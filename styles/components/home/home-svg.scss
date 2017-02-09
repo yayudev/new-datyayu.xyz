@@ -5,27 +5,23 @@
     z-index: 0;
     height: 100vh;
     overflow: hidden;
+    transition: border 200ms ease-in-out;
     border-bottom: 14em solid white;
     border-left: 50em solid transparent;
-    transition: border 200ms ease-in-out;
 
     @include at-tablet {
-        border-bottom: 16em solid white;
-        border-left: 60em solid transparent;
+        border-bottom: 14em solid white;
+        border-left: 30em solid transparent;
     }
 
     @include at-desktop {
-        border-bottom: 20em solid white;
+        border-bottom: 15em solid white;
         border-left: 15em solid transparent;
     }
 
-    @include at-hd-desktop {
-        border-bottom: 15em solid white;
-        border-left: 25em solid transparent;
-    }
 
-    @include at-plus-hd-desktop {
-        border-bottom: 18em solid white;
+    @include at-hd-desktop {
+        border-bottom: 17em solid white;
         border-left: 15em solid transparent;
     }
 }
