@@ -1,0 +1,43 @@
+.home-navigation {
+    position: relative;
+    align-self: flex-end;
+    list-style: none;
+    text-align: right;
+    // height: 100%;
+    padding: .5em 0;
+    margin: 0;
+    width: 100vw;
+    text-align: center;
+    font-size: 3em;
+    z-index: 2;
+    box-sizing: border-box;
+
+    @include at-desktop {
+        text-align: right;
+        padding: .5em 5vw;
+    }
+}
+
+.home-navigation-item {
+    margin: 1em 0;
+    will-change: transform;
+    transition: transform 200ms ease-in-out;
+    // box-sizing: border-box;
+
+    &:hover {
+        transform: scale(1.05) translateX(-.5em);
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 1em;
+    }
+}
+
+
+.home-navigation-link {
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}

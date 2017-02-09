@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .home-bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .home-video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100vw;
+            min-height: 100vh;
+            background: rgba(0,0,0,.5);
+            z-index: -1;
+        }
+
+        .home-svg {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .svg-polygon {
+            height: 100vh;
+            width: 50vw;
+        }
+    </style>
+</head>
+<body>
+    <svg
+        class="home-svg"
+        xmlns="http://www.w3.org/2000/svg",
+        xmlns:xlink="http://www.w3.org/1999/xlink",
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+    >
+        <polygon
+            class="bg-polygon"
+            points="40 100 100 100 100 10"
+            fill="red"
+        />
+        <foreignObject>
+            <video class="home-bg-video" src="/assets/bg.webm" loop autoplay></video>
+            <div class="home-video-overlay"></div>
+        </foreignObject>
+    </svg>
+</body>
+</html>
