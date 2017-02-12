@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Open+Sans|Raleway|Ropa+Sans|Wire+One">
+  </head>
+  <body>
+    <header class="header" style="background-image: url('/assets/bg.png');">
+      <div class="header-overlay"></div>
+      <nav class="navigation js-nav">
+        <ul class="navigation-list">
+          <li class="navigation-item"><a class="navigation-link navigation-item--home" href="/views/home.html">Home</a></li>
+          <li class="navigation-item"><a class="navigation-link navigation-item--blog" href="/views/blog.html">Blog</a></li>
+          <li class="navigation-item"><a class="navigation-link navigation-item--projects" href="/views/projects.html">Projects</a></li>
+          <li class="navigation-item"><a class="navigation-link navigation-item--experiments" href="/views/experiments.html">Experiments</a></li>
+          <li class="navigation-item"><a class="navigation-link navigation-item--about" href="/views/about.html">About</a></li>
+        </ul>
+      </nav><i class="navigation-button js-navigation-button"><span class="navigation-button-line"></span><span class="navigation-button-line"></span><span class="navigation-button-line"></span></i>
+      <div class="header-content">
+        <h1 class="header-title"><span>YAYU/</span><span class="red">TEST</span></h1>
+        <h2 class="header-subtitle">A colllection of small learning experiments using the latest technologies availables for the web.</h2>
+      </div>
+    </header>
+    <div class="experiments">
+      <div class="experiments-list"><a class="experiments-item" href="#"><img class="experiments-item-image" src="/assets/weetrack2-desktop.png">
+          <h3 class="experiments-item-title">Experiment #123</h3></a><a class="experiments-item" href="#"><img class="experiments-item-image" src="/assets/weetrack2-desktop.png">
+          <h3 class="experiments-item-title">Experiment #123</h3></a><a class="experiments-item" href="#"><img class="experiments-item-image" src="/assets/weetrack2-desktop.png">
+          <h3 class="experiments-item-title">Experiment #123</h3></a><a class="experiments-item" href="#"><img class="experiments-item-image" src="/assets/weetrack2-desktop.png">
+          <h3 class="experiments-item-title">Experiment #123</h3></a><a class="experiments-item" href="#"><img class="experiments-item-image" src="/assets/weetrack2-desktop.png">
+          <h3 class="experiments-item-title">Experiment #123</h3></a>
+      </div>
+    </div>
+    <script>
+      (function() {
+          var $navButton = document.querySelector('.js-navigation-button');
+          var $nav = document.querySelector('.js-nav');
+          if (!$navButton) return;
+          console.log($nav, $navButton)
+          $navButton.addEventListener('click', function() {
+              var navIsActive = $nav.classList.contains('is-active');
+              if (navIsActive) {
+                  $nav.classList.remove('is-active')
+              } else {
+                  $nav.classList.add('is-active')
+              }
+              console.log('click')
+          })
+      })();
+    </script>
+  </body>
+</html>

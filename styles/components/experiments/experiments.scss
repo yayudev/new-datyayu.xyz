@@ -1,0 +1,19 @@
+.experiments {
+    margin-top: 2em;
+}
+
+.experiments-list {
+    padding: 0;
+    list-style: none;
+    width: 80vw;
+    max-width: 900px;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @include at-plus-hd-desktop  {
+        max-width: 1200px;
+    }
+}
