@@ -26,9 +26,13 @@
 }
 
 .blog-post-item-title {
-    color: $green;
     margin: .25em 0;
     font-size: 1.9em;
+}
+
+.blog-post-item-title-link {
+    text-decoration: none;
+    color: $green;
 }
 
 .blog-post-item-tags {

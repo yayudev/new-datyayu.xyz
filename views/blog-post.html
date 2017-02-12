@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Open+Sans|Raleway|Ropa+Sans|Wire+One">
+  </head>
+  <body>
+    <header class="header" style="background-image: url('/assets/bg.png');">
+      <div class="header-overlay"></div>
+      <nav class="navigation js-nav">
+        <ul class="navigation-list">
+          <li class="navigation-item"><a class="navigation-link navigation-item--home" href="/views/home.html">Home</a></li>
+          <li class="navigation-item"><a class="navigation-link navigation-item--blog" href="/views/blog.html">Blog</a></li>
+          <li class="navigation-item"><a class="navigation-link navigation-item--projects" href="/views/projects.html">Projects</a></li>
+          <li class="navigation-item"><a class="navigation-link navigation-item--experiments" href="/views/experiments.html">Experiments</a></li>
+          <li class="navigation-item"><a class="navigation-link navigation-item--about" href="/views/about.html">About</a></li>
+        </ul>
+      </nav><i class="navigation-button js-navigation-button"><span class="navigation-button-line"></span><span class="navigation-button-line"></span><span class="navigation-button-line"></span></i>
+      <div class="header-content">
+        <h1 class="header-title"><span>YAYU/</span><span class="green">BLOG</span></h1>
+        <h2 class="header-subtitle">Frontend is cool</h2>
+      </div>
+    </header>
+    <div class="blog">
+      <h1 class="blog-post-title">Blog post about an interesting topic that is longer than one line</h1>
+      <h4 class="blog-post-date">2017.02.03</h4>
+      <h4 class="blog-post-tags"><a class="blog-post-tag-link">#javascript,</a><a class="blog-post-tag-link">#Vue.js</a></h4>
+      <div class="blog-post-text">
+        <p>Howl uncontrollably for no reason find empty spot in cupboard and sleep all day or going to catch the red dot today <strong>going to catch the red dot</strong> today ignore the squirrels, you'll never catch them anyway <a href="#">climb a tree, wait for a fireman</a> jump to fireman then scratch his face. Nap all day the dog smells bad a nice warm <em>laptop for me to sit on kitty</em> loves pigs but scratch the furniture.</p>
+        <p>Put butt in owner's face jump launch to pounce upon little yarn mouse, bare fangs at toy run hide in litter box <code> until  treats are fed</code>. Have my breakfast spaghetti yarn. Playing with balls of wool damn that dog so scratch the box playing with balls of wool.</p>
+        <h2>TOPIC #140</h2>
+        <p>Cat snacks stare at ceiling light purr or kitty loves pigs and scream at teh bath. Sit in box climb leg, so poop on grasses yet stare at ceiling chew iPad power cord. Run outside as soon as door open.</p>
+        <pre><code>function sayHello() {
+    alert('hello world');
+}
+sayHello();</code></pre>
+      </div>
+    </div>
+    <script>
+      (function() {
+          var $navButton = document.querySelector('.js-navigation-button');
+          var $nav = document.querySelector('.js-nav');
+          if (!$navButton) return;
+          console.log($nav, $navButton)
+          $navButton.addEventListener('click', function() {
+              var navIsActive = $nav.classList.contains('is-active');
+              if (navIsActive) {
+                  $nav.classList.remove('is-active')
+              } else {
+                  $nav.classList.add('is-active')
+              }
+              console.log('click')
+          })
+      })();
+    </script>
+  </body>
+</html>
