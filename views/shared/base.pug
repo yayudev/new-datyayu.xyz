@@ -10,4 +10,21 @@ html(lang="en")
 
     body
         block content
-        block scritps
+        script
+            | (function() {
+            |     var $navButton = document.querySelector('.js-navigation-button');
+            |     var $nav = document.querySelector('.js-nav');
+            |     if (!$navButton) return;
+            |     console.log($nav, $navButton)
+            |     $navButton.addEventListener('click', function() {
+            |         var navIsActive = $nav.classList.contains('is-active');
+            |         if (navIsActive) {
+            |             $nav.classList.remove('is-active')
+            |         } else {
+            |             $nav.classList.add('is-active')
+            |         }
+            |         console.log('click')
+            |     })
+            | })();
+
+        block scripts

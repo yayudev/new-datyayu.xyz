@@ -3,7 +3,7 @@
     align-self: flex-end;
     list-style: none;
     text-align: right;
-    padding: .5em 0;
+    padding: 0;
     margin: 0;
     width: 100vw;
     text-align: center;
@@ -17,11 +17,11 @@
     }
 
     @include at-desktop {
-        padding: .5em 5vw;
+        padding: 0em 5vw;
     }
 
     @include at-hd-desktop {
-        padding: .5em 1em;
+        padding: 0em 1em;
     }
 }
 
@@ -29,6 +29,8 @@
     margin: 1em 0;
     will-change: transform;
     transition: transform 200ms ease-in-out;
+    overflow: hidden;
+    box-sizing: border-box;
 
     &:hover {
         transform: scale(1.05) translateX(-.75em);
