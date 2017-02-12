@@ -1,0 +1,14 @@
+.blog-navigation {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    padding: 1em;
+    margin: 2em 0;
+}
+
+.blog-navigation-link {
+    color: $blue;
+    text-decoration: none;
+    font-size: 1.3em;
+}
