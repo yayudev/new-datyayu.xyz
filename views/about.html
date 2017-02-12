@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Open+Sans|Raleway|Ropa+Sans|Wire+One">
+  </head>
+  <body>
+    <header class="header" style="background-image: url('/assets/bg.png');">
+      <div class="header-overlay"></div>
+      <nav class="navigation js-nav">
+        <ul class="navigation-list">
+          <li class="navigation-item"><a class="navigation-link navigation-item--home" href="/views/home.html">Home</a></li>
+          <li class="navigation-item"><a class="navigation-link navigation-item--blog" href="/views/blog.html">Blog</a></li>
+          <li class="navigation-item"><a class="navigation-link navigation-item--projects" href="/views/projects.html">Projects</a></li>
+          <li class="navigation-item"><a class="navigation-link navigation-item--experiments" href="/views/experiments.html">Experiments</a></li>
+          <li class="navigation-item"><a class="navigation-link navigation-item--about" href="/views/about.html">About</a></li>
+        </ul>
+      </nav><i class="navigation-button js-navigation-button"><span class="navigation-button-line"></span><span class="navigation-button-line"></span><span class="navigation-button-line"></span></i>
+      <div class="header-content">
+        <h1 class="header-title"><span>YAYU/</span><span class="orange">ME</span></h1>
+        <h2 class="header-subtitle">Some info about me</h2>
+      </div>
+    </header>
+    <div class="about">
+      <h2 class="about-title">ME</h2>
+      <p class="about-text">Hola. Soy Arturo Coronel (puedes llamarme Yayu), tengo 21 años, vivo en Tijuana, MX y me encanta el desarrollo web ❤.</p>
+      <p class="about-text">
+        Trabajo haciendo frontend, soy estudiante de ingeniería en computación en la UABC,
+        ayudo en proyectos de investigación y de vez en cuando hago freelance.
+        Pero ante todo me dedico a aprender por mi cuenta todos los días.
+      </p>
+      <p class="about-text">
+        Me gusta compartir casi todo lo que hago en mi cuenta de Github, con licencia de
+        MIT para que cualquiera pueda inspirarse; así como herramientas y librerías que
+        he desarrollado para hacer más fácil mi trabajo, así otros pueden hacer más fácil
+        el suyo y aprender de mi código.
+      </p>
+      <p class="about-text">
+        Mis hobbies son ver anime, escuchar podcasts, stalkear aprender acerca de
+        mis seiyuus favoritas, escribir acerca de javascript y ayudar a los demás a aprender.
+      </p>
+      <h2 class="about-title">Contacto</h2>
+      <p class="about-text">
+        ¿Quieres saber más de mí? ¿Tienes alguna idea o sugerencia para mejorar este blog?
+        ¿Deseas platicar de tecnologías web o monas chinas? ¡Contáctame!
+      </p>
+      <ul class="about-list">
+        <li class="about-list-item"><a class="about-link" href="#">Github</a></li>
+        <li class="about-list-item"><a class="about-link" href="#">Correo</a></li>
+        <li class="about-list-item"><a class="about-link" href="#">Facebook</a></li>
+        <li class="about-list-item"><a class="about-link" href="#">Twitter</a></li>
+        <li class="about-list-item"><a class="about-link" href="#">Linkedin</a></li>
+        <li class="about-list-item"><a class="about-link" href="#">Skype</a></li>
+      </ul>
+    </div>
+    <script>
+      (function() {
+          var $navButton = document.querySelector('.js-navigation-button');
+          var $nav = document.querySelector('.js-nav');
+          if (!$navButton) return;
+          console.log($nav, $navButton)
+          $navButton.addEventListener('click', function() {
+              var navIsActive = $nav.classList.contains('is-active');
+              if (navIsActive) {
+                  $nav.classList.remove('is-active')
+              } else {
+                  $nav.classList.add('is-active')
+              }
+              console.log('click')
+          })
+      })();
+    </script>
+  </body>
+</html>

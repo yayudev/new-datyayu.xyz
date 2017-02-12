@@ -1,0 +1,21 @@
+.about {
+    margin: 0 10%;
+    font-size: 1.1em;
+
+    @include at-hd-desktop {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+.about-title {
+    color: $orange;
+    font-size: 2em;
+    margin: 1em 0 0 0;
+}
+
+
+.about-link {
+    color: $blue;
+    text-decoration: none;
+}
