@@ -14,7 +14,7 @@ body > div {
     min-height: 100%;
 }
 
-body > div > div {
+body > div > div:nth-child(2) {
     height: 100vh;
     min-height: 100%;
     position: relative;
