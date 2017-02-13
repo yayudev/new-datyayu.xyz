@@ -1,7 +1,7 @@
 <template>
   <header class="header" :style="bgStyle">
     <div class="header-overlay"></div>
-    <!-- Navigation component -->
+    <navigation></navigation>
 
     <div class="header-content">
       <h1 class="header-title">
@@ -16,7 +16,13 @@
 
 
 <script>
+  import Navigation from '../Navigation/Navigation.vue'
+
   export default {
+    components: {
+      Navigation
+    },
+
     props: {
       headerTitle: { type: String, required: true },
       headerSubtitle: { type: String, required: true },
