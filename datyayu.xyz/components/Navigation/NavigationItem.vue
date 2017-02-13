@@ -1,7 +1,11 @@
 <template>
-  <li class="navigation-item">
-    <a class="navigation-link" :class="linkClasses" :href="url"> {{ text }} </a>
-  </li>
+  <nuxt-link
+    class="navigation-item"
+    :active-class="activeClass"
+    :to="url"
+    tag="li">
+      <a class="navigation-link" :class="linkClasses" >{{ text }}</a>
+  </nuxt-link>
 </template>
 
 
@@ -15,12 +19,7 @@
 
     computed: {
       activeClass () {
-        if (this.url === '/') return ''
-
-        const currentPath = this.$route.fullPath
-        const linkShouldBeActive = currentPath.startsWith(this.url)
-
-        return linkShouldBeActive ? `${this.hoverColor}-active` : ''
+        return `${this.hoverColor}-active`
       },
 
       linkClasses () {
@@ -65,11 +64,11 @@
   .red:hover { color: #FF2121; }
   .orange:hover { color: #FF9204; }
 
-  .gray-active { color: #b8b9b9; }
-  .green-active { color: #00BF13; }
-  .blue-active { color: #6591f5; }
-  .red-active { color: #FF2121; }
-  .orange-active { color: #FF9204; }
+  .gray-active a { color: #b8b9b9; }
+  .green-active a { color: #00BF13; }
+  .blue-active a { color: #6591f5; }
+  .red-active a { color: #FF2121; }
+  .orange-active a { color: #FF9204; }
 
 /* Tablet */
   @media screen and (min-width: 480px) {

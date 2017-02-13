@@ -5,8 +5,8 @@
 
     <div class="header-content">
       <h1 class="header-title">
-        <span> YAYU/ </span>
-        <span :class="headerColor")> {{ headerTitle }} </span>
+        <span> YAYU/</span>
+        <span :class="headerColor")>{{ headerTitle }}</span>
       </h1>
 
       <h2 class="header-subtitle"> {{ headerSubtitle }} </h2>
