@@ -1,6 +1,6 @@
 <template>
   <li class="navigation-item">
-    <a class="navigation-link" :class="hoverColor" :href="url"> {{ text }} </a>
+    <a class="navigation-link" :class="linkClasses" :href="url"> {{ text }} </a>
   </li>
 </template>
 
@@ -11,6 +11,21 @@
       hoverColor: { type: String, required: true },
       url: { type: String, required: true },
       text: { type: String, required: true }
+    },
+
+    computed: {
+      activeClass () {
+        if (this.url === '/') return ''
+
+        const currentPath = this.$route.fullPath
+        const linkShouldBeActive = currentPath.startsWith(this.url)
+
+        return linkShouldBeActive ? `${this.hoverColor}-active` : ''
+      },
+
+      linkClasses () {
+        return `${this.hoverColor} ${this.activeClass}`
+      }
     }
   }
 </script>
@@ -32,12 +47,6 @@
     transform: scale(1.2) translateX(.5em);
   }
 
-  .gray:hover { color: #b8b9b9; }
-  .green:hover { color: #00BF13; }
-  .blue:hover { color: #6591f5; }
-  .red:hover { color: #FF2121; }
-  .orange:hover { color: #FF9204; }
-
   .navigation-link {
     text-decoration: none;
     color: white;
@@ -49,6 +58,18 @@
     text-align: center;
     width: 100%;
   }
+
+  .gray:hover { color: #b8b9b9; }
+  .green:hover { color: #00BF13; }
+  .blue:hover { color: #6591f5; }
+  .red:hover { color: #FF2121; }
+  .orange:hover { color: #FF9204; }
+
+  .gray-active { color: #b8b9b9; }
+  .green-active { color: #00BF13; }
+  .blue-active { color: #6591f5; }
+  .red-active { color: #FF2121; }
+  .orange-active { color: #FF9204; }
 
 /* Tablet */
   @media screen and (min-width: 480px) {
