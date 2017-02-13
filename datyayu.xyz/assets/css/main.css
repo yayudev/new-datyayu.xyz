@@ -1,0 +1,30 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100%;
+    overflow-x: hidden;
+    font-family: 'Abel', 'Open Sans', 'arial', sans-serif, serif;
+    position: relative;
+}
+
+body > div {
+    height: 100vh;
+    min-height: 100%;
+}
+
+body > div > div {
+    height: 100vh;
+    min-height: 100%;
+    position: relative;
+}
+
+
+.white  { color: #ffffff; }
+.black  { color: #3b3b3b; }
+.gray   { color: #b8b9b9; }
+.blue   { color: #6591f5; }
+.orange { color: #FF9204; }
+.red    { color: #FF2121; }
+.green  { color: #00BF13; }
