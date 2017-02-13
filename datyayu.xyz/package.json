@@ -5,8 +5,9 @@
   "author": "Arturo Coronel <aoitsu3@gmail.com>",
   "private": true,
   "dependencies": {
-    "file-loader": "^0.10.0",
-    "nuxt": "latest"
+    "highlightjs": "^9.8.0",
+    "nuxt": "latest",
+    "vue-disqus": "^2.0.1"
   },
   "scripts": {
     "dev": "nuxt",
@@ -23,6 +24,7 @@
     "eslint-loader": "^1.6.1",
     "eslint-plugin-html": "^2.0.0",
     "eslint-plugin-promise": "^3.4.1",
-    "eslint-plugin-standard": "^2.0.1"
+    "eslint-plugin-standard": "^2.0.1",
+    "file-loader": "^0.10.0"
   }
 }
