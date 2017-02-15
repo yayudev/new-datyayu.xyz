@@ -23,6 +23,10 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   /*
+  ** Vue Plugins
+  */
+  plugins: [],
+  /*
   ** Build configuration
   */
   build: {

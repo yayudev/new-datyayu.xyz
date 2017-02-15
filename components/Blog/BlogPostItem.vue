@@ -7,15 +7,7 @@
         <nuxt-link class="blog-post-item-title-link" :to="generatePostUrl(postId)"> {{ title }} </nuxt-link>
       </h2>
 
-      <h4 class="blog-post-item-tags">
-        <nuxt-link v-for="tag in tags"
-          class="blog-post-item-link"
-          :to="generateTagUrl(tag)">
-          #{{ tag }}
-        </nuxt-link>
-      </h4>
-
-      <p class="blog-post-item-summary"> {{ summary }} </p>
+      <div class="blog-post-item-summary" v-html="summary"></div>
     </div>
   </li>
 </template>
@@ -24,10 +16,9 @@
 <script>
   export default {
     props: {
-      postId: { type: String, required: true },
+      postId: { type: Number, required: true },
       title: { type: String, required: true },
       date: { type: String, required: true },
-      tags: { type: Array, default: [] },
       summary: { type: String, default: '' }
     },
     methods: {

@@ -42,13 +42,15 @@
   }
 
   .blog-post-text code {
-    background: #3b3b3b;
+    background: #282a36;
     color: white;
     padding: 0 .5em;
   }
 
   .blog-post-text pre {
     display: block;
+    background: #282a36;
+    padding: 1em;
   }
 
   .blog-post-text h1,

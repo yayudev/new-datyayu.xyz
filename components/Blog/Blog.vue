@@ -5,7 +5,6 @@
         :postId="post.id"
         :title="post.title"
         :date="post.date"
-        :tags="post.tags"
         :summary="post.summary"
       ></blog-post-item>
     </ul>
@@ -26,7 +25,7 @@
     },
 
     props: {
-      posts: { type: Array, default: [] },
+      posts: { type: Array, default: () => [] },
       nextPage: { type: Boolean, default: false },
       prevPage: { type: Boolean, default: false }
     }
