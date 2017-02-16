@@ -15,6 +15,10 @@
       hljs.initHighlightingOnLoad()
     },
 
+    beforeUpdate () {
+      hljs.initHighlightingOnLoad()
+    },
+
     watch: {
       content (text) {
         this.$nextTick(function () {

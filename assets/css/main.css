@@ -5,6 +5,7 @@ html, body {
     height: 100vh;
     min-height: 100%;
     overflow-x: hidden;
+    overflow-y: auto;
     font-family: 'Abel', 'Open Sans', 'arial', sans-serif, serif;
     position: relative;
 }
@@ -12,12 +13,14 @@ html, body {
 body > div {
     height: 100vh;
     min-height: 100%;
+    overflow-y: auto;
 }
 
 body > div > div:nth-child(2) {
     height: 100vh;
     min-height: 100%;
     position: relative;
+    overflow-y: auto;
 }
 
 

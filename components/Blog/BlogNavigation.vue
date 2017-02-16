@@ -1,7 +1,7 @@
 <template>
   <div class="blog-navigation">
-    <nuxt-link v-if="prevPage" class="blog-navigation-link" to="#"> < Anterior </nuxt-link>
-    <nuxt-link v-if="nextPage" class="blog-navigation-link" to="#">  Siguiente > </nuxt-link>
+    <nuxt-link v-if="hasPrevPage" class="blog-navigation-link" :to="prevPage"> < Anterior </nuxt-link>
+    <nuxt-link v-if="hasNextPage" class="blog-navigation-link" :to="nextPage">  Siguiente > </nuxt-link>
   </div>
 </template>
 
@@ -9,8 +9,18 @@
 <script>
   export default {
     props: {
-      prevPage: { type: Boolean, default: false },
-      nextPage: { type: Boolean, default: false }
+      page: { type: Number, default: 0 },
+      hasPrevPage: { type: Boolean, default: false },
+      hasNextPage: { type: Boolean, default: false }
+    },
+
+    computed: {
+      nextPage () {
+        return `/blog/page/${this.page + 1}`
+      },
+      prevPage () {
+        return `/blog/page/${this.page - 1}`
+      }
     }
   }
 </script>

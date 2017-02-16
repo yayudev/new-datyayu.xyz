@@ -12,18 +12,19 @@
   import Blog from '~components/Blog/Blog.vue'
   import axios from 'axios'
   import { mapGetters } from 'vuex'
-  import { POSTS_ENDPOINT } from '../../config/api.js'
-  import { formatDate } from '../../utils/date-formatter.js'
+  import { POSTS_ENDPOINT } from '../../../config/api.js'
+  import { formatDate } from '../../../utils/date-formatter.js'
 
   export default {
     components: {
       Blog
     },
 
-    async fetch ({ store }) {
+    async fetch ({ store, route }) {
       store.commit('posts/startFetching')
 
-      const request = await axios.get(POSTS_ENDPOINT)
+      const page = parseInt(route.params.id, 10)
+      const request = await axios.get(`${POSTS_ENDPOINT}?page=${page}`)
 
       const totalPosts = request.headers['x-wp-total']
       const posts = request.data.map(post => {
@@ -35,7 +36,7 @@
         }
       })
 
-      store.commit('posts/updatePosts', { posts, totalPosts, page: 1 })
+      store.commit('posts/updatePosts', { posts, totalPosts, page })
     },
 
     computed: {

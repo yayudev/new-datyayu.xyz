@@ -9,7 +9,7 @@
       ></blog-post-item>
     </ul>
 
-    <blog-navigation :prevPage="prevPage" :nextPage="nextPage"></blog-navigation>
+    <blog-navigation :hasPrevPage="hasPrevPage" :hasNextPage="hasNextPage" :page="page"></blog-navigation>
   </div>
 </template>
 
@@ -26,8 +26,9 @@
 
     props: {
       posts: { type: Array, default: () => [] },
-      nextPage: { type: Boolean, default: false },
-      prevPage: { type: Boolean, default: false }
+      page: { type: Number, default: 0 },
+      hasNextPage: { type: Boolean, default: false },
+      hasPrevPage: { type: Boolean, default: false }
     }
   }
 </script>

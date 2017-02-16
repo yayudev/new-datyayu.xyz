@@ -20,10 +20,10 @@
       BlogPost
     },
 
-    async beforeCreate () {
-      this.$store.commit('posts/startFetching')
+    async fetch ({ store, route }) {
+      store.commit('posts/startFetching')
 
-      const postId = this.$route.params.id
+      const postId = route.params.id
       const request = await axios.get(`${POSTS_ENDPOINT}/${postId}`)
       const post = request.data
 
@@ -34,7 +34,7 @@
         tags: []
       }
 
-      this.$store.commit('posts/setActivePost', blogPost)
+      store.commit('posts/setActivePost', blogPost)
     },
 
     computed: {
