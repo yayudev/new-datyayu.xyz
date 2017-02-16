@@ -23,7 +23,7 @@
     async fetch ({ store }) {
       store.commit('posts/startFetching')
 
-      const request = await axios.get(POSTS_ENDPOINT)
+      const request = await axios.get(`${POSTS_ENDPOINT}?per_page=5`)
 
       const totalPosts = request.headers['x-wp-total']
       const posts = request.data.map(post => {

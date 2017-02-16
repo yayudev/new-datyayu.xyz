@@ -24,7 +24,7 @@
       store.commit('posts/startFetching')
 
       const page = parseInt(route.params.id, 10)
-      const request = await axios.get(`${POSTS_ENDPOINT}?page=${page}`)
+      const request = await axios.get(`${POSTS_ENDPOINT}?per_page=5&page=${page}`)
 
       const totalPosts = request.headers['x-wp-total']
       const posts = request.data.map(post => {

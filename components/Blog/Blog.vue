@@ -1,5 +1,7 @@
 <template>
   <div class="blog">
+    <blog-navigation :hasPrevPage="hasPrevPage" :hasNextPage="hasNextPage" :page="page"></blog-navigation>
+
     <ul class="blog-post-list">
       <blog-post-item v-for="post in posts"
         :postId="post.id"

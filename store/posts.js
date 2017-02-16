@@ -36,5 +36,5 @@ export const getters = {
   posts: state => state.posts,
   currentPage: state => state.page,
   hasPrevPage: state => state.page !== 0 && state.page !== 1,
-  hasNextPage: state => state.page !== 0 && state.page < (state.totalPosts / 10)
+  hasNextPage: state => state.page !== 0 && state.page < (state.totalPosts / 5)
 }
