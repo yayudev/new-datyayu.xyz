@@ -1,15 +1,25 @@
 <template>
+  <div>
+    <site-header
+      bg-image="/images/bg.png"
+      header-title="BLOG"
+      header-subtitle="Frontend is cool"
+      header-color="green"
+    ></site-header>
+
     <blog-post v-if="!fetching"
         :title="currentPost.title"
         :date="currentPost.date"
         :tags="currentPost.tags"
         :content="currentPost.content"
     ></blog-post>
+  </div>
 </template>
 
 
 <script>
   import BlogPost from '~components/BlogPost/BlogPost.vue'
+  import SiteHeader from '~components/SiteHeader/SiteHeader.vue'
   import axios from 'axios'
   import { mapGetters } from 'vuex'
   import { formatDate } from '../../../utils/date-formatter.js'
@@ -17,7 +27,8 @@
 
   export default {
     components: {
-      BlogPost
+      BlogPost,
+      SiteHeader
     },
 
     async fetch ({ store, route }) {

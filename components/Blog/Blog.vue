@@ -2,6 +2,8 @@
   <div class="blog">
     <blog-navigation :hasPrevPage="hasPrevPage" :hasNextPage="hasNextPage" :page="page"></blog-navigation>
 
+    <h2 v-if="posts && posts.length === 0">No hay posts en esta pagina</h2>
+
     <ul class="blog-post-list">
       <blog-post-item v-for="post in posts"
         :postId="post.id"

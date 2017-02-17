@@ -1,15 +1,25 @@
 <template>
+  <div>
+    <site-header
+      bg-image="/images/bg.png"
+      header-title="BLOG"
+      header-subtitle="Frontend is cool"
+      header-color="green"
+    ></site-header>
+
     <blog v-if="!fetching"
       :posts="posts"
       :hasNextPage="hasNextPage"
       :hasPrevPage="hasPrevPage"
       :page="currentPage"
     ></blog>
+  </div>
 </template>
 
 
 <script>
   import Blog from '~components/Blog/Blog.vue'
+  import SiteHeader from '~components/SiteHeader/SiteHeader.vue'
   import axios from 'axios'
   import { mapGetters } from 'vuex'
   import { POSTS_ENDPOINT } from '../../config/api.js'
@@ -17,7 +27,8 @@
 
   export default {
     components: {
-      Blog
+      Blog,
+      SiteHeader
     },
 
     async fetch ({ store }) {
