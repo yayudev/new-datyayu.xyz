@@ -26,6 +26,7 @@ module.exports = {
   ** Vue Plugins
   */
   plugins: [
+    '~plugins/google-analytics',
     '~plugins/vue-i18n'
   ],
   /*
