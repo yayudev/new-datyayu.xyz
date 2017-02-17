@@ -27,7 +27,7 @@ export default {
 
       introTitle: 'YO',
 
-      intro: 'Hola. Soy Arturo Coronel (puedes llamarme Yayu), tengo 21 años, vivo en Tijuana, MX y ❤ el desarrollo web .',
+      intro: 'Hola. Soy Arturo Coronel (puedes llamarme Yayu), tengo 21 años, vivo en Tijuana, MX y amo el desarrollo web ♥.',
 
       work: 'Trabajo haciendo frontend, soy estudiante de ingeniería en computación en la UABC, ayudo en proyectos de investigación y de vez en cuando hago freelance. Pero ante todo me dedico a aprender por mi cuenta todos los días.',
 
@@ -37,7 +37,7 @@ export default {
 
       contactTitle: 'Contacto',
 
-      contactText: '¿Quieres saber más de mí? ¿Tienes alguna idea o sugerencia para mejorar este blog? ¿Deseas platicar de tecnologías web o monas chinas? ¡Contáctame!'
+      contactText: '¿Quieres saber más de mí o contratar mis servicios? ¿Tienes alguna idea o sugerencia para mejorar este blog? ¿Deseas platicar de tecnologías web o monas chinas? ¡Contáctame!'
     }
   }
 }

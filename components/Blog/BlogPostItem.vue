@@ -77,8 +77,10 @@
 
   .blog-post-item-summary {
     text-align: left;
-    font-size: 1.1em;
+    font-size: 1em;
+    line-height: 1.5em;
     color: #3b3b3b;
+    font-family: 'Open Sans', 'arial', sans-serif, serif;
   }
 
 

@@ -33,7 +33,9 @@
 
 <style>
   .blog-post-text {
-    font-size: 1.2em;
+    font-family: 'Open Sans', 'arial', sans-serif, serif;
+    font-size: 1em;
+    line-height: 1.6em;
   }
 
   .blog-post-text a {
@@ -48,7 +50,7 @@
   .blog-post-text code {
     background: #282a36;
     color: white;
-    padding: 0 .5em;
+    padding: 0 .25em;
   }
 
   .blog-post-text pre {
@@ -64,6 +66,7 @@
   .blog-post-text h5,
   .blog-post-text h6 {
     color: #00BF13;
+    margin-top: 2em;
   }
 
   .hljs.hljs {

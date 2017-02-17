@@ -24,7 +24,7 @@
 <style scoped>
   .about {
     margin: 0 10%;
-    font-size: 1.1em;
+    font-size: 1em;
   }
 
   .about-title {
@@ -34,7 +34,9 @@
   }
 
   .about-text {
-    font-size: 1.1em;
+    font-size: 1em;
+    font-family: 'Open Sans', 'arial', sans-serif, serif;
+    line-height: 1.5em;
   }
 
   .about-link {

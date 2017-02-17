@@ -29,6 +29,23 @@ module.exports = {
     '~plugins/vue-i18n'
   ],
   /*
+  ** Vue Router
+  */
+  router: {
+    scrollBehavior (to, from, savedPosition) {
+      if (savedPosition) {
+        return savedPosition
+      }
+
+      const $header = document.querySelector('.header')
+      if ($header) {
+        $header.scrollIntoView()
+      }
+
+      return { x: 0, y: 0 }
+    }
+  },
+  /*
   ** Build configuration
   */
   build: {

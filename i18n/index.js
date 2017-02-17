@@ -1,4 +1,5 @@
 import Navigation from './shared/navigation.js'
+import Footer from './shared/footer.js'
 
 import Blog from './pages/blog.js'
 import Experiments from './pages/experiments.js'
@@ -9,6 +10,8 @@ import About from './pages/about.js'
 export default {
   en: {
     ...Navigation.en,
+    ...Footer.en,
+
     ...About.en,
     ...Blog.en,
     ...Experiments.en,
@@ -18,6 +21,8 @@ export default {
 
   es: {
     ...Navigation.es,
+    ...Footer.es,
+
     ...About.es,
     ...Blog.es,
     ...Experiments.es,
