@@ -9,7 +9,7 @@ export default {
   es: {
     experiments: {
       title: 'TEST',
-      subtitle: 'Una colleccion de pequenos experimentos usando las tecnologias mas recientes de la web.'
+      subtitle: 'Una colección de pequeños experimentos usando las tecnologias más recientes de la web.'
     }
   }
 }

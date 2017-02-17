@@ -9,7 +9,7 @@ export default {
   es: {
     projects: {
       title: 'PROYECTOS',
-      subtitle: 'Una colleccion de mis proyectos favoritos que he creado.'
+      subtitle: 'Una colección de mis proyectos favoritos que he creado.'
     }
   }
 }
