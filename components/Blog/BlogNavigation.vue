@@ -1,7 +1,7 @@
 <template>
   <div class="blog-navigation">
-    <nuxt-link v-if="hasPrevPage" class="blog-navigation-link" :to="prevPage"> < Anterior </nuxt-link>
-    <nuxt-link v-if="hasNextPage" class="blog-navigation-link" :to="nextPage">  Siguiente > </nuxt-link>
+    <nuxt-link v-if="hasPrevPage" class="blog-navigation-link" :to="prevPage"> < {{ $t('blog.prev') }} </nuxt-link>
+    <nuxt-link v-if="hasNextPage" class="blog-navigation-link" :to="nextPage">  {{ $t('blog.next') }} > </nuxt-link>
   </div>
 </template>
 

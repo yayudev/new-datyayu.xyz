@@ -2,9 +2,9 @@
   <div>
     <site-header
       bg-image="/images/bg.png"
-      header-title="BLOG"
-      header-subtitle="Frontend is cool"
       header-color="green"
+      :header-title="pageTitle"
+      :header-subtitle="pageSubtitle"
     ></site-header>
 
     <blog v-if="!fetching"
@@ -56,7 +56,15 @@
         hasNextPage: 'posts/hasNextPage',
         hasPrevPage: 'posts/hasPrevPage',
         currentPage: 'posts/currentPage'
-      })
+      }),
+
+      pageTitle () {
+        return this.$t('blog.title')
+      },
+
+      pageSubtitle () {
+        return this.$t('blog.subtitle')
+      }
     }
   }
 </script>

@@ -1,11 +1,15 @@
 <template>
-    <ul class="home-navigation">
-        <div class="home-border-layer"></div>
+  <ul class="home-navigation">
+    <div class="home-border-layer"></div>
 
-        <li v-for="link in links" class="home-navigation-item">
-            <nuxt-link class="home-navigation-link" :to="link.url">{{ link.text }}</nuxt-link>
-        </li>
-    </ul>
+    <li v-for="link in links" class="home-navigation-item">
+      <nuxt-link class="home-navigation-link" :to="link.url">{{ $t(`navigation.${link.text}`) }}</nuxt-link>
+    </li>
+
+    <li class="home-navigation-item">
+      <a class="home-navigation-link"  href="https://github.com/datyayu" target="_blank"> Github </a>
+    </li>
+  </ul>
 </template>
 
 
@@ -14,11 +18,10 @@
     data () {
       return {
         links: [
-          { text: 'Blog', url: '/blog' },
-          { text: 'Projects', url: '/projects' },
-          { text: 'Experiments', url: '/experiments' },
-          { text: 'Github', url: 'https:///github.com/datyayu/' },
-          { text: 'About', url: '/about' }
+          { text: 'blog', url: '/blog' },
+          { text: 'projects', url: '/projects' },
+          { text: 'experiments', url: '/experiments' },
+          { text: 'about', url: '/about' }
         ]
       }
     }

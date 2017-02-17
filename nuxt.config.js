@@ -25,7 +25,9 @@ module.exports = {
   /*
   ** Vue Plugins
   */
-  plugins: [],
+  plugins: [
+    '~plugins/vue-i18n'
+  ],
   /*
   ** Build configuration
   */

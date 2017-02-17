@@ -30,11 +30,11 @@
       return {
         isActive: false,
         links: [
-          { text: 'Home', url: '/', hoverColor: 'gray' },
-          { text: 'Blog', url: '/blog', hoverColor: 'green' },
-          { text: 'Projects', url: '/projects', hoverColor: 'blue' },
-          { text: 'Experiments', url: '/experiments', hoverColor: 'red' },
-          { text: 'About', url: '/about', hoverColor: 'orange' }
+          { text: 'home', url: '/', hoverColor: 'gray' },
+          { text: 'blog', url: '/blog', hoverColor: 'green' },
+          { text: 'projects', url: '/projects', hoverColor: 'blue' },
+          { text: 'experiments', url: '/experiments', hoverColor: 'red' },
+          { text: 'about', url: '/about', hoverColor: 'orange' }
         ]
       }
     },

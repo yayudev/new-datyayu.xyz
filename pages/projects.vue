@@ -2,9 +2,9 @@
   <div>
     <site-header
       bg-image="/images/bg.png"
-      header-title="PROJECTS"
-      header-subtitle="A collection of my favorite side-projects I've created."
       header-color="blue"
+      :header-title="pageTitle"
+      :header-subtitle="pageSubtitle"
     ></site-header>
 
     <projects></projects>
@@ -20,6 +20,16 @@
     components: {
       SiteHeader,
       Projects
+    },
+
+    computed: {
+      pageTitle () {
+        return this.$t('projects.title')
+      },
+
+      pageSubtitle () {
+        return this.$t('projects.subtitle')
+      }
     }
   }
 </script>

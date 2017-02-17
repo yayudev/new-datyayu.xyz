@@ -26,6 +26,7 @@
     .home {
       position: relative;
       height: 100%;
+      overflow-x: hidden;
     }
 
     .home-bg-video {

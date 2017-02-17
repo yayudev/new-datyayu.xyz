@@ -2,9 +2,9 @@
   <div>
     <site-header
       bg-image="/images/bg.png"
-      header-title="ME"
-      header-subtitle="Some info about me"
       header-color="orange"
+      :header-title="pageTitle"
+      :header-subtitle="pageSubtitle"
     ></site-header>
     <about></about>
   </div>
@@ -19,6 +19,16 @@
     components: {
       About,
       SiteHeader
+    },
+
+    computed: {
+      pageTitle () {
+        return this.$t('about.title')
+      },
+
+      pageSubtitle () {
+        return this.$t('about.subtitle')
+      }
     }
   }
 </script>

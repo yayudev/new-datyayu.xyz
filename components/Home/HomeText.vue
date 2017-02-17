@@ -2,8 +2,8 @@
     <div class="home-text-container">
         <h1 class="home-title"> ARTURO CORONEL </h1>
         <h3 class="home-subtitle">
-            <span class="home-subtitle-item"> Frontend Developer </span>
-            <span class="home-subtitle-item"> Javascript expert </span>
+            <span class="home-subtitle-item"> {{ $t('home.developerTitle') }} </span>
+            <span class="home-subtitle-item"> {{ $t('home.javascriptTitle') }} </span>
             <span class="home-subtitle-item"> {{ currentMessage }} </span>
         </h3>
     </div>
@@ -13,39 +13,14 @@
   export default {
     data () {
       return {
-        messages: [
-          'Likes penguins',
-          'Loves Sakura Ayane',
-          'Actually owns a Vita',
-          'Reads at least a book per week',
-          'Built this site',
-          'Prefers spaces over tabs',
-          'THE TRUTH IS OUT THERE',
-          'Collects mangas',
-          'Puts stickers on his laptop',
-          'Rubik\'s cubes\' solver',
-          'Knows how to juggle',
-          'Hated the Angular2 RC fase',
-          'Loves to share knowledge',
-          'The bg video is from YuruYuri',
-          'EMs are the superior css unit',
-          'Loves to animate using css',
-          'Shares side-project on github',
-          'Needs to add a SW to the site',
-          'Sites should be responsive',
-          'Using React since early 2015',
-          'Felt in love with Vue.js',
-          'WORDS, WORDS, WORDS.',
-          'How you doin\'',
-          'Currently A2 on Shadowverse'
-        ],
         currentMessage: ''
       }
     },
 
     created () {
-      const randomIndex = Math.floor(Math.random() * this.messages.length)
-      this.currentMessage = this.messages[randomIndex]
+      const messages = this.$t('home.messages')
+      const randomIndex = Math.floor(Math.random() * messages.length)
+      this.currentMessage = messages[randomIndex]
     }
   }
 </script>

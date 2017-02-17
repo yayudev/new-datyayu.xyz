@@ -2,9 +2,9 @@
   <div>
     <site-header
       bg-image="/images/bg.png"
-      header-title="TEST"
-      header-subtitle="A colllection of small learning experiments using the latest technologies availables for the web."
       header-color="red"
+      :header-title="pageTitle"
+      :header-subtitle="pageSubtitle"
     ></site-header>
 
     <experiments></experiments>
@@ -20,6 +20,16 @@
     components: {
       SiteHeader,
       Experiments
+    },
+
+    computed: {
+      pageTitle () {
+        return this.$t('experiments.title')
+      },
+
+      pageSubtitle () {
+        return this.$t('experiments.subtitle')
+      }
     }
   }
 </script>

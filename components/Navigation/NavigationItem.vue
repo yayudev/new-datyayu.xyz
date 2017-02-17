@@ -4,7 +4,7 @@
     :active-class="activeClass"
     :to="url"
     tag="li">
-      <a class="navigation-link" :class="linkClasses" >{{ text }}</a>
+      <a class="navigation-link" :class="linkClasses" > {{ $t(`navigation.${text}`) }}</a>
   </nuxt-link>
 </template>
 

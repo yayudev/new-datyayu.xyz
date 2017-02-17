@@ -12,3 +12,4 @@ dist
 
 # MacOS file
 .DS_Store
+.vscode
