@@ -7,12 +7,14 @@
       header-color="green"
     ></site-header>
 
-    <blog v-if="!fetching"
-      :posts="posts"
-      :hasNextPage="hasNextPage"
-      :hasPrevPage="hasPrevPage"
-      :page="currentPage"
-    ></blog>
+    <div class="site-content">
+      <blog v-if="!fetching"
+        :posts="posts"
+        :hasNextPage="hasNextPage"
+        :hasPrevPage="hasPrevPage"
+        :page="currentPage"
+      ></blog>
+    </div>
   </div>
 </template>
 
@@ -26,6 +28,8 @@
   import { formatDate } from '../../../utils/date-formatter.js'
 
   export default {
+    transition: 'content',
+
     components: {
       Blog,
       SiteHeader

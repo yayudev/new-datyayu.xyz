@@ -7,7 +7,9 @@
       :header-subtitle="pageSubtitle"
     ></site-header>
 
-    <projects></projects>
+    <div class="site-content">
+      <projects></projects>
+    </div>
   </div>
 </template>
 
@@ -17,6 +19,8 @@
   import Projects from '~components/Projects/Projects.vue'
 
   export default {
+    transition: 'content',
+
     components: {
       SiteHeader,
       Projects

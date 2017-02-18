@@ -31,3 +31,68 @@ body > div > div:nth-child(2) {
 .orange { color: #FF9204; }
 .red    { color: #FF2121; }
 .green  { color: #00BF13; }
+
+/**
+** Home Transition
+**/
+.home-navigation {
+  transition: opacity 300ms ease-in-out;
+}
+.home-navigation-list {
+  transition: opacity 600ms ease-in-out;
+}
+
+.home-enter .home-border-layer {
+  border-bottom: 0em solid white;
+  border-left: 0em solid transparent;
+}
+
+.home-enter .home-navigation,
+.home-enter .home-navigation-list {
+  opacity: 0;
+}
+
+.home-enter-to .home-border-layer {
+  border-bottom: 14em solid white;
+  border-left: 30em solid transparent;
+  opacity: 0;
+}
+
+.home-enter-to .home-navigation,
+.home-enter-to .home-navigation-list {
+  opacity: 1;
+}
+
+/**
+** Page Transition
+**/
+.site-content {
+  transition: transform 300ms ease-in-out,
+              opacity 500ms ease-in-out;
+}
+
+.content-enter .site-content {
+  opacity: 0;
+  transform: translateY(2em);
+}
+
+.content-enter-active .site-content, {
+  opacity: .3;
+  transform: translateY(5em);
+}
+
+.content-enter-to .site-content,
+.content-leave .site-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-leave-active .site-content {
+  opacity: .3;
+  transform: translateY(5em);
+}
+
+.content-leave-to .site-content {
+  opacity: 0;
+  transform: translateY(5em);
+}

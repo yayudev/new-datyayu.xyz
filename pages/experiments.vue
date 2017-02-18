@@ -7,7 +7,9 @@
       :header-subtitle="pageSubtitle"
     ></site-header>
 
-    <experiments></experiments>
+    <div class="site-content">
+      <experiments></experiments>
+    </div>
   </div>
 </template>
 
@@ -17,6 +19,8 @@
   import Experiments from '~components/Experiments/Experiments.vue'
 
   export default {
+    transition: 'content',
+
     components: {
       SiteHeader,
       Experiments

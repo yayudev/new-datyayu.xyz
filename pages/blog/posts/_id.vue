@@ -7,12 +7,14 @@
       header-color="green"
     ></site-header>
 
-    <blog-post v-if="!fetching"
-        :title="currentPost.title"
-        :date="currentPost.date"
-        :tags="currentPost.tags"
-        :content="currentPost.content"
-    ></blog-post>
+    <div class="site-content">
+      <blog-post v-if="!fetching"
+          :title="currentPost.title"
+          :date="currentPost.date"
+          :tags="currentPost.tags"
+          :content="currentPost.content"
+      ></blog-post>
+    </div>
   </div>
 </template>
 
@@ -26,6 +28,8 @@
   import { POSTS_ENDPOINT } from '../../../config/api.js'
 
   export default {
+    transition: 'content',
+
     components: {
       BlogPost,
       SiteHeader

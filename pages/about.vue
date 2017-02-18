@@ -6,7 +6,10 @@
       :header-title="pageTitle"
       :header-subtitle="pageSubtitle"
     ></site-header>
-    <about></about>
+
+    <div class="site-content">
+      <about></about>
+    </div>
   </div>
 </template>
 
@@ -16,6 +19,8 @@
   import SiteHeader from '~components/SiteHeader/SiteHeader.vue'
 
   export default {
+    transition: 'content',
+
     components: {
       About,
       SiteHeader

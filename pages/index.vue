@@ -7,6 +7,8 @@
 
   export default {
     layout: 'home',
+    transition: 'home',
+
     components: {
       Home
     }
