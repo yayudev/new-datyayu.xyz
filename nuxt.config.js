@@ -86,5 +86,12 @@ module.exports = {
         loader: 'file-loader'
       }
     ]
+  },
+  /*
+  ** Server rendering cache config
+  */
+  cache: {
+    max: 100,
+    maxAge: 900000
   }
 }
