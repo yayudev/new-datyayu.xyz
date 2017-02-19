@@ -63,7 +63,7 @@
 
     .home-navigation-link {
         text-decoration: none;
-        color: #333;
+        color: #20c0b1;
         text-transform: uppercase;
         box-sizing: border-box;
     }
@@ -94,7 +94,7 @@
     }
 
 /* Desktop */
-    @media screen and (min-width: 780px) {
+    @media screen and (min-width: 830px) {
         .home-navigation {
             padding: 0em 5vw;
         }

@@ -1,12 +1,18 @@
 <template>
-    <div class="home-text-container">
-        <h1 class="home-title"> ARTURO CORONEL </h1>
-        <h3 class="home-subtitle">
-            <span class="home-subtitle-item"> {{ $t('home.developerTitle') }} </span>
-            <span class="home-subtitle-item"> {{ $t('home.javascriptTitle') }} </span>
-            <span class="home-subtitle-item"> {{ currentMessage }} </span>
-        </h3>
+  <div class="home-text">
+    <div class="home-logo-container">
+      <img class="home-logo" src="~assets/images/logo.svg" alt="Arturo Coronel Logo" />
     </div>
+
+    <div class="home-text-container">
+      <h1 class="home-title"> ARTURO CORONEL </h1>
+      <h3 class="home-subtitle">
+        <span class="home-subtitle-item"> {{ $t('home.developerTitle') }} </span>
+        <span class="home-subtitle-item"> {{ $t('home.javascriptTitle') }} </span>
+        <span class="home-subtitle-item"> {{ currentMessage }} </span>
+      </h3>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -28,12 +34,28 @@
 
 <style>
 /* Base */
+    .home-text {
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        min-height: 24em;
+    }
+
+    .home-logo-container {
+        margin: 1em .5em 0 .5em;
+        max-width: 15em;
+    }
+
+    .home-logo {
+        width: 100%;
+    }
+
     .home-text-container {
         color: white;
         padding: .5em;
-        width: 100vw;
         font-size: 1.5em;
-        z-index: 2;
+        flex: 1;
     }
 
     .home-title {
@@ -75,7 +97,17 @@
 
 
 /* Desktop */
-    @media screen and (min-width: 780px) {
+    @media screen and (min-width: 830px) {
+        .home-text {
+            flex-direction: row;
+            min-height: 12em;
+            align-items: center;
+        }
+
+        .home-logo-container {
+            margin: 1em;
+        }
+
         .home-text-container {
             padding: 1.2em;
         }
