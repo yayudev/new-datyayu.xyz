@@ -31,6 +31,7 @@
 <style>
 /* Base */
     .home-navigation {
+        width: auto;
         position: relative;
         align-self: flex-end;
         list-style: none;
@@ -45,7 +46,7 @@
     }
 
     .home-navigation-item {
-        margin: 1em 0;
+        margin: .6em 0;
         will-change: transform;
         transition: transform 200ms ease-in-out;
         overflow: hidden;

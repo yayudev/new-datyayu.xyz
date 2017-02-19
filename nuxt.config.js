@@ -1,3 +1,7 @@
+const NUMBER_OF_PAGES_TO_RENDER = 10
+const NUMBER_OF_POSTS_TO_RENDER = 50
+
+
 module.exports = {
   /*
   ** Headers of the page
@@ -93,5 +97,17 @@ module.exports = {
   cache: {
     max: 100,
     maxAge: 900000
+  },
+  /*
+  ** Static build config
+  */
+  generate: {
+    routeParams: {
+      '/blog/page/:id': Array.from(Array(NUMBER_OF_PAGES_TO_RENDER))
+        .map((e, i) => i + 1),
+
+      '/blog/posts/:id': Array.from(Array(NUMBER_OF_POSTS_TO_RENDER))
+        .map((e, i) => i + 1),
+    }
   }
 }

@@ -5,6 +5,7 @@
     <div class="home-container">
       <HomeText></HomeText>
       <HomeNavigation></HomeNavigation>
+      <HomeLangSwitch></HomeLangSwitch>
     </div>
   </div>
 </template>
@@ -13,11 +14,13 @@
 <script>
   import HomeNavigation from './HomeNavigation.vue'
   import HomeText from './HomeText.vue'
+  import HomeLangSwitch from './HomeLangSwitch.vue'
 
   export default {
     components: {
       HomeNavigation,
-      HomeText
+      HomeText,
+      HomeLangSwitch
     }
   }
 </script>

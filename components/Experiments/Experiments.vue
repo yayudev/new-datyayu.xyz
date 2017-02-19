@@ -19,23 +19,9 @@
       ExperimentsItem
     },
 
-    data () {
-      const experiment = {
-        img: '/images/weetrack2-desktop.png',
-        title: 'Experiment #123',
-        url: '#'
-      }
-
-      return {
-        experiments: [experiment]
-          .concat(experiment)
-          .concat(experiment)
-          .concat(experiment)
-          .concat(experiment)
-          .concat(experiment)
-          .concat(experiment)
-          .concat(experiment)
-          .concat(experiment)
+    computed: {
+      experiments () {
+        return this.$t('experiments.experiments')
       }
     }
   }
@@ -45,7 +31,7 @@
 <style>
 /* Base */
   .experiments {
-    margin-top: 2em;
+    margin: 2em 0 4em;
    }
 
   .experiments-list {

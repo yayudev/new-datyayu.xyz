@@ -7,8 +7,8 @@
     <div class="home-text-container">
       <h1 class="home-title"> ARTURO CORONEL </h1>
       <h3 class="home-subtitle">
-        <span class="home-subtitle-item"> {{ $t('home.developerTitle') }} </span>
-        <span class="home-subtitle-item"> {{ $t('home.javascriptTitle') }} </span>
+        <span class="home-subtitle-item"> {{ developerTitle }} </span>
+        <span class="home-subtitle-item"> {{ javascriptTitle }} </span>
         <span class="home-subtitle-item"> {{ currentMessage }} </span>
       </h3>
     </div>
@@ -19,14 +19,31 @@
   export default {
     data () {
       return {
-        currentMessage: ''
+        currentMessage: '',
+        messageIndex: 0
       }
     },
 
     created () {
       const messages = this.$t('home.messages')
-      const randomIndex = Math.floor(Math.random() * messages.length)
-      this.currentMessage = messages[randomIndex]
+      this.messageIndex = Math.floor(Math.random() * messages.length)
+      this.currentMessage = messages[this.messageIndex]
+    },
+
+    computed: {
+      developerTitle () {
+        return this.$t('home.developerTitle')
+      },
+      javascriptTitle () {
+        return this.$t('home.javascriptTitle')
+      }
+    },
+
+    watch: {
+      developerTitle () {
+        const messages = this.$t('home.messages')
+        this.currentMessage = messages[this.messageIndex]
+      }
     }
   }
 </script>
@@ -39,7 +56,7 @@
         display: flex;
         flex-direction: column;
         width: 100vw;
-        min-height: 24em;
+        min-height: 30em;
     }
 
     .home-logo-container {

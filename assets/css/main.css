@@ -31,6 +31,7 @@ body > div > div:nth-child(2) {
 .orange { color: #FF9204; }
 .red    { color: #FF2121; }
 .green  { color: #00BF13; }
+.purple { color: #997cff; }
 
 /**
 ** Home Transition

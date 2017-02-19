@@ -2,7 +2,7 @@
   <div>
     <site-header
       bg-image="/images/bg.png"
-      header-color="red"
+      header-color="purple"
       :header-title="pageTitle"
       :header-subtitle="pageSubtitle"
     ></site-header>

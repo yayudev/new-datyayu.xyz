@@ -1,8 +1,8 @@
 <template>
-  <nuxt-link class="experiments-item" :to="url">
-    <img class="experiments-item-image" :src="img" />
+  <a class="experiments-item" :href="url" target="_blank">
+    <img class="experiments-item-image" :src="img" :alt="title" />
     <h3 class="experiments-item-title"> {{title}} </h3>
-  </nuxt-link>
+  </a>
 </template>
 
 
@@ -20,13 +20,25 @@
 <style>
   .experiments-item {
     width: 100%;
+    height: 8em;
     position: relative;
     overflow: hidden;
     margin: 1em 0;
+    transition: transform 200ms ease-in-out;
+  }
+
+  .experiments-item:hover {
+    transform: scale(1.05);
+    z-index: 2;
+  }
+
+  .experiments-item:hover .experiments-item-title {
+    background: rgba(153, 123, 255, 1);
   }
 
   .experiments-item-image {
     width: 100%;
+    height: 100%;
   }
 
   .experiments-item-title {
@@ -36,11 +48,14 @@
     margin: 0;
     width: 100%;
     text-align: center;
-    text-overflow: ellipsis;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
     color: white;
     padding: .5em;
-    background: rgba(255, 33, 33, .5);
+    background: rgba(153, 123, 255, .5);
+    transition: background 200ms ease-in-out;
   }
 
 /* Tablet */
@@ -59,18 +74,10 @@
     }
   }
 
-/* HD Desktop */
-  @media screen and (min-width: 1025px) {
-    .experiments-item {
-      width: 24%;
-      margin: 1em .5%;
-    }
-  }
-
 /* +HD Desktop */
   @media screen and (min-width: 1200px) {
     .experiments-item {
-      width: 19%;
+      width: 24%;
       margin: 1em .5%;
     }
   }
