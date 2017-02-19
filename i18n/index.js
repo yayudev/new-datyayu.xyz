@@ -6,11 +6,13 @@ import Experiments from './pages/experiments.js'
 import Projects from './pages/projects.js'
 import Home from './pages/home.js'
 import About from './pages/about.js'
+import ErrorPage from './pages/error.js'
 
 export default {
   en: {
     ...Navigation.en,
     ...Footer.en,
+    ...ErrorPage.en,
 
     ...About.en,
     ...Blog.en,
@@ -22,6 +24,7 @@ export default {
   es: {
     ...Navigation.es,
     ...Footer.es,
+    ...ErrorPage.es,
 
     ...About.es,
     ...Blog.es,

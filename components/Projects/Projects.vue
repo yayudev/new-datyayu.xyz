@@ -21,32 +21,9 @@
       ProjectsItem
     },
 
-    data () {
-      const testProject =
-        {
-          name: 'Weetrack 2.0',
-          date: '2014 - Current',
-          imagePrefix: 'weetrack2',
-          url: 'http://track.datyayu.xyz/',
-          description: `
-            An automated anime release tracker build using react,
-            redux and SASS for the frontend. The backend is written
-            in node.js using ES6, and part of the logic for listening
-            the rss feeds which uses as data source, was extracted
-            onto a published npm module (feed-watcher) to help other
-            people to deal with that problem.
-          `
-        }
-
-      const projects = [testProject]
-        .concat(testProject)
-        .concat(testProject)
-        .concat(testProject)
-        .concat(testProject)
-        .concat(testProject)
-
-      return {
-        projects
+    computed: {
+      projects () {
+        return this.$t('projects.projects')
       }
     }
   }
