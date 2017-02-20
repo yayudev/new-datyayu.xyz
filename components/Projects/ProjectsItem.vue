@@ -91,7 +91,7 @@
 
   .projects-screenshots {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
     margin: 1em;
     padding: 0 2em;
@@ -105,6 +105,7 @@
     cursor: pointer;
     height: 150px;
     max-width: 100%;
+    margin: 0 auto;
   }
 
   .projects-image--phone,
@@ -153,6 +154,10 @@
 
 /* Desktop */
   @media screen and (min-width: 780px) {
+    .projects-screenshots {
+      justify-content: space-around;
+    }
+
     .projects-image--phone,
     .projects-image--ipad {
         display: inline-block;
