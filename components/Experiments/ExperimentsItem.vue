@@ -1,6 +1,6 @@
 <template>
   <a class="experiments-item" :href="url" target="_blank">
-    <img class="experiments-item-image" :src="img" :alt="title" />
+    <img class="experiments-item-image" :src="thumbnailUrl" :alt="title" />
     <h3 class="experiments-item-title"> {{title}} </h3>
   </a>
 </template>
@@ -12,6 +12,12 @@
       url: { type: String, required: true },
       img: { type: String, required: true },
       title: { type: String, required: true }
+    },
+
+    computed: {
+      thumbnailUrl () {
+        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/experiments/${this.img}.jpg`
+      }
     }
   }
 </script>

@@ -3,9 +3,15 @@
     <h2 class="projects-title"> {{name}} </h2>
 
     <div class="projects-screenshots">
-      <img class="projects-image--phone" :src="phoneImage" />
-      <img class="projects-image--ipad" :src="ipadImage" />
-      <img class="projects-image--desktop" :src="desktopImage" />
+      <a :href="phoneImage" target="_blank">
+        <img class="projects-image--phone" :src="phoneThumbnail" />
+      </a>
+      <a :href="ipadImage" target="_blank">
+        <img class="projects-image--ipad" :src="ipadThumbnail" />
+      </a>
+      <a :href="desktopImage" target="_blank">
+        <img class="projects-image--desktop" :src="desktopThumbnail" />
+      </a>
     </div>
 
     <p class="projects-date"> {{date}} </p>
@@ -26,16 +32,23 @@
     },
 
     computed: {
+      phoneThumbnail () {
+        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/project-thumbnails/${this.imagePrefix}-phone.jpg`
+      },
       phoneImage () {
-        return `/images/${this.imagePrefix}-phone.png`
+        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/projects/${this.imagePrefix}-phone.jpg`
       },
-
+      ipadThumbnail () {
+        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/project-thumbnails/${this.imagePrefix}-ipad.jpg`
+      },
       ipadImage () {
-        return `/images/${this.imagePrefix}-ipad.png`
+        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/projects/${this.imagePrefix}-ipad.jpg`
       },
-
+      desktopThumbnail () {
+        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/project-thumbnails/${this.imagePrefix}-desktop.jpg`
+      },
       desktopImage () {
-        return `/images/${this.imagePrefix}-desktop.png`
+        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/projects/${this.imagePrefix}-desktop.jpg`
       }
     }
   }

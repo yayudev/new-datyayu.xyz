@@ -29,7 +29,7 @@ export default {
         {
           name: 'raji',
           date: '2016',
-          imagePrefix: 'datyayu-xyz',
+          imagePrefix: 'raji',
           url: 'http://raji-demo.herokuapp.com',
           description: `
              Music player app for anisongs. Build
@@ -48,7 +48,7 @@ export default {
         },
         {
           name: 'Weetrack 2.0',
-          date: '2016 - Current',
+          date: '2016',
           imagePrefix: 'weetrack2',
           url: 'http://track.datyayu.xyz/',
           description: `
@@ -66,7 +66,7 @@ export default {
         {
           name: 'fbot-mk2',
           date: '2016',
-          imagePrefix: 'fbot',
+          imagePrefix: 'fbot2',
           url: 'https://github.com/datyayu/fbot',
           description: `
             Second version of fbot. It uses node.js, as the
@@ -165,7 +165,7 @@ export default {
             No longer mantained.`
         },
         {
-          name: 'Weetrack (Replaced for v2)',
+          name: 'Weetrack',
           date: '2014',
           imagePrefix: 'weetrack',
           url: 'https://github.com/datyayu/weetrack/tree/ae836bff72f7c9782c3086c5e8f799e07baa75dc',
@@ -222,7 +222,7 @@ export default {
         {
           name: 'raji',
           date: '2016',
-          imagePrefix: 'datyayu-xyz',
+          imagePrefix: 'raji',
           url: 'http://raji-demo.herokuapp.com',
           description: `
             Aplicación de musica para anisongs.
@@ -260,7 +260,7 @@ export default {
         {
           name: 'fbot-mk2',
           date: '2016',
-          imagePrefix: 'fbot',
+          imagePrefix: 'fbot2',
           url: 'https://github.com/datyayu/fbot',
           description: `
             Segunda versión de fbot. Utiliza node.js, como

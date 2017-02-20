@@ -1,7 +1,6 @@
 <template>
   <div>
     <site-header
-      bg-image="/images/bg.png"
       header-color="purple"
       :header-title="pageTitle"
       :header-subtitle="pageSubtitle"

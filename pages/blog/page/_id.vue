@@ -1,7 +1,6 @@
 <template>
   <div>
     <site-header
-      bg-image="/images/bg.png"
       header-title="BLOG"
       header-subtitle="Frontend is cool"
       header-color="green"

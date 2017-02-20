@@ -5,32 +5,32 @@ export default {
       subtitle: 'A colllection of small learning experiments using the latest technologies availables for the web.',
       experiments: [
         {
-          img: '/images/experiments/loading.png',
+          img: 'loading',
           title: 'CSS-only loading screen',
           url: 'https://codepen.io/datyayu/full/zNQJqq/'
         },
         {
-          img: '/images/experiments/redux.png',
+          img: 'redux',
           title: 'Redux from scratch',
           url: 'https://codepen.io/datyayu/full/JYmRrq/'
         },
         {
-          img: '/images/experiments/smooth-scroll.png',
+          img: 'smooth-scroll',
           title: 'Smooth scroll using just css',
           url: 'https://codepen.io/datyayu/full/LGoxdy/'
         },
         {
-          img: '/images/experiments/css-variables.png',
+          img: 'css-variables',
           title: 'CSS variables-based theme',
           url: 'https://codepen.io/datyayu/full/mVgWxb/'
         },
         {
-          img: '/images/experiments/theme-colors-2.png',
+          img: 'theme-colors-2',
           title: 'Dynamic Color theme #2',
           url: 'https://codepen.io/datyayu/full/PZapxo/'
         },
         {
-          img: '/images/experiments/theme-colors-2.png',
+          img: 'theme-colors-2',
           title: 'Dynamic Color theme #1',
           url: 'https://codepen.io/datyayu/full/dGKvdg/'
         }
@@ -44,32 +44,32 @@ export default {
       subtitle: 'Una colección de pequeños experimentos usando las tecnologias más recientes de la web.',
       experiments: [
         {
-          img: '/images/experiments/loading.png',
+          img: 'loading',
           title: 'Pantalla de carga con CSS',
           url: 'https://codepen.io/datyayu/full/zNQJqq/'
         },
         {
-          img: '/images/experiments/redux.png',
+          img: 'redux',
           title: 'Redux desde 0',
           url: 'https://codepen.io/datyayu/full/JYmRrq/'
         },
         {
-          img: '/images/experiments/smooth-scroll.png',
+          img: 'smooth-scroll',
           title: 'Smooth scroll usando solo css',
           url: 'https://codepen.io/datyayu/full/LGoxdy/'
         },
         {
-          img: '/images/experiments/css-variables.png',
+          img: 'css-variables',
           title: 'Temas usando variables de CSS',
           url: 'https://codepen.io/datyayu/full/mVgWxb/'
         },
         {
-          img: '/images/experiments/theme-colors-2.png',
+          img: 'theme-colors-2',
           title: 'Color theme Dinámico #2',
           url: 'https://codepen.io/datyayu/full/PZapxo/'
         },
         {
-          img: '/images/experiments/theme-colors-2.png',
+          img: 'theme-colors-2',
           title: 'Color theme dinámico #1',
           url: 'https://codepen.io/datyayu/full/dGKvdg/'
         }

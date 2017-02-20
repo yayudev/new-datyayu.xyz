@@ -27,7 +27,7 @@
       headerTitle: { type: String, required: true },
       headerSubtitle: { type: String, required: true },
       headerColor: { type: String, required: true },
-      bgImage: { type: String, required: true }
+      bgImage: { type: String, default: 'https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.jpg' }
     },
 
     computed: {

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <video class="home-bg-video" src="/video/bg.webm" loop autoplay></video>
+    <video class="home-bg-video" src="https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.webm" loop autoplay></video>
     <div class="home-video-overlay"></div>
     <div class="home-container">
       <HomeText></HomeText>
