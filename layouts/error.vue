@@ -1,22 +1,15 @@
 <template>
-  <section class="container">
+  <section class="error-container">
     <site-header
-      bg-image="/images/bg.png"
       header-color="red"
       :header-title="errorTitle"
       :header-subtitle="errorSubtitle"
     ></site-header>
 
-    <h1 class="title"> {{ error.statusCode }} </h1>
-    <h2 class="info"> {{ error.message }} </h2>
-
-    <nuxt-link
-      v-if="error.statusCode === 404"
-      class="button"
-      to="/"
-    >
-      Homepage
-    </nuxt-link>
+    <div class="error-text">
+      <h3 class="error-info"> {{ $t('error.error') }} </h3>
+      <h2 class="error-code red"> {{ error.statusCode }} </h2>
+    </div>
   </section>
 </template>
 <script>
@@ -39,3 +32,25 @@ export default {
   }
 }
 </script>
+
+
+<style>
+  .error-container {
+    width: 100%;
+  }
+
+  .error-text {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .error-info {
+    white-space: pre-wrap;
+  }
+
+  .error-code {
+    text-align: center;
+    font-size: 5em;
+    margin-top: 0;
+  }
+</style>
