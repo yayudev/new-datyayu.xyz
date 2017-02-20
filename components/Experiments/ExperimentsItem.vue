@@ -1,5 +1,5 @@
 <template>
-  <a class="experiments-item" :href="url" target="_blank">
+  <a class="experiments-item" :href="url" rel="noopener" target="_blank">
     <img class="experiments-item-image" :src="thumbnailUrl" :alt="title" />
     <h3 class="experiments-item-title"> {{title}} </h3>
   </a>

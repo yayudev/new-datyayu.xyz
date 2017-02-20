@@ -3,13 +3,13 @@
     <h2 class="projects-title"> {{name}} </h2>
 
     <div class="projects-screenshots">
-      <a :href="phoneImage" target="_blank">
+      <a :href="phoneImage" rel="noopener" target="_blank">
         <img class="projects-image--phone" :src="phoneThumbnail" />
       </a>
-      <a :href="ipadImage" target="_blank">
+      <a :href="ipadImage" rel="noopener" target="_blank">
         <img class="projects-image--ipad" :src="ipadThumbnail" />
       </a>
-      <a :href="desktopImage" target="_blank">
+      <a :href="desktopImage" rel="noopener" target="_blank">
         <img class="projects-image--desktop" :src="desktopThumbnail" />
       </a>
     </div>

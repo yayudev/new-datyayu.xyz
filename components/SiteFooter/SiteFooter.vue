@@ -11,8 +11,8 @@
       <p class="footer-legal">
         Copyright © 2017 Arturo Coronel.
         {{ $t('footer.buildWith') }}
-        <a class="footer-link" href="https://vuejs.org/" target="_blank">Vue.js</a>,
-        <a class="footer-link" href="https://nuxtjs.org/" target="_blank">Nuxt.js</a>
+        <a class="footer-link" rel="noopener" href="https://vuejs.org/" target="_blank">Vue.js</a>,
+        <a class="footer-link" rel="noopener" href="https://nuxtjs.org/" target="_blank">Nuxt.js</a>
         {{ $t('footer.and') }}
         ♥.
       </p>

@@ -7,7 +7,7 @@
     </li>
 
     <li class="home-navigation-item">
-      <a class="home-navigation-link"  href="https://github.com/datyayu" target="_blank"> Github </a>
+      <a class="home-navigation-link" rel="noopener" href="https://github.com/datyayu" target="_blank"> Github </a>
     </li>
   </ul>
 </template>
