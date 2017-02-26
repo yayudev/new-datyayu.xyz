@@ -25,6 +25,12 @@
       Experiments
     },
 
+    head () {
+      return {
+        title: this.pageTitle
+      }
+    },
+
     computed: {
       pageTitle () {
         return this.$t('experiments.title')

@@ -25,6 +25,12 @@
       Projects
     },
 
+    head () {
+      return {
+        title: this.pageTitle
+      }
+    },
+
     computed: {
       pageTitle () {
         return this.$t('projects.title')

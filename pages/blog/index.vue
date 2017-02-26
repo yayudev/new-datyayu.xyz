@@ -52,6 +52,12 @@
       store.commit('posts/updatePosts', { posts, totalPosts, page: 1 })
     },
 
+    head () {
+      return {
+        title: this.pageTitle
+      }
+    },
+
     computed: {
       ...mapGetters({
         posts: 'posts/posts',

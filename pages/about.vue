@@ -25,6 +25,12 @@
       SiteHeader
     },
 
+    head () {
+      return {
+        title: this.pageTitle
+      }
+    },
+
     computed: {
       pageTitle () {
         return this.$t('about.title')

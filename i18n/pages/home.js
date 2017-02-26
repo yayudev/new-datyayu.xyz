@@ -1,6 +1,7 @@
 export default {
   en: {
     home: {
+      title: 'Home',
       developerTitle: 'Front-end Developer',
       javascriptTitle: 'Javascript Expert',
       messages: [
@@ -34,6 +35,7 @@ export default {
 
   es: {
     home: {
+      title: 'Inicio',
       developerTitle: 'Desarrollador Front-end',
       javascriptTitle: 'Experto en JS',
       messages: [

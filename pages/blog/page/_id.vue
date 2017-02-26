@@ -1,8 +1,8 @@
 <template>
   <div>
     <site-header
-      header-title="BLOG"
-      header-subtitle="Frontend is cool"
+      :header-title="pageTitle"
+      :header-subtitle="pageSubtitle"
       header-color="green"
     ></site-header>
 
@@ -53,6 +53,12 @@
       store.commit('posts/updatePosts', { posts, totalPosts, page })
     },
 
+    head () {
+      return {
+        title: this.pageTitle
+      }
+    },
+
     computed: {
       ...mapGetters({
         posts: 'posts/posts',
@@ -60,7 +66,15 @@
         hasNextPage: 'posts/hasNextPage',
         hasPrevPage: 'posts/hasPrevPage',
         currentPage: 'posts/currentPage'
-      })
+      }),
+
+      pageTitle () {
+        return this.$t('blog.title')
+      },
+
+      pageSubtitle () {
+        return this.$t('blog.subtitle')
+      }
     }
   }
 </script>

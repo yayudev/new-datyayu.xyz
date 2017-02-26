@@ -11,6 +11,12 @@
 
     components: {
       Home
+    },
+
+    head () {
+      return {
+        title: this.$t('home.title')
+      }
     }
   }
 </script>

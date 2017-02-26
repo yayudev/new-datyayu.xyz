@@ -1,7 +1,7 @@
 export default {
   en: {
     about: {
-      title: 'ABOUT',
+      title: 'About',
       subtitle: 'Some info about me',
 
       introTitle: 'Me',
@@ -22,7 +22,7 @@ export default {
 
   es: {
     about: {
-      title: 'INFO',
+      title: 'Info',
       subtitle: 'Algo de informacion acerca de mi',
 
       introTitle: 'YO',
