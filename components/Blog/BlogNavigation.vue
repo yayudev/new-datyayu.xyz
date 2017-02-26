@@ -11,15 +11,16 @@
     props: {
       page: { type: Number, default: 0 },
       hasPrevPage: { type: Boolean, default: false },
-      hasNextPage: { type: Boolean, default: false }
+      hasNextPage: { type: Boolean, default: false },
+      prefix: { type: String, default: '/page' }
     },
 
     computed: {
       nextPage () {
-        return `/blog/page/${this.page + 1}`
+        return `/blog${this.prefix}/${this.page + 1}`
       },
       prevPage () {
-        return `/blog/page/${this.page - 1}`
+        return `/blog${this.prefix}/${this.page - 1}`
       }
     }
   }

@@ -2,7 +2,8 @@ export const state = {
   posts: [],
   activePost: {},
   fetching: true,
-  page: 0
+  page: 0,
+  tagName: ''
 }
 
 export const mutations = {
@@ -11,7 +12,8 @@ export const mutations = {
       posts: [],
       activePost: {},
       fetching: true,
-      page: 0
+      page: 0,
+      tagName: ''
     }
   },
 
@@ -27,10 +29,15 @@ export const mutations = {
   setActivePost (state, post) {
     state.activePost = post
     state.fetching = false
+  },
+
+  setTagName (state, tagName) {
+    state.tagName = tagName
   }
 }
 
 export const getters = {
+  tagName: state => state.tagName,
   fetching: state => state.fetching,
   currentPost: state => state.activePost,
   posts: state => state.posts,

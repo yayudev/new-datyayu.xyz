@@ -1,6 +1,10 @@
 <template>
   <div class="blog">
-    <blog-navigation :hasPrevPage="hasPrevPage" :hasNextPage="hasNextPage" :page="page"></blog-navigation>
+    <blog-navigation
+      :hasPrevPage="hasPrevPage"
+      :hasNextPage="hasNextPage"
+      :page="page"
+      :prefix="navigationPrefix"></blog-navigation>
 
     <h2 v-if="posts && posts.length === 0">No hay posts en esta pagina</h2>
 
@@ -13,7 +17,11 @@
       ></blog-post-item>
     </ul>
 
-    <blog-navigation :hasPrevPage="hasPrevPage" :hasNextPage="hasNextPage" :page="page"></blog-navigation>
+    <blog-navigation
+      :hasPrevPage="hasPrevPage"
+      :hasNextPage="hasNextPage"
+      :page="page"
+      :prefix="navigationPrefix"></blog-navigation>
   </div>
 </template>
 
@@ -32,7 +40,8 @@
       posts: { type: Array, default: () => [] },
       page: { type: Number, default: 0 },
       hasNextPage: { type: Boolean, default: false },
-      hasPrevPage: { type: Boolean, default: false }
+      hasPrevPage: { type: Boolean, default: false },
+      navigationPrefix: { type: String, default: '/page' }
     }
   }
 </script>
