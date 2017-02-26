@@ -2,6 +2,9 @@
 
 > A portfolio site
 
+## Roadmap
+You can checkout upcoming features on the [roadmap](https://github.com/datyayu/new-datyayu.xyz/projects/1).
+
 ## Build Setup
 
 ``` bash
