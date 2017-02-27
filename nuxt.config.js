@@ -7,16 +7,35 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Arturo Coronel',
+    titleTemplate: '%s | Arturo Coronel',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Arturo Coronel. Front-end developer.' }
+      { property: 'og:image', content: 'https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.jpg' },
+      { property: 'og:site_name', content: 'datyayu.xyz' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:image:alt', content: 'datyayu.xyz logo' },
+      { name: 'twitter:site', content: '@datyayu' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v=3' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Abel|Open+Sans' }
-    ]
+    ],
+    script: [
+      {
+        type: 'application/ld+json',
+        innerHTML: `{
+          "@context": "http://schema.org/",
+          "@type": "Person",
+          "name": "Arturo Coronel",
+          "additionalName": "Yayu",
+          "jobTitle": "Frontend developer",
+          "telephone": "(664) 3476016 ",
+          "url": "https//datyayu.xyz/"
+        }`
+      }
+    ],
+    __dangerouslyDisableSanitizers: [ 'script' ]
   },
   /*
   ** Global CSS

@@ -25,6 +25,18 @@
       Experiments
     },
 
+    head () {
+      return {
+        title: this.pageTitle,
+        meta: [
+          { name: 'theme-color', content: '#997cff' },
+          { property: 'og:title', content: this.pageTitle },
+          { property: 'og:description', content: this.pageSubtitle },
+          { property: 'og:url', content: 'https://datyayu.xyz/experiments' }
+        ]
+      }
+    },
+
     computed: {
       pageTitle () {
         return this.$t('experiments.title')

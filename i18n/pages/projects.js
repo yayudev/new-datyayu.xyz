@@ -1,7 +1,7 @@
 export default {
   en: {
     projects: {
-      title: 'PROJECTS',
+      title: 'Projects',
       subtitle: `
         A collection of my favorite side-projects I've
         created.`,
@@ -193,7 +193,7 @@ export default {
 
   es: {
     projects: {
-      title: 'PROYECTOS',
+      title: 'Proyectos',
       subtitle: `
         Una colección de mis proyectos favoritos que
         he creado.`,

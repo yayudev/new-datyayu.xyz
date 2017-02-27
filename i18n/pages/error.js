@@ -1,7 +1,7 @@
 export default {
   en: {
     error: {
-      title: 'OOPS',
+      title: 'Oops',
       subtitle: 'Something happened while loading ¯\\_(ツ)_/¯',
       error: `
     Against all probability, a page had suddenly been called into existence several miles away from your browser.
@@ -39,7 +39,7 @@ export default {
   },
   es: {
     error: {
-      title: 'OOPS',
+      title: 'Oops',
       subtitle: 'Algo ocurrió mientras la página cargaba ¯\\_(ツ)_/¯',
       error: `
     Contra toda probabilidad, una página aparecio en existencia a varios miles de kilómetros de tu navegador.

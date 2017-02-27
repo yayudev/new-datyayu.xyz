@@ -52,6 +52,17 @@
       store.commit('posts/updatePosts', { posts, totalPosts, page: 1 })
     },
 
+    head () {
+      return {
+        title: this.pageTitle,
+        meta: [
+          { property: 'og:title', content: this.pageTitle },
+          { property: 'og:description', content: this.pageSubtitle },
+          { property: 'og:url', content: 'https://datyayu.xyz/blog' }
+        ]
+      }
+    },
+
     computed: {
       ...mapGetters({
         posts: 'posts/posts',

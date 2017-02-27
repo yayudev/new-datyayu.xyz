@@ -1,8 +1,8 @@
 <template>
   <div>
     <site-header
-      header-title="BLOG"
-      header-subtitle="Frontend is cool"
+      :header-title="pageTitle"
+      :header-subtitle="pageSubtitle"
       header-color="green"
     ></site-header>
 
@@ -59,6 +59,17 @@
       store.commit('posts/updatePosts', { posts, totalPosts, page })
     },
 
+    head () {
+      return {
+        title: this.pageTitle,
+        meta: [
+          { property: 'og:title', content: this.pageTitle },
+          { property: 'og:description', content: this.pageSubtitle },
+          { property: 'og:url', content: this.pageUrl }
+        ]
+      }
+    },
+
     computed: {
       ...mapGetters({
         posts: 'posts/posts',
@@ -70,6 +81,18 @@
 
       navigationPrefix () {
         return `/tags/${this.$route.params.tag}`
+      },
+
+      pageUrl () {
+        return `https://datyayu.xyz/blog/${this.navigationPrefix}/${this.currentPage}`
+      },
+
+      pageTitle () {
+        return this.$t('blog.title')
+      },
+
+      pageSubtitle () {
+        return this.$t('blog.subtitle')
       }
     }
   }

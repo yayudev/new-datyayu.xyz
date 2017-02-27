@@ -4,6 +4,13 @@
 
 <script>
   export default {
-    transition: 'content'
+    transition: 'content',
+    head () {
+      return {
+        meta: [
+          { name: 'theme-color', content: '#00BF13' }
+        ]
+      }
+    }
   }
 </script>

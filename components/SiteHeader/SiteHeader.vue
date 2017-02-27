@@ -6,7 +6,7 @@
     <div class="header-content">
       <h1 class="header-title">
         <span> YAYU/</span>
-        <span :class="headerColor">{{ headerTitle }}</span>
+        <span :class="headerColor">{{ title }}</span>
       </h1>
 
       <h2 class="header-subtitle"> {{ headerSubtitle }} </h2>
@@ -33,6 +33,9 @@
     computed: {
       bgStyle () {
         return `background-image: url('${this.bgImage}')`
+      },
+      title () {
+        return this.headerTitle.toUpperCase()
       }
     }
   }

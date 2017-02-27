@@ -1,8 +1,8 @@
 <template>
   <div>
     <site-header
-      header-title="BLOG"
-      header-subtitle="Frontend is cool"
+      :header-title="pageTitle"
+      :header-subtitle="pageSubtitle"
       header-color="green"
     ></site-header>
 
@@ -51,11 +51,48 @@
       store.commit('posts/setActivePost', blogPost)
     },
 
+    head () {
+      return {
+        title: this.postTitle,
+        meta: [
+          { property: 'og:title', content: this.postTitle },
+          { property: 'og:description', content: this.postSubtitle },
+          { property: 'og:url', content: this.pageUrl }
+        ]
+      }
+    },
+
     computed: {
       ...mapGetters({
         fetching: 'posts/fetching',
         currentPost: 'posts/currentPost'
-      })
+      }),
+
+      postTitle () {
+        return this.currentPost && this.currentPost.title ? this.currentPost.title : this.pageTitle
+      },
+
+      postSubtitle () {
+        return this.currentPost && this.currentPost.summary
+          ? this.currentPost.summary
+            .replace('\n', '')
+            .replace('<p>', '')
+            .replace('</p>', '')
+            .replace('[&hellip;]', '...')
+          : this.pageSubtitle
+      },
+
+      pageUrl () {
+        return `https://datyayu.xyz/blog/posts/${this.$route.params.id}`
+      },
+
+      pageTitle () {
+        return this.$t('blog.title')
+      },
+
+      pageSubtitle () {
+        return this.$t('blog.subtitle')
+      }
     }
   }
 </script>

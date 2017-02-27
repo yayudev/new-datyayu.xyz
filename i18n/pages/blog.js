@@ -1,7 +1,7 @@
 export default {
   en: {
     blog: {
-      title: 'BLOG',
+      title: 'Blog',
       subtitle: 'Frontend is cool',
       prev: 'Previous',
       next: 'Next'
@@ -10,7 +10,7 @@ export default {
 
   es: {
     blog: {
-      title: 'BLOG',
+      title: 'Blog',
       subtitle: 'Frontend es cool',
       prev: 'Anterior',
       next: 'Siguiente'

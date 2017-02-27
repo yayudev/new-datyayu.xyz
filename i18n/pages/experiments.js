@@ -1,9 +1,19 @@
 export default {
   en: {
     experiments: {
-      title: 'TEST',
+      title: 'Tests',
       subtitle: 'A colllection of small learning experiments using the latest technologies availables for the web.',
       experiments: [
+        {
+          img: 'hifumi-side-nav',
+          title: 'Sidenav with dinamic bluring',
+          url: 'http://codepen.io/datyayu/full/RpPbpV/'
+        },
+        {
+          img: 'unbluring-circle',
+          title: 'Dinamic bluring',
+          url: 'http://codepen.io/datyayu/full/mWJbWw/'
+        },
         {
           img: 'loading',
           title: 'CSS-only loading screen',
@@ -40,9 +50,19 @@ export default {
 
   es: {
     experiments: {
-      title: 'TEST',
+      title: 'Tests',
       subtitle: 'Una colección de pequeños experimentos usando las tecnologias más recientes de la web.',
       experiments: [
+        {
+          img: 'unbluring-circle',
+          title: 'Difuminado dinamico',
+          url: 'http://codepen.io/datyayu/full/mWJbWw/'
+        },
+        {
+          img: 'hifumi-side-nav',
+          title: 'Sidenav con difuminado dinámico',
+          url: 'http://codepen.io/datyayu/full/RpPbpV/'
+        },
         {
           img: 'loading',
           title: 'Pantalla de carga con CSS',
