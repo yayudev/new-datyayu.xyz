@@ -20,7 +20,22 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v=3' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Abel|Open+Sans' }
-    ]
+    ],
+    script: [
+      {
+        type: 'application/ld+json',
+        innerHTML: `{
+          "@context": "http://schema.org/",
+          "@type": "Person",
+          "name": "Arturo Coronel",
+          "additionalName": "Yayu",
+          "jobTitle": "Frontend developer",
+          "telephone": "(664) 3476016 ",
+          "url": "https//datyayu.xyz/"
+        }`
+      }
+    ],
+    __dangerouslyDisableSanitizers: [ 'script' ]
   },
   /*
   ** Global CSS
