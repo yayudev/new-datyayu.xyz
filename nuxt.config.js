@@ -11,7 +11,11 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Arturo Coronel. Front-end developer.' }
+      { property: 'og:image', content: 'https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.jpg' },
+      { property: 'og:site_name', content: 'datyayu.xyz' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:image:alt', content: 'datyayu.xyz logo' },
+      { name: 'twitter:site', content: '@datyayu' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v=3' },

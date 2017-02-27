@@ -54,7 +54,12 @@
 
     head () {
       return {
-        title: this.pageTitle
+        title: this.pageTitle,
+        meta: [
+          { property: 'og:title', content: this.pageTitle },
+          { property: 'og:description', content: this.pageSubtitle },
+          { property: 'og:url', content: 'https://datyayu.xyz/blog' }
+        ]
       }
     },
 

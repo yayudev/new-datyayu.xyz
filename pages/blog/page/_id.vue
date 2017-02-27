@@ -55,7 +55,12 @@
 
     head () {
       return {
-        title: this.pageTitle
+        title: this.pageTitle,
+        meta: [
+          { property: 'og:title', content: this.pageTitle },
+          { property: 'og:description', content: this.pageSubtitle },
+          { property: 'og:url', content: this.pageUrl }
+        ]
       }
     },
 
@@ -67,6 +72,10 @@
         hasPrevPage: 'posts/hasPrevPage',
         currentPage: 'posts/currentPage'
       }),
+
+      pageUrl () {
+        return `https://datyayu.xyz/blog/page/${this.$route.params.id}`
+      },
 
       pageTitle () {
         return this.$t('blog.title')

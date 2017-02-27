@@ -2,6 +2,7 @@ export default {
   en: {
     home: {
       title: 'Home',
+      subtitle: 'Arturo Coronel | Front-end developer',
       developerTitle: 'Front-end Developer',
       javascriptTitle: 'Javascript Expert',
       messages: [
@@ -36,6 +37,7 @@ export default {
   es: {
     home: {
       title: 'Inicio',
+      subtitle: 'Arturo Coronel | Desarrollador front-end',
       developerTitle: 'Desarrollador Front-end',
       javascriptTitle: 'Experto en JS',
       messages: [

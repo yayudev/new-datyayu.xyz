@@ -59,7 +59,12 @@
 
     head () {
       return {
-        title: this.pageTitle
+        title: this.pageTitle,
+        meta: [
+          { property: 'og:title', content: this.pageTitle },
+          { property: 'og:description', content: this.pageSubtitle },
+          { property: 'og:url', content: this.pageUrl }
+        ]
       }
     },
 
@@ -74,6 +79,10 @@
 
       navigationPrefix () {
         return `/tags/${this.$route.params.tag}`
+      },
+
+      pageUrl () {
+        return `https://datyayu.xyz/blog/${this.navigationPrefix}`
       },
 
       pageTitle () {

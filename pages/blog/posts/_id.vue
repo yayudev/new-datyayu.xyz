@@ -53,7 +53,12 @@
 
     head () {
       return {
-        title: this.currentPost ? this.currentPost.title : this.pageTitle
+        title: this.postTitle,
+        meta: [
+          { property: 'og:title', content: this.postTitle },
+          { property: 'og:description', content: this.postSubtitle },
+          { property: 'og:url', content: this.pageUrl }
+        ]
       }
     },
 
@@ -62,6 +67,24 @@
         fetching: 'posts/fetching',
         currentPost: 'posts/currentPost'
       }),
+
+      postTitle () {
+        return this.currentPost && this.currentPost.title ? this.currentPost.title : this.pageTitle
+      },
+
+      postSubtitle () {
+        return this.currentPost && this.currentPost.summary
+          ? this.currentPost.summary
+            .replace('\n', '')
+            .replace('<p>', '')
+            .replace('</p>', '')
+            .replace('[&hellip;]', '...')
+          : this.pageSubtitle
+      },
+
+      pageUrl () {
+        return `https://datyayu.xyz/blog/posts/${this.$route.params.id}`
+      },
 
       pageTitle () {
         return this.$t('blog.title')

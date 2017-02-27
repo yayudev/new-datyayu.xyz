@@ -27,7 +27,13 @@
 
     head () {
       return {
-        title: this.pageTitle
+        title: this.pageTitle,
+        meta: [
+          { name: 'theme-color', content: '#6591f5' },
+          { property: 'og:title', content: this.pageTitle },
+          { property: 'og:description', content: this.pageSubtitle },
+          { property: 'og:url', content: 'https://datyayu.xyz/projects' }
+        ]
       }
     },
 
