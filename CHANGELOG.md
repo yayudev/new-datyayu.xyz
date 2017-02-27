@@ -1,6 +1,8 @@
 # [1.2.0] (SOON TM)
+
 ### New Features
 - Added this changelog to keep track of the changes. ([8dd6eb6](https://github.com/datyayu/new-datyayu.xyz/commit/8dd6eb6))
+- Added manifest.json. ([538fe4e](https://github.com/datyayu/new-datyayu.xyz/commit/538fe4e))
 
 ### Bugfixes
 - Fixed post styles like big images and videos overflowing the content. ([c79de46](https://github.com/datyayu/new-datyayu.xyz/commit/c79de46))
