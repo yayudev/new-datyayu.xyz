@@ -3,6 +3,7 @@
 ### New Features
 - Added this changelog to keep track of the changes. ([8dd6eb6](https://github.com/datyayu/new-datyayu.xyz/commit/8dd6eb6))
 - Added manifest.json. ([538fe4e](https://github.com/datyayu/new-datyayu.xyz/commit/538fe4e))
+- Added service worker for offline support. ([d8a6599](https://github.com/datyayu/new-datyayu.xyz/commit/d8a6599))
 
 ### Bugfixes
 - Fixed post styles like big images and videos overflowing the content. ([c79de46](https://github.com/datyayu/new-datyayu.xyz/commit/c79de46))
