@@ -51,12 +51,25 @@
     background: #282a36;
     color: white;
     padding: 0 .25em;
+    font-size: 1.2em;
+  }
+
+  .blog-post-text img {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .blog-post-text video {
+    width: 100%;
   }
 
   .blog-post-text pre {
     display: block;
     background: #282a36;
     padding: 1em;
+    box-sizing: border-box;
+    overflow: auto;
   }
 
   .blog-post-text h1,
