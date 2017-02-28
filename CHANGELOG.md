@@ -1,4 +1,4 @@
-# [1.2.0] (SOON TM)
+# [1.2.0 - PWA](https://github.com/datyayu/new-datyayu.xyz/tree/1.2.0)
 
 ### New Features
 - Added this changelog to keep track of the changes. ([8dd6eb6](https://github.com/datyayu/new-datyayu.xyz/commit/8dd6eb6))
@@ -10,7 +10,7 @@
 
 
 
-# [1.1.0](https://github.com/datyayu/new-datyayu.xyz/tree/1.1.0)
+# [1.1.0 - SEO Optimization](https://github.com/datyayu/new-datyayu.xyz/tree/1.1.0)
 
 ### New Features
 - Added Open Graph and Twitter meta tags. ([6aef1bc](https://github.com/datyayu/new-datyayu.xyz/commit/6aef1bc))
@@ -27,5 +27,5 @@
 
 
 
-# [1.0.0](https://github.com/datyayu/new-datyayu.xyz/tree/1.0.0)
+# [1.0.0 - Release](https://github.com/datyayu/new-datyayu.xyz/tree/1.0.0)
 First production-ready version
