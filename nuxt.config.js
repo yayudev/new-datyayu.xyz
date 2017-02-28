@@ -19,6 +19,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v=3' },
+      { rel: 'manifest', href: '/manifest.json' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Abel|Open+Sans' }
     ],
     script: [
@@ -50,7 +51,8 @@ module.exports = {
   */
   plugins: [
     '~plugins/google-analytics',
-    '~plugins/vue-i18n'
+    '~plugins/vue-i18n',
+    '~plugins/service-worker'
   ],
   /*
   ** Vue Router

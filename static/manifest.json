@@ -1,5 +1,9 @@
 {
+    "manifest_version": 2,
     "name": "datyayu.xyz",
+    "version": "1.2.0",
+    "author": "Arturo Coronel <aoitsu3@gmail.com> (https://datyayu.xyz)",
+
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -12,6 +16,7 @@
             "type": "image/png"
         }
     ],
+
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "start_url": "https://datyayu.xyz",
