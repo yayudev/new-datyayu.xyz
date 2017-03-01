@@ -6,9 +6,10 @@
   "private": true,
   "dependencies": {
     "axios": "^0.15.3",
-    "highlightjs": "^9.8.0",
+    "highlight.js": "^9.9.0",
     "left-pad": "^1.1.3",
     "nuxt": "latest",
+    "promise-polyfill": "^6.0.2",
     "vue-disqus": "^2.0.1",
     "vue-i18n": "^5.0.1",
     "vuex": "^2.1.2"
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
+    "babel-plugin-es6-promise": "^1.1.1",
     "eslint": "^3.15.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-loader": "^1.6.1",

@@ -1,3 +1,6 @@
+const Webpack = require('webpack')
+const SUPPORTED_HIGHLIGHT_LANGUAGES = require('./config/highlight-languages.js')
+
 const NUMBER_OF_PAGES_TO_RENDER = 10
 const NUMBER_OF_POSTS_TO_RENDER = 50
 
@@ -76,6 +79,15 @@ module.exports = {
   */
   build: {
     /*
+    ** Vendor files
+    */
+    vendor: [
+      'axios',
+      'left-pad',
+      'promise-polyfill',
+      'vue-i18n'
+    ],
+    /*
     ** Run ESLINT on save
     */
     extend (config, { isClient }) {
@@ -88,6 +100,13 @@ module.exports = {
         })
       }
     },
+
+    plugins: [
+      new Webpack.ContextReplacementPlugin(
+        /highlight\.js\/lib\/languages$/,
+        new RegExp(`^./(${SUPPORTED_HIGHLIGHT_LANGUAGES.join('|')})$`)
+      )
+    ],
 
     loaders: [
       {

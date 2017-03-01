@@ -4,7 +4,7 @@
 
 
 <script>
-  import hljs from 'highlightjs'
+  import hljs from '../../plugins/highlight.js'
 
   export default {
     props: {
@@ -12,18 +12,19 @@
     },
 
     mounted () {
-      hljs.initHighlightingOnLoad()
-    },
-
-    beforeUpdate () {
-      hljs.initHighlightingOnLoad()
+      if (process.BROWSER_BUILD) {
+        document.querySelectorAll('code').forEach((block) => {
+          hljs.highlightBlock(block)
+        })
+      }
     },
 
     watch: {
       content (text) {
         this.$nextTick(function () {
-          hljs.initHighlighting.called = false
-          hljs.initHighlighting()
+          document.querySelectorAll('code').forEach((block) => {
+            hljs.highlightBlock(block)
+          })
         })
       }
     }
