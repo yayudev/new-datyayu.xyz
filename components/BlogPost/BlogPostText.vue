@@ -12,19 +12,18 @@
     },
 
     mounted () {
-      if (process.BROWSER_BUILD) {
-        document.querySelectorAll('code').forEach((block) => {
-          hljs.highlightBlock(block)
-        })
-      }
+      hljs.initHighlightingOnLoad()
+    },
+
+    beforeUpdate () {
+      hljs.initHighlightingOnLoad()
     },
 
     watch: {
       content (text) {
         this.$nextTick(function () {
-          document.querySelectorAll('code').forEach((block) => {
-            hljs.highlightBlock(block)
-          })
+          hljs.initHighlighting.called = false
+          hljs.initHighlighting()
         })
       }
     }
