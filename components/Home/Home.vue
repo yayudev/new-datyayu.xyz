@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <video class="home-bg-video" src="https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.webm" loop autoplay></video>
+    <video class="home-bg-video" loop autoplay>
+      <source src="https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.webm" type="video/webm">
+      <source src="https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.mp4" type="video/mp4">
+    </video>
+
     <div class="home-video-overlay"></div>
     <div class="home-container">
       <HomeText></HomeText>
@@ -33,15 +37,19 @@
     }
 
     .home-bg-video {
-        min-width: 100vw;
-        max-width: 100vw;
-        min-height: 100vh;
-        max-height: 100vh;
-        position: fixed;
-        object-fit: cover;
-        z-index: -1;
-        top: 0;
-        left: 0;
+      min-width: 100%;
+      min-height: 100%;
+
+      width: auto;
+      height: auto;
+
+      /* Center the video */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: -1;
+      overflow: hidden;
     }
 
     .home-video-overlay {
@@ -66,6 +74,11 @@
 
 /* Desktop */
     @media screen and (min-width: 830px) {
+      .home {
+        height: 100vh;
+        overflow: hidden;
+      }
+
       .home-container {
         overflow: hidden;
       }
