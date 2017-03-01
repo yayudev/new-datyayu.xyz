@@ -1,7 +1,14 @@
-# [1.3.0 - Cross-browser support]()
+# [1.3.0 - Cross-browser support](https://github.com/datyayu/new-datyayu.xyz/tree/1.2.0q)
+### Improvements
+- Added Promise polyfill for IE. ([78a4560](https://github.com/datyayu/new-datyayu.xyz/commit/78a4560))
+- Reduced highlight.js bundle size ([78a4560](https://github.com/datyayu/new-datyayu.xyz/commit/78a4560))
+- Added mp4 source bg for home ([9fc1f93](https://github.com/datyayu/new-datyayu.xyz/commit/9fc1f93))
 
 ### Bugfixes
 - Fixed home layout issues on safari ([09833a7](https://github.com/datyayu/new-datyayu.xyz/commit/09833a7))
+- Fixed home layout issues on ie ([8cac1b3](https://github.com/datyayu/new-datyayu.xyz/commit/8cac1b3))
+- Fixed overflow-x being available on Firefox ([9f3b329](https://github.com/datyayu/new-datyayu.xyz/commit/9f3b329))
+
 
 # [1.2.0 - PWA](https://github.com/datyayu/new-datyayu.xyz/tree/1.2.0)
 
