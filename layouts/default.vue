@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default-layout">
     <nuxt/>
 
     <site-footer></site-footer>
@@ -16,3 +16,13 @@
     }
   }
 </script>
+
+
+<style>
+  .default-layout {
+    height: 100vh;
+    min-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+</style>

@@ -1,3 +1,8 @@
+# [1.3.0 - Cross-browser support]()
+
+### Bugfixes
+- Fixed home layout issues on safari ([09833a7](https://github.com/datyayu/new-datyayu.xyz/commit/09833a7))
+
 # [1.2.0 - PWA](https://github.com/datyayu/new-datyayu.xyz/tree/1.2.0)
 
 ### New Features
