@@ -97,7 +97,8 @@
 /* Desktop */
     @media screen and (min-width: 830px) {
         .home-navigation {
-            padding: 0em 5vw;
+            padding: 2em 5vw 0 5vw;
+            flex: 1;
         }
 
         .home-border-layer {
@@ -109,7 +110,14 @@
 /* HD Desktop */
     @media screen and (min-width: 1025px) {
         .home-navigation {
-            padding: 0em 1em;
+            padding: 3em 1em 0 1em;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .home-navigation-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .home-border-layer {
