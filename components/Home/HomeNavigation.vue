@@ -73,12 +73,12 @@
         position: absolute;
         right: 0;
         bottom: 0;
-        z-index: 0;
         height: 100vh;
         overflow: hidden;
         transition: border 200ms ease-in-out;
         border-bottom: 14em solid white;
         border-left: 30em solid transparent;
+        z-index: -1;
     }
 
 
@@ -115,6 +115,8 @@
         .home-border-layer {
             border-bottom: 17em solid white;
             border-left: 15em solid transparent;
+            bottom: -.5em;
+            overflow: hidden;
         }
     }
 </style>

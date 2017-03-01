@@ -14,6 +14,7 @@ body > div {
     height: 100vh;
     min-height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 body > div > div:nth-child(2) {
