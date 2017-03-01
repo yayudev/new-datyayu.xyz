@@ -63,4 +63,11 @@
         flex-direction: column;
         justify-content: space-between;
     }
+
+/* Desktop */
+    @media screen and (min-width: 830px) {
+      .home-container {
+        overflow: hidden;
+      }
+    }
 </style>

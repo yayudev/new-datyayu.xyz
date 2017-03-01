@@ -124,4 +124,12 @@
             overflow: hidden;
         }
     }
+
+/* +HD Desktop */
+    @media screen and (min-width: 1200px) {
+        .home-navigation {
+            padding: 3em 1em 0 1em;
+            box-sizing: border-box;
+        }
+    }
 </style>
