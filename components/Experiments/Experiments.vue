@@ -5,23 +5,51 @@
         :url="experiment.url"
         :title="experiment.title"
         :img="experiment.img"
+        @showModal="showModal"
       ></experiments-item>
     </div>
+
+    <experiments-modal v-if="isModalActive"
+      :url="activeModalExperiment.url"
+      @closeModal="closeModal"
+    ></experiments-modal>
   </div>
 </template>
 
 
 <script>
   import ExperimentsItem from './ExperimentsItem.vue'
+  import ExperimentsModal from './ExperimentsModal.vue'
 
   export default {
     components: {
-      ExperimentsItem
+      ExperimentsItem,
+      ExperimentsModal
+    },
+
+    data () {
+      return {
+        isModalActive: false,
+        activeModalExperiment: {}
+      }
     },
 
     computed: {
       experiments () {
         return this.$t('experiments.experiments')
+      }
+    },
+
+    methods: {
+      showModal (experimentInfo) {
+        console.log('click', experimentInfo)
+        this.isModalActive = true
+        this.activeModalExperiment = experimentInfo
+      },
+
+      closeModal () {
+        this.isModalActive = false
+        this.activeModalExperiment = {}
       }
     }
   }

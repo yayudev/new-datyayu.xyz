@@ -1,5 +1,9 @@
 <template>
-  <a class="experiments-item" :href="url" rel="noopener" target="_blank">
+  <a class="experiments-item"
+     :href="url"
+     rel="noopener"
+     target="_blank"
+     @click.prevent="openExperimentModal">
     <img class="experiments-item-image" :src="thumbnailUrl" :alt="title" />
     <h3 class="experiments-item-title"> {{title}} </h3>
   </a>
@@ -18,12 +22,24 @@
       thumbnailUrl () {
         return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/experiments/${this.img}.jpg`
       }
+    },
+
+    methods: {
+      openExperimentModal () {
+        const experimentInfo = {
+          url: this.url,
+          title: this.title
+        }
+
+        this.$emit('showModal', experimentInfo)
+      }
     }
   }
 </script>
 
 
 <style>
+/* Base */
   .experiments-item {
     width: 100%;
     height: 8em;
