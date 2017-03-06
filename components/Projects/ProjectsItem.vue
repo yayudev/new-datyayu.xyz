@@ -15,7 +15,10 @@
     </div>
 
     <p class="projects-date"> {{date}} </p>
-    <a class="projects-link" :href="url" target="_blank"> < Link > </a>
+    <p>
+      <a class="projects-link" :href="url" @click.prevent="showModal" target="_blank"> < Preview > </a>
+      <a class="projects-link" :href="url" target="_blank"> < Link > </a>
+    </p>
     <p class="projects-description"> {{description}} </p>
   </li>
 </template>
@@ -49,6 +52,19 @@
       },
       desktopImage () {
         return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/projects/${this.imagePrefix}-desktop.jpg`
+      }
+    },
+
+    methods: {
+      showModal () {
+        const project = {
+          name: this.name,
+          description: this.description,
+          url: this.url,
+          date: this.date
+        }
+
+        this.$emit('showModal', project)
       }
     }
   }

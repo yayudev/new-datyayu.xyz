@@ -7,7 +7,17 @@
         :url="project.url"
         :imagePrefix="project.imagePrefix"
         :description="project.description"
+        @showModal="showModal"
       ></projects-item>
+
+      <projects-modal v-if="modalIsActive"
+        :name="activeProject.name"
+        :description="activeProject.description"
+        :date="activeProject.date"
+        :url="activeProject.url"
+        :isIframe="true"
+        @closeModal="closeModal"
+      ></projects-modal>
     </ul>
   </div>
 </template>
@@ -15,15 +25,36 @@
 
 <script>
   import ProjectsItem from './ProjectsItem.vue'
+  import ProjectsModal from './ProjectsModal.vue'
 
   export default {
     components: {
-      ProjectsItem
+      ProjectsItem,
+      ProjectsModal
+    },
+
+    data () {
+      return {
+        modalIsActive: false,
+        activeProject: {}
+      }
     },
 
     computed: {
       projects () {
         return this.$t('projects.projects')
+      }
+    },
+
+    methods: {
+      showModal (activeProject) {
+        this.modalIsActive = true
+        this.activeProject = activeProject
+      },
+
+      closeModal () {
+        this.modalIsActive = false
+        this.activeProject = {}
       }
     }
   }
