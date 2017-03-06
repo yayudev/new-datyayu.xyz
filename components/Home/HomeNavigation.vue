@@ -117,6 +117,10 @@
 
 /* HD Desktop */
     @media screen and (min-width: 1025px) {
+        .home-navigation {
+            padding: 2em 2vw 0;
+        }
+
         .home-border-layer {
             border-bottom: 17em solid white;
             border-left: 15em solid transparent;
@@ -130,6 +134,12 @@
         .home-navigation {
             padding: 3em 1em 0 1em;
             box-sizing: border-box;
+        }
+    }
+
+    @media screen and (min-width: 1400px) and (min-height: 1000px) {
+        .home-navigation {
+            padding: 5em 1em 0 1em;
         }
     }
 </style>
