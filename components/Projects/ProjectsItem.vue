@@ -1,6 +1,7 @@
 <template>
   <li class="projects-item">
     <h2 class="projects-title"> {{name}} </h2>
+    <p class="projects-date"> {{date}} </p>
 
     <div class="projects-screenshots">
       <a :href="phoneImage" rel="noopener" target="_blank">
@@ -14,12 +15,10 @@
       </a>
     </div>
 
-    <p class="projects-date"> {{date}} </p>
     <p>
       <a class="projects-link" :href="url" @click.prevent="showModal" target="_blank"> < Preview > </a>
       <a class="projects-link" :href="url" target="_blank"> < Link > </a>
     </p>
-    <p class="projects-description"> {{description}} </p>
   </li>
 </template>
 
