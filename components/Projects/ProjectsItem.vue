@@ -4,13 +4,13 @@
     <p class="projects-date"> {{date}} </p>
 
     <div class="projects-screenshots">
-      <a :href="phoneImage" rel="noopener" target="_blank">
+      <a :href="phoneImage" rel="noopener" target="_blank" @click.prevent="showModal">
         <img class="projects-image--phone" :src="phoneThumbnail" />
       </a>
-      <a :href="ipadImage" rel="noopener" target="_blank">
+      <a :href="ipadImage" rel="noopener" target="_blank" @click.prevent="showModal">
         <img class="projects-image--ipad" :src="ipadThumbnail" />
       </a>
-      <a :href="desktopImage" rel="noopener" target="_blank">
+      <a :href="desktopImage" rel="noopener" target="_blank" @click.prevent="showModal">
         <img class="projects-image--desktop" :src="desktopThumbnail" />
       </a>
     </div>

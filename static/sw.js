@@ -3,27 +3,20 @@
 */
 const CACHE_VERSION = 1.3
 const CACHE_NAME = `datyayu-xyz-v${CACHE_VERSION}`
+const NUMBER_OF_BUNDLES = 15
 const CACHED_ASSETS = [
   '/',
   '/_nuxt/style.css',
   '/_nuxt/vendor.bundle.js',
-  '/_nuxt/nuxt.bundle.js',
-  '/_nuxt/0.nuxt.bundle.js',
-  '/_nuxt/1.nuxt.bundle.js',
-  '/_nuxt/2.nuxt.bundle.js',
-  '/_nuxt/3.nuxt.bundle.js',
-  '/_nuxt/4.nuxt.bundle.js',
-  '/_nuxt/5.nuxt.bundle.js',
-  '/_nuxt/6.nuxt.bundle.js',
-  '/_nuxt/7.nuxt.bundle.js',
-  '/_nuxt/8.nuxt.bundle.js',
-  '/_nuxt/9.nuxt.bundle.js',
-  '/_nuxt/10.nuxt.bundle.js',
-  '/_nuxt/11.nuxt.bundle.js',
-  '/_nuxt/12.nuxt.bundle.js',
-  '/_nuxt/13.nuxt.bundle.js',
-  '/_nuxt/14.nuxt.bundle.js'
+  '/_nuxt/nuxt.bundle.js'
 ]
+
+/*
+** Generate partial bundle names.
+*/
+const emptyArray = new Array(NUMBER_OF_BUNDLES)
+const generatedBundles = emptyArray.map((_, index) => `/_nuxt/${index}.nuxt.bundle.js`)
+
 
 /*
 ** INSTALL SW
@@ -34,7 +27,10 @@ self.addEventListener('install', (e) => {
       .open(CACHE_NAME)
       .then(cache => {
         return cache
-          .addAll(CACHED_ASSETS)
+          .addAll([
+            ...CACHED_ASSETS,
+            ...generatedBundles
+          ])
           .then(_ => self.skipWaiting())
       })
   )
