@@ -1,23 +1,22 @@
 <template>
-  <li class="projects-item">
+  <li class="projects-item" @click.prevent="showModal">
     <h2 class="projects-title"> {{name}} </h2>
     <p class="projects-date"> {{date}} </p>
 
     <div class="projects-screenshots">
-      <a :href="phoneImage" rel="noopener" target="_blank" @click.prevent="showModal">
+      <a :href="phoneImage" rel="noopener" target="_blank" @click.prevent>
         <img class="projects-image--phone" :src="phoneThumbnail" />
       </a>
-      <a :href="ipadImage" rel="noopener" target="_blank" @click.prevent="showModal">
+      <a :href="ipadImage" rel="noopener" target="_blank" @click.prevent>
         <img class="projects-image--ipad" :src="ipadThumbnail" />
       </a>
-      <a :href="desktopImage" rel="noopener" target="_blank" @click.prevent="showModal">
+      <a :href="desktopImage" rel="noopener" target="_blank" @click.prevent>
         <img class="projects-image--desktop" :src="desktopThumbnail" />
       </a>
     </div>
 
     <p>
-      <a class="projects-link" :href="url" @click.prevent="showModal" target="_blank"> < Preview > </a>
-      <a class="projects-link" :href="url" target="_blank"> < Link > </a>
+      <a class="projects-link" :href="url" target="_blank" @click.stop> < Link > </a>
     </p>
   </li>
 </template>
@@ -73,6 +72,7 @@
 <style>
 /* Base */
   .projects-item {
+    cursor: pointer;
     max-width: 100%;
     display: flex;
     align-items: center;
@@ -80,16 +80,12 @@
     padding-bottom: 1em;
     box-sizing: border-box;
     flex-direction: column;
-    border-bottom: 1px solid #6591f5;
+    border-bottom: 1px solid #b3b3b3;
     transition: border-bottom 200ms ease-in-out;
   }
 
   .projects-item:last-child {
     border-bottom: none;
-  }
-
-  .projects-item:hover {
-    border-bottom: 1px solid #3571c5;
   }
 
   .projects-item:hover:last-child {
