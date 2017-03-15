@@ -1,9 +1,17 @@
 <template>
   <div class="projects-modal" @click="closeModal">
     <iframe v-if="isIframe" class="projects-modal-iframe" :src="url" @click.stop></iframe>
-    <div class="projects-modal-content">
+
+    <projects-modal-image-gallery
+      v-if="!isIframe"
+      :imagePrefix="imagePrefix"
+    >
+    </projects-modal-image-gallery>
+
+    <div class="projects-modal-content"  @click.stop>
       <h2 class="projects-modal-title"> {{ name }} </h2>
       <h4 class="projects-modal-date"> {{ date }} </h4>
+      <a class="projects-link" :href="url" target="_blank" @click.stop> < Link > </a>
       <p class="projects-modal-description"> {{ description }} </p>
     </div>
   </div>
@@ -11,14 +19,20 @@
 
 
 <script>
+  import ProjectsModalImageGallery from './ProjectsModalImageGallery.vue'
+
   export default {
+    components: {
+      ProjectsModalImageGallery
+    },
+
     props: {
       name: { type: String, required: true },
       description: { type: String, required: true },
       date: { type: String, required: true },
       isIframe: { type: Boolean, default: false },
       url: { type: String, default: '' },
-      images: { type: Array, default: () => [] }
+      imagePrefix: { type: String, required: true }
     },
 
     methods: {

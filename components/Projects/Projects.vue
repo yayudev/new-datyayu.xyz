@@ -7,6 +7,7 @@
         :url="project.url"
         :imagePrefix="project.imagePrefix"
         :description="project.description"
+        :isIframe="project.isIframe"
         @showModal="showModal"
       ></projects-item>
 
@@ -15,7 +16,8 @@
         :description="activeProject.description"
         :date="activeProject.date"
         :url="activeProject.url"
-        :isIframe="true"
+        :imagePrefix="activeProject.imagePrefix"
+        :isIframe="activeProject.isIframe"
         @closeModal="closeModal"
       ></projects-modal>
     </ul>

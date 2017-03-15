@@ -14,42 +14,41 @@
         <img class="projects-image--desktop" :src="desktopThumbnail" />
       </a>
     </div>
-
-    <p>
-      <a class="projects-link" :href="url" target="_blank" @click.stop> < Link > </a>
-    </p>
   </li>
 </template>
 
 
 <script>
+  import { getImageUrl } from '../../utils/image-path-generator.js'
+
   export default {
     props: {
       name: { type: String, required: true },
       date: { type: String, required: true },
       url: { type: String, required: true },
       imagePrefix: { type: String, required: true },
-      description: { type: String, required: true }
+      description: { type: String, required: true },
+      isIframe: { type: Boolean, default: () => false }
     },
 
     computed: {
       phoneThumbnail () {
-        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/project-thumbnails/${this.imagePrefix}-phone.jpg`
+        return getImageUrl(this.imagePrefix, 'phone', true)
       },
       phoneImage () {
-        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/projects/${this.imagePrefix}-phone.jpg`
+        return getImageUrl(this.imagePrefix, 'phone', false)
       },
       ipadThumbnail () {
-        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/project-thumbnails/${this.imagePrefix}-ipad.jpg`
+        return getImageUrl(this.imagePrefix, 'ipad', true)
       },
       ipadImage () {
-        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/projects/${this.imagePrefix}-ipad.jpg`
+        return getImageUrl(this.imagePrefix, 'ipad', false)
       },
       desktopThumbnail () {
-        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/project-thumbnails/${this.imagePrefix}-desktop.jpg`
+        return getImageUrl(this.imagePrefix, 'desktop', true)
       },
       desktopImage () {
-        return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/projects/${this.imagePrefix}-desktop.jpg`
+        return getImageUrl(this.imagePrefix, 'desktop', false)
       }
     },
 
@@ -59,7 +58,9 @@
           name: this.name,
           description: this.description,
           url: this.url,
-          date: this.date
+          date: this.date,
+          imagePrefix: this.imagePrefix,
+          isIframe: this.isIframe
         }
 
         this.$emit('showModal', project)

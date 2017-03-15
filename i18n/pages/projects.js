@@ -11,6 +11,7 @@ export default {
           date: '2017',
           imagePrefix: 'datyayu-xyz',
           url: 'https://datyayu.xyz',
+          isIframe: true,
           description: `
             This site :D. Created originally using pug and
             Sass but later on they were replaced by simple
@@ -31,6 +32,7 @@ export default {
           date: '2016',
           imagePrefix: 'raji',
           url: 'http://raji-demo.herokuapp.com',
+          isIframe: true,
           description: `
              Music player app for anisongs. Build
              using react, redux, RWD, Sass and webpack. The
@@ -51,6 +53,7 @@ export default {
           date: '2016',
           imagePrefix: 'weetrack2',
           url: 'http://track.datyayu.xyz/',
+          isIframe: true,
           description: `
             An automated anime release tracker build using
             react, redux, SASS and Gulp for the frontend.
@@ -68,6 +71,7 @@ export default {
           date: '2016',
           imagePrefix: 'fbot2',
           url: 'https://github.com/datyayu/fbot',
+          isIframe: false,
           description: `
             Second version of fbot. It uses node.js, as the
             first one does, but this version uses the
@@ -84,6 +88,7 @@ export default {
           date: '2016',
           imagePrefix: 'fbot',
           url: 'https://github.com/datyayu/fbot',
+          isIframe: false,
           description: `
             A facebook bot who google things. Build using
             node and the facebook messenger API.`
@@ -93,6 +98,7 @@ export default {
           date: '2016',
           imagePrefix: 'color-blind',
           url: 'https://github.com/datyayu/color-blind',
+          isIframe: false,
           description: `
             A small platform game with similar mechanics
             than Color Symphony.
@@ -104,6 +110,7 @@ export default {
           date: '2016',
           imagePrefix: 'yayujs',
           url: 'http://old.datyayu.xyz',
+          isIframe: false,
           description: `
             Blog build with ghost, deployed using a custom
             theme created from scratch for this site
@@ -119,6 +126,7 @@ export default {
           date: '2016',
           imagePrefix: 'rental',
           url: 'http://datyayu.github.io/rental-frontend/views/home.html',
+          isIframe: true,
           description: `
             A demo concept for a rental site. Build as a
             part of an internship to prove my skills using
@@ -130,6 +138,7 @@ export default {
           date: '2015',
           imagePrefix: 'weeselect',
           url: 'http://weeselect.herokuapp.com/',
+          isIframe: true,
           description: `
             A Single-page application build using angular
             1.3 and node. It picks you a character for
@@ -143,6 +152,7 @@ export default {
           date: '2015',
           imagePrefix: 'weesong',
           url: 'https://github.com/datyayu/weesong',
+          isIframe: false,
           description: `
             Frontend-only SPA music player, targeted for
             anisongs. Build using angular 1.3, node, stylus
@@ -155,6 +165,7 @@ export default {
           date: '2015',
           imagePrefix: 'weetrack-mobile',
           url: 'https://github.com/datyayu/weetrack-mobile',
+          isIframe: false,
           description: `
             A mobile client for weetrack's original version
             created using the ionic framework angular
@@ -169,6 +180,7 @@ export default {
           date: '2014',
           imagePrefix: 'weetrack',
           url: 'https://github.com/datyayu/weetrack/tree/ae836bff72f7c9782c3086c5e8f799e07baa75dc',
+          isIframe: false,
           description: `
             An automated anime release tracker build stylus,
             angular 1.3 and gulp. The backend was written
@@ -181,6 +193,7 @@ export default {
           date: '2010',
           imagePrefix: 'start-page',
           url: 'http://datyayu.github.io/StartPage/index.html',
+          isIframe: true,
           description: `
             Nothing really cool here. Just and old broken
             static page. However this was the first site
@@ -203,6 +216,7 @@ export default {
           date: '2017',
           imagePrefix: 'datyayu-xyz',
           url: 'https://datyayu.xyz',
+          isIframe: true,
           description: `
             Este sitio :D. Creado originalmente usando
             pug y Sass, pero posteriormente remplazados por
@@ -224,6 +238,7 @@ export default {
           date: '2016',
           imagePrefix: 'raji',
           url: 'http://raji-demo.herokuapp.com',
+          isIframe: true,
           description: `
             Aplicación de musica para anisongs.
             Creado usando react, redux, RWD, Sass y webpack.
@@ -244,6 +259,7 @@ export default {
           date: '2016',
           imagePrefix: 'weetrack2',
           url: 'http://track.datyayu.xyz/',
+          isIframe: true,
           description: `
             Un rastreador automático de lanzamientos de
             episodios de anime creado react, redux, SASS y
@@ -262,6 +278,7 @@ export default {
           date: '2016',
           imagePrefix: 'fbot2',
           url: 'https://github.com/datyayu/fbot',
+          isIframe: false,
           description: `
             Segunda versión de fbot. Utiliza node.js, como
             su predecesor, pero esta versión usa el API de
@@ -278,6 +295,7 @@ export default {
           date: '2016',
           imagePrefix: 'fbot',
           url: 'https://github.com/datyayu/fbot',
+          isIframe: false,
           description: `
             Un bot de facebook que googlea cosas. Creado
             usando node y el API de Messenger de facebook.`
@@ -287,6 +305,7 @@ export default {
           date: '2016',
           imagePrefix: 'color-blind',
           url: 'https://github.com/datyayu/color-blind',
+          isIframe: false,
           description: `
             Un pequeño juego de plataforma con mecánicas
             similares a Color Symphony.
@@ -297,6 +316,7 @@ export default {
           date: '2016',
           imagePrefix: 'yayujs',
           url: 'http://old.datyayu.xyz',
+          isIframe: false,
           description: `
             Blog construido con ghost, publicado usando
             un tema personalizado creado desde cero para
@@ -324,6 +344,7 @@ export default {
           date: '2015',
           imagePrefix: 'weeselect',
           url: 'http://weeselect.herokuapp.com/',
+          isIframe: true,
           description: `
             Una aplicacion construida usando angular 1.3
             y node. Selecciona un personaje para League of
@@ -338,6 +359,7 @@ export default {
           date: '2015',
           imagePrefix: 'weesong',
           url: 'https://github.com/datyayu/weesong',
+          isIframe: false,
           description: `
             Reproductor de música, dirigido en especifico
             para anisongs. Creado usando angular 1.3, node,
@@ -350,6 +372,7 @@ export default {
           date: '2015',
           imagePrefix: 'weetrack-mobile',
           url: 'https://github.com/datyayu/weetrack-mobile',
+          isIframe: false,
           description: `
             Un cliente móvil para la versión original de
             weetrack, creado usando el framework Ionic,
@@ -364,6 +387,7 @@ export default {
           date: '2014',
           imagePrefix: 'weetrack',
           url: 'https://github.com/datyayu/weetrack/tree/ae836bff72f7c9782c3086c5e8f799e07baa75dc',
+          isIframe: false,
           description: `
             Un rastreador automático de lanzamientos de
             anime creado usando stylus, angular 1.3 y gulp.
@@ -377,6 +401,7 @@ export default {
           date: '2010',
           imagePrefix: 'start-page',
           url: 'http://datyayu.github.io/StartPage/index.html',
+          isIframe: true,
           description: `
             Nada fancy aqui. Sólo una vieja página rota.
             Sin embargo, este fue el primer sitio que
