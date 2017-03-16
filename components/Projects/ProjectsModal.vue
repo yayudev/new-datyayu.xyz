@@ -9,9 +9,12 @@
     </projects-modal-image-gallery>
 
     <div class="projects-modal-content"  @click.stop>
-      <h2 class="projects-modal-title"> {{ name }} </h2>
-      <h4 class="projects-modal-date"> {{ date }} </h4>
-      <a class="projects-link" :href="url" target="_blank" @click.stop> < Link > </a>
+      <div class="projects-modal-info-container">
+        <h2 class="projects-modal-title"> {{ name }} </h2>
+        <h4 class="projects-modal-date"> {{ date }} </h4>
+        <a class="projects-link" v-if="url" :href="url" target="_blank" @click.stop> < Link > </a>
+        <a class="projects-link" v-if="github" :href="github" target="_blank" @click.stop> < Github > </a>
+      </div>
       <p class="projects-modal-description"> {{ description }} </p>
     </div>
   </div>
@@ -32,6 +35,7 @@
       date: { type: String, required: true },
       isIframe: { type: Boolean, default: false },
       url: { type: String, default: '' },
+      github: { type: String, default: '' },
       imagePrefix: { type: String, required: true }
     },
 
@@ -53,14 +57,15 @@
     height: 100vh;
     z-index: 9;
     background: rgba(0,0,0,.5);
-    padding: 10vh 10vw;
+    padding: 5vh 5vw;
     display: flex;
+    flex-direction: column;
     cursor: pointer;
   }
 
   .projects-modal-iframe {
-    width: 50vw;
-    height: 80vh;
+    width: 90vw;
+    height: 45vh;
     background: white;
     border: none;
     box-sizing: border-box;
@@ -68,9 +73,11 @@
   }
 
   .projects-modal-content {
-    width: 30vw;
-    height: 80.1vh;
+    overflow-y: auto;
+    width: 90vw;
+    height: 45vh;
     padding: 0 2em;
+    border-top: 3px solid #3571c5;
     box-sizing: border-box;
     background: white;
     text-align: center;
@@ -92,5 +99,52 @@
     font-weight: normal;
     color: #b8b9b9;
     margin: 0 0 1em 0;
+  }
+
+  .projects-modal-description {
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 779px) and (orientation: landscape) {
+    .projects-modal-content {
+      display: flex;
+    }
+
+    .projects-modal-info-container {
+      width: 50%;
+    }
+
+    .projects-link {
+      display: block;
+    }
+
+    .projects-modal-description {
+      width: 50%;
+    }
+  }
+
+/* Desktop */
+  @media screen and (min-width: 780px) {
+    .projects-modal {
+      flex-direction: row;
+      padding: 10vh 10vw;
+    }
+
+    .projects-modal-iframe {
+      width: 50vw;
+      height: 80vh;
+    }
+
+    .projects-modal-content {
+      width: 30vw;
+      height: 80.1vh;
+    }
+
+    .projects-modal-description {
+      display: block;
+    }
   }
 </style>

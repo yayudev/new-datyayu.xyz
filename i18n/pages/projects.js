@@ -11,6 +11,7 @@ export default {
           date: '2017',
           imagePrefix: 'datyayu-xyz',
           url: 'https://datyayu.xyz',
+          github: 'https://github.com/datyayu/new-datyayu.xyz',
           isIframe: true,
           description: `
             This site :D. Created originally using pug and
@@ -18,8 +19,12 @@ export default {
             Vue.js components and plain css. It features
             route transitions, vuex with state management,
             i18n support for multilanguage (spanish and
-            english), rendering optimization and
-            server-side rendering.
+            english), code-splitting, rendering optimization,
+            server-side rendering and the use of service
+            worker for offline support.
+
+            Currently scores 100/100 on google's lighthouse
+            test for Progressive Web Apps.
 
             This is also an example of how JAMStack sites
             can work using Wordpress only as an API and a
@@ -32,6 +37,7 @@ export default {
           date: '2016',
           imagePrefix: 'raji',
           url: 'http://raji-demo.herokuapp.com',
+          github: 'https://github.com/datyayu/raji-net-frontend',
           isIframe: true,
           description: `
              Music player app for anisongs. Build
@@ -53,6 +59,7 @@ export default {
           date: '2016',
           imagePrefix: 'weetrack2',
           url: 'http://track.datyayu.xyz/',
+          github: 'https://github.com/datyayu/weetrack',
           isIframe: true,
           description: `
             An automated anime release tracker build using
@@ -70,7 +77,7 @@ export default {
           name: 'fbot-mk2',
           date: '2016',
           imagePrefix: 'fbot2',
-          url: 'https://github.com/datyayu/fbot',
+          github: 'https://github.com/datyayu/fbot',
           isIframe: false,
           description: `
             Second version of fbot. It uses node.js, as the
@@ -87,7 +94,7 @@ export default {
           name: 'fbot',
           date: '2016',
           imagePrefix: 'fbot',
-          url: 'https://github.com/datyayu/fbot',
+          github: 'https://github.com/datyayu/fbot',
           isIframe: false,
           description: `
             A facebook bot who google things. Build using
@@ -97,7 +104,7 @@ export default {
           name: 'color-blind',
           date: '2016',
           imagePrefix: 'color-blind',
-          url: 'https://github.com/datyayu/color-blind',
+          github: 'https://github.com/datyayu/color-blind',
           isIframe: false,
           description: `
             A small platform game with similar mechanics
@@ -109,7 +116,7 @@ export default {
           name: 'YayuJS',
           date: '2016',
           imagePrefix: 'yayujs',
-          url: 'http://old.datyayu.xyz',
+          github: 'https://github.com/datyayu/yayul-theme',
           isIframe: false,
           description: `
             Blog build with ghost, deployed using a custom
@@ -126,6 +133,7 @@ export default {
           date: '2016',
           imagePrefix: 'rental',
           url: 'http://datyayu.github.io/rental-frontend/views/home.html',
+          github: 'https://github.com/datyayu/rental-frontend',
           isIframe: true,
           description: `
             A demo concept for a rental site. Build as a
@@ -138,6 +146,7 @@ export default {
           date: '2015',
           imagePrefix: 'weeselect',
           url: 'http://weeselect.herokuapp.com/',
+          github: 'https://github.com/datyayu/weeselect',
           isIframe: true,
           description: `
             A Single-page application build using angular
@@ -151,7 +160,7 @@ export default {
           name: 'Weesong',
           date: '2015',
           imagePrefix: 'weesong',
-          url: 'https://github.com/datyayu/weesong',
+          github: 'https://github.com/datyayu/weesong',
           isIframe: false,
           description: `
             Frontend-only SPA music player, targeted for
@@ -164,7 +173,7 @@ export default {
           name: 'Weetrack Mobile',
           date: '2015',
           imagePrefix: 'weetrack-mobile',
-          url: 'https://github.com/datyayu/weetrack-mobile',
+          github: 'https://github.com/datyayu/weetrack-mobile',
           isIframe: false,
           description: `
             A mobile client for weetrack's original version
@@ -179,7 +188,7 @@ export default {
           name: 'Weetrack',
           date: '2014',
           imagePrefix: 'weetrack',
-          url: 'https://github.com/datyayu/weetrack/tree/ae836bff72f7c9782c3086c5e8f799e07baa75dc',
+          github: 'https://github.com/datyayu/weetrack/tree/ae836bff72f7c9782c3086c5e8f799e07baa75dc',
           isIframe: false,
           description: `
             An automated anime release tracker build stylus,
@@ -193,6 +202,7 @@ export default {
           date: '2010',
           imagePrefix: 'start-page',
           url: 'http://datyayu.github.io/StartPage/index.html',
+          github: 'https://github.com/datyayu/StartPage',
           isIframe: true,
           description: `
             Nothing really cool here. Just and old broken
@@ -216,6 +226,7 @@ export default {
           date: '2017',
           imagePrefix: 'datyayu-xyz',
           url: 'https://datyayu.xyz',
+          github: 'https://github.com/datyayu/new-datyayu.xyz',
           isIframe: true,
           description: `
             Este sitio :D. Creado originalmente usando
@@ -223,8 +234,12 @@ export default {
             simples componentes de Vue.js y css. Incluye
             transiciones entre rutas, manejo de estado con
             Vuex, soporte de i18n para multiples lenguajes
-            (español e ingles), optimización de renderizado
-            y server-side rendering.
+            (español e ingles), code-splitting, optimización de
+            renderizado, server-side rendering y el uso de
+            service worker para soporte offline.
+
+            Actualmente obtiene 100/100 puntos en el test lighthouse
+            de google para Progressive Web Apps.
 
             Este también es un ejemplo de como un sitio
             creado con el JAMStack puede funcionar usando
@@ -238,6 +253,7 @@ export default {
           date: '2016',
           imagePrefix: 'raji',
           url: 'http://raji-demo.herokuapp.com',
+          github: 'https://github.com/datyayu/raji-net-frontend',
           isIframe: true,
           description: `
             Aplicación de musica para anisongs.
@@ -259,6 +275,7 @@ export default {
           date: '2016',
           imagePrefix: 'weetrack2',
           url: 'http://track.datyayu.xyz/',
+          github: 'https://github.com/datyayu/weetrack',
           isIframe: true,
           description: `
             Un rastreador automático de lanzamientos de
@@ -277,7 +294,7 @@ export default {
           name: 'fbot-mk2',
           date: '2016',
           imagePrefix: 'fbot2',
-          url: 'https://github.com/datyayu/fbot',
+          github: 'https://github.com/datyayu/fbot',
           isIframe: false,
           description: `
             Segunda versión de fbot. Utiliza node.js, como
@@ -294,7 +311,7 @@ export default {
           name: 'fbot',
           date: '2016',
           imagePrefix: 'fbot',
-          url: 'https://github.com/datyayu/fbot',
+          github: 'https://github.com/datyayu/fbot',
           isIframe: false,
           description: `
             Un bot de facebook que googlea cosas. Creado
@@ -304,7 +321,7 @@ export default {
           name: 'color-blind',
           date: '2016',
           imagePrefix: 'color-blind',
-          url: 'https://github.com/datyayu/color-blind',
+          github: 'https://github.com/datyayu/color-blind',
           isIframe: false,
           description: `
             Un pequeño juego de plataforma con mecánicas
@@ -315,7 +332,7 @@ export default {
           name: 'YayuJS',
           date: '2016',
           imagePrefix: 'yayujs',
-          url: 'http://old.datyayu.xyz',
+          github: 'https://github.com/datyayu/yayul-theme',
           isIframe: false,
           description: `
             Blog construido con ghost, publicado usando
@@ -332,6 +349,7 @@ export default {
           date: '2016',
           imagePrefix: 'rental',
           url: 'http://datyayu.github.io/rental-frontend/views/home.html',
+          github: 'https://github.com/datyayu/rental-frontend',
           description: `
             Un concepto demo para un sitio de rentas.
             Creado como parte de mis prácticas profesionales
@@ -344,6 +362,7 @@ export default {
           date: '2015',
           imagePrefix: 'weeselect',
           url: 'http://weeselect.herokuapp.com/',
+          github: 'https://github.com/datyayu/weeselect',
           isIframe: true,
           description: `
             Una aplicacion construida usando angular 1.3
@@ -358,7 +377,7 @@ export default {
           name: 'Weesong',
           date: '2015',
           imagePrefix: 'weesong',
-          url: 'https://github.com/datyayu/weesong',
+          github: 'https://github.com/datyayu/weesong',
           isIframe: false,
           description: `
             Reproductor de música, dirigido en especifico
@@ -371,7 +390,7 @@ export default {
           name: 'Weetrack Mobile',
           date: '2015',
           imagePrefix: 'weetrack-mobile',
-          url: 'https://github.com/datyayu/weetrack-mobile',
+          github: 'https://github.com/datyayu/weetrack-mobile',
           isIframe: false,
           description: `
             Un cliente móvil para la versión original de
@@ -386,7 +405,7 @@ export default {
           name: 'Weetrack',
           date: '2014',
           imagePrefix: 'weetrack',
-          url: 'https://github.com/datyayu/weetrack/tree/ae836bff72f7c9782c3086c5e8f799e07baa75dc',
+          github: 'https://github.com/datyayu/weetrack/tree/ae836bff72f7c9782c3086c5e8f799e07baa75dc',
           isIframe: false,
           description: `
             Un rastreador automático de lanzamientos de
@@ -401,6 +420,7 @@ export default {
           date: '2010',
           imagePrefix: 'start-page',
           url: 'http://datyayu.github.io/StartPage/index.html',
+          github: 'https://github.com/datyayu/StartPage',
           isIframe: true,
           description: `
             Nada fancy aqui. Sólo una vieja página rota.

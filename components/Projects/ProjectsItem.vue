@@ -25,7 +25,8 @@
     props: {
       name: { type: String, required: true },
       date: { type: String, required: true },
-      url: { type: String, required: true },
+      url: { type: String, required: false },
+      github: { type: String, required: true },
       imagePrefix: { type: String, required: true },
       description: { type: String, required: true },
       isIframe: { type: Boolean, default: () => false }
@@ -57,8 +58,9 @@
         const project = {
           name: this.name,
           description: this.description,
-          url: this.url,
           date: this.date,
+          url: this.url,
+          github: this.github,
           imagePrefix: this.imagePrefix,
           isIframe: this.isIframe
         }
@@ -164,8 +166,8 @@
   }
 
 
-/* Desktop */
-  @media screen and (min-width: 780px) {
+/* HD Desktop */
+  @media screen and (min-width: 1025px) {
     .projects-screenshots {
       justify-content: space-around;
     }

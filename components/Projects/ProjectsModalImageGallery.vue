@@ -53,8 +53,8 @@
 
 <style>
   .image-gallery {
-    width: 50vw;
-    height: 80vh;
+    width: 90vw;
+    height: 45vh;
     background: #000;
     border: none;
     box-sizing: border-box;
@@ -90,5 +90,13 @@
   .image-gallery-button:hover {
     cursor: pointer;
     color: rgba(128, 128, 128, 1);
+  }
+
+  /* Desktop */
+  @media screen and (min-width: 780px) {
+    .image-gallery {
+      width: 50vw;
+      height: 80vh;
+    }
   }
 </style>
