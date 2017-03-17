@@ -1,7 +1,7 @@
 /*
 ** CONFIG
 */
-const CACHE_VERSION = 1.3
+const CACHE_VERSION = 1.4
 const CACHE_NAME = `datyayu-xyz-v${CACHE_VERSION}`
 const NUMBER_OF_BUNDLES = 15
 const CACHED_ASSETS = [
