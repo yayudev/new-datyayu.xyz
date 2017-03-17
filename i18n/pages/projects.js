@@ -36,7 +36,7 @@ export default {
           name: 'raji',
           date: '2016',
           imagePrefix: 'raji',
-          url: 'http://raji-demo.herokuapp.com',
+          url: 'https://raji-demo.herokuapp.com',
           github: 'https://github.com/datyayu/raji-net-frontend',
           isIframe: true,
           description: `
@@ -60,7 +60,7 @@ export default {
           imagePrefix: 'weetrack2',
           url: 'http://track.datyayu.xyz/',
           github: 'https://github.com/datyayu/weetrack',
-          isIframe: true,
+          isIframe: false,
           description: `
             An automated anime release tracker build using
             react, redux, SASS and Gulp for the frontend.
@@ -132,7 +132,7 @@ export default {
           name: 'rental',
           date: '2016',
           imagePrefix: 'rental',
-          url: 'http://datyayu.github.io/rental-frontend/views/home.html',
+          url: 'https://datyayu.github.io/rental-frontend/views/home.html',
           github: 'https://github.com/datyayu/rental-frontend',
           isIframe: true,
           description: `
@@ -145,7 +145,7 @@ export default {
           name: 'Weeselect',
           date: '2015',
           imagePrefix: 'weeselect',
-          url: 'http://weeselect.herokuapp.com/',
+          url: 'https://weeselect.herokuapp.com/',
           github: 'https://github.com/datyayu/weeselect',
           isIframe: true,
           description: `
@@ -201,7 +201,7 @@ export default {
           name: 'StartPage',
           date: '2010',
           imagePrefix: 'start-page',
-          url: 'http://datyayu.github.io/StartPage/index.html',
+          url: 'https://datyayu.github.io/StartPage/index.html',
           github: 'https://github.com/datyayu/StartPage',
           isIframe: true,
           description: `
@@ -252,7 +252,7 @@ export default {
           name: 'raji',
           date: '2016',
           imagePrefix: 'raji',
-          url: 'http://raji-demo.herokuapp.com',
+          url: 'https://raji-demo.herokuapp.com',
           github: 'https://github.com/datyayu/raji-net-frontend',
           isIframe: true,
           description: `
@@ -276,7 +276,7 @@ export default {
           imagePrefix: 'weetrack2',
           url: 'http://track.datyayu.xyz/',
           github: 'https://github.com/datyayu/weetrack',
-          isIframe: true,
+          isIframe: false,
           description: `
             Un rastreador automático de lanzamientos de
             episodios de anime creado react, redux, SASS y
@@ -348,8 +348,9 @@ export default {
           name: 'rental',
           date: '2016',
           imagePrefix: 'rental',
-          url: 'http://datyayu.github.io/rental-frontend/views/home.html',
+          url: 'https://datyayu.github.io/rental-frontend/views/home.html',
           github: 'https://github.com/datyayu/rental-frontend',
+          isIframe: true,
           description: `
             Un concepto demo para un sitio de rentas.
             Creado como parte de mis prácticas profesionales
@@ -361,7 +362,7 @@ export default {
           name: 'Weeselect',
           date: '2015',
           imagePrefix: 'weeselect',
-          url: 'http://weeselect.herokuapp.com/',
+          url: 'https://weeselect.herokuapp.com/',
           github: 'https://github.com/datyayu/weeselect',
           isIframe: true,
           description: `
@@ -419,7 +420,7 @@ export default {
           name: 'StartPage',
           date: '2010',
           imagePrefix: 'start-page',
-          url: 'http://datyayu.github.io/StartPage/index.html',
+          url: 'https://datyayu.github.io/StartPage/index.html',
           github: 'https://github.com/datyayu/StartPage',
           isIframe: true,
           description: `
