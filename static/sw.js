@@ -15,7 +15,9 @@ const CACHED_ASSETS = [
 ** Generate partial bundle names.
 */
 const emptyArray = new Array(NUMBER_OF_BUNDLES)
-const generatedBundles = emptyArray.map((_, index) => `/_nuxt/${index}.nuxt.bundle.js`)
+const generatedBundles = emptyArray
+  .fill(0)
+  .map((_, index) => `/_nuxt/${index}.nuxt.bundle.js`)
 
 
 /*
