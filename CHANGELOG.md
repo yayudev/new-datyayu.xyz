@@ -12,7 +12,7 @@
 - Added projects image gallery ([7d62cfc](https://github.com/datyayu/new-datyayu.xyz/commit/7d62cfc))
 
 ### Improvements
-- Added image to about page. ([](https://github.com/datyayu/new-datyayu.xyz/commit/))
+- Added image to about page. ([9f7d7fe](https://github.com/datyayu/new-datyayu.xyz/commit/9f7d7fe))
 
 ### Bugfixes
 - Fixed home navigation being rendered outside the triangle on desktop 4:3 resolutions ([7de4c7e](https://github.com/datyayu/new-datyayu.xyz/commit/7de4c7e))
