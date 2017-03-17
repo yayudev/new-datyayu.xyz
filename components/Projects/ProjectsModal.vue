@@ -106,6 +106,7 @@
     overflow-y: auto;
     display: flex;
     align-items: center;
+    white-space: pre-line;
   }
 
   @media screen and (max-width: 779px) and (orientation: landscape) {
@@ -146,6 +147,7 @@
 
     .projects-modal-description {
       display: block;
+      text-align: left;
     }
   }
 </style>
