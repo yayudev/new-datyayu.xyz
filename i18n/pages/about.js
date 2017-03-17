@@ -4,7 +4,7 @@ export default {
       title: 'About',
       subtitle: 'Some info about me',
 
-      introTitle: 'Me',
+      introTitle: 'About me',
 
       intro: `
         Hi! I'm Arturo Coronel (you can call me Yayu).
@@ -18,7 +18,7 @@ export default {
         the css usage to improve the page performance. I'm also experienced
         with major css libraries like bootstrap, materialize and foundation;
         as well as javascript frameworks like Angular, Angular2, ember, polymer
-        and, as my main foucs. React+redux and Vue.js.
+        and, as my main focus, React+redux and Vue.js.
       `,
 
       openSource: `
@@ -50,9 +50,9 @@ export default {
   es: {
     about: {
       title: 'Info',
-      subtitle: 'Algo de informacion acerca de mi',
+      subtitle: 'Algo de información acerca de mí',
 
-      introTitle: 'YO',
+      introTitle: 'Acerca de mí',
 
       intro: `
         Hola. Soy Arturo Coronel (puedes llamarme Yayu), tengo 21 años,

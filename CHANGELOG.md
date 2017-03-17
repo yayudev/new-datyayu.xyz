@@ -1,4 +1,24 @@
-# [1.3.0 - Cross-browser support](https://github.com/datyayu/new-datyayu.xyz/tree/1.2.0q)
+# [1.4.0 - In-page improvements](https://github.com/datyayu/new-datyayu.xyz/tree/1.4.0)
+
+### New features
+- Added experiments preview modal ([098045e](https://github.com/datyayu/new-datyayu.xyz/commit/098045e))
+- Added projects preview modal (
+    [51132e6](https://github.com/datyayu/new-datyayu.xyz/commit/51132e6),
+    [c255535](https://github.com/datyayu/new-datyayu.xyz/commit/c255535),
+    [05da614](https://github.com/datyayu/new-datyayu.xyz/commit/05da614),
+    [7eaac64](https://github.com/datyayu/new-datyayu.xyz/commit/7eaac64),
+    [0d15bc0](https://github.com/datyayu/new-datyayu.xyz/commit/0d15bc0)
+    )
+- Added projects image gallery ([7d62cfc](https://github.com/datyayu/new-datyayu.xyz/commit/7d62cfc))
+
+### Improvements
+- Added image to about page. ([](https://github.com/datyayu/new-datyayu.xyz/commit/))
+
+### Bugfixes
+- Fixed home navigation being rendered outside the triangle on desktop 4:3 resolutions ([7de4c7e](https://github.com/datyayu/new-datyayu.xyz/commit/7de4c7e))
+
+
+# [1.3.0 - Cross-browser support](https://github.com/datyayu/new-datyayu.xyz/tree/1.3.0)
 ### Improvements
 - Added Promise polyfill for IE. ([78a4560](https://github.com/datyayu/new-datyayu.xyz/commit/78a4560))
 - Reduced highlight.js bundle size ([78a4560](https://github.com/datyayu/new-datyayu.xyz/commit/78a4560))
