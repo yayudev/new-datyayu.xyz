@@ -141,6 +141,7 @@
     .projects-modal-content {
       width: 30vw;
       height: 80.1vh;
+      border-top: none;
     }
 
     .projects-modal-description {

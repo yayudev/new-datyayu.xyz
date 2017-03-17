@@ -98,5 +98,10 @@
       width: 50vw;
       height: 80vh;
     }
+
+    .image-gallery-image {
+      max-width: 50vw;
+      max-height: 80vh;
+    }
   }
 </style>
