@@ -17,3 +17,6 @@ dist
 
 # Deploy script
 deploy.sh
+
+# Generated sw
+static/sw.js

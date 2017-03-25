@@ -1,3 +1,21 @@
+# [1.5.0 - Quickfixes and updates](https://github.com/datyayu/new-datyayu.xyz/tree/1.5.0)
+
+### New features
+- Service worker is now generated dinamically on the build process ([05b9674](https://github.com/datyayu/new-datyayu.xyz/commit/05b9674))
+
+### Improvements
+- Updated proyects info layout ([5b4e337](https://github.com/datyayu/new-datyayu.xyz/commit/5b4e337))
+- Update to nuxt 0.10 (which includes support for gzip) ([05b9674](https://github.com/datyayu/new-datyayu.xyz/commit/05b9674))
+
+### Bugfixes
+- Fixed error on sw at generated files ([b4e45c5](https://github.com/datyayu/new-datyayu.xyz/commit/b4e45c5))
+- Fixed http iframes not displaying due to security issues ([e630048](https://github.com/datyayu/new-datyayu.xyz/commit/e630048))
+- Fixed build warnings ([05b9674](https://github.com/datyayu/new-datyayu.xyz/commit/05b9674))
+- Removed `console.log` on experiments page ([7fb2fe6](https://github.com/datyayu/new-datyayu.xyz/commit/7fb2fe6))
+
+### Content updates
+- Added music visualizer experiment ([05b9674](https://github.com/datyayu/new-datyayu.xyz/commit/05b9674))
+
 # [1.4.0 - In-page improvements](https://github.com/datyayu/new-datyayu.xyz/tree/1.4.0)
 
 ### New features
