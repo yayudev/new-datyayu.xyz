@@ -5,6 +5,11 @@ export default {
       subtitle: 'A colllection of small learning experiments using the latest technologies availables for the web.',
       experiments: [
         {
+          img: 'music-visualizer',
+          title: 'Music visualizer',
+          url: 'https://datyayu.github.io/music-visualizer/index.html'
+        },
+        {
           img: 'hifumi-side-nav',
           title: 'Sidenav with dinamic bluring',
           url: 'http://codepen.io/datyayu/full/RpPbpV/'
@@ -53,6 +58,11 @@ export default {
       title: 'Tests',
       subtitle: 'Una colección de pequeños experimentos usando las tecnologias más recientes de la web.',
       experiments: [
+        {
+          img: 'music-visualizer',
+          title: 'Visualizador de musica',
+          url: 'https://datyayu.github.io/music-visualizer/index.html'
+        },
         {
           img: 'unbluring-circle',
           title: 'Difuminado dinamico',

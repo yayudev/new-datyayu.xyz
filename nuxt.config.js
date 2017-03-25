@@ -4,6 +4,15 @@ const SUPPORTED_HIGHLIGHT_LANGUAGES = require('./config/highlight-languages.js')
 const NUMBER_OF_PAGES_TO_RENDER = 10
 const NUMBER_OF_POSTS_TO_RENDER = 50
 
+const JSON_LD_DATA = {
+    '@context': 'http://schema.org/',
+    '@type': 'Person',
+    name: 'Arturo Coronel',
+    additionalName: 'Yayu',
+    jobTitle: 'Frontend developer',
+    telephone: '(664) 3476016 ',
+    url: 'https//datyayu.xyz/'
+}
 
 module.exports = {
   /*
@@ -28,15 +37,7 @@ module.exports = {
     script: [
       {
         type: 'application/ld+json',
-        innerHTML: `{
-          "@context": "http://schema.org/",
-          "@type": "Person",
-          "name": "Arturo Coronel",
-          "additionalName": "Yayu",
-          "jobTitle": "Frontend developer",
-          "telephone": "(664) 3476016 ",
-          "url": "https//datyayu.xyz/"
-        }`
+        innerHTML: JSON.stringify(JSON_LD_DATA)
       }
     ],
     __dangerouslyDisableSanitizers: [ 'script' ]

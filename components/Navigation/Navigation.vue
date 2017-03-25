@@ -3,7 +3,8 @@
     <nav class="navigation" :class="activeClass">
       <ul class="navigation-list">
         <navigation-item
-            v-for="link in links"
+            v-for="(link, index) in links"
+            :key="index"
             :text="link.text"
             :url="link.url"
             :hover-color="link.hoverColor"

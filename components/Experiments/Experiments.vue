@@ -1,7 +1,8 @@
 <template>
   <div class="experiments">
     <div class="experiments-list">
-      <experiments-item v-for="experiment in experiments"
+      <experiments-item v-for="(experiment, index) in experiments"
+        :key="index"
         :url="experiment.url"
         :title="experiment.title"
         :img="experiment.img"

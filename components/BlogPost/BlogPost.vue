@@ -3,7 +3,10 @@
     <h1 class="blog-post-title"> {{ title }} </h1>
     <h4 class="blog-post-date"> {{ date }} </h4>
     <h4 class="blog-post-tags">
-      <nuxt-link v-for="tag in tags" class="blog-post-tag-link" :to="generateTagUrl(tag)">
+      <nuxt-link v-for="(tag, index) in tags"
+        class="blog-post-tag-link"
+        :key="index"
+        :to="generateTagUrl(tag)">
         #{{tag}}
       </nuxt-link>
     </h4>

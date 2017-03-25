@@ -5,7 +5,7 @@
 
 <script>
   export default {
-    data ({ redirect }) {
+    asyncData ({ redirect }) {
       redirect('/blog')
     }
   }

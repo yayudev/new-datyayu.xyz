@@ -1,7 +1,8 @@
 <template>
   <div class="projects">
     <ul class="projects-list">
-      <projects-item v-for="project in projects"
+      <projects-item v-for="(project, index) in projects"
+        :key="index"
         :name="project.name"
         :date="project.date"
         :url="project.url"
