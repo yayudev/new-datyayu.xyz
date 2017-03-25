@@ -43,7 +43,6 @@
 
     methods: {
       showModal (experimentInfo) {
-        console.log('click', experimentInfo)
         this.isModalActive = true
         this.activeModalExperiment = experimentInfo
       },
