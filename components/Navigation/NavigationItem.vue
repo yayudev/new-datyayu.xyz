@@ -61,13 +61,13 @@
   .gray:hover { color: #b8b9b9; }
   .green:hover { color: #00BF13; }
   .blue:hover { color: #6591f5; }
-  .red:hover { color: #FF2121; }
+  .purple:hover { color: #997cff; }
   .orange:hover { color: #FF9204; }
 
   .gray-active a { color: #b8b9b9; }
   .green-active a { color: #00BF13; }
   .blue-active a { color: #6591f5; }
-  .red-active a { color: #FF2121; }
+  .purple-active a { color: #997cff; }
   .orange-active a { color: #FF9204; }
 
 /* Tablet */

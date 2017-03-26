@@ -34,7 +34,7 @@
           { text: 'home', url: '/', hoverColor: 'gray' },
           { text: 'blog', url: '/blog', hoverColor: 'green' },
           { text: 'projects', url: '/projects', hoverColor: 'blue' },
-          { text: 'experiments', url: '/experiments', hoverColor: 'red' },
+          { text: 'experiments', url: '/experiments', hoverColor: 'purple' },
           { text: 'about', url: '/about', hoverColor: 'orange' }
         ]
       }
