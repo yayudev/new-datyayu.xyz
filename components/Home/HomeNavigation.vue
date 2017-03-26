@@ -46,15 +46,11 @@
     }
 
     .home-navigation-item {
-        margin: 0;
+        margin: 0 0 .5em 0;
         will-change: transform;
         transition: transform 200ms ease-in-out;
         overflow: hidden;
         box-sizing: border-box;
-    }
-
-    .home-navigation-item:hover {
-        transform: scale(1.05) translateX(-.75em);
     }
 
     .home-navigation-item:last-child {
@@ -76,7 +72,7 @@
         height: 100vh;
         overflow: hidden;
         transition: border 200ms ease-in-out;
-        border-bottom: 14em solid white;
+        border-bottom: 13em solid white;
         border-left: 30em solid transparent;
         z-index: -1;
     }
@@ -97,11 +93,19 @@
 /* Desktop */
     @media screen and (min-width: 830px) {
         .home-navigation {
-            padding: 0 5vw;
+            padding: 4em 5vw 0;
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
+        }
+
+        .home-navigation-item {
+            margin: 0;
+        }
+
+        .home-navigation-item:hover {
+            transform: scale(1.05) translateX(-.75em);
         }
 
         .home-navigation-item:last-child {
@@ -118,11 +122,11 @@
 /* HD Desktop */
     @media screen and (min-width: 1025px) {
         .home-navigation {
-            padding: 2em 2vw 0;
+            padding: 2em 3vw 0;
         }
 
         .home-border-layer {
-            border-bottom: 17em solid white;
+            border-bottom: 18em solid white;
             border-left: 15em solid transparent;
             bottom: -.5em;
             overflow: hidden;
