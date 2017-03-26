@@ -22,6 +22,10 @@ export default {
     SiteHeader
   },
 
+  head: {
+    title: 'Error'
+  },
+
   computed: {
     errorTitle () {
       return this.$t('error.title')
