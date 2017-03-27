@@ -1,3 +1,27 @@
+# [1.6.0 - Mobile Fixes](https://github.com/datyayu/new-datyayu.xyz/tree/1.6.0)
+
+### New features
+- Home random message now is rewritten dinamically ([8c3ba10](https://github.com/datyayu/new-datyayu.xyz/commit/8c3ba10))
+
+### Improvements
+- Sidenav now can be closed when clicking on overlay ([49b794c](https://github.com/datyayu/new-datyayu.xyz/commit/49b794c))
+- Project previews now only show iframe on desktop+ and defaults to image gallery on mobile ([5326586](https://github.com/datyayu/new-datyayu.xyz/commit/5326586))
+- Added close button to projects preview ([5326586](https://github.com/datyayu/new-datyayu.xyz/commit/5326586))
+- Added close button to experiments preview ([a5a5522](https://github.com/datyayu/new-datyayu.xyz/commit/a5a5522))
+
+### Bugfixes
+- Fixed error on page transition with script tag / json+ld content ([fe9d7c5](https://github.com/datyayu/new-datyayu.xyz/commit/fe9d7c5))
+- Error page now has `Error | Arturo Coronel` as title instead of `undefined | Arturo Coronel` ([627e80f](https://github.com/datyayu/new-datyayu.xyz/commit/627e80f))
+- Fixed home layout on mobile devices ([a131713](https://github.com/datyayu/new-datyayu.xyz/commit/a131713))
+- Fixed color on experiments nav link (was red, changed to purple) ([2e97694](https://github.com/datyayu/new-datyayu.xyz/commit/2e97694))
+- Fixed home bg video not playing on mobile browsers ([ad13045](https://github.com/datyayu/new-datyayu.xyz/commit/ad13045))
+- Fixed links on about page ([4f7e76d](https://github.com/datyayu/new-datyayu.xyz/commit/4f7e76d))
+
+### Content updates
+- Updated about page. ([4f7e76d](https://github.com/datyayu/new-datyayu.xyz/commit/4f7e76d))
+- Updated home messages. ([372a696](https://github.com/datyayu/new-datyayu.xyz/commit/372a696))
+- Added site's github link to the footer ([1956049](https://github.com/datyayu/new-datyayu.xyz/commit/1956049))
+
 # [1.5.0 - Quickfixes and updates](https://github.com/datyayu/new-datyayu.xyz/tree/1.5.0)
 
 ### New features
