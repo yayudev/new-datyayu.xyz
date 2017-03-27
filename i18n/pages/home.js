@@ -15,21 +15,20 @@ export default {
         'THE TRUTH IS OUT THERE',
         'Collects mangas',
         'Puts stickers on his laptop',
-        'Rubik\'s cubes\' solver',
         'Knows how to juggle',
         'Hated the Angular2 RC fase',
         'Loves to share knowledge',
         'The video is from YuruYuri',
         'EMs are the superior css unit',
         'Loves to animate using css',
-        'Shares side-project on github',
-        'Needs to add a SW to the site',
+        'Shares side-projects on github',
+        'Finally added SW to this site',
         'Believes RWD is a must-have',
         'Using React since early 2015',
         'Fell in love with Vue.js',
         'WORDS, WORDS, WORDS.',
-        'How you doin\'',
-        'Currently A2 on Shadowverse'
+        'Hi',
+        'Currently A3 on Shadowverse'
       ]
     }
   },
@@ -50,7 +49,6 @@ export default {
         'LA VERDAD ESTÁ AHÍ FUERA',
         'Colecciona mangas',
         'Le pone stickers a su laptop',
-        'Soluciona cubos de Rubik',
         'Sabe hacer malabares',
         'Odió la fase RC de Angular2',
         'Le encanta compartir info',
@@ -58,13 +56,12 @@ export default {
         'EM es la unidad superior',
         'Adora animar cosas en CSS',
         'Comparte proyectos en Github',
-        'Ocupa agregar un SW al sitio',
+        'Al fin agrego SW al sitio',
         'Cree que RWD es obligatorio',
         'Usando react desde el 2015',
         'Se ha enamorado de Vue.js',
-        'CHISTE PERDIDO AL TRADUCIR',
         'Hola',
-        'Actualmente A2 en Shadowverse'
+        'Actualmente A3 en Shadowverse'
       ]
     }
   }
