@@ -9,12 +9,17 @@
       </p>
 
       <p class="footer-legal">
-        Copyright © 2017 Arturo Coronel.
         {{ $t('footer.buildWith') }}
         <a class="footer-link" rel="noopener" href="https://vuejs.org/" target="_blank">Vue.js</a>,
         <a class="footer-link" rel="noopener" href="https://nuxtjs.org/" target="_blank">Nuxt.js</a>
         {{ $t('footer.and') }}
         ♥.
+        {{ $t('footer.repo') }}
+        <a class="footer-link" rel="noopener" href="https://github.com/datyayu/new-datyayu.xyz" target="_blank"> Github</a>.
+      </p>
+
+      <p class="footer-legal">
+        Copyright © 2017 Arturo Coronel.
       </p>
     </div>
   </footer>
