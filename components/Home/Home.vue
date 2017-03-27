@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <video class="home-bg-video" loop autoplay>
+    <video class="home-bg-video" loop autoplay muted playsinline>
       <source src="https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.webm" type="video/webm">
       <source src="https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.mp4" type="video/mp4">
     </video>
