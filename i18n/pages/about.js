@@ -14,9 +14,10 @@ export default {
 
       work: `
         I work as a web developer, focusing mainly on the front-end, UI
-        design and UX areas. My favorite things about them are optimizing
-        the css usage to improve the page performance. I'm also experienced
-        with major css libraries like bootstrap, materialize and foundation;
+        design and UX areas. My favorite things about them are using css to bring
+        life the pages, create awesome interactive experiences using javascript and
+        optimizing the site performance in order to improve the mobile user's experience.
+        I'm also experienced with major css libraries like bootstrap, materialize and foundation;
         as well as javascript frameworks like Angular, Angular2, ember, polymer
         and, as my main focus, React+redux and Vue.js.
       `,
@@ -62,9 +63,10 @@ export default {
       work: `
         Me dedico a hacer desarrollo web, principalmente en las areas de
         front-end, diseño de interfaces y experiencia de usuario.
-        Mis cosa favorita de estas areas son optimizar el
-        uso de css para mejorar el rendimiento de la página.
-        También tengo experiencia trabajando con librerias de css como
+        Mis cosas favoritas de estas areas son el uso de css para darle
+        vida a las páginas, crear experiencias interactivas increibles con
+        javascript y optimizar el rendimiento de sitios para mejorar la experiencia
+        de usuarios moviles. También tengo experiencia trabajando con librerias de css como
         bootstrap, materialize, foundation; y frameworks de javascript
         como Angular, Angular2, ember, polymer y, como mi enfoque principal,
         React+Redux y Vue.js.
