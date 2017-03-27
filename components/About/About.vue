@@ -47,6 +47,7 @@
     font-size: 1em;
     font-family: 'Open Sans', 'arial', sans-serif, serif;
     line-height: 1.5em;
+    text-align: center;
   }
 
   .about-link {

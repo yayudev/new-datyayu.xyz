@@ -10,7 +10,10 @@
             :hover-color="link.hoverColor"
         ></navigation-item>
       </ul>
+
+      <div class="navigation-overlay" @click="toggleActive"></div>
     </nav>
+
 
     <navigation-button @click="toggleActive" :is-active="isActive"></navigation-button>
   </div>
@@ -72,8 +75,7 @@
     will-change: transform;
   }
 
-  .navigation:after {
-    content: "";
+  .navigation-overlay {
     width: 150vw;
     height: 100vh;
     position: fixed;
@@ -90,8 +92,7 @@
     transform: translateX(0);
   }
 
-  .navigation.is-active:after {
-    content: "";
+  .navigation.is-active .navigation-overlay {
     opacity: 1;
     transform: translateX(0);
   }
@@ -119,7 +120,7 @@
       width: 100%;
     }
 
-    .navigation.is-active:after {
+    .navigation.is-active .navigation-overlay {
       content: none;
     }
 
