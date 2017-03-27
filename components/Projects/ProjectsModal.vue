@@ -1,6 +1,6 @@
 <template>
   <div class="projects-modal" @click="closeModal">
-    <projects-modal-close-button @click="closeModal"></projects-modal-close-button>
+    <modal-close-button @click="closeModal"></modal-close-button>
 
     <iframe v-if="isIframe" class="projects-modal-iframe" :src="url" @click.stop></iframe>
 
@@ -24,12 +24,12 @@
 
 
 <script>
+  import ModalCloseButton from '../Shared/ModalCloseButton.vue'
   import ProjectsModalImageGallery from './ProjectsModalImageGallery.vue'
-  import ProjectsModalCloseButton from './ProjectsModalCloseButton.vue'
 
   export default {
     components: {
-      ProjectsModalCloseButton,
+      ModalCloseButton,
       ProjectsModalImageGallery
     },
 

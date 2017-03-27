@@ -1,11 +1,19 @@
 <template>
   <div class="experiments-modal" @click="closeModal">
+    <modal-close-button @click="closeModal"></modal-close-button>
+
     <iframe class="experiments-modal-iframe" :src="url" @click.stop></iframe>
   </div>
 </template>
 
 <script>
+  import ModalCloseButton from '../Shared/ModalCloseButton.vue'
+
   export default {
+    components: {
+      ModalCloseButton
+    },
+
     props: {
       url: { type: String, required: true }
     },
