@@ -3,12 +3,12 @@
     <iframe v-if="isIframe" class="projects-modal-iframe" :src="url" @click.stop></iframe>
 
     <projects-modal-image-gallery
-      v-if="!isIframe"
+      :hasIframe="isIframe"
       :imagePrefix="imagePrefix"
     >
     </projects-modal-image-gallery>
 
-    <div class="projects-modal-content"  @click.stop>
+    <div class="projects-modal-content" @click.stop>
       <div class="projects-modal-info-container">
         <h2 class="projects-modal-title"> {{ name }} </h2>
         <h4 class="projects-modal-date"> {{ date }} </h4>
@@ -64,8 +64,7 @@
   }
 
   .projects-modal-iframe {
-    width: 90vw;
-    height: 45vh;
+    display: none;
     background: white;
     border: none;
     box-sizing: border-box;
@@ -135,6 +134,7 @@
     }
 
     .projects-modal-iframe {
+      display: block;
       width: 50vw;
       height: 80vh;
     }

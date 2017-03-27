@@ -1,5 +1,5 @@
 <template>
-  <div class="image-gallery">
+  <div class="image-gallery" :class="iframeClass">
     <img v-if="imageIndex === 0" class="image-gallery-image" :src="phoneImage" />
     <img v-if="imageIndex === 1" class="image-gallery-image" :src="ipadImage" />
     <img v-if="imageIndex === 2" class="image-gallery-image" :src="desktopImage" />
@@ -17,7 +17,8 @@
 
   export default {
     props: {
-      imagePrefix: { type: String, required: true }
+      imagePrefix: { type: String, required: true },
+      hasIframe: { type: Boolean, default: () => false }
     },
 
     data () {
@@ -35,6 +36,10 @@
       },
       desktopImage () {
         return getImageUrl(this.imagePrefix, 'desktop')
+      },
+
+      iframeClass () {
+        return this.hasIframe ? 'image-gallery--iframe' : ''
       }
     },
 
@@ -97,6 +102,10 @@
     .image-gallery {
       width: 50vw;
       height: 80vh;
+    }
+
+    .image-gallery--iframe {
+      display: none;
     }
 
     .image-gallery-image {
