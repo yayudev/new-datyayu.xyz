@@ -9,25 +9,39 @@
       <h3 class="home-subtitle">
         <span class="home-subtitle-item"> {{ developerTitle }} </span>
         <span class="home-subtitle-item"> {{ javascriptTitle }} </span>
-        <span class="home-subtitle-item"> {{ currentMessage }} </span>
+        <span class="home-subtitle-item">
+          <vue-typer
+            :text="messages"
+            :repeat="Infinity"
+            :shuffle="true"
+            :pre-type-delay="70"
+            :type-delay="70"
+            :pre-erase-delay="2000"
+            :erase-delay="70"
+            :erase-on-complete="false"
+            erase-style="backspace"
+            initial-action="typing"
+            caret-animation="blink"
+          ></vue-typer>
+        </span>
       </h3>
     </div>
   </div>
 </template>
 
 <script>
+  import VueTyper from '../Shared/VueTyper.vue'
+
   export default {
+    components: {
+      VueTyper
+    },
+
     data () {
       return {
         currentMessage: '',
         messageIndex: 0
       }
-    },
-
-    created () {
-      const messages = this.$t('home.messages')
-      this.messageIndex = Math.floor(Math.random() * messages.length)
-      this.currentMessage = messages[this.messageIndex]
     },
 
     computed: {
@@ -36,6 +50,9 @@
       },
       javascriptTitle () {
         return this.$t('home.javascriptTitle')
+      },
+      messages () {
+        return this.$t('home.messages')
       }
     },
 

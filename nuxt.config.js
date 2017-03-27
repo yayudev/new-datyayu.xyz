@@ -38,8 +38,8 @@ module.exports = {
   */
   plugins: [
     '~plugins/google-analytics',
-    '~plugins/vue-i18n',
-    '~plugins/service-worker'
+    '~plugins/service-worker',
+    '~plugins/vue-i18n'
   ],
   /*
   ** Vue Router
