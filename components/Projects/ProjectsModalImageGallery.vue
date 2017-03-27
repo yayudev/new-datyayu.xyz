@@ -1,5 +1,5 @@
 <template>
-  <div class="image-gallery" :class="iframeClass">
+  <div class="image-gallery" :class="iframeClass" @click.stop>
     <img v-if="imageIndex === 0" class="image-gallery-image" :src="phoneImage" />
     <img v-if="imageIndex === 1" class="image-gallery-image" :src="ipadImage" />
     <img v-if="imageIndex === 2" class="image-gallery-image" :src="desktopImage" />

@@ -1,5 +1,7 @@
 <template>
   <div class="projects-modal" @click="closeModal">
+    <projects-modal-close-button @click="closeModal"></projects-modal-close-button>
+
     <iframe v-if="isIframe" class="projects-modal-iframe" :src="url" @click.stop></iframe>
 
     <projects-modal-image-gallery
@@ -23,9 +25,11 @@
 
 <script>
   import ProjectsModalImageGallery from './ProjectsModalImageGallery.vue'
+  import ProjectsModalCloseButton from './ProjectsModalCloseButton.vue'
 
   export default {
     components: {
+      ProjectsModalCloseButton,
       ProjectsModalImageGallery
     },
 
