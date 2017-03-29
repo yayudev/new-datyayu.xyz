@@ -23,3 +23,7 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+
+
+## Changelog
+You can check out the latest changes [here](https://github.com/datyayu/new-datyayu.xyz/blob/master/CHANGELOG.md).
