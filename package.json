@@ -1,6 +1,6 @@
 {
   "name": "datyayu.xyz",
-  "version": "1.6.0",
+  "version": "1.7.0-beta.1",
   "description": "A portfolio site",
   "author": "Arturo Coronel <aoitsu3@gmail.com>",
   "private": true,
@@ -16,9 +16,10 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build && node sw-generator.js",
+    "build": "nuxt build && npm run generate-sw",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "generate-sw": "node sw-generator.js",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
