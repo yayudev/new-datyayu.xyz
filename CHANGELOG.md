@@ -1,3 +1,14 @@
+# [1.7.0 - Service Worker Improvement](https://github.com/datyayu/new-datyayu.xyz/tree/1.7.0)
+
+# Improvements
+- Added cache invalidation on service worker ([06f7f44](https://github.com/datyayu/new-datyayu.xyz/commit/06f7f44))
+- Added on-every-request caching to service worker ([06f7f44](https://github.com/datyayu/new-datyayu.xyz/commit/06f7f44))
+
+# Bug fixes
+- Fixed text on no-posts page not being i18n'd ([a932f3f](https://github.com/datyayu/new-datyayu.xyz/commit/a932f3f))
+- Fixed blog-api requests errors not being handled properly (was pretty broken when offline) ([fb591f9](https://github.com/datyayu/new-datyayu.xyz/commit/fb591f9))
+
+
 # [1.6.0 - Mobile Fixes](https://github.com/datyayu/new-datyayu.xyz/tree/1.6.0)
 
 ### New features
