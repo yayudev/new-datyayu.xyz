@@ -4,7 +4,8 @@ export default {
       title: 'Blog',
       subtitle: 'Frontend is cool',
       prev: 'Previous',
-      next: 'Next'
+      next: 'Next',
+      noPosts: 'No posts on this page.'
     }
   },
 
@@ -13,7 +14,8 @@ export default {
       title: 'Blog',
       subtitle: 'Frontend es cool',
       prev: 'Anterior',
-      next: 'Siguiente'
+      next: 'Siguiente',
+      noPosts: 'No hay posts en esta pagina.'
     }
   }
 }

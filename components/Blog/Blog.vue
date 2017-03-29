@@ -6,7 +6,7 @@
       :page="page"
       :prefix="navigationPrefix"></blog-navigation>
 
-    <h2 v-if="posts && posts.length === 0">No hay posts en esta pagina</h2>
+    <h2 v-if="posts && posts.length === 0"> {{ $t('blog.noPostsM') }} </h2>
 
     <ul class="blog-post-list">
       <blog-post-item v-for="(post, index) in posts"
