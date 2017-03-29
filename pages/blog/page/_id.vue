@@ -7,7 +7,9 @@
     ></site-header>
 
     <div class="site-content">
-      <blog v-if="!fetching"
+      <h2 v-if="error" class="blog-error-message">{{ $t('blog.errorFetchingList') }}</h2>
+
+      <blog v-if="!fetching && !error"
         :posts="posts"
         :hasNextPage="hasNextPage"
         :hasPrevPage="hasPrevPage"
@@ -38,19 +40,24 @@
       store.commit('posts/startFetching')
 
       const page = parseInt(route.params.id, 10)
-      const request = await axios.get(`${POSTS_ENDPOINT}?per_page=5&page=${page}`)
 
-      const totalPosts = request.headers['x-wp-total']
-      const posts = request.data.map(post => {
-        return {
-          id: post.id,
-          title: post.title.rendered,
-          date: formatDate(post.date),
-          summary: post.excerpt.rendered
-        }
-      })
+      try {
+        const request = await axios.get(`${POSTS_ENDPOINT}?per_page=5&page=${page}`)
 
-      store.commit('posts/updatePosts', { posts, totalPosts, page })
+        const totalPosts = request.headers['x-wp-total']
+        const posts = request.data.map(post => {
+          return {
+            id: post.id,
+            title: post.title.rendered,
+            date: formatDate(post.date),
+            summary: post.excerpt.rendered
+          }
+        })
+
+        store.commit('posts/updatePosts', { posts, totalPosts, page })
+      } catch (error) {
+        store.commit('posts/errorFetching')
+      }
     },
 
     head () {
@@ -70,7 +77,8 @@
         fetching: 'posts/fetching',
         hasNextPage: 'posts/hasNextPage',
         hasPrevPage: 'posts/hasPrevPage',
-        currentPage: 'posts/currentPage'
+        currentPage: 'posts/currentPage',
+        error: 'posts/error'
       }),
 
       pageUrl () {
@@ -87,3 +95,15 @@
     }
   }
 </script>
+
+
+<style>
+  .blog-error-message {
+    width: 90vw;
+    max-width: 800px;
+    margin: 2em auto;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
+

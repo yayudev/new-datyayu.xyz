@@ -7,7 +7,9 @@
     ></site-header>
 
     <div class="site-content">
-      <blog-post v-if="!fetching"
+      <h2 v-if="error" class="blog-error-message">{{ $t('blog.errorFetchingPost') }}</h2>
+
+      <blog-post v-if="!fetching && !error"
           :title="currentPost.title"
           :date="currentPost.date"
           :tags="currentPost.tags"
@@ -38,17 +40,22 @@
       store.commit('posts/startFetching')
 
       const postId = route.params.id
-      const request = await axios.get(`${POSTS_ENDPOINT}/${postId}`)
-      const post = request.data
 
-      const blogPost = {
-        title: post.title.rendered,
-        date: formatDate(post.date),
-        content: post.content.rendered,
-        tags: []
+      try {
+        const request = await axios.get(`${POSTS_ENDPOINT}/${postId}`)
+        const post = request.data
+
+        const blogPost = {
+          title: post.title.rendered,
+          date: formatDate(post.date),
+          content: post.content.rendered,
+          tags: []
+        }
+
+        store.commit('posts/setActivePost', blogPost)
+      } catch (error) {
+        store.commit('posts/errorFetching')
       }
-
-      store.commit('posts/setActivePost', blogPost)
     },
 
     head () {
@@ -65,7 +72,8 @@
     computed: {
       ...mapGetters({
         fetching: 'posts/fetching',
-        currentPost: 'posts/currentPost'
+        currentPost: 'posts/currentPost',
+        error: 'posts/error'
       }),
 
       postTitle () {
@@ -96,3 +104,14 @@
     }
   }
 </script>
+
+
+<style>
+  .blog-error-message {
+    width: 90vw;
+    max-width: 800px;
+    margin: 2em auto;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
