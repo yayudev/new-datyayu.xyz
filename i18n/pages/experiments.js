@@ -12,12 +12,12 @@ export default {
         {
           img: 'hifumi-side-nav',
           title: 'Sidenav with dinamic bluring',
-          url: 'http://codepen.io/datyayu/full/RpPbpV/'
+          url: 'https://codepen.io/datyayu/full/RpPbpV/'
         },
         {
           img: 'unbluring-circle',
           title: 'Dinamic bluring',
-          url: 'http://codepen.io/datyayu/full/mWJbWw/'
+          url: 'https://codepen.io/datyayu/full/mWJbWw/'
         },
         {
           img: 'loading',
@@ -66,12 +66,12 @@ export default {
         {
           img: 'unbluring-circle',
           title: 'Difuminado dinamico',
-          url: 'http://codepen.io/datyayu/full/mWJbWw/'
+          url: 'https://codepen.io/datyayu/full/mWJbWw/'
         },
         {
           img: 'hifumi-side-nav',
           title: 'Sidenav con difuminado dinámico',
-          url: 'http://codepen.io/datyayu/full/RpPbpV/'
+          url: 'https://codepen.io/datyayu/full/RpPbpV/'
         },
         {
           img: 'loading',
