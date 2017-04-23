@@ -26,7 +26,6 @@
   import axios from 'axios'
   import { mapGetters } from 'vuex'
   import { POSTS_ENDPOINT } from '../../config/api.js'
-  import { formatDate } from '../../utils/date-formatter.js'
 
   export default {
     transition: 'content',
@@ -40,15 +39,16 @@
       store.commit('posts/startFetching')
 
       try {
-        const request = await axios.get(`${POSTS_ENDPOINT}?per_page=5`)
+        const request = await axios.get(`${POSTS_ENDPOINT}/pages/1.json`)
 
-        const totalPosts = request.headers['x-wp-total']
-        const posts = request.data.map(post => {
+        const totalPosts = request.data.totalPosts
+        const posts = request.data.posts.map(post => {
           return {
             id: post.id,
-            title: post.title.rendered,
-            date: formatDate(post.date),
-            summary: post.excerpt.rendered
+            title: post.title,
+            date: post.date,
+            summary: post.excerpt,
+            url: post.url
           }
         })
 

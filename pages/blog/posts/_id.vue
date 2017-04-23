@@ -25,7 +25,6 @@
   import SiteHeader from '~components/SiteHeader/SiteHeader.vue'
   import axios from 'axios'
   import { mapGetters } from 'vuex'
-  import { formatDate } from '../../../utils/date-formatter.js'
   import { POSTS_ENDPOINT } from '../../../config/api.js'
 
   export default {
@@ -42,14 +41,15 @@
       const postId = route.params.id
 
       try {
-        const request = await axios.get(`${POSTS_ENDPOINT}/${postId}`)
+        const request = await axios.get(`${POSTS_ENDPOINT}/${postId}.json`)
         const post = request.data
 
         const blogPost = {
-          title: post.title.rendered,
-          date: formatDate(post.date),
-          content: post.content.rendered,
-          tags: []
+          id: post.id,
+          title: post.title,
+          date: post.date,
+          content: post.html,
+          tags: post.tags
         }
 
         store.commit('posts/setActivePost', blogPost)

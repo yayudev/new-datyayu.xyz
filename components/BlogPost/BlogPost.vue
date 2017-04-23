@@ -35,7 +35,7 @@
     },
     methods: {
       generateTagUrl (tag) {
-        return `/blog/tag/${tag}`
+        return `/blog/tags/${tag}`
       }
     }
   }
@@ -75,5 +75,9 @@
 
   .blog-post-tag-link:after {
     content: ',';
+  }
+
+  .blog-post-tag-link:last-child:after {
+    content: '';
   }
 </style>

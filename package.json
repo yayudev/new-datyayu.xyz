@@ -18,7 +18,9 @@
     "dev": "nuxt",
     "build": "nuxt build && npm run generate-sw",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "npm run generate-api && npm run generate-nuxt && npm run generate-sw",
+    "generate-nuxt": "nuxt generate",
+    "generate-api": "md-to-api ./posts ./static",
     "generate-sw": "node sw-generator.js",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
@@ -34,6 +36,7 @@
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-standard": "^2.0.1",
     "file-loader": "^0.10.0",
+    "md-to-api": "https://github.com/datyayu/static-blog-api",
     "push-dir": "^0.4.1"
   }
 }

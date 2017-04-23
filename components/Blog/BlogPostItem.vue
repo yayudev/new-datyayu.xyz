@@ -4,7 +4,7 @@
 
     <div class="blog-post-item-info">
       <h2 class="blog-post-item-title">
-        <nuxt-link class="blog-post-item-title-link" :to="generatePostUrl(postId)"> {{ title }} </nuxt-link>
+        <nuxt-link class="blog-post-item-title-link" :to="generatePostUrl()"> {{ title }} </nuxt-link>
       </h2>
 
       <div class="blog-post-item-summary" v-html="summary"></div>
@@ -19,7 +19,8 @@
       postId: { type: Number, required: true },
       title: { type: String, required: true },
       date: { type: String, required: true },
-      summary: { type: String, default: '' }
+      summary: { type: String, default: '' },
+      url: { type: String, required: true }
     },
     methods: {
       generateTagUrl (tag) {
@@ -27,7 +28,7 @@
       },
 
       generatePostUrl (postId) {
-        return `/blog/posts/${postId}`
+        return `/blog/posts/${this.url}`
       }
     }
   }
@@ -61,6 +62,10 @@
   .blog-post-item-title-link {
     text-decoration: none;
     color: #00BF13;
+  }
+
+  .blog-post-item-info {
+    margin-bottom: 1em;
   }
 
   .blog-post-item-tags {

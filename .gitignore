@@ -18,5 +18,10 @@ dist
 # Deploy script
 deploy.sh
 
-# Generated sw
+# Generated stuff
+static/api
 static/sw.js
+
+
+# Not ready yet
+posts

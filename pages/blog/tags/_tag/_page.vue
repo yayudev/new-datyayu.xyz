@@ -26,7 +26,7 @@
   import SiteHeader from '~components/SiteHeader/SiteHeader.vue'
   import axios from 'axios'
   import { mapGetters } from 'vuex'
-  import { POSTS_ENDPOINT } from '../../../../config/api.js'
+  import { TAGS_ENDPOINT } from '../../../../config/api.js'
   import { formatDate } from '../../../../utils/date-formatter.js'
 
   export default {
@@ -41,16 +41,14 @@
       store.commit('posts/startFetching')
 
       const page = parseInt(route.params.page, 10)
-      const pageParam = encodeURIComponent(page)
+      const tagId = route.params.tag
 
       try {
-        const tagId = encodeURIComponent(parseInt(route.params.tag, 10))
-        const tagInfoRequest = await axios.get(`https://blog-api.datyayu.xyz/wp-json/wp/v2/tags/${tagId}`)
-        const postsRequests = await axios.get(`${POSTS_ENDPOINT}?per_page=5&tags=${tagId}&page=${pageParam}`)
+        const request = await axios.get(`${TAGS_ENDPOINT}/${tagId}-${page}.json`)
 
-        const tagName = tagInfoRequest.data.name
-        const totalPosts = postsRequests.headers['x-wp-total']
-        const posts = postsRequests.data.map(post => {
+        const tagName = request.data.name
+        const totalPosts = request.data.totalPosts
+        const posts = request.data.map(post => {
           return {
             id: post.id,
             title: post.title.rendered,
