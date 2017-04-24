@@ -126,12 +126,13 @@ module.exports = {
   ** Static build config
   */
   generate: {
-    routeParams: {
-      '/blog/page/:id': Array.from(Array(NUMBER_OF_PAGES_TO_RENDER))
-        .map((e, i) => i + 1),
-
-      '/blog/posts/:id': Array.from(Array(NUMBER_OF_POSTS_TO_RENDER))
-        .map((e, i) => i + 1),
-    }
+    routes: [
+      ...Array
+        .from(Array(NUMBER_OF_PAGES_TO_RENDER))
+        .map((e, i) => `/blog/page/${i + 1}`),
+      ...Array
+        .from(Array(NUMBER_OF_POSTS_TO_RENDER))
+        .map((e, i) => `/blog/posts/${i + 1}`),
+    ]
   }
 }
