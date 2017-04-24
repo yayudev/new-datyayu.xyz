@@ -27,7 +27,6 @@
   import axios from 'axios'
   import { mapGetters } from 'vuex'
   import { TAGS_ENDPOINT } from '../../../../config/api.js'
-  import { formatDate } from '../../../../utils/date-formatter.js'
 
   export default {
     transition: 'content',
@@ -44,16 +43,17 @@
       const tagId = route.params.tag
 
       try {
-        const request = await axios.get(`${TAGS_ENDPOINT}/${tagId}-${page}.json`)
+        const request = await axios.get(`${TAGS_ENDPOINT}/pages/${tagId}-${page}.json`)
 
         const tagName = request.data.name
         const totalPosts = request.data.totalPosts
-        const posts = request.data.map(post => {
+        const posts = request.data.posts.map(post => {
           return {
             id: post.id,
-            title: post.title.rendered,
-            date: formatDate(post.date),
-            summary: post.excerpt.rendered
+            title: post.title,
+            date: post.date,
+            summary: post.excerpt,
+            url: post.url
           }
         })
 

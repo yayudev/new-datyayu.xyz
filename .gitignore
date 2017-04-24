@@ -22,6 +22,3 @@ deploy.sh
 static/api
 static/sw.js
 
-
-# Not ready yet
-posts

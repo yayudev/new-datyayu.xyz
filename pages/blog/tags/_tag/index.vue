@@ -43,7 +43,6 @@
 
       try {
         const request = await axios.get(`${TAGS_ENDPOINT}/pages/${tagId}-1.json`)
-        console.log(request.data)
         const tagName = request.data.id
         const totalPosts = request.data.totalPosts
         const posts = request.data.posts.map(post => {
@@ -59,8 +58,6 @@
         store.commit('posts/setTagName', tagName)
         store.commit('posts/updatePosts', { posts, totalPosts, page: 1 })
       } catch (error) {
-        console.log(error)
-
         store.commit('posts/errorFetching')
       }
     },
