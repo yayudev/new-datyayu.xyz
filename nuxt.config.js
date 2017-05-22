@@ -140,7 +140,7 @@ module.exports = {
       ...fs.readdirSync(POSTS_PAGES_DIR)
         .map(file => {
           const postname = file.replace('.json', '')
-          return `/blog/posts/page/${postname}`
+          return `/blog/page/${postname}`
         }),
       ...fs.readdirSync(TAGS_DIR)
         .map(file => {
