@@ -167,8 +167,8 @@
       rightCharClasses () {
         return {
           selected: this.state === STATE.ERASING && this.isSelectionBasedEraseStyle,
-          erased: this.state !== STATE.ERASING ||
-                  this.state === STATE.ERASING && !this.isSelectionBasedEraseStyle
+          erased: (this.state !== STATE.ERASING) ||
+                  (this.state === STATE.ERASING && !this.isSelectionBasedEraseStyle)
         }
       },
       isSelectionBasedEraseStyle () {
