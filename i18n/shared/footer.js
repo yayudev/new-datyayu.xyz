@@ -1,7 +1,7 @@
 export default {
   en: {
     footer: {
-      langChange: 'Change language',
+      localeChange: 'Change language',
       buildWith: 'Powered by',
       and: 'and',
       repo: 'Source code available on'
@@ -10,7 +10,7 @@ export default {
 
   es: {
     footer: {
-      langChange: 'Cambiar idioma',
+      localeChange: 'Cambiar idioma',
       buildWith: 'Creado usando',
       and: 'y',
       repo: 'Codigo fuente disponible en'

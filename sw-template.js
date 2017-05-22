@@ -7,7 +7,6 @@ const CACHED_ASSETS = [
   /* [PLACEHOLDER_FOR_FILES] */
 ]
 
-
 function clearPreviousCaches (keys) {
   const deletedCachesPromises = keys.map(key => {
     if (key !== CACHE_NAME) {
@@ -31,14 +30,12 @@ self.addEventListener('install', (e) => {
   )
 })
 
-
 /*
 ** ACTIVATE SW
 */
 self.addEventListener('activate', (event) => {
   event.waitUntil(self.clients.claim())
 })
-
 
 /*
 ** INTERCEPT REQUESTS

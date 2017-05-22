@@ -4,7 +4,6 @@ const SUPPORTED_HIGHLIGHT_LANGUAGES = require('./config/highlight-languages.js')
 const NUMBER_OF_PAGES_TO_RENDER = 10
 const NUMBER_OF_POSTS_TO_RENDER = 50
 
-
 module.exports = {
   /*
   ** Headers of the page
@@ -39,7 +38,7 @@ module.exports = {
   plugins: [
     '~plugins/google-analytics',
     '~plugins/service-worker',
-    '~plugins/vue-i18n'
+    { src: '~plugins/i18n.js', injectAs: 'i18n' }
   ],
   /*
   ** Vue Router
@@ -132,7 +131,7 @@ module.exports = {
         .map((e, i) => `/blog/page/${i + 1}`),
       ...Array
         .from(Array(NUMBER_OF_POSTS_TO_RENDER))
-        .map((e, i) => `/blog/posts/${i + 1}`),
+        .map((e, i) => `/blog/posts/${i + 1}`)
     ]
   }
 }

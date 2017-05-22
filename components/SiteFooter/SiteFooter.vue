@@ -2,10 +2,10 @@
   <footer class="footer">
     <div class="footer-content">
       <p class="footer-links">
-        {{ $t('footer.langChange') }}:
-          <span @click="setLang('es')" class="footer-link" :class="esClass"> Español </span>
+        {{ $t('footer.localeChange') }}:
+          <span @click="setLocale('es')" class="footer-link" :class="esClass"> Español </span>
         /
-          <span @click="setLang('en')" class="footer-link" :class="enClass"> English </span>
+          <span @click="setLocale('en')" class="footer-link" :class="enClass"> English </span>
       </p>
 
       <p class="footer-legal">
@@ -27,28 +27,26 @@
 
 
 <script>
-  import { mapGetters } from 'vuex'
-
   export default {
     computed: {
-      ...mapGetters({ lang: 'i18n/lang' }),
 
       esClass () {
-        return this.lang === 'es' ? 'footer-link--active' : ''
+        return this.$i18n.locale === 'es' ? 'footer-link--active' : ''
       },
 
       enClass () {
-        return this.lang === 'en' ? 'footer-link--active' : ''
+        return this.$i18n.locale === 'en' ? 'footer-link--active' : ''
       }
     },
 
     methods: {
-      setLang (lang) {
-        if (lang === this.lang) {
+      setLocale (locale) {
+        if (locale === this.$i18n.locale) {
           return
         }
 
-        this.$store.commit('i18n/setLang', lang)
+        this.$i18n.locale = locale
+        localStorage.setItem('locale', locale)
       }
     }
   }
@@ -71,9 +69,9 @@
 
   .footer-link {
     color: #6591f5;
-    cursor: pointer;
     font-weight: bold;
     text-decoration: none;
+    cursor: pointer;
   }
 
   .footer-link:hover {
@@ -82,7 +80,7 @@
 
   .footer-link--active {
     color: #3b3b3b;
-    cursor: auto;
+    cursor: default;
   }
 
   .footer-link--active:hover {
