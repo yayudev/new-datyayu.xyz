@@ -22,6 +22,7 @@
       summary: { type: String, default: '' },
       url: { type: String, required: true }
     },
+
     methods: {
       generateTagUrl (tag) {
         return `/blog/tag/${tag}`

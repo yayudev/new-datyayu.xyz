@@ -1,3 +1,4 @@
+// Base endpoint
 const HOST_URL = process.env.NODE_ENV === 'production'
   ? 'https://datyayu.xyz'
   : 'http://localhost:3000'

@@ -27,12 +27,14 @@
       BlogPostText,
       BlogPostComments
     },
+
     props: {
       title: { type: String, required: true },
       date: { type: String, required: true },
       tags: { type: Array, default: [] },
       content: { type: String, default: '' }
     },
+
     methods: {
       generateTagUrl (tag) {
         return `/blog/tags/${tag}`

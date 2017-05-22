@@ -1,3 +1,4 @@
+// Promise polyfill for ie
 if (process.BROWSER_BUILD) {
   const PromisePolyfill = require('promise-polyfill')
 

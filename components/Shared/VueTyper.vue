@@ -45,6 +45,7 @@
     components: {
       Caret
     },
+
     props: {
       /**
       * Text(s) to type.
@@ -59,6 +60,7 @@
           return value.every(item => typeof item === 'string' && item.length > 0)
         }
       },
+
       /**
       * Number of extra times to type 'text' after the first time.
       * 0 will type 'text' once, 1 will type twice, Infinity will type forever.
@@ -68,6 +70,7 @@
         default: Infinity,
         validator: value => value >= 0
       },
+
       /**
       * Randomly shuffles 'text' (using Fisher-Yates algorithm) before typing it.
       * If 'repeat' > 0, 'text' will be shuffled again before each repetition.
@@ -76,6 +79,7 @@
         type: Boolean,
         default: false
       },
+
       /**
       * 'typing'  - starts VueTyper off as a blank space and begins to type the first word.
       * 'erasing' - starts VueTyper off with the first word already typed, and begins to erase.
@@ -85,6 +89,7 @@
         default: STATE.TYPING,
         validator: value => !!value.match(`^${STATE.TYPING}|${STATE.ERASING}$`)
       },
+
       /**
       * Milliseconds to wait before typing the first character.
       */
@@ -93,6 +98,7 @@
         default: 70,
         validator: value => value >= 0
       },
+
       /**
       * Milliseconds to wait after typing a character, until the next character is typed.
       */
@@ -101,6 +107,7 @@
         default: 70,
         validator: value => value >= 0
       },
+
       /**
       * Milliseconds to wait before performing the first erase action (backspace, highlight, etc.).
       */
@@ -109,6 +116,7 @@
         default: 2000,
         validator: value => value >= 0
       },
+
       /**
       * Milliseconds to wait after performing an erase action (backspace, highlight, etc.),
       * until the next erase action can start.
@@ -118,6 +126,7 @@
         default: 250,
         validator: value => value >= 0
       },
+
       /**
       * 'backspace'   - Erase one character at a time, like pressing backspace.
       * 'select-back' - Highlight back one character at a time; erase once all characters are highlighted.
@@ -129,6 +138,7 @@
         default: ERASE_STYLE.SELECT_ALL,
         validator: value => Object.keys(ERASE_STYLE).some(item => ERASE_STYLE[item] === value)
       },
+
       /**
       * Flag to erase everything once VueTyper is finished typing. Set to false to leave the last word visible.
       */
@@ -136,11 +146,13 @@
         type: Boolean,
         default: false
       },
+
       /**
       * Caret animation style. See Caret.vue.
       */
       caretAnimation: String
     },
+
     data () {
       return {
         state: STATE.IDLE,
@@ -154,6 +166,7 @@
         currentTextIndex: -1
       }
     },
+
     computed: {
       caretClasses () {
         return {
@@ -212,12 +225,15 @@
         return this.currentText.length - this.numLeftChars
       }
     },
+
     mounted () {
       this.init()
     },
+
     beforeDestroy () {
       this.cancelCurrentAction()
     },
+
     methods: {
       init () {
         // Process the 'text' prop into a typing spool

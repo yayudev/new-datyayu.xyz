@@ -1,3 +1,4 @@
+// List of progamming languages to support highlighting.
 module.exports = [
   'bash',
   'css',
