@@ -5,7 +5,7 @@
   "author": "Arturo Coronel <aoitsu3@gmail.com>",
   "private": true,
   "dependencies": {
-    "axios": "^0.15.3",
+    "axios": "^0.16.1",
     "highlight.js": "^9.10.0",
     "left-pad": "^1.1.3",
     "nuxt": "latest",
@@ -34,8 +34,8 @@
     "eslint-loader": "^1.6.1",
     "eslint-plugin-html": "^2.0.0",
     "eslint-plugin-promise": "^3.4.1",
-    "eslint-plugin-standard": "^2.0.1",
-    "file-loader": "^0.10.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "file-loader": "^0.11.1",
     "md-to-api": "https://github.com/datyayu/static-blog-api",
     "push-dir": "^0.4.1"
   }
