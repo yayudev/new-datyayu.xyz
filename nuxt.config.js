@@ -1,8 +1,14 @@
 const Webpack = require('webpack')
+const fs = require('fs')
+const path = require('path')
+
 const SUPPORTED_HIGHLIGHT_LANGUAGES = require('./config/highlight-languages.js')
 
-const NUMBER_OF_PAGES_TO_RENDER = 10
-const NUMBER_OF_POSTS_TO_RENDER = 50
+const API_DIR = path.resolve(__dirname, 'static', 'api')
+const POSTS_DIR = path.resolve(API_DIR, 'posts')
+const POSTS_PAGES_DIR = path.resolve(POSTS_DIR, 'pages')
+const TAGS_DIR = path.resolve(API_DIR, 'tags')
+const TAGS_PAGES_DIR = path.resolve(TAGS_DIR, 'pages')
 
 module.exports = {
   /*
@@ -126,12 +132,29 @@ module.exports = {
   */
   generate: {
     routes: [
-      ...Array
-        .from(Array(NUMBER_OF_PAGES_TO_RENDER))
-        .map((e, i) => `/blog/page/${i + 1}`),
-      ...Array
-        .from(Array(NUMBER_OF_POSTS_TO_RENDER))
-        .map((e, i) => `/blog/posts/${i + 1}`)
+      ...fs.readdirSync(POSTS_DIR)
+        .map(file => {
+          const postname = file.replace('.json', '')
+          return `/blog/posts/${postname}`
+        }),
+      ...fs.readdirSync(POSTS_PAGES_DIR)
+        .map(file => {
+          const postname = file.replace('.json', '')
+          return `/blog/posts/page/${postname}`
+        }),
+      ...fs.readdirSync(TAGS_DIR)
+        .map(file => {
+          const tagname = file.replace('.json', '')
+          return `/blog/tags/${tagname}`
+        }),
+      ...fs.readdirSync(TAGS_PAGES_DIR)
+        .map(file => {
+          const filename = file.replace('.json', '')
+          const page = filename.match(/[0-9]+$/)
+          const tagname = filename.replace(/-[0-9]+$/, '')
+
+          return `/blog/tags/${tagname}/${page}`
+        })
     ]
   }
 }
