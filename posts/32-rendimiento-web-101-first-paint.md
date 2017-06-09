@@ -1,6 +1,6 @@
 [//]: # (title   - Rendimiento web 101: First paint             )
 [//]: # (tags    - javascript, rendimiento, browsers, html, css )
-[//]: # (id      - 99                                           )
+[//]: # (id      - 32                                           )
 [//]: # (date    - 2017.04.05                                   )
 [//]: # (url     - rendimiento-web-101-first-paint              )
 [//]: # (excerpt - Aprende como optimizar los tiempos de carga de tus sitios web y mejora la experiencia de tus usuarios dandoles una impresion más fluida y accessible. )

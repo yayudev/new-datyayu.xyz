@@ -60,6 +60,11 @@
     margin: 0 auto;
   }
 
+  .blog-post-text svg {
+    display: block;
+    margin: 0 auto;
+  }
+
   .blog-post-text video {
     width: 100%;
   }
