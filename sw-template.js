@@ -1,7 +1,7 @@
 /*
 ** CONFIG
 */
-const CACHE_VERSION = '1.7.1'
+const CACHE_VERSION = '1.7.2'
 const CACHE_NAME = `datyayu-xyz-v${CACHE_VERSION}`
 const CACHED_ASSETS = [
   /* [PLACEHOLDER_FOR_FILES] */
