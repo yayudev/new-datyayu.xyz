@@ -66,21 +66,22 @@ La mejor manera de desbloquear css es siguiendo dos reglas:
 - **Inyectar el resto de manera dinámica.**
 
 La manera en que esto funciona es que separas los estilos más importantes o "críticos" de tu aplicación y los pones directamente en la cabecera del html:
+
 ```html
 <head>
-    ...
-    <style>
-        body {
-            background-color: gray;
-        }
+  <!-- ... -->
+  <style>
+    body {
+      background-color: gray;
+    }
 
-        .header {
-            color: white;
-            background-color: red;
-            height: 5em;
-            width: 100vw;
-        }
-    </style>
+    .header {
+      color: white;
+      background-color: red;
+      height: 5em;
+      width: 100vw;
+    }
+  </style>
 </head>
 ```
 
@@ -88,23 +89,21 @@ De esta manera, cuando el navegador descargue el archivo de html tendrá acceso 
 
 ¿Pero qué pasa con el resto del css, la parte que no es "crítica"? Bueno, la mejor manera de tratar con esto es inyectarlo dinámicamente usando javascript. Hay muchas maneras de hacer esto pero aquí hay un ejemplo:
 
-```html
-<script>
-    function loadCSS(url, targetChild, mediaType){
-        var linkElement = window.document.createElement("link");
-        var targetElement = targetChild || window.document.getElementsByTagName("script")[0];
+```js
+function loadCSS(url, targetChild, mediaType){
+  var linkElement = window.document.createElement("link");
+  var targetElement = targetChild || window.document.getElementsByTagName("script")[0];
 
-        linkElement.rel = "stylesheet";
-        linkElement.href = url;
-        linkElement.media = "only x";
+  linkElement.rel = "stylesheet";
+  linkElement.href = url;
+  linkElement.media = "only x";
 
-        targetElement.parentNode.insertBefore(linkElement, targetElement);
+  targetElement.parentNode.insertBefore(linkElement, targetElement);
 
-        setTimeout(function(){ linkElement.media = mediaType || "all" })
-    }
+  setTimeout(function(){ linkElement.media = mediaType || "all" })
+}
 
-    loadCSS('estilos/estilos-no-criticos.css');
-</script>
+loadCSS('estilos/estilos-no-criticos.css');
 ```
 
 Básicamente lo que sucede aquí es que creamos un elemento `link` y le agregamos los atributos `rel`, `href` y `media`; dando como resultado:
@@ -144,7 +143,7 @@ Esto es bueno ya que podemos ejecutar los scripts inmediatamente bloqueando lo m
 
 Por el problema anterior, solamente es recomendado usar este método para scripts que son totalmente independientes de otros. Un ejemplo claro de esta situación es el script Google Analytics, ya que es totalmente auto-contenido y no lo usamos en nuestra aplicación.
 
-# Defer
+### Defer
 
 Para los casos en los que dependemos de otros scripts tenemos `defer`.
 ```html
@@ -160,7 +159,7 @@ Este método es por lo general más practico y garantiza el hecho de que jamas b
 
 ---
 
-# Comparacion contra normal
+## Comparacion contra normal
 
 Una vez aplicados los pasos anteriores, podemos ver como un sitio pasa de
 tardar casi 2 segundos para hacer el first paint:
@@ -174,7 +173,7 @@ A menos de 650ms:
 Cabe aclarar que este test fue hecho restringuiendo la velocidad del navegador a 2G/regular para ver de forma más clara el efecto, pero toma en cuenta que este es un ejemplo muy simple y estas metodologías puede impactar aun más en un sitio real. Si quieres revisarlo por tu cuenta, ambas versiones están disponibles en [github]((https://github.com/datyayu-xyz/rendimiento-101-first-paint)).
 
 
-# Single Page Applications y Server-Side rendering.
+## Single Page Applications y Server-Side rendering.
 Cabe aclarar que los consejos anteriores sólo aplican cuando el contenido es renderizado desde el servidor. Si tu página, utiliza algún un framework como AngularJS o una librería como React para todo su contenido, el navegador aún tiene que esperar a que ejecute tus scripts ya que ellos son los que crean y montan ese contenido dinámicamente en el DOM. Apesar de todas las ventajas que este tipo de sistemas nos brindan, también pueden terminar siendo inclusive peor para nuestra experiencia inicial ya que el navegador no sólo tiene que esperar hasta que termine de descargar y parsear el contenido antes de comenzar a renderizarlo, sino que también tiene que ejecutar el javascript antes de que el usuario pueda ver algo en la pantalla.
 
 Para estos casos, lo mejor es utilizar Server-side rendering (renderizado en el servidor), que básicamente lo que hace es pre-renderizar el contenido que va a generarse por javascript desde el servidor y nos envía un html con ese contenido ya inyectado. No quiero entrar en detalles en este tema, ya que cada framework o librería tiene una manera distinta de hacerlo, pero si quieres optimizar el first paint de tu single-page application lo más seguro es que este sea uno de los puntos más importantes a tener en cuenta.
