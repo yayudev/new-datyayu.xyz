@@ -5,6 +5,31 @@ export default {
       subtitle: 'A colllection of small learning experiments using the latest technologies availables for the web.',
       experiments: [
         {
+          img: 'signup-demo',
+          title: 'react + redux signup',
+          url: 'https://datyayu.github.io/signup-demo/'
+        },
+        {
+          img: 'svg-check-animation',
+          title: 'SVG Check animation',
+          url: 'https://codepen.io/datyayu/full/dRbmEQ/'
+        },
+        {
+          img: 'svg-loading-circles',
+          title: 'SVG loading circles',
+          url: 'https://codepen.io/datyayu/full/jwNaBE/'
+        },
+        {
+          img: 'svg-interactive-drawing',
+          title: 'SVG Interactive drawing',
+          url: 'https://codepen.io/datyayu/full/WOeOqx/'
+        },
+        {
+          img: 'svg-line-drawing',
+          title: 'SVG Line drawing',
+          url: 'https://codepen.io/datyayu/full/yXeYbq/'
+        },
+        {
           img: 'music-visualizer',
           title: 'Music visualizer',
           url: 'https://datyayu.github.io/music-visualizer/index.html'
@@ -58,6 +83,31 @@ export default {
       title: 'Tests',
       subtitle: 'Una colección de pequeños experimentos usando las tecnologias más recientes de la web.',
       experiments: [
+        {
+          img: 'signup-demo',
+          title: 'registro con react + redux',
+          url: 'https://datyayu.github.io/signup-demo/'
+        },
+        {
+          img: 'svg-check-animation',
+          title: 'Animación de visto con SVG',
+          url: 'https://codepen.io/datyayu/full/dRbmEQ/'
+        },
+        {
+          img: 'svg-loading-circles',
+          title: 'Circulos de carga con SVG',
+          url: 'https://codepen.io/datyayu/full/jwNaBE/'
+        },
+        {
+          img: 'svg-interactive-drawing',
+          title: 'Trazado interactivo con SVG',
+          url: 'https://codepen.io/datyayu/full/WOeOqx/'
+        },
+        {
+          img: 'svg-line-drawing',
+          title: 'Trazado con SVG',
+          url: 'https://codepen.io/datyayu/full/yXeYbq/'
+        },
         {
           img: 'music-visualizer',
           title: 'Visualizador de musica',
