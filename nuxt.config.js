@@ -41,11 +41,12 @@ module.exports = {
   /*
   ** Vue Plugins
   */
-  offline: true, // true or https://github.com/NekR/offline-plugin/blob/master/docs/options.md
   plugins: [
     '~plugins/google-analytics',
-    { src: '~plugins/offline.js', ssr: false },
     { src: '~plugins/i18n.js', injectAs: 'i18n' }
+  ],
+  modules: [
+    '@nuxtjs/workbox'
   ],
   /*
   ** Vue Router

@@ -5,6 +5,7 @@
   "author": "Arturo Coronel <aoitsu3@gmail.com>",
   "private": true,
   "dependencies": {
+    "@nuxtjs/workbox": "^0.4.0",
     "axios": "^0.16.1",
     "highlight.js": "^9.10.0",
     "left-pad": "^1.1.3",
@@ -21,7 +22,6 @@
     "generate": "npm run generate-api && npm run generate-nuxt",
     "generate-nuxt": "nuxt generate",
     "generate-api": "md-to-api posts static",
-    "generate-sw": "node sw-generator.js",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"

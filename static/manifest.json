@@ -1,6 +1,7 @@
 {
     "manifest_version": 2,
     "name": "datyayu.xyz",
+    "short_name": "datyayu",
     "version": "1.2.0",
     "author": "Arturo Coronel <aoitsu3@gmail.com> (https://datyayu.xyz)",
 
