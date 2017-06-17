@@ -53,21 +53,22 @@
 
   .blog-post-title {
     color: #00BF13;
-    font-size: 2em;
+    font-size: 2.5em;
     text-align: center;
     margin: 1em 0 0 0;
   }
 
   .blog-post-date {
     text-align: center;
-    margin: .5em 0;
+    margin: .25em 0;
+    font-size: 1.5em;
   }
 
   .blog-post-tags {
     text-align: center;
     margin: .5em 0;
     font-weight: normal;
-    font-size: 1.1em;
+    font-size: 1.4em;
   }
 
   .blog-post-tag-link {

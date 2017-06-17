@@ -13,18 +13,26 @@
 
     mounted () {
       hljs.initHighlightingOnLoad()
+      this.forceHighlight()
     },
 
     beforeUpdate () {
       hljs.initHighlightingOnLoad()
+      this.forceHighlight()
     },
 
-    watch: {
-      content (text) {
+    methods: {
+      forceHighlight () {
         this.$nextTick(function () {
           hljs.initHighlighting.called = false
           hljs.initHighlighting()
         })
+      }
+    },
+
+    watch: {
+      content (text) {
+        this.forceHighlight()
       }
     }
   }
@@ -34,7 +42,7 @@
 <style>
   .blog-post-text {
     font-family: 'Open Sans', 'arial', sans-serif, serif;
-    font-size: 1em;
+    font-size: 1.3em;
     line-height: 1.6em;
   }
 
@@ -48,10 +56,17 @@
   }
 
   .blog-post-text code {
+    background: #ffe7e7;
+    padding: 0 .25em;
+    color: #d06060;
+  }
+
+  .blog-post-text pre code {
     background: #282a36;
     color: white;
     padding: 0 .25em;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    line-height: 1.5em;
   }
 
   .blog-post-text img {
@@ -85,6 +100,8 @@
   .blog-post-text h6 {
     color: #00BF13;
     margin-top: 2em;
+    line-height: 1.5em;
+    text-align: center;
   }
 
   .hljs.hljs {
@@ -153,5 +170,16 @@
 
   .hljs-emphasis {
     font-style: italic;
+  }
+
+  @media screen and (min-width: 780px) {
+    .blog-post-text h1,
+    .blog-post-text h2,
+    .blog-post-text h3,
+    .blog-post-text h4,
+    .blog-post-text h5,
+    .blog-post-text h6 {
+      text-align: left;
+    }
   }
 </style>
