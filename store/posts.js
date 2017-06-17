@@ -1,11 +1,11 @@
-export const state = {
+export const state = () => ({
   posts: [],
   activePost: {},
   fetching: true,
   page: 0,
   tagName: '',
   error: false
-}
+})
 
 export const mutations = {
   startFetching (state) {

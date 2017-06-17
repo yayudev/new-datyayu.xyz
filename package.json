@@ -16,9 +16,9 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build && npm run generate-sw",
+    "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "npm run generate-api && npm run generate-nuxt && npm run generate-sw",
+    "generate": "npm run generate-api && npm run generate-nuxt",
     "generate-nuxt": "nuxt generate",
     "generate-api": "md-to-api posts static",
     "generate-sw": "node sw-generator.js",
