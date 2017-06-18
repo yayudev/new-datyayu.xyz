@@ -8,7 +8,7 @@ export default {
       projects: [
         {
           name: 'datyayu.xyz',
-          date: '2017',
+          date: '2017 - Ongoing',
           imagePrefix: 'datyayu-xyz',
           url: 'https://datyayu.xyz',
           github: 'https://github.com/datyayu/new-datyayu.xyz',
@@ -20,7 +20,20 @@ Created originally using pug and Sass but later on they were replaced by simple 
 
 Currently scores 100/100 on google's lighthouse test for Progressive Web Apps.
 
-This is also an example of how JAMStack sites can work using Wordpress only as an API and a CDN for static files, resulting in a almost serverless architecture (My server it's only for adding server-side rendering).`
+This is also an example of how JAMStack sites can work using only a CDN for static files, resulting in a fully functional app with great experience, without the need to mount you own server.`
+        },
+        {
+          name: 'risu-moe',
+          date: '2017 - Ongoing',
+          imagePrefix: 'risu-moe',
+          url: 'https://datyayu.github.io/risu-moe/',
+          github: 'https://github.com/datyayu/risu-moe',
+          isIframe: true,
+          description: `
+A shared sync music player. Basically you drop an audio file, then it gets uploaded and played in sync for all the connected users. Built using react, redux and typescript and also pretty new technologies like the Web Audio API and firebase's cloud functions.
+
+It's currently on the first alpha release so expect a lot of new features coming soon.
+`
         },
         {
           name: 'raji',
@@ -28,25 +41,27 @@ This is also an example of how JAMStack sites can work using Wordpress only as a
           imagePrefix: 'raji',
           url: 'https://raji-demo.herokuapp.com',
           github: 'https://github.com/datyayu/raji-net-frontend',
-          isIframe: true,
+          isIframe: false,
           description: `
-Music player app for anisongs. Build using react, redux, RWD, Sass and webpack. The backend is written using .NET Core and Web API Core. It also features responsive design, rendering layers optimization and screen-size-based experience.
+Music player app for anisongs. Built using react, redux, RWD, Sass and webpack. The backend is written using .NET Core and Web API Core. It also features responsive design, rendering layers optimization and screen-size-based experience.
 
 This project also ended up generating a separate project, a module that makes easier to work with the Web Audio API called ongaku which is available on github and npm.
 
-Currently on development.`
+Currently paused, but I'll probably going to retake this project on the future.`
         },
         {
           name: 'Weetrack 2.0',
-          date: '2016',
+          date: '2016 - Ongoing',
           imagePrefix: 'weetrack2',
           url: 'http://track.datyayu.xyz/',
           github: 'https://github.com/datyayu/weetrack',
           isIframe: false,
           description: `
-An automated anime release tracker build using react, redux, SASS and Gulp for the frontend. Both the frontend and the backend are written using ES6.
+An automated anime release tracker built using react, redux, SASS and Gulp for the frontend. Both the frontend and the backend are written using ES6.
 
-Part of the logic for listening the rss feeds, which the application uses as data source, was extracted onto a separate module (feed-watcher) and published on Github and npm to help other people to deal with that problem.`
+Part of the logic for listening the rss feeds, which the application uses as data source, was extracted onto a separate module (feed-watcher) and published on Github and npm to help other people to deal with that problem.
+
+Currently has some issues due to the feed source (nyaa.eu) being taken down by its owner. Will fix as soon as the summer 2017 anime season begins.`
         },
         {
           name: 'fbot-mk2',
@@ -66,8 +81,7 @@ This was an experiment created on the same day facebook launched the Messenger P
           github: 'https://github.com/datyayu/fbot',
           isIframe: false,
           description: `
-            A facebook bot who google things. Build using
-            node and the facebook messenger API.`
+A facebook bot who google things. Built using node and the facebook messenger API.`
         },
         {
           name: 'color-blind',
@@ -78,17 +92,16 @@ This was an experiment created on the same day facebook launched the Messenger P
           description: `
 A platform game with similar mechanics than Color Symphony.
 
-Build from scratch using java.
-          `
+Built from scratch using java.`
         },
         {
           name: 'YayuJS',
-          date: '2016',
+          date: '2016 - 2017',
           imagePrefix: 'yayujs',
           github: 'https://github.com/datyayu/yayul-theme',
           isIframe: false,
           description: `
-Blog build with ghost, deployed using a custom theme created from scratch for this site (Available now at github at datyayu/yayul-theme).
+Blog built with ghost, deployed using a custom theme created from scratch for this site (Available now at github at datyayu/yayul-theme).
 
 It was the first version of datyayu.xyz, but focused only on the blogging side of this site.`
         },
@@ -100,17 +113,19 @@ It was the first version of datyayu.xyz, but focused only on the blogging side o
           github: 'https://github.com/datyayu/rental-frontend',
           isIframe: true,
           description: `
-A demo concept for a rental site. Build as a part of an internship to prove my skills using existing css frameworks (like materialize) and javascript libraries (like jQuery).`
+A demo concept for a rental site. Built as a part of an internship to prove my skills using existing css frameworks (like materialize) and javascript libraries (like jQuery).`
         },
         {
           name: 'Weeselect',
-          date: '2015',
+          date: '2015 - 2016',
           imagePrefix: 'weeselect',
           url: 'https://weeselect.herokuapp.com/',
           github: 'https://github.com/datyayu/weeselect',
           isIframe: true,
           description: `
-A Single-page application build using angular 1.3 and node. It picks you a character for League of Legends from your custom pool and automatically it gives you a optimal item set for that character based on real match data (using Champion.gg).`
+A Single-page application built using angular 1.3 and node. It picks you a character for League of Legends from your custom pool and automatically it gives you a optimal item set for that character based on real match data (using Champion.gg).
+
+This app is no longer being maintained.`
         },
         {
           name: 'Weesong',
@@ -119,11 +134,11 @@ A Single-page application build using angular 1.3 and node. It picks you a chara
           github: 'https://github.com/datyayu/weesong',
           isIframe: false,
           description: `
-Frontend-only SPA music player, targeted for anisongs. Build using angular 1.3, node, stylus and gulp. It uses advanced responsive web design techniques and browser APIs interaction like local-storage and Audio API.`
+Frontend-only SPA music player, targeted for anisongs. Built using angular 1.3, node, stylus and gulp. It uses advanced responsive web design techniques and browser APIs interaction like local-storage and Audio API.`
         },
         {
           name: 'Weetrack Mobile',
-          date: '2015',
+          date: '2014 - 2015',
           imagePrefix: 'weetrack-mobile',
           github: 'https://github.com/datyayu/weetrack-mobile',
           isIframe: false,
@@ -134,12 +149,12 @@ No longer mantained.`
         },
         {
           name: 'Weetrack',
-          date: '2014',
+          date: '2014 - 2015',
           imagePrefix: 'weetrack',
           github: 'https://github.com/datyayu/weetrack/tree/ae836bff72f7c9782c3086c5e8f799e07baa75dc',
           isIframe: false,
           description: `
-An automated anime release tracker build stylus, angular 1.3 and gulp. The backend was written in node.js using coffescript.
+An automated anime release tracker built with stylus, angular 1.3 and gulp. The backend was written in node.js using coffescript.
 
 Replaced by weetrack 2.0.`
         },
@@ -168,7 +183,7 @@ Isn't it beautiful?`
       projects: [
         {
           name: 'datyayu.xyz',
-          date: '2017',
+          date: '2017 - Actual',
           imagePrefix: 'datyayu-xyz',
           url: 'https://datyayu.xyz',
           github: 'https://github.com/datyayu/new-datyayu.xyz',
@@ -178,7 +193,19 @@ Este sitio :D. Creado originalmente usando pug y Sass, pero posteriormente rempl
 
 Actualmente obtiene 100/100 puntos en el test lighthouse de google para Progressive Web Apps.
 
-Este también es un ejemplo de como un sitio creado con el JAMStack puede funcionar usando Wordpress únicamente como un API y un CDN para archivos estaticos, resultando en una arquitectura casi sin servidor (Mi servidor sólo es para agregar server-side rendering).`
+Este también es un ejemplo de como un sitio creado con el JAMStack pude funcionar usando solamente un CDN para montar la aplicación, resultando en una experiencia completamenta y de alta calidad, sin necesidad de tener un servidor corriendo.`
+        },
+        {
+          name: 'risu-moe',
+          date: '2017 - Actual',
+          imagePrefix: 'risu-moe',
+          url: 'https://datyayu.github.io/risu-moe/',
+          github: 'https://github.com/datyayu/risu-moe',
+          isIframe: true,
+          description: `
+Un reproductor sincronizado/compartido. Basicamente arrastras un archivo de audio, y este se sube a firebase y reproducido de manera sincronizada para todos los usuarios conectados. Creado usando react, redux y typescript, en conjuncto con otras herramientas como el Web Audio API y las cloud functions de firebase.
+
+Actualmente se encuentra en la primera alpha, así que espera muchas funcionalidades nuevas muy pronto.`
         },
         {
           name: 'raji',
@@ -186,17 +213,17 @@ Este también es un ejemplo de como un sitio creado con el JAMStack puede funcio
           imagePrefix: 'raji',
           url: 'https://raji-demo.herokuapp.com',
           github: 'https://github.com/datyayu/raji-net-frontend',
-          isIframe: true,
+          isIframe: false,
           description: `
 Aplicación de musica para anisongs. Creado usando react, redux, RWD, Sass y webpack. El backend esta escrito usando .NET Core y Web API Core. También incluye diseño responsivo, optimización de renderizado y experiencias basada en el tamaño de pantalla.
 
 Esta aplicación también terminó generando un proyecto separado, un módulo para usar el Web Audio API de manera sencilla llamado ongaku, el cual está disponible en github y npm.
 
-Actualmente en desarrollo.`
+Actualmente en pausa, pero definitivamente planeo retomarlo en un futuro.`
         },
         {
           name: 'Weetrack 2.0',
-          date: '2016',
+          date: '2016 - Actual',
           imagePrefix: 'weetrack2',
           url: 'http://track.datyayu.xyz/',
           github: 'https://github.com/datyayu/weetrack',
@@ -204,7 +231,9 @@ Actualmente en desarrollo.`
           description: `
 Un rastreador automático de lanzamientos de episodios de anime creado react, redux, SASS y Gulp para el frontend. Tanto el frontend como el backend están escritos usando ES6.
 
-Parte de la lógica para escuchar a los feeds de RSS, los cuáles usa la aplicación como fuente de datos, fue extraída en un módulo separado publicado libremente en github y npm (feed-watcher) para ayudar a otros a resolver ese problema.`
+Parte de la lógica para escuchar a los feeds de RSS, los cuáles usa la aplicación como fuente de datos, fue extraída en un módulo separado publicado libremente en github y npm (feed-watcher) para ayudar a otros a resolver ese problema.
+
+Actualmente tiene algunos problemas debido a que la fuente de rss (nyaa.eu) ha sido borrada por su propietario. Aún así, será actualizado para funcionar correctamente apenas comience la temporada de verano 2017.`
         },
         {
           name: 'fbot-mk2',
@@ -239,7 +268,7 @@ Creado desde cero usando java.`
         },
         {
           name: 'YayuJS',
-          date: '2016',
+          date: '2016 - 2017',
           imagePrefix: 'yayujs',
           github: 'https://github.com/datyayu/yayul-theme',
           isIframe: false,
@@ -262,7 +291,7 @@ Creado como parte de mis prácticas profesionales para demostrar mis habilidades
         },
         {
           name: 'Weeselect',
-          date: '2015',
+          date: '2015 - 2016',
           imagePrefix: 'weeselect',
           url: 'https://weeselect.herokuapp.com/',
           github: 'https://github.com/datyayu/weeselect',
@@ -284,7 +313,7 @@ Reproductor de música, dirigido en especifico para anisongs. Creado usando angu
         },
         {
           name: 'Weetrack Mobile',
-          date: '2015',
+          date: '2015 - 2016',
           imagePrefix: 'weetrack-mobile',
           github: 'https://github.com/datyayu/weetrack-mobile',
           isIframe: false,
@@ -295,7 +324,7 @@ Ya no es mantenida.`
         },
         {
           name: 'Weetrack',
-          date: '2014',
+          date: '2014 - 2015',
           imagePrefix: 'weetrack',
           github: 'https://github.com/datyayu/weetrack/tree/ae836bff72f7c9782c3086c5e8f799e07baa75dc',
           isIframe: false,
