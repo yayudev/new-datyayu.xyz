@@ -1,2 +1,5 @@
+.git
+.nuxt
 assets
+dist
 static
