@@ -1,10 +1,10 @@
 export default {
   en: {
     about: {
-      title: 'About',
-      subtitle: 'Some info about me',
+      title: "About",
+      subtitle: "Some info about me",
 
-      introTitle: 'About me',
+      introTitle: "About me",
 
       intro: `
         Hi! I'm Arturo Coronel (you can call me Yayu).
@@ -37,7 +37,7 @@ export default {
         and help other people to improve their skills.
       `,
 
-      contactTitle: 'Contact',
+      contactTitle: "Contact",
 
       contactText: `
         Want to know more about me or contract my services?
@@ -50,10 +50,10 @@ export default {
 
   es: {
     about: {
-      title: 'Info',
-      subtitle: 'Algo de información acerca de mí',
+      title: "Info",
+      subtitle: "Algo de información acerca de mí",
 
-      introTitle: 'Acerca de mí',
+      introTitle: "Acerca de mí",
 
       intro: `
         Hola. Soy Arturo Coronel (puedes llamarme Yayu), tengo 21 años,
@@ -86,7 +86,7 @@ export default {
         a los demás a mejorar sus habilidades.
       `,
 
-      contactTitle: 'Contacto',
+      contactTitle: "Contacto",
 
       contactText: `
         ¿Quieres saber más de mí o contratar mis servicios?
@@ -96,4 +96,4 @@ export default {
       `
     }
   }
-}
+};

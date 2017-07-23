@@ -4,12 +4,8 @@
  * @param {Number} val Number to evaluate.
  * @return {Boolean} Wheter the number is valid or not.
  */
-function validNumber (val) {
-  return (
-    (typeof val === 'number') &&
-    !Number.isNaN(val) &&
-    Number.isFinite(val)
-  )
+function validNumber(val) {
+  return typeof val === "number" && !Number.isNaN(val) && Number.isFinite(val);
 }
 
 /**
@@ -19,12 +15,8 @@ function validNumber (val) {
  * @param {Number} upper Bottom boundary.
  * @return {Boolean} Whether the range is valid or not.
  */
-function validRange (lower, upper) {
-  return (
-    validNumber(lower) &&
-    validNumber(upper) &&
-    lower <= upper
-  )
+function validRange(lower, upper) {
+  return validNumber(lower) && validNumber(upper) && lower <= upper;
 }
 
 /**
@@ -39,11 +31,11 @@ function validRange (lower, upper) {
  */
 export default (min, max) => {
   if (!validRange(min, max)) {
-    return -1
+    return -1;
   }
 
-  min = Math.ceil(min)
-  max = Math.floor(max)
+  min = Math.ceil(min);
+  max = Math.floor(max);
 
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};

@@ -1,9 +1,9 @@
 <template>
   <div>
     <site-header
-      header-color="purple"
       :header-title="pageTitle"
       :header-subtitle="pageSubtitle"
+      header-color="purple"
     ></site-header>
 
     <div class="site-content">
@@ -14,37 +14,37 @@
 
 
 <script>
-  import SiteHeader from '~components/SiteHeader/SiteHeader.vue'
-  import Experiments from '~components/Experiments/Experiments.vue'
+import SiteHeader from "~components/SiteHeader/SiteHeader.vue";
+import Experiments from "~components/Experiments/Experiments.vue";
 
-  export default {
-    transition: 'content',
+export default {
+  transition: "content",
 
-    components: {
-      SiteHeader,
-      Experiments
+  components: {
+    SiteHeader,
+    Experiments
+  },
+
+  head() {
+    return {
+      title: this.pageTitle,
+      meta: [
+        { name: "theme-color", content: "#997cff" },
+        { property: "og:title", content: this.pageTitle },
+        { property: "og:description", content: this.pageSubtitle },
+        { property: "og:url", content: "https://datyayu.xyz/experiments" }
+      ]
+    };
+  },
+
+  computed: {
+    pageTitle() {
+      return this.$t("experiments.title");
     },
 
-    head () {
-      return {
-        title: this.pageTitle,
-        meta: [
-          { name: 'theme-color', content: '#997cff' },
-          { property: 'og:title', content: this.pageTitle },
-          { property: 'og:description', content: this.pageSubtitle },
-          { property: 'og:url', content: 'https://datyayu.xyz/experiments' }
-        ]
-      }
-    },
-
-    computed: {
-      pageTitle () {
-        return this.$t('experiments.title')
-      },
-
-      pageSubtitle () {
-        return this.$t('experiments.subtitle')
-      }
+    pageSubtitle() {
+      return this.$t("experiments.subtitle");
     }
   }
+};
 </script>

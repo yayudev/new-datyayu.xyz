@@ -4,9 +4,9 @@
 
 
 <script>
-  export default {
-    asyncData ({ redirect }) {
-      redirect('/blog')
-    }
+export default {
+  asyncData({ redirect }) {
+    redirect("/blog");
   }
+};
 </script>

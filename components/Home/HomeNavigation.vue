@@ -2,8 +2,10 @@
   <ul class="home-navigation">
     <div class="home-border-layer"></div>
 
-    <li v-for="link in links" class="home-navigation-item">
-      <nuxt-link class="home-navigation-link" :to="link.url">{{ $t(`navigation.${link.text}`) }}</nuxt-link>
+    <li v-for="link in links" v-bind:key="link" class="home-navigation-item">
+      <nuxt-link class="home-navigation-link" :to="link.url">
+        {{ $t(`navigation.${link.text}`) }}
+      </nuxt-link>
     </li>
 
     <li class="home-navigation-item">
@@ -14,18 +16,18 @@
 
 
 <script>
-  export default {
-    data () {
-      return {
-        links: [
-          { text: 'blog', url: '/blog' },
-          { text: 'projects', url: '/projects' },
-          { text: 'experiments', url: '/experiments' },
-          { text: 'about', url: '/about' }
-        ]
-      }
-    }
+export default {
+  data() {
+    return {
+      links: [
+        { text: "blog", url: "/blog" },
+        { text: "projects", url: "/projects" },
+        { text: "experiments", url: "/experiments" },
+        { text: "about", url: "/about" }
+      ]
+    };
   }
+};
 </script>
 
 <style>

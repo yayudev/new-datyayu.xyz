@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es" {{ HTML_ATTRS }}>
-  <head>
-    {{ HEAD }}
 
-    <script type="application/ld+json">
-      {
+<head>
+  {{ HEAD }}
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Open+Sans">
+
+  <script type="application/ld+json">
+    {
         "@context": "https://schema.org/",
         "@type": "Person",
         "name": "Arturo Coronel",
@@ -13,11 +16,12 @@
         "telephone": "(664) 3476016 ",
         "url": "https//datyayu.xyz/"
       }
-    </script>
+  </script>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Open+Sans" media="none" onload="if(media!='all')media='all'">
-  </head>
-  <body {{ BODY_ATTRS }}>
-    {{ APP }}
-  </body>
+</head>
+
+<body {{ BODY_ATTRS }}>
+  {{ APP }}
+</body>
+
 </html>

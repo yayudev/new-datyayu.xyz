@@ -1,4 +1,4 @@
-import randomInt from './random-int'
+import randomInt from "./random-int";
 
 /**
  * Swap two indexes in the given array.
@@ -8,14 +8,14 @@ import randomInt from './random-int'
  * @param {Number} i First index to swap.
  * @param {Number} j Second index to swap.
  */
-function swap (list, i, j) {
+function swap(list, i, j) {
   if (i === j) {
-    return
+    return;
   }
 
-  const temp = list[i]
-  list[i] = list[j]
-  list[j] = temp
+  const temp = list[i];
+  list[i] = list[j];
+  list[j] = temp;
 }
 
 /**
@@ -25,13 +25,13 @@ function swap (list, i, j) {
  *
  * @param {Array} list Array to shuffle
  */
-export default function shuffle (list) {
+export default function shuffle(list) {
   if (!(list instanceof Array)) {
-    return
+    return;
   }
 
   for (let i = list.length - 1; i > 0; i--) {
-    let randomIndex = randomInt(0, i)
-    swap(list, i, randomIndex)
+    let randomIndex = randomInt(0, i);
+    swap(list, i, randomIndex);
   }
 }

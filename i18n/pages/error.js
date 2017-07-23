@@ -1,8 +1,8 @@
 export default {
   en: {
     error: {
-      title: 'Oops',
-      subtitle: 'Something happened while loading ¯\\_(ツ)_/¯',
+      title: "Oops",
+      subtitle: "Something happened while loading ¯\\_(ツ)_/¯",
       error: `
     Against all probability, a page had suddenly been called into existence several miles away from your browser.
 
@@ -39,8 +39,8 @@ export default {
   },
   es: {
     error: {
-      title: 'Oops',
-      subtitle: 'Algo ocurrió mientras la página cargaba ¯\\_(ツ)_/¯',
+      title: "Oops",
+      subtitle: "Algo ocurrió mientras la página cargaba ¯\\_(ツ)_/¯",
       error: `
     Contra toda probabilidad, una página aparecio en existencia a varios miles de kilómetros de tu navegador.
 
@@ -75,4 +75,4 @@ export default {
     Y el resto, tras una excepción del servidor, fue un numero.`
     }
   }
-}
+};

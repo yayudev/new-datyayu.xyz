@@ -7,21 +7,21 @@
 
 
 <script>
-  import VueDisqus from 'vue-disqus/VueDisqus.vue'
+import VueDisqus from "vue-disqus/VueDisqus.vue";
 
-  export default {
-    components: {
-      disqus: VueDisqus
-    }
+export default {
+  components: {
+    disqus: VueDisqus
   }
+};
 </script>
 
 
 <style>
-  .blog-post-comments-divider {
-    margin-top: 4em;
-    margin-bottom: 2em;
-    border: none;
-    border-top: 1px solid #00bf13;
-  }
+.blog-post-comments-divider {
+  margin-top: 4em;
+  margin-bottom: 2em;
+  border: none;
+  border-top: 1px solid #00bf13;
+}
 </style>

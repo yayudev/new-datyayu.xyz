@@ -1,12 +1,12 @@
-import Navigation from './shared/navigation.js'
-import Footer from './shared/footer.js'
+import Navigation from "./shared/navigation.js";
+import Footer from "./shared/footer.js";
 
-import Blog from './pages/blog.js'
-import Experiments from './pages/experiments.js'
-import Projects from './pages/projects.js'
-import Home from './pages/home.js'
-import About from './pages/about.js'
-import ErrorPage from './pages/error.js'
+import Blog from "./pages/blog.js";
+import Experiments from "./pages/experiments.js";
+import Projects from "./pages/projects.js";
+import Home from "./pages/home.js";
+import About from "./pages/about.js";
+import ErrorPage from "./pages/error.js";
 
 export default {
   en: {
@@ -32,4 +32,4 @@ export default {
     ...Projects.es,
     ...Home.es
   }
-}
+};
