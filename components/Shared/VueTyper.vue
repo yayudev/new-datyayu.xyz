@@ -283,7 +283,7 @@ export default {
       const newCaretIndex = this.currentTextIndex + delta;
       this.currentTextIndex = Math.min(
         Math.max(newCaretIndex, 0),
-        this.currentText.lengt
+        this.currentText.length
       );
     },
     moveCaretToStart() {
