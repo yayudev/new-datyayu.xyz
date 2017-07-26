@@ -1,14 +1,13 @@
-
 <template>
   <span class="vue-typer">
     <span class="left">
-      <span v-for="l in numLeftChars" v-bind:key="l" class="char custom typed" v-html="currentTextArray[l-1]"></span>
+      <span v-for="l in numLeftChars" :key="l" class="char custom typed" v-html="currentTextArray[l-1]"></span>
     </span>
 
     <caret :class="caretClasses" :animation="caretAnimation"></caret>
 
     <span class="right">
-      <span v-for="r in numRightChars" v-bind:key="r" class="char custom" :class="rightCharClasses" v-html="currentTextArray[numLeftChars + r-1]"></span>
+      <span v-for="r in numRightChars" :key="r" class="char custom" :class="rightCharClasses" v-html="currentTextArray[numLeftChars + r-1]"></span>
     </span>
   </span>
 </template>
@@ -181,14 +180,14 @@ export default {
       };
     },
     isSelectionBasedEraseStyle() {
-      return !!this.eraseStyle.match(
-        `^${ERASE_STYLE.SELECT_BACK}|${ERASE_STYLE.SELECT_ALL}$`
-      );
+      const selectBack = ERASE_STYLE.SELECT_BACK;
+      const selectAll = ERASE_STYLE.SELECT_ALL;
+      return !!this.eraseStyle.match(`^${selectBack}|${selectAll}$`);
     },
     isEraseAllStyle() {
-      return !!this.eraseStyle.match(
-        `^${ERASE_STYLE.CLEAR}|${ERASE_STYLE.SELECT_ALL}$`
-      );
+      const clear = ERASE_STYLE.CLEAR;
+      const selectAll = ERASE_STYLE.SELECT_ALL;
+      return !!this.eraseStyle.match(`^${clear}|${selectAll}$`);
     },
     isDoneTyping() {
       return this.currentTextIndex >= this.currentText.length;
@@ -283,7 +282,7 @@ export default {
       const newCaretIndex = this.currentTextIndex + delta;
       this.currentTextIndex = Math.min(
         Math.max(newCaretIndex, 0),
-        this.currentText.lengt
+        this.currentText.length
       );
     },
     moveCaretToStart() {
@@ -419,21 +418,6 @@ span.vue-typer span.left,
 span.vue-typer span.right {
   display: inline;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

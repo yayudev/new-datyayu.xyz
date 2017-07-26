@@ -23,6 +23,19 @@ Currently scores 100/100 on google's lighthouse test for Progressive Web Apps.
 This is also an example of how JAMStack sites can work using only a CDN for static files, resulting in a fully functional app with great experience, without the need to mount you own server.`
         },
         {
+          name: "tachiagare!",
+          date: "2017 - Ongoing",
+          imagePrefix: "tachiagare",
+          url: "http://tachiagare.herokuapp.com/",
+          github: "https://github.com/datyayu/tachiagre",
+          isIframe: true,
+          description: `
+A karaoke app for idol music. It's intended to be used as a practice tool for japanese idol events and features custom calls and embedded guide video on each song.
+
+It uses only plain javascript to keep track of the player as well as to keep the lyrics in-sync and scroll as needed. If you want a full overview of the front-end code, I also made a screencast here:
+https://www.youtube.com/watch?v=iQ5GuiF9Dko (sorry about the static noise :P).`
+        },
+        {
           name: "risu-moe",
           date: "2017 - Ongoing",
           imagePrefix: "risu-moe",
@@ -195,6 +208,19 @@ Este sitio :D. Creado originalmente usando pug y Sass, pero posteriormente rempl
 Actualmente obtiene 100/100 puntos en el test lighthouse de google para Progressive Web Apps.
 
 Este también es un ejemplo de como un sitio creado con el JAMStack pude funcionar usando solamente un CDN para montar la aplicación, resultando en una experiencia completamenta y de alta calidad, sin necesidad de tener un servidor corriendo.`
+        },
+        {
+          name: "tachiagare!",
+          date: "2017 - Ongoing",
+          imagePrefix: "tachiagare",
+          url: "http://tachiagare.herokuapp.com/",
+          github: "https://github.com/datyayu/tachiagre",
+          isIframe: true,
+          description: `
+Un app de karaoke para musica idol. Esta diseñada como una herramienta de practica para eventos de jp idols e incluye calls y video de guía en cada canción.
+
+Usa unicament javascript plano (sin frameworks / librerias) para analizar el reproductor de audio, así como para mantener las letras en sincronía y hacer scroll cuando es requerido. Si quieres ver una vista general del codigo de frontend, también tengo un screencast donde lo explico en ingles:
+https://www.youtube.com/watch?v=iQ5GuiF9Dko (Perdón por la estática :P).`
         },
         {
           name: "risu-moe",

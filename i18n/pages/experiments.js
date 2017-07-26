@@ -6,6 +6,16 @@ export default {
         "A colllection of small learning experiments using the latest technologies availables for the web.",
       experiments: [
         {
+          img: "tachiagare-demo",
+          title: "Karaoke with html5 audio",
+          url: "https://datyayu.github.io/tachiagare-demo/"
+        },
+        {
+          img: "angular1-test",
+          title: "Component validation (angularjs)",
+          url: "https://datyayu.github.io/angular-test/index.html"
+        },
+        {
           img: "signup-demo",
           title: "react + redux signup",
           url: "https://datyayu.github.io/signup-demo/"
@@ -85,6 +95,16 @@ export default {
       subtitle:
         "Una colección de pequeños experimentos usando las tecnologias más recientes de la web.",
       experiments: [
+        {
+          img: "tachiagare-demo",
+          title: "Karaoke con html5 audio",
+          url: "https://datyayu.github.io/tachiagare-demo/"
+        },
+        {
+          img: "angular1-test",
+          title: "Validación en componentes (angularjs)",
+          url: "https://datyayu.github.io/angular-test/index.html"
+        },
         {
           img: "signup-demo",
           title: "registro con react + redux",
