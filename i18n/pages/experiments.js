@@ -6,12 +6,17 @@ export default {
         "A colllection of small learning experiments using the latest technologies availables for the web.",
       experiments: [
         {
-          img: "tachiagare-demo",
+          img: "feed-demo",
+          title: "SPA twitter reports (react + redux)",
+          url: "http://police-kangaroo-43356.netlify.com/"
+        },
+        {
+          img: "karaoke",
           title: "Karaoke with html5 audio",
           url: "https://datyayu.github.io/tachiagare-demo/"
         },
         {
-          img: "angular1-test",
+          img: "component-validation",
           title: "Component validation (angularjs)",
           url: "https://datyayu.github.io/angular-test/index.html"
         },
@@ -96,12 +101,17 @@ export default {
         "Una colección de pequeños experimentos usando las tecnologias más recientes de la web.",
       experiments: [
         {
-          img: "tachiagare-demo",
+          img: "feed-demo",
+          title: "SPA twitter reporter (react + redux)",
+          url: "http://police-kangaroo-43356.netlify.com/"
+        },
+        {
+          img: "karaoke",
           title: "Karaoke con html5 audio",
           url: "https://datyayu.github.io/tachiagare-demo/"
         },
         {
-          img: "angular1-test",
+          img: "component-validation",
           title: "Validación en componentes (angularjs)",
           url: "https://datyayu.github.io/angular-test/index.html"
         },
