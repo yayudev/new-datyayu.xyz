@@ -1,10 +1,10 @@
 <template>
   <div class="blog-navigation">
     <nuxt-link v-if="hasPrevPage" class="blog-navigation-link" :to="prevPage">
-      &gt; {{ $t('blog.prev') }}
+      &lt; {{ $t('blog.prev') }}
     </nuxt-link>
     <nuxt-link v-if="hasNextPage" class="blog-navigation-link" :to="nextPage">
-      {{ $t('blog.next') }} &lt;
+      {{ $t('blog.next') }} &gt;
     </nuxt-link>
   </div>
 </template>
