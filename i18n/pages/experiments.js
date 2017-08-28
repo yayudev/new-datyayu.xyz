@@ -11,14 +11,9 @@ export default {
           url: "http://police-kangaroo-43356.netlify.com/"
         },
         {
-          img: "karaoke",
-          title: "Karaoke with html5 audio",
-          url: "https://datyayu.github.io/tachiagare-demo/"
-        },
-        {
-          img: "component-validation",
-          title: "Component validation (angularjs)",
-          url: "https://datyayu.github.io/angular-test/index.html"
+          img: "music-visualizer",
+          title: "Music visualizer",
+          url: "https://datyayu.github.io/music-visualizer/index.html"
         },
         {
           img: "signup-demo",
@@ -26,9 +21,24 @@ export default {
           url: "https://datyayu.github.io/signup-demo/"
         },
         {
+          img: "karaoke",
+          title: "Karaoke with html5 audio",
+          url: "https://datyayu.github.io/tachiagare-demo/"
+        },
+        {
+          img: "io-img-lazy-loading",
+          title: "Lazy loading images",
+          url: "https://codepen.io/datyayu/full/PKyYxK/"
+        },
+        {
           img: "svg-check-animation",
           title: "SVG Check animation",
           url: "https://codepen.io/datyayu/full/dRbmEQ/"
+        },
+        {
+          img: "component-validation",
+          title: "Angularjs validation directive",
+          url: "https://datyayu.github.io/angular-test/index.html"
         },
         {
           img: "svg-loading-circles",
@@ -46,11 +56,6 @@ export default {
           url: "https://codepen.io/datyayu/full/yXeYbq/"
         },
         {
-          img: "music-visualizer",
-          title: "Music visualizer",
-          url: "https://datyayu.github.io/music-visualizer/index.html"
-        },
-        {
           img: "hifumi-side-nav",
           title: "Sidenav with dinamic bluring",
           url: "https://codepen.io/datyayu/full/RpPbpV/"
@@ -66,9 +71,14 @@ export default {
           url: "https://codepen.io/datyayu/full/zNQJqq/"
         },
         {
-          img: "redux",
-          title: "Redux from scratch",
-          url: "https://codepen.io/datyayu/full/JYmRrq/"
+          img: "io-animation",
+          title: "scroll-trigger using IO",
+          url: "https://codepen.io/datyayu/full/xLyKmx/"
+        },
+        {
+          img: "io-infinite-scroll",
+          title: "Infinite scroll using IO",
+          url: "https://codepen.io/datyayu/full/zdmOaQ/"
         },
         {
           img: "smooth-scroll",
@@ -79,6 +89,11 @@ export default {
           img: "css-variables",
           title: "CSS variables-based theme",
           url: "https://codepen.io/datyayu/full/mVgWxb/"
+        },
+        {
+          img: "redux",
+          title: "Redux from scratch",
+          url: "https://codepen.io/datyayu/full/JYmRrq/"
         },
         {
           img: "theme-colors-2",
@@ -106,14 +121,9 @@ export default {
           url: "http://police-kangaroo-43356.netlify.com/"
         },
         {
-          img: "karaoke",
-          title: "Karaoke con html5 audio",
-          url: "https://datyayu.github.io/tachiagare-demo/"
-        },
-        {
-          img: "component-validation",
-          title: "Validación en componentes (angularjs)",
-          url: "https://datyayu.github.io/angular-test/index.html"
+          img: "music-visualizer",
+          title: "Visualizador de musica",
+          url: "https://datyayu.github.io/music-visualizer/index.html"
         },
         {
           img: "signup-demo",
@@ -121,9 +131,24 @@ export default {
           url: "https://datyayu.github.io/signup-demo/"
         },
         {
+          img: "karaoke",
+          title: "Karaoke con html5 audio",
+          url: "https://datyayu.github.io/tachiagare-demo/"
+        },
+        {
+          img: "io-img-lazy-loading",
+          title: "Lazy-loading de imagenes",
+          url: "https://codepen.io/datyayu/full/PKyYxK/"
+        },
+        {
           img: "svg-check-animation",
           title: "Animación de visto con SVG",
           url: "https://codepen.io/datyayu/full/dRbmEQ/"
+        },
+        {
+          img: "component-validation",
+          title: "Angularjs directiva de validación",
+          url: "https://datyayu.github.io/angular-test/index.html"
         },
         {
           img: "svg-loading-circles",
@@ -141,9 +166,9 @@ export default {
           url: "https://codepen.io/datyayu/full/yXeYbq/"
         },
         {
-          img: "music-visualizer",
-          title: "Visualizador de musica",
-          url: "https://datyayu.github.io/music-visualizer/index.html"
+          img: "hifumi-side-nav",
+          title: "Sidenav con difuminado dinámico",
+          url: "https://codepen.io/datyayu/full/RpPbpV/"
         },
         {
           img: "unbluring-circle",
@@ -151,19 +176,19 @@ export default {
           url: "https://codepen.io/datyayu/full/mWJbWw/"
         },
         {
-          img: "hifumi-side-nav",
-          title: "Sidenav con difuminado dinámico",
-          url: "https://codepen.io/datyayu/full/RpPbpV/"
-        },
-        {
           img: "loading",
           title: "Pantalla de carga con CSS",
           url: "https://codepen.io/datyayu/full/zNQJqq/"
         },
         {
-          img: "redux",
-          title: "Redux desde 0",
-          url: "https://codepen.io/datyayu/full/JYmRrq/"
+          img: "io-animation",
+          title: "scroll-trigger usando IO",
+          url: "https://codepen.io/datyayu/full/xLyKmx/"
+        },
+        {
+          img: "io-infinite-scroll",
+          title: "Infinite scroll usando IO",
+          url: "https://codepen.io/datyayu/full/zdmOaQ/"
         },
         {
           img: "smooth-scroll",
@@ -174,6 +199,11 @@ export default {
           img: "css-variables",
           title: "Temas usando variables de CSS",
           url: "https://codepen.io/datyayu/full/mVgWxb/"
+        },
+        {
+          img: "redux",
+          title: "Redux desde 0",
+          url: "https://codepen.io/datyayu/full/JYmRrq/"
         },
         {
           img: "theme-colors-2",

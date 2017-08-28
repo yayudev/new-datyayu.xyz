@@ -16,11 +16,11 @@ export default {
           description: `
 This site :D.
 
-Created originally using pug and Sass but later on they were replaced by simple Vue.js components and plain css. It features route transitions, vuex with state management, i18n support for multilanguage (spanish and english), code-splitting, rendering optimization, server-side rendering and the use of service worker for offline support.
+Created originally using pug and Sass but later on they were replaced by simple Vue.js components and plain css. It features route transitions, vuex for state management, i18n support for multilanguage (spanish and english), code-splitting, rendering optimization, server-side rendering and the use of service worker for offline support.
 
 Currently scores 100/100 on google's lighthouse test for Progressive Web Apps.
 
-This is also an example of how JAMStack sites can work using only a CDN for static files, resulting in a fully functional app with great experience, without the need to mount you own server.`
+This is also an example of how JAMStack sites can work using only a CDN for static files, resulting in a fully functional app with great experience, without the need to roll you own server (thanks netlify! :D).`
         },
         {
           name: "tachiagare!",
@@ -49,6 +49,18 @@ It's currently on the first alpha release so expect a lot of new features coming
 `
         },
         {
+          name: "Weetrack 2.0",
+          date: "2016 - Ongoing",
+          imagePrefix: "weetrack2",
+          url: "http://track.datyayu.xyz/",
+          github: "https://github.com/datyayu/weetrack",
+          isIframe: false,
+          description: `
+An automated anime release tracker built using react, redux, SASS and Gulp for the frontend. Both the frontend and the backend are written using ES6.
+
+Part of the logic for listening the rss feeds, which the application uses as data source, was extracted onto a separate module (feed-watcher) and published on Github and npm to help other people to deal with that problem.`
+        },
+        {
           name: "raji",
           date: "2016",
           imagePrefix: "raji",
@@ -61,20 +73,6 @@ Music player app for anisongs. Built using react, redux, RWD, Sass and webpack. 
 This project also ended up generating a separate project, a module that makes easier to work with the Web Audio API called ongaku which is available on github and npm.
 
 Currently paused, but I'll probably going to retake this project on the future.`
-        },
-        {
-          name: "Weetrack 2.0",
-          date: "2016 - Ongoing",
-          imagePrefix: "weetrack2",
-          url: "http://track.datyayu.xyz/",
-          github: "https://github.com/datyayu/weetrack",
-          isIframe: false,
-          description: `
-An automated anime release tracker built using react, redux, SASS and Gulp for the frontend. Both the frontend and the backend are written using ES6.
-
-Part of the logic for listening the rss feeds, which the application uses as data source, was extracted onto a separate module (feed-watcher) and published on Github and npm to help other people to deal with that problem.
-
-Currently has some issues due to the feed source (nyaa.eu) being taken down by its owner. Will fix as soon as the summer 2017 anime season begins.`
         },
         {
           name: "fbot-mk2",
@@ -211,7 +209,7 @@ Este también es un ejemplo de como un sitio creado con el JAMStack pude funcion
         },
         {
           name: "tachiagare!",
-          date: "2017 - Ongoing",
+          date: "2017 - Actual",
           imagePrefix: "tachiagare",
           url: "http://tachiagare.herokuapp.com/",
           github: "https://github.com/datyayu/tachiagre",
@@ -235,6 +233,18 @@ Un reproductor sincronizado/compartido. Basicamente arrastras un archivo de audi
 Actualmente se encuentra en la primera alpha, así que espera muchas funcionalidades nuevas muy pronto.`
         },
         {
+          name: "Weetrack 2.0",
+          date: "2016 - Actual",
+          imagePrefix: "weetrack2",
+          url: "http://track.datyayu.xyz/",
+          github: "https://github.com/datyayu/weetrack",
+          isIframe: false,
+          description: `
+Un rastreador automático de lanzamientos de episodios de anime creado react, redux, SASS y Gulp para el frontend. Tanto el frontend como el backend están escritos usando ES6.
+
+Parte de la lógica para escuchar a los feeds de RSS, los cuáles usa la aplicación como fuente de datos, fue extraída en un módulo separado publicado libremente en github y npm (feed-watcher) para ayudar a otros a resolver ese problema.`
+        },
+        {
           name: "raji",
           date: "2016",
           imagePrefix: "raji",
@@ -247,20 +257,6 @@ Aplicación de musica para anisongs. Creado usando react, redux, RWD, Sass y web
 Esta aplicación también terminó generando un proyecto separado, un módulo para usar el Web Audio API de manera sencilla llamado ongaku, el cual está disponible en github y npm.
 
 Actualmente en pausa, pero definitivamente planeo retomarlo en un futuro.`
-        },
-        {
-          name: "Weetrack 2.0",
-          date: "2016 - Actual",
-          imagePrefix: "weetrack2",
-          url: "http://track.datyayu.xyz/",
-          github: "https://github.com/datyayu/weetrack",
-          isIframe: false,
-          description: `
-Un rastreador automático de lanzamientos de episodios de anime creado react, redux, SASS y Gulp para el frontend. Tanto el frontend como el backend están escritos usando ES6.
-
-Parte de la lógica para escuchar a los feeds de RSS, los cuáles usa la aplicación como fuente de datos, fue extraída en un módulo separado publicado libremente en github y npm (feed-watcher) para ayudar a otros a resolver ese problema.
-
-Actualmente tiene algunos problemas debido a que la fuente de rss (nyaa.eu) ha sido borrada por su propietario. Aún así, será actualizado para funcionar correctamente apenas comience la temporada de verano 2017.`
         },
         {
           name: "fbot-mk2",
