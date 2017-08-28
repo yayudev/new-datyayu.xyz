@@ -8,7 +8,7 @@ export default {
 
       intro: `
         Hi! I'm Arturo Coronel (you can call me Yayu).
-        I'm 21 years old, I live at Tijuana, MX and
+        I'm 22 years old, I live at Tijuana, MX and
         I ❤ web development.
       `,
 
@@ -32,9 +32,9 @@ export default {
       `,
 
       hobbies: `
-        My hobbies are watching anime, listening to podcasts,
-        learn about my favorite voice actresses, write about frontend
-        and help other people to improve their skills.
+        My hobbies are watching anime, play music games, listening to podcasts,
+        learn about my favorite voice actresses, watch idol lives events,
+        write about frontend and help other people to improve their skills.
       `,
 
       contactTitle: "Contact",
@@ -42,7 +42,7 @@ export default {
       contactText: `
         Want to know more about me or contract my services?
         Do you have any idea or suggestion to improve this site?
-        Want to talk about web develoment or chinese cartoons?
+        Want to talk about web develoment or idols?
         Contact me!
       `
     }
@@ -56,7 +56,7 @@ export default {
       introTitle: "Acerca de mí",
 
       intro: `
-        Hola. Soy Arturo Coronel (puedes llamarme Yayu), tengo 21 años,
+        Hola. Soy Arturo Coronel (puedes llamarme Yayu), tengo 22 años,
         vivo en Tijuana, MX y amo el desarrollo web ❤.
       `,
 
@@ -81,9 +81,9 @@ export default {
       `,
 
       hobbies: `
-        Mis hobbies son ver anime, escuchar podcasts, aprender acerca de
-        mis actrices de voz favoritas, escribir acerca de frontend y ayudar
-        a los demás a mejorar sus habilidades.
+        Mis hobbies son ver anime, juegos de musica, escuchar podcasts,
+        aprender acerca de mis actrices de voz favoritas, ver eventos de idols,
+        escribir acerca de frontend y ayudar a los demás a mejorar sus habilidades.
       `,
 
       contactTitle: "Contacto",
@@ -91,7 +91,7 @@ export default {
       contactText: `
         ¿Quieres saber más de mí o contratar mis servicios?
         ¿Tienes alguna idea o sugerencia para mejorar este blog?
-        ¿Deseas platicar de tecnologías web o monas chinas?
+        ¿Deseas platicar de tecnologías web o idols?
         ¡Contáctame!
       `
     }

@@ -5,164 +5,161 @@
 [//]: # (url     - extender-create-react-app                          )
 [//]: # (excerpt - Extiende CRA y agrega funcionalidades extra sin necesidad de hacer eject y perder la conveniencia que te ofrece. )
 
-En la web moderna hay varios tipos de interacciones, como el infinite scroll, lazy loading o la carga de anuncios; que requieren saber si el usuario llegó a cierta parte de la página. Para detectar esto actualmente la solución más común es una combinación de escuchar por eventos de scroll y resize y usar APIs como `getBoundingClientRect()` para conocer la posición exacta de un elemento con respecto al viewport o la pantalla del usuario. El problema es que esto no sólo es ineficiente sino que no es exacto, pues cosas como las imagenes, que al cargar pueden pasar de tener 0 height a cubrir toda la pantalla y desplazar el resto del contenido, hacen muy impreciso saber la posición de un elemento sin tener que calcularla constantemente.
-
-Pues ahora existe una manera más sencilla de hacerlo de forma precisa y al más tiempo con un rendimiento nativo: `IntersectionObserver`.
+Hace tiempo escribí [un post acerca de create-react-app (CRA)](https://datyayu.xyz/blog/posts/create-react-app) donde puedes revisar a detalle qué es y cómo usarlo para crear aplicaciones sin preocuparte por configurar las herramientas de desarrollo. Aún cuando considero que es una herramienta genial y mi primera opción a la hora de trabajar con react, una de las limitantes que he encontrado usandolo para crear aplicaciones es que si tu caso de uso está fuera de lo que CRA te ofrece por defecto toca usar `eject`, lo cual termina quitandole esa simplicidad que es el lado fuerte de la herramienta. Sin embargo, en este post te mostraré cómo puedes extender la funcionalidad de CRA manteniendo tu proyecto simple y sin tanta configuración.
 
 
-## Intersection Observer
+## `eject`
 
-Intersection Observer (IO) es una API de los navegadores modernos que nos ofrece una manera bastante sencilla de detectar cuando un elemento se encuentra o no visible para el usuario y reaccionar ante ello.
+`eject` o `npm run eject` es la manera que CRA nos ofrece por defecto para poder personalizar nuestro proceso de build y tener acceso directo a la configuración de webpack.
 
-Básicamente, mientras hacemos scroll por la pagina, IntersectionObserver nos avisa cuando cierto porcentaje de un objeto o elemento se encuentra visible para el usuario y en base a ello podemos realizar alguna tarea en especifico.
 
-## Uso
+Una vez, que haces eject, puedes modificar los archivos de webpack y agregar plugins y loaders a tu gusto. La desventaja de esto es que terminas con un monton de archivos y dependencias que puede que no tengas ni idea de por que están en tu proyecto.
 
-Para ver su uso, reproduciremos un caso donde tenemos varios divs y queremos resaltar solo los elementos en base a que tanto porcentaje de ellos es visible para el usuario (color verde si están 100% visibles, amarillo si están >50% visibles o rojo de lo contrario).
+<img src="https://s3-us-west-1.amazonaws.com/datyayu-xyz/blog/images/035-1-archivos-despues-de-eject.jpg" alt="Archivos despues de eject" height="400px" width="220px" style="width:220px;height:400px;" />
 
-Pues empezemos:
+Puedes ignorar estos problemas al inicio pero a medida que el tiempo pasa, mantener todas esas dependencias y scripts actualizados y funcionando se vuelve cada vez peor. Además de que al usar `eject` nos perdemos de las nuevas funcionalidades que CRA vaya agregando conforme salgan nuevas versiones.
 
-```html
-<!-- Index.html -->
-<!--...-->
-  <style>
-    div {
-      align-items: center;
-      background: blue;
-      color: white;
-      display: flex;
-      font-size: 3em;
-      height: 150px;
-      justify-content: center;
-      margin: .5em 0;
-      text-align: center;
-      width: 100%;
-    }
-  </style>
-<!--...-->
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-  <div>5</div>
-  <div>6</div>
-<!--...-->
-````
+<img src="https://s3-us-west-1.amazonaws.com/datyayu-xyz/blog/images/035-2-dependencias-despues-de-eject.jpg" alt="Dependencias despues de eject" />
 
-Para crear un IntersectionObserver que se encargue de observar a los elementos, primero definimos su configuración.
+Por eso quiero presentarte una alternativa para poder extender nuestro proyecto sin caer en estos problemas: [react-app-rewired](https://github.com/timarney/react-app-rewired).
 
-``` js
-const ioConfig = {
-  threshold: [0, .5, 1]
+
+# react-rewire-app
+
+[react-app-rewired](https://github.com/timarney/react-app-rewired) es una extensión encima de CRA (o más bien, encima de `react-scripts`, el nucleo de la herramienta) y que nos permite tener acceso a la configuración de webpack y hacer cambios sin la necesidad de usar `eject`. De esta manera sigues teniendo todos los beneficios de CRA pero sin las limitantes de "cero configuración".
+
+La manera en que esto funciona es mediante un archivo `config-overrides.js` en la raíz del proyecto. Dentro de este, se exporta una función la cual recibe como parametros la configuración de webpack por defecto y el tipo de ambiente (desarrollo/producción), y regresa la configuración una vez que la hayas modificado.
+
+```js
+/* config-overrides.js */
+module.exports = function override(config, env) {
+  // Modifica la config de webpack.
+  return config;
+}
+```
+
+Con sólo este archivo, puedes realizar los cambios que quieras y seguir teniendo todos los beneficios de usar CRA. Pero para entenderlo mejor, aquí hay dos ejemplos de cómo puedes usarlo.
+
+
+## Agregar plugins a babel.
+
+Uno de los mayores casos de uso de react-app-rewired es para extender babel. CRA ya viene con muchos plugins populares para poder usar funcionalidades de ES6+ pero obviamente hay muchisimos más plugins experimentales que nos pueden resultar utiles y no vienen incluidos por defecto. Con react-app-rewired podemos incluirlos de manera bastante sencilla:
+
+Primero instalamos `react-app-rewired` y el plugin que querramos. (En este caso, queremos agregarle decoradores usando el plugin [transform-decorators-legacy](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy)).
+
+```sh
+$ yarn add --dev react-app-rewired babel-plugin-transform-decorators-legacy
+```
+
+O si prefieres npm:
+
+```sh
+$ npm install --save-dev react-app-rewired babel-plugin-transform-decorators-legacy
+```
+
+
+Despues, creamos un archivo `config-overrides.js` en la raíz del proyecto.
+
+```js
+// config-overrides.js
+const babelLoader = function(rule) {
+  return rule.loader && rule.loader.endsWith("/babel-loader/lib/index.js");
+};
+
+module.exports = function override(config, env) {
+  const babelrc = config.module.rules.find(babelLoader).options;
+
+  babelrc.plugins = ["transform-decorators-legacy"].concat(babelrc.plugins || []);
+
+  return config;
+};
+```
+En este caso, primero buscamos el plugin de babel dentro de las reglas (`rules`) de la configuración. Recuerda que `module.rules` es la lista de loaders que webpack 2 usa para transformar tu código.
+
+Una vez que lo encontramos, accedemos a sus opciones (`options`), que es basicamente un `babelrc` o un objecto de configuración de babel. Dentro de ese `babelrc`, a la lista de plugins le agregando al inicio `"transform-decorators-legacy"`.
+
+Una vez modificada la configuración de webpack, simplemente la retornamos para que `react-app-rewired` la pueda utilizar.
+
+Por último, sólo falta remplazar los scripts en `package.json` para usar `react-app-rewired` en lugar de `react-scripts`.
+
+```json
+...
+"scripts": {
+  "start": "react-app-rewired start",
+  "build": "react-app-rewired build",
+  "test": "react-app-rewired test --env=jsdom"
+}
+...
+```
+
+Y listo, ahora al usar `yarn start` o `npm run start` tendrás los mismos beneficios de antes pero con soporte también para los plugins que agregaste.
+
+
+## Agregar soporte para Sass
+
+Para poder usar Sass con create-react-app, el proceso es basicamente el mismo que con babel.
+
+Primero ocupamos las dependencias. Para transformar sass ocupamos:
+
+1. **node-sass** para poder correr las transformaciones.
+2. **sass-loader** para realizar la transformación los archivos de sass.
+3. **css-loader** para cargar el resultado de `sass-loader`.
+4. **style-loader** para cargar el css como estilos.
+5. **react-app-rewired** para evitar tener que usar `eject`.
+
+Las podemos instalar todas usando:
+
+```sh
+$ yarn add --dev react-app-rewired node-sass sass-loader css-loader style-loader
+```
+O con npm:
+
+```sh
+$ npm install --save-dev react-app-rewired node-sass sass-loader css-loader style-loader
+```
+
+Una vez instalados, agregamos el `config-overrides.js`.
+
+```js
+const findFileLoader = function(rule) {
+  return rule.loader && rule.loader.endsWith("/file-loader/index.js");
+};
+
+module.exports = function override(config, env) {
+  // Exclude sass files from the file-loader
+  const fileLoader = config.module.rules.find(findFileLoader);
+  fileLoader.exclude.push(/\.scss$/);
+
+  config.module.rules.push({
+    test: /\.scss$/,
+    loader: ["style-loader", "css-loader", "sass-loader"]
+  });
+
+  return config;
 };
 ```
 
-Queremos saber cuando el elemento este completamente (100%) dentro de la pantalla, cuando este parcialmente pero mayor al 50% y cuando no lo este asi que en la config le pasamos los valores correspondientes a esos porcentajes donde queremos que nos notifique: `[0, .5, 1]`.
+Primero buscamos el `file-loader` en la lista de reglas y excluimos los archivos `.scss`. Esto es para evitar que `file-loader` intente procesar ese tipo de archivos, pues queremos que sea `sass-loader` quien lo haga.
 
-Ya que tenemos la configuración toca definir la función que se ejecutará cuando los valores de intersección que especificamos se cumplan.
+Despues agregamos otra regla a `module.rules` diciendole a webpack que los archivos `.scss` los pase por los loaders que instalamos antes.
 
-Debido a que un mismo IO se puede usar para observar multiples elementos, la función de callback que ejecuta IO te da como parámetro un array de eventos, uno por cada elemento que esté observando.
+Por último, regresamos la configuración ya modificada.
 
-```js
-function ioHandler(elementos) {
-  for (let elemento of elementos) {
-    //...
-  }
+Ahora sólo queda remplazar los scripts en el `package.json`.
+
+```json
+...
+"scripts": {
+  "start": "react-app-rewired start",
+  "build": "react-app-rewired build",
+  "test": "react-app-rewired test --env=jsdom"
 }
+...
 ```
 
-Entonces, lo primero que hacemos es iterar por cada elemento en el array que recibimos usando un ciclo `for...of`, así podremos evaluar cada elemento que esté registrado.
 
-```js
-function ioHandler(elementos) {
-  for (let elemento of elementos) {
-
-    if (elemento.intersectionRatio === 1) {
-      elemento.target.style.background = "green"
-    } else if (elemento.intersectionRatio > .5) {
-      elemento.target.style.background = "yellow"
-    } else {
-      elemento.target.style.background = "red"
-    }
-
-  }
-}
-```
-
-Lo siguiente es bastante sencillo, simplemente checamos si el elemento esta 100% dentro del viewport (`elemento.intersectionRatio === 1`) y si es asi lo ponemos verde. Si no esta completamente dentro, revisamos si tiene un porcentaje de interseccion mayor al 50% (`elemento.intersectionRatio > 0.5`) y si lo es entonces le ponemos el fondo amarillo, de lo contrario lo ponemos rojo. De esta manera podremos notar de forma muy visual el funcionamiento de IO.
-
-Ya que tenemos definida la configuración y el handler para el IO, entonces lo que sigue es instanciarlo.
-
-```js
-const io = new IntersectionObserver(ioHandler, ioConfig);
-```
-
-Y por ultimo, solo hay que registrar los elementos a observar usando `io.observe()`.
-
-```js
-const blocks = document.getElementsByTagName("div");
-
-for (let block of blocks) {
-  io.observe(block)
-}
-
-/* Nota:
-En navegadores viejos que no soporten NodeList como iterable puedes usar
-lo siguiente en vez de un ciclo for..of.
-
-[].forEach.call(blocks, block => {
-  io.observe(block)
-})
-
-*/
-```
-
-En nuestro caso queremos observar todos los divs en nuestra pagina así que registramos uno por uno después de obtenerlos con `document.getElementsByTagName`.
-
-Y listo, si corres el ejemplo puedes ver como a medida que haces scroll los bloques cambian de color en base a que tanto porcentaje de ellos este dentro de la pantalla.
-
-<p data-height="265" data-theme-id="0" data-slug-hash="brxPZy" data-default-tab="js,result" data-user="datyayu" data-embed-version="2" data-pen-title="brxPZy" class="codepen">See the Pen <a href="https://codepen.io/datyayu/pen/brxPZy/">brxPZy</a> by Arturo Coronel (<a href="https://codepen.io/datyayu">@datyayu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-
-## Usos
-
-Obviamente, este tipo de APIs puede tener un infinito numero de usos pero aquí te dejo un cuantos usos populares para que te des una idea de como puedes usarla en tus projectos:
-
-
-### Lazy-loading de imágenes
-
-Carga images cuando las ocupes mostrar.
-
-<p data-height="265" data-theme-id="dark" data-slug-hash="PKyYxK" data-default-tab="result" data-user="datyayu" data-embed-version="2" data-pen-title="IntersectionObserver - Lazy loading images" class="codepen">See the Pen <a href="https://codepen.io/datyayu/pen/PKyYxK/">IntersectionObserver - Lazy loading images</a> by Arturo Coronel (<a href="https://codepen.io/datyayu">@datyayu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-
-### Infinite scroll
-
-Carga más contenido mientras el usuario siga scrolleando.
-
-<p data-height="265" data-theme-id="dark" data-slug-hash="zdmOaQ" data-default-tab="result" data-user="datyayu" data-embed-version="2" data-pen-title="IntersectionObserver - Lazy loading images" class="codepen">See the Pen <a href="https://codepen.io/datyayu/pen/zdmOaQ/">IntersectionObserver - Infinite scroll</a> by Arturo Coronel (<a href="https://codepen.io/datyayu">@datyayu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-
-### Animaciones
-
-Dispara animaciones conforme el usuario hace scroll en tu página.
-
-<p data-height="400" data-theme-id="dark" data-slug-hash="xLyKmx" data-default-tab="css,result" data-user="datyayu" data-embed-version="2" data-pen-title="IntersectionObserver - animations" class="codepen">See the Pen <a href="https://codepen.io/datyayu/pen/xLyKmx/">IntersectionObserver - animations</a> by Arturo Coronel (<a href="https://codepen.io/datyayu">@datyayu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-## Soporte para navegadores
-
-Por último queda hablar de la parte díficil y es el soporte de navegadores.
-
-Al momento de escribir este post (27.08.2017), IntersectionObserver es soportado de manera nativa en Edge 15+, Firefox 55+, Chrome 58+ y Opera 46+.
-
-Para el resto de los navegadores, puedes usarlo incluyendo un polyfill disponible en [https://github.com/w3c/IntersectionObserver/tree/gh-pages/polyfill](https://github.com/w3c/IntersectionObserver/tree/gh-pages/polyfill) o via [polyfill.io](https://polyfill.io) incluyendo en tu página:
-
-```html
-<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
-```
+Y con esto ya podremos usar sass sin problemas.
 
 ---
 
-Como siempre, [los ejemplos de este post están disponible en github](https://github.com/datyayu-xyz/intersection-observer) para cualquier duda que tengas o mejora que quieras agregar, ¡así que no dudes en hacerlo!
-
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+Como siempre, [los ejemplos de este post están disponible en github](https://github.com/datyayu-xyz/extender-create-react-app) para cualquier duda que tengas o mejora que quieras agregar, ¡así que no dudes en hacerlo!
