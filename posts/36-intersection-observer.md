@@ -1,9 +1,9 @@
-[//]: # (title   - Extender create-react-app con react-app-rewire     )
-[//]: # (tags    - javascript, tooling, react, node, npm, babel, sass )
-[//]: # (id      - 35                                                 )
-[//]: # (date    - 2017.06.16                                         )
-[//]: # (url     - extender-create-react-app                          )
-[//]: # (excerpt - Extiende CRA y agrega funcionalidades extra sin necesidad de hacer eject y perder la conveniencia que te ofrece. )
+[//]: # (title   - BrowserAPIs - IntersectionObserver         )
+[//]: # (tags    - javascript, es6, browser-apis )
+[//]: # (id      - 36                            )
+[//]: # (date    - 2017.08.27                    )
+[//]: # (url     - intersection-observer         )
+[//]: # (excerpt - Dejate de hacks y métodos extraños para detectar si tus usuarios hicieron scroll hasta cierto contenido de tu pagina. Ahora es fácil con IntersectionObserver. )
 
 En la web moderna hay varios tipos de interacciones, como el infinite scroll, lazy loading o la carga de anuncios; que requieren saber si el usuario llegó a cierta parte de la página. Para detectar esto actualmente la solución más común es una combinación de escuchar por eventos de scroll y resize y usar APIs como `getBoundingClientRect()` para conocer la posición exacta de un elemento con respecto al viewport o la pantalla del usuario. El problema es que esto no sólo es ineficiente sino que no es exacto, pues cosas como las imagenes, que al cargar pueden pasar de tener 0 height a cubrir toda la pantalla y desplazar el resto del contenido, hacen muy impreciso saber la posición de un elemento sin tener que calcularla constantemente.
 
@@ -47,17 +47,17 @@ Pues empezemos:
   <div>5</div>
   <div>6</div>
 <!--...-->
-````
+```
 
-Para crear un IntersectionObserver que se encargue de observar a los elementos, primero definimos su configuración.
+Para crear un `IntersectionObserver` que se encargue de observar a los elementos, primero definimos su configuración.
 
 ``` js
 const ioConfig = {
-  threshold: [0, .5, 1]
+  threshold: [0, .5, .999]
 };
 ```
 
-Queremos saber cuando el elemento este completamente (100%) dentro de la pantalla, cuando este parcialmente pero mayor al 50% y cuando no lo este asi que en la config le pasamos los valores correspondientes a esos porcentajes donde queremos que nos notifique: `[0, .5, 1]`.
+Queremos saber cuando el elemento esté completamente (100%) dentro de la pantalla, cuando este parcialmente pero mayor al 50% y cuando no lo esté; asi que en la config le pasamos los valores correspondientes a esos porcentajes donde queremos que nos notifique: `[0, .5, .999]`. La razón por la que usamos `.999` en lugar de `1` es porque en mi experiencia el `1` suele ser inexacto a la hora de disparar el evento (no siempre el ratio que regresa es 1, en algunos casos extraños está en el rango de .99 a 1).
 
 Ya que tenemos la configuración toca definir la función que se ejecutará cuando los valores de intersección que especificamos se cumplan.
 
@@ -77,7 +77,7 @@ Entonces, lo primero que hacemos es iterar por cada elemento en el array que rec
 function ioHandler(elementos) {
   for (let elemento of elementos) {
 
-    if (elemento.intersectionRatio === 1) {
+    if (elemento.intersectionRatio >= .99) {
       elemento.target.style.background = "green"
     } else if (elemento.intersectionRatio > .5) {
       elemento.target.style.background = "yellow"
@@ -89,7 +89,7 @@ function ioHandler(elementos) {
 }
 ```
 
-Lo siguiente es bastante sencillo, simplemente checamos si el elemento esta 100% dentro del viewport (`elemento.intersectionRatio === 1`) y si es asi lo ponemos verde. Si no esta completamente dentro, revisamos si tiene un porcentaje de interseccion mayor al 50% (`elemento.intersectionRatio > 0.5`) y si lo es entonces le ponemos el fondo amarillo, de lo contrario lo ponemos rojo. De esta manera podremos notar de forma muy visual el funcionamiento de IO.
+Lo siguiente es bastante sencillo, simplemente checamos si el elemento está 100% dentro del viewport (`elemento.intersectionRatio >= .99`) y si es así lo ponemos verde. Si no está completamente dentro, revisamos si tiene un porcentaje de interseccion mayor al 50% (`elemento.intersectionRatio > 0.5`) y si lo es entonces le ponemos el fondo amarillo, de lo contrario lo ponemos rojo. De esta manera podremos notar de forma muy visual el funcionamiento de IO.
 
 Ya que tenemos definida la configuración y el handler para el IO, entonces lo que sigue es instanciarlo.
 
@@ -107,8 +107,8 @@ for (let block of blocks) {
 }
 
 /* Nota:
-En navegadores viejos que no soporten NodeList como iterable puedes usar
-lo siguiente en vez de un ciclo for..of.
+En navegadores viejos que no soporten NodeList como iterable
+puedes usar lo siguiente en vez de un ciclo for..of.
 
 [].forEach.call(blocks, block => {
   io.observe(block)
@@ -126,7 +126,7 @@ Y listo, si corres el ejemplo puedes ver como a medida que haces scroll los bloq
 
 ## Usos
 
-Obviamente, este tipo de APIs puede tener un infinito numero de usos pero aquí te dejo un cuantos usos populares para que te des una idea de como puedes usarla en tus projectos:
+Obviamente, este tipo de APIs puede tener un infinito número de usos pero aquí te dejo un cuantos usos populares para que te des una idea de cómo puedes usarlo en tus projectos:
 
 
 ### Lazy-loading de imágenes
@@ -138,7 +138,7 @@ Carga images cuando las ocupes mostrar.
 
 ### Infinite scroll
 
-Carga más contenido mientras el usuario siga scrolleando.
+Carga más contenido mientras el usuario siga scrolleando. (Te recomiendo abrirlo en otra página para poder apreciar bien el efecto, puedes hacerlo <a href="https://codepen.io/datyayu/full/zdmOaQ/" target="_blank" rel="noopener"> haciendo click aqui</a>).
 
 <p data-height="265" data-theme-id="dark" data-slug-hash="zdmOaQ" data-default-tab="result" data-user="datyayu" data-embed-version="2" data-pen-title="IntersectionObserver - Lazy loading images" class="codepen">See the Pen <a href="https://codepen.io/datyayu/pen/zdmOaQ/">IntersectionObserver - Infinite scroll</a> by Arturo Coronel (<a href="https://codepen.io/datyayu">@datyayu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 
