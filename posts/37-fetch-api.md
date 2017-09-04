@@ -5,6 +5,7 @@
 [//]: # (url     - fetch-api                         )
 [//]: # (excerpt - Aprende la manera moderna de hacer ajax de forma nativa en el navegador con Fetch API. )
 
+
 Uno de los problemas al hacer AJAX por mucho tiempo fue que la unica manera de hacerlo de forma nativa era por medio de XMLHttpRequest que, si lo haz usado directamente, seguro sabras que no es tan fácil ni bonito. Pero estos inconvenientes ya no son necesarios pues hoy en día los navegadores nos ofrecen una opción mucho más sencilla para hacer AJAX de una forma moderna y sencilla: Fetch API.
 
 > Nota: Fetch API depende del uso de promesas, así que te recomiendo que, si nunca las haz usado, aprendas como usarlas primero para que no te confundas al usar fetch. Si ocupas ayuda, puedes revisar [este post que escribí acerca de Promesas](https://datyayu.xyz/blog/posts/es6-promesas) para aprender qué son y cómo usarlas.
