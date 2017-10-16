@@ -26,8 +26,7 @@ This is also an example of how JAMStack sites can work using only a CDN for stat
           name: "tachiagare!",
           date: "2017 - Ongoing",
           imagePrefix: "tachiagare",
-          url: "http://tachiagare.herokuapp.com/",
-          github: "https://github.com/datyayu/tachiagre",
+          url: "https://livecalls.yayu.pro",
           isIframe: true,
           description: `
 A karaoke app for idol music. It's intended to be used as a practice tool for japanese idol events and features custom calls and embedded guide video on each song.
@@ -37,9 +36,9 @@ https://www.youtube.com/watch?v=iQ5GuiF9Dko (sorry about the static noise :P).`
         },
         {
           name: "risu-moe",
-          date: "2017 - Ongoing",
+          date: "2017",
           imagePrefix: "risu-moe",
-          url: "https://datyayu.github.io/risu-moe/",
+          url: "https://risu.yayu.pro",
           github: "https://github.com/datyayu/risu-moe",
           isIframe: true,
           description: `
@@ -52,7 +51,7 @@ It's currently on the first alpha release so expect a lot of new features coming
           name: "Weetrack 2.0",
           date: "2016 - Ongoing",
           imagePrefix: "weetrack2",
-          url: "http://track.datyayu.xyz/",
+          url: "https://track.yayu.pro/",
           github: "https://github.com/datyayu/weetrack",
           isIframe: false,
           description: `
@@ -211,7 +210,7 @@ Este también es un ejemplo de como un sitio creado con el JAMStack pude funcion
           name: "tachiagare!",
           date: "2017 - Actual",
           imagePrefix: "tachiagare",
-          url: "http://tachiagare.herokuapp.com/",
+          url: "https://livecalls.yayu.pro",
           github: "https://github.com/datyayu/tachiagre",
           isIframe: true,
           description: `
@@ -222,9 +221,9 @@ https://www.youtube.com/watch?v=iQ5GuiF9Dko (Perdón por la estática :P).`
         },
         {
           name: "risu-moe",
-          date: "2017 - Actual",
+          date: "2017",
           imagePrefix: "risu-moe",
-          url: "https://datyayu.github.io/risu-moe/",
+          url: "https://risu.yayu.pro",
           github: "https://github.com/datyayu/risu-moe",
           isIframe: true,
           description: `
@@ -236,7 +235,7 @@ Actualmente se encuentra en la primera alpha, así que espera muchas funcionalid
           name: "Weetrack 2.0",
           date: "2016 - Actual",
           imagePrefix: "weetrack2",
-          url: "http://track.datyayu.xyz/",
+          url: "https://track.yayu.pro",
           github: "https://github.com/datyayu/weetrack",
           isIframe: false,
           description: `
