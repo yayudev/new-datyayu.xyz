@@ -7,13 +7,13 @@ export default {
       javascriptTitle: "Javascript Expert",
       messages: [
         "Likes penguins",
-        "Loves Sakura Ayane",
+        "Loves Nishimoto Rimi",
         "Actually owns a Vita",
-        "Reads a book per week",
+        "Ocassionally goes to Japan for a weekend",
         "Built this site",
         "Prefers spaces over tabs",
         "THE TRUTH IS OUT THERE",
-        "Collects mangas",
+        "Collects idol CDs",
         "Puts stickers on his laptop",
         "Knows how to juggle",
         "Idol otaku",
@@ -27,11 +27,14 @@ export default {
         "Believes RWD is a must-have",
         "Using React since early 2015",
         "Fell in love with Vue.js",
+        "Uses ember at work",
         "Cares about web performance",
         "WORDS, WORDS, WORDS.",
         "Plays too many mobile games",
         "Hi",
-        "Currently AA1 on Shadowverse"
+        "Learning to play the bass",
+        "Eventer",
+        "Bang dreamer"
       ]
     }
   },
