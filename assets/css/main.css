@@ -28,11 +28,11 @@ body > div > div:nth-child(2) {
 .white  { color: #ffffff; }
 .black  { color: #3b3b3b; }
 .gray   { color: #b8b9b9; }
-.blue   { color: #6591f5; }
-.orange { color: #FF9204; }
+.blue   { color: #729dff; }
+.orange { color: #ffc272; }
 .red    { color: #FF2121; }
-.green  { color: #00BF13; }
-.purple { color: #997cff; }
+.green  { color: #01d215; }
+.purple { color: #bdabff; }
 
 /**
 ** Home Transition

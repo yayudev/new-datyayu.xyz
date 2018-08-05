@@ -66,7 +66,7 @@ export default {
 }
 
 .footer-link {
-  color: #6591f5;
+  color: #2664f1;
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;

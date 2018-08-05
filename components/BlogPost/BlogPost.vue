@@ -54,7 +54,7 @@ export default {
 }
 
 .blog-post-title {
-  color: #00bf13;
+  color: #01a711;
   font-size: 2.5em;
   text-align: center;
   margin: 1em 0 0 0;
@@ -74,7 +74,7 @@ export default {
 }
 
 .blog-post-tag-link {
-  color: #b8b9b9;
+  color: #717171;
   text-decoration: none;
 }
 

@@ -48,7 +48,7 @@ export default {
 
 .blog-post-text a {
   text-decoration: none;
-  color: #6591f5;
+  color: #2664f1;
 }
 
 .blog-post-text a:hover {
@@ -98,7 +98,7 @@ export default {
 .blog-post-text h4,
 .blog-post-text h5,
 .blog-post-text h6 {
-  color: #00bf13;
+  color: #01a711;
   margin-top: 2em;
   line-height: 1.5em;
   text-align: center;

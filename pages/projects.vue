@@ -29,7 +29,7 @@ export default {
     return {
       title: this.pageTitle,
       meta: [
-        { name: "theme-color", content: "#6591f5" },
+        { name: "theme-color", content: "#2664f1" },
         { property: "og:title", content: this.pageTitle },
         { property: "og:description", content: this.pageSubtitle },
         { property: "og:url", content: "https://datyayu.xyz/projects" }

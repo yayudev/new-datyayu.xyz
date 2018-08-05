@@ -62,19 +62,19 @@ export default {
 }
 
 .green:hover {
-  color: #00bf13;
+  color: #01d215;
 }
 
 .blue:hover {
-  color: #6591f5;
+  color: #729dff;
 }
 
 .purple:hover {
-  color: #997cff;
+  color: #bdabff;
 }
 
 .orange:hover {
-  color: #ff9204;
+  color: #ffc272;
 }
 
 .gray-active a {
@@ -82,19 +82,19 @@ export default {
 }
 
 .green-active a {
-  color: #00bf13;
+  color: #01d215;
 }
 
 .blue-active a {
-  color: #6591f5;
+  color: #729dff;
 }
 
 .purple-active a {
-  color: #997cff;
+  color: #bdabff;
 }
 
 .orange-active a {
-  color: #ff9204;
+  color: #ffc272;
 }
 
 /* Tablet */

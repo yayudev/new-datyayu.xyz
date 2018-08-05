@@ -63,7 +63,7 @@ export default {
 
 .blog-post-item-title-link {
   text-decoration: none;
-  color: #00bf13;
+  color: #01a711;
 }
 
 .blog-post-item-info {
@@ -71,7 +71,7 @@ export default {
 }
 
 .blog-post-item-tags {
-  color: #b8b9b9;
+  color: #717171;
   font-weight: normal;
   margin: 0.25em 0;
   font-size: 1.2em;
@@ -79,7 +79,7 @@ export default {
 
 .blog-post-item-link {
   text-decoration: none;
-  color: #b8b9b9;
+  color: #717171;
 }
 
 .blog-post-item-summary {

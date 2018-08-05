@@ -42,7 +42,7 @@ export default {
 }
 
 .blog-navigation-link {
-  color: #6591f5;
+  color: #2664f1;
   text-decoration: none;
   font-size: 1.3em;
 }

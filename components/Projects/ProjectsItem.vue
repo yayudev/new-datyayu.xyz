@@ -5,13 +5,13 @@
 
     <div class="projects-screenshots">
       <a :href="phoneImage" rel="noopener" target="_blank" @click.prevent>
-        <img :src="phoneThumbnail" class="projects-image--phone">
+        <img :src="phoneThumbnail" :alt="name + ' (mobile)'" class="projects-image--phone">
       </a>
       <a :href="ipadImage" rel="noopener" target="_blank" @click.prevent>
-        <img :src="ipadThumbnail" class="projects-image--ipad">
+        <img :src="ipadThumbnail" :alt="name + ' (ipad)'" class="projects-image--ipad">
       </a>
       <a :href="desktopImage" rel="noopener" target="_blank" @click.prevent>
-        <img :src="desktopThumbnail" class="projects-image--desktop">
+        <img :src="desktopThumbnail" :alt="name + ' (desktop)'" class="projects-image--desktop">
       </a>
     </div>
   </li>
@@ -135,7 +135,7 @@ export default {
 
 .projects-title {
   font-size: 2em;
-  color: #6591f5;
+  color: #2664f1;
   margin: 0.5em 0 0 0;
   text-align: center;
   transition: color 200ms ease-in-out;
@@ -143,14 +143,14 @@ export default {
 
 .projects-date {
   text-align: center;
-  color: #b8b9b9;
+  color: #757575;
   margin: 0;
   font-size: 1.1em;
   transition: color 200ms ease-in-out;
 }
 
 .projects-link {
-  color: #6591f5;
+  color: #2664f1;
   text-decoration: none;
   font-size: 1.3em;
   font-weight: bold;

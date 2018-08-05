@@ -100,7 +100,7 @@ export default {
 
 .projects-modal-date {
   font-weight: normal;
-  color: #b8b9b9;
+  color: #757575;
   margin: 0 0 1em 0;
 }
 

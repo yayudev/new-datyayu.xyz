@@ -38,7 +38,7 @@
 
 .about-title {
   text-align: center;
-  color: #ff9204;
+  color: #da7e00;
   font-size: 2em;
   margin: 1em 0 0 0;
 }
@@ -51,7 +51,7 @@
 }
 
 .about-link {
-  color: #6591f5;
+  color: #2664f1;
   text-decoration: none;
   font-size: 1.3em;
 }

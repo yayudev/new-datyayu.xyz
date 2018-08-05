@@ -11,7 +11,7 @@ export default {
       meta: [
         {
           name: "theme-color",
-          content: "#00BF13"
+          content: "#01a711"
         }
       ]
     }
