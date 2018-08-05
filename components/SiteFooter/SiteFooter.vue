@@ -3,11 +3,11 @@
     <div class="footer-content">
       <p class="footer-links">
         {{ $t('footer.localeChange') }}:
-        <span @click="setLocale('es')" class="footer-link" :class="esClass"> Español </span>
+        <span :class="esClass" class="footer-link" @click="setLocale('es')"> Español </span>
         /
-        <span @click="setLocale('en')" class="footer-link" :class="enClass"> English </span>
+        <span :class="enClass" class="footer-link" @click="setLocale('en')"> English </span>
       </p>
-  
+
       <p class="footer-legal">
         {{ $t('footer.buildWith') }}
         <a class="footer-link" rel="noopener" href="https://nuxtjs.org/" target="_blank">Nuxt.js</a>
@@ -16,7 +16,7 @@
         {{ $t('footer.and') }} ♥. {{ $t('footer.repo') }}
         <a class="footer-link" rel="noopener" href="https://github.com/datyayu/new-datyayu.xyz" target="_blank"> Github</a>.
       </p>
-  
+
       <p class="footer-legal">
         Copyright © 2017 Arturo Coronel.
       </p>
@@ -29,25 +29,25 @@
 export default {
   computed: {
     esClass() {
-      return this.$i18n.locale === "es" ? "footer-link--active" : "";
+      return this.$i18n.locale === "es" ? "footer-link--active" : ""
     },
 
     enClass() {
-      return this.$i18n.locale === "en" ? "footer-link--active" : "";
+      return this.$i18n.locale === "en" ? "footer-link--active" : ""
     }
   },
 
   methods: {
     setLocale(locale) {
       if (locale === this.$i18n.locale) {
-        return;
+        return
       }
 
-      this.$i18n.locale = locale;
-      localStorage.setItem("locale", locale);
+      this.$i18n.locale = locale
+      localStorage.setItem("locale", locale)
     }
   }
-};
+}
 </script>
 
 
@@ -57,7 +57,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: .5em;
+  padding: 0.5em;
 }
 
 .footer-content {

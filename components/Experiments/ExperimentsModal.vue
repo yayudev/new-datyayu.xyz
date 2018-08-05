@@ -1,13 +1,13 @@
 <template>
   <div class="experiments-modal" @click="closeModal">
-    <modal-close-button @click="closeModal"></modal-close-button>
-  
-    <iframe class="experiments-modal-iframe" :src="url" @click.stop></iframe>
+    <modal-close-button @click="closeModal" />
+
+    <iframe :src="url" class="experiments-modal-iframe" @click.stop />
   </div>
 </template>
 
 <script>
-import ModalCloseButton from "../Shared/ModalCloseButton.vue";
+import ModalCloseButton from "../Shared/ModalCloseButton.vue"
 
 export default {
   components: {
@@ -20,10 +20,10 @@ export default {
 
   methods: {
     closeModal() {
-      this.$emit("closeModal");
+      this.$emit("closeModal")
     }
   }
-};
+}
 </script>
 
 
@@ -32,7 +32,7 @@ export default {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
   z-index: 10;

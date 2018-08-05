@@ -4,21 +4,22 @@
       <source src="https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.webm" type="video/webm">
       <source src="https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.mp4" type="video/mp4">
     </video>
-  
-    <div class="home-video-overlay"></div>
+
+    <div class="home-video-overlay" />
+
     <div class="home-container">
-      <HomeText></HomeText>
-      <HomeNavigation></HomeNavigation>
-      <HomeLocaleSwitch></HomeLocaleSwitch>
+      <HomeText />
+      <HomeNavigation />
+      <HomeLocaleSwitch />
     </div>
   </div>
 </template>
 
 
 <script>
-import HomeNavigation from "./HomeNavigation.vue";
-import HomeText from "./HomeText.vue";
-import HomeLocaleSwitch from "./HomeLocaleSwitch.vue";
+import HomeNavigation from "./HomeNavigation.vue"
+import HomeText from "./HomeText.vue"
+import HomeLocaleSwitch from "./HomeLocaleSwitch.vue"
 
 export default {
   components: {
@@ -26,7 +27,7 @@ export default {
     HomeText,
     HomeLocaleSwitch
   }
-};
+}
 </script>
 
 <style>
@@ -55,7 +56,7 @@ export default {
 .home-video-overlay {
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
   position: fixed;
   top: 0;
@@ -71,7 +72,6 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
-
 
 /* Desktop */
 

@@ -1,5 +1,5 @@
 <template>
-  <nuxt-child></nuxt-child>
+  <nuxt-child />
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
           content: "#00BF13"
         }
       ]
-    };
+    }
   }
-};
+}
 </script>

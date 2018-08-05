@@ -5,43 +5,41 @@ export const state = () => ({
   page: 0,
   tagName: "",
   error: false
-});
+})
 
 export const mutations = {
   startFetching(state) {
-    state = {
-      posts: [],
-      activePost: {},
-      fetching: true,
-      page: 0,
-      tagName: "",
-      error: false
-    };
+    state.posts = []
+    state.activePost = {}
+    state.fetching = true
+    state.page = 0
+    state.tagName = ""
+    state.error = false
   },
 
   errorFetching(state) {
-    state.error = true;
+    state.error = true
   },
 
   updatePosts(state, payload) {
-    const { posts, totalPosts, page } = payload;
+    const { posts, totalPosts, page } = payload
 
-    state.page = page;
-    state.posts = posts;
-    state.totalPosts = totalPosts;
-    state.fetching = false;
-    state.error = false;
+    state.page = page
+    state.posts = posts
+    state.totalPosts = totalPosts
+    state.fetching = false
+    state.error = false
   },
 
   setActivePost(state, post) {
-    state.activePost = post;
-    state.fetching = false;
+    state.activePost = post
+    state.fetching = false
   },
 
   setTagName(state, tagName) {
-    state.tagName = tagName;
+    state.tagName = tagName
   }
-};
+}
 
 export const getters = {
   tagName: state => state.tagName,
@@ -52,4 +50,4 @@ export const getters = {
   hasPrevPage: state => state.page !== 0 && state.page !== 1,
   hasNextPage: state => state.page !== 0 && state.page < state.totalPosts / 5,
   error: state => state.error
-};
+}

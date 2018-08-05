@@ -1,6 +1,6 @@
 <template>
-  <nuxt-link class="navigation-item" :active-class="activeClass" :to="url" tag="li">
-    <a class="navigation-link" :class="linkClasses">
+  <nuxt-link :active-class="activeClass" :to="url" class="navigation-item" tag="li">
+    <a :class="linkClasses" class="navigation-link">
       {{ $t(`navigation.${text}`) }}
     </a>
   </nuxt-link>
@@ -17,14 +17,14 @@ export default {
 
   computed: {
     activeClass() {
-      return `${this.hoverColor}-active`;
+      return `${this.hoverColor}-active`
     },
 
     linkClasses() {
-      return `${this.hoverColor} ${this.activeClass}`;
+      return `${this.hoverColor} ${this.activeClass}`
     }
   }
-};
+}
 </script>
 
 
@@ -42,7 +42,7 @@ export default {
 }
 
 .navigation-item:hover {
-  transform: scale(1.2) translateX(.5em);
+  transform: scale(1.2) translateX(0.5em);
 }
 
 .navigation-link {
@@ -62,7 +62,7 @@ export default {
 }
 
 .green:hover {
-  color: #00BF13;
+  color: #00bf13;
 }
 
 .blue:hover {
@@ -74,7 +74,7 @@ export default {
 }
 
 .orange:hover {
-  color: #FF9204;
+  color: #ff9204;
 }
 
 .gray-active a {
@@ -82,7 +82,7 @@ export default {
 }
 
 .green-active a {
-  color: #00BF13;
+  color: #00bf13;
 }
 
 .blue-active a {
@@ -94,11 +94,8 @@ export default {
 }
 
 .orange-active a {
-  color: #FF9204;
+  color: #ff9204;
 }
-
-
-
 
 /* Tablet */
 
@@ -107,10 +104,6 @@ export default {
     transform: scale(1.2) translateX(1em);
   }
 }
-
-
-
-
 
 /* Desktop */
 

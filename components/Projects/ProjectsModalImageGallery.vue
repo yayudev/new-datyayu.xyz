@@ -1,20 +1,19 @@
 <template>
-  <div class="image-gallery" :class="iframeClass" @click.stop>
-    <img v-if="imageIndex === 0" class="image-gallery-image" :src="phoneImage" />
-    <img v-if="imageIndex === 1" class="image-gallery-image" :src="ipadImage" />
-    <img v-if="imageIndex === 2" class="image-gallery-image" :src="desktopImage" />
-  
+  <div :class="iframeClass" class="image-gallery" @click.stop>
+    <img v-if="imageIndex === 0" :src="phoneImage" class="image-gallery-image">
+    <img v-if="imageIndex === 1" :src="ipadImage" class="image-gallery-image">
+    <img v-if="imageIndex === 2" :src="desktopImage" class="image-gallery-image">
+
     <div class="image-gallery-buttons">
-      <a class="image-gallery-button" @click.stop="showPrevImage">
-        < </a>
-          <a class="image-gallery-button" @click.stop="showNextImage"> > </a>
+      <a class="image-gallery-button" @click.stop="showPrevImage"> &lt; </a>
+      <a class="image-gallery-button" @click.stop="showNextImage"> &gt; </a>
     </div>
   </div>
 </template>
 
 
 <script>
-import { getImageUrl } from "../../utils/image-path-generator.js";
+import { getImageUrl } from "../../utils/image-path-generator.js"
 
 export default {
   props: {
@@ -25,35 +24,35 @@ export default {
   data() {
     return {
       imageIndex: 0
-    };
+    }
   },
 
   computed: {
     phoneImage() {
-      return getImageUrl(this.imagePrefix, "phone");
+      return getImageUrl(this.imagePrefix, "phone")
     },
     ipadImage() {
-      return getImageUrl(this.imagePrefix, "ipad");
+      return getImageUrl(this.imagePrefix, "ipad")
     },
     desktopImage() {
-      return getImageUrl(this.imagePrefix, "desktop");
+      return getImageUrl(this.imagePrefix, "desktop")
     },
 
     iframeClass() {
-      return this.hasIframe ? "image-gallery--iframe" : "";
+      return this.hasIframe ? "image-gallery--iframe" : ""
     }
   },
 
   methods: {
     showNextImage() {
-      this.imageIndex = this.imageIndex === 2 ? 0 : this.imageIndex + 1;
+      this.imageIndex = this.imageIndex === 2 ? 0 : this.imageIndex + 1
     },
 
     showPrevImage() {
-      this.imageIndex = this.imageIndex === 0 ? 2 : this.imageIndex - 1;
+      this.imageIndex = this.imageIndex === 0 ? 2 : this.imageIndex - 1
     }
   }
-};
+}
 </script>
 
 
@@ -84,12 +83,12 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  color: rgba(128, 128, 128, .5);
+  color: rgba(128, 128, 128, 0.5);
   font-size: 3em;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 .5em;
+  padding: 0 0.5em;
   box-sizing: border-box;
 }
 
@@ -97,11 +96,6 @@ export default {
   cursor: pointer;
   color: rgba(128, 128, 128, 1);
 }
-
-
-
-
-
 
 /* Desktop */
 

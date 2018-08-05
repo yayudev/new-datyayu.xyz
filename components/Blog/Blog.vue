@@ -1,21 +1,39 @@
 <template>
   <div class="blog">
-    <blog-navigation :hasPrevPage="hasPrevPage" :hasNextPage="hasNextPage" :page="page" :prefix="navigationPrefix"></blog-navigation>
-  
+    <blog-navigation
+      :has-prev-page="hasPrevPage"
+      :has-next-page="hasNextPage"
+      :page="page"
+      :prefix="navigationPrefix"
+    />
+
     <h2 v-if="posts && posts.length === 0"> {{ $t('blog.noPosts') }} </h2>
-  
+
     <ul class="blog-post-list">
-      <blog-post-item v-for="(post, index) in posts" :key="index" :postId="post.id" :title="post.title" :date="post.date" :url="post.url" :summary="post.summary"></blog-post-item>
+      <blog-post-item
+        v-for="(post, index) in posts"
+        :key="index"
+        :post-id="post.id"
+        :title="post.title"
+        :summary="post.summary"
+        :url="post.url"
+        :date="post.date"
+      />
     </ul>
-  
-    <blog-navigation :hasPrevPage="hasPrevPage" :hasNextPage="hasNextPage" :page="page" :prefix="navigationPrefix"></blog-navigation>
+
+    <blog-navigation
+      :has-prev-page="hasPrevPage"
+      :has-next-page="hasNextPage"
+      :page="page"
+      :prefix="navigationPrefix"
+    />
   </div>
 </template>
 
 
 <script>
-import BlogPostItem from "./BlogPostItem.vue";
-import BlogNavigation from "./BlogNavigation.vue";
+import BlogPostItem from "./BlogPostItem.vue"
+import BlogNavigation from "./BlogNavigation.vue"
 
 export default {
   components: {
@@ -30,7 +48,7 @@ export default {
     hasPrevPage: { type: Boolean, default: false },
     navigationPrefix: { type: String, default: "/page" }
   }
-};
+}
 </script>
 
 
@@ -40,7 +58,6 @@ export default {
   max-width: 800px;
   width: 90vw;
 }
-
 
 .blog-post-list {
   list-style: none;

@@ -1,21 +1,20 @@
 <template>
   <div class="projects-modal" @click="closeModal">
-    <modal-close-button @click="closeModal"></modal-close-button>
-  
-    <iframe v-if="isIframe" class="projects-modal-iframe" :src="url" @click.stop></iframe>
-  
-    <projects-modal-image-gallery :hasIframe="isIframe" :imagePrefix="imagePrefix">
-    </projects-modal-image-gallery>
-  
+    <modal-close-button @click="closeModal" />
+
+    <iframe v-if="isIframe" :src="url" class="projects-modal-iframe" @click.stop />
+
+    <projects-modal-image-gallery :has-iframe="isIframe" :image-prefix="imagePrefix" />
+
     <div class="projects-modal-content" @click.stop>
       <div class="projects-modal-info-container">
         <h2 class="projects-modal-title"> {{ name }} </h2>
         <h4 class="projects-modal-date"> {{ date }} </h4>
-        <a class="projects-link" v-if="url" :href="url" target="_blank" @click.stop>
-          < Link>
+        <a v-if="url" :href="url" class="projects-link" target="_blank" @click.stop>
+          &lt; Link &gt;
         </a>
-        <a class="projects-link" v-if="github" :href="github" target="_blank" @click.stop>
-          < Github>
+        <a v-if="github" :href="github" class="projects-link" target="_blank" @click.stop>
+          &lt; Github &gt;
         </a>
       </div>
       <p class="projects-modal-description"> {{ description }} </p>
@@ -25,8 +24,8 @@
 
 
 <script>
-import ModalCloseButton from "../Shared/ModalCloseButton.vue";
-import ProjectsModalImageGallery from "./ProjectsModalImageGallery.vue";
+import ModalCloseButton from "../Shared/ModalCloseButton.vue"
+import ProjectsModalImageGallery from "./ProjectsModalImageGallery.vue"
 
 export default {
   components: {
@@ -46,10 +45,10 @@ export default {
 
   methods: {
     closeModal() {
-      this.$emit("closeModal");
+      this.$emit("closeModal")
     }
   }
-};
+}
 </script>
 
 
@@ -61,7 +60,7 @@ export default {
   width: 100vw;
   height: 100vh;
   z-index: 9;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
   padding: 5vh 5vw;
   display: flex;
   flex-direction: column;
@@ -130,14 +129,6 @@ export default {
     width: 50%;
   }
 }
-
-
-
-
-
-
-
-
 
 /* Desktop */
 

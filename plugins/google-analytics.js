@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /*
 ** Only run on client-side and only in production mode
 */
@@ -5,29 +7,30 @@ if (process.BROWSER_BUILD && process.env.NODE_ENV === "production") {
   /*
   ** Include Google Analytics Script
   */
-  (function(i, s, o, g, r, a, m) {
-    i["GoogleAnalyticsObject"] = r;
-    (i[r] =
+  ;(function(i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r
+    ;(i[r] =
       i[r] ||
       function() {
-        (i[r].q = i[r].q || []).push(arguments);
-      }), (i[r].l = 1 * new Date());
-    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m);
+        ;(i[r].q = i[r].q || []).push(arguments)
+      }),
+      (i[r].l = 1 * new Date())
+    ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+    a.async = 1
+    a.src = g
+    m.parentNode.insertBefore(a, m)
   })(
     window,
     document,
     "script",
     "https://www.google-analytics.com/analytics.js",
     "ga"
-  );
+  )
   /*
   ** Set the current page
   */
-  ga("create", "UA-74079416-2", "auto");
-  ga("send", "pageview");
+  ga("create", "UA-74079416-2", "auto")
+  ga("send", "pageview")
   /*
   ** When the app is mounted
   */
@@ -39,8 +42,8 @@ if (process.BROWSER_BUILD && process.env.NODE_ENV === "production") {
       /*
       ** We tell Google Analytic to add a page view
       */
-      ga("set", "page", to.fullPath);
-      ga("send", "pageview");
-    });
-  });
+      ga("set", "page", to.fullPath)
+      ga("send", "pageview")
+    })
+  })
 }

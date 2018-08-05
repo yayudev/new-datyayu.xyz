@@ -4,30 +4,31 @@
       :header-title="pageTitle"
       :header-subtitle="pageSubtitle"
       header-color="green"
-    ></site-header>
+    />
 
     <div class="site-content">
       <h2 v-if="error" class="blog-error-message">
         {{ $t("blog.errorFetchingList") }}
       </h2>
 
-      <blog v-if="!fetching && !error"
+      <blog
+        v-if="!fetching && !error"
         :posts="posts"
-        :hasNextPage="hasNextPage"
-        :hasPrevPage="hasPrevPage"
+        :has-next-page="hasNextPage"
+        :has-prev-page="hasPrevPage"
         :page="currentPage"
-      ></blog>
+      />
     </div>
   </div>
 </template>
 
 
 <script>
-import Blog from "~components/Blog/Blog.vue";
-import SiteHeader from "~components/SiteHeader/SiteHeader.vue";
-import axios from "axios";
-import { mapGetters } from "vuex";
-import { POSTS_ENDPOINT } from "../../config/api.js";
+import Blog from "~/components/Blog/Blog.vue"
+import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"
+import axios from "axios"
+import { mapGetters } from "vuex"
+import { POSTS_ENDPOINT } from "~/config/api.js"
 
 export default {
   transition: "content",
@@ -38,12 +39,12 @@ export default {
   },
 
   async fetch({ store }) {
-    store.commit("posts/startFetching");
+    store.commit("posts/startFetching")
 
     try {
-      const request = await axios.get(`${POSTS_ENDPOINT}/pages/1.json`);
+      const request = await axios.get(`${POSTS_ENDPOINT}/pages/1.json`)
 
-      const totalPosts = request.data.totalPosts;
+      const totalPosts = request.data.totalPosts
       const posts = request.data.posts.map(post => {
         return {
           id: post.id,
@@ -51,12 +52,12 @@ export default {
           date: post.date,
           summary: post.excerpt,
           url: post.url
-        };
-      });
+        }
+      })
 
-      store.commit("posts/updatePosts", { posts, totalPosts, page: 1 });
+      store.commit("posts/updatePosts", { posts, totalPosts, page: 1 })
     } catch (error) {
-      store.commit("posts/errorFetching");
+      store.commit("posts/errorFetching")
     }
   },
 
@@ -68,7 +69,7 @@ export default {
         { property: "og:description", content: this.pageSubtitle },
         { property: "og:url", content: "https://datyayu.xyz/blog" }
       ]
-    };
+    }
   },
 
   computed: {
@@ -82,14 +83,14 @@ export default {
     }),
 
     pageTitle() {
-      return this.$t("blog.title");
+      return this.$t("blog.title")
     },
 
     pageSubtitle() {
-      return this.$t("blog.subtitle");
+      return this.$t("blog.subtitle")
     }
   }
-};
+}
 </script>
 
 <style>

@@ -1,13 +1,13 @@
 <template>
   <li class="blog-post-item">
     <h4 class="blog-post-item-date">{{ date }}</h4>
-  
+
     <div class="blog-post-item-info">
       <h2 class="blog-post-item-title">
-        <nuxt-link class="blog-post-item-title-link" :to="generatePostUrl()"> {{ title }} </nuxt-link>
+        <nuxt-link :to="generatePostUrl()" class="blog-post-item-title-link"> {{ title }} </nuxt-link>
       </h2>
-  
-      <div class="blog-post-item-summary" v-html="summary"></div>
+
+      <div class="blog-post-item-summary" v-html="summary" />
     </div>
   </li>
 </template>
@@ -25,14 +25,14 @@ export default {
 
   methods: {
     generateTagUrl(tag) {
-      return `/blog/tag/${tag}`;
+      return `/blog/tag/${tag}`
     },
 
-    generatePostUrl(postId) {
-      return `/blog/posts/${this.url}`;
+    generatePostUrl() {
+      return `/blog/posts/${this.url}`
     }
   }
-};
+}
 </script>
 
 
@@ -57,13 +57,13 @@ export default {
 }
 
 .blog-post-item-title {
-  margin: .25em 0;
+  margin: 0.25em 0;
   font-size: 1.9em;
 }
 
 .blog-post-item-title-link {
   text-decoration: none;
-  color: #00BF13;
+  color: #00bf13;
 }
 
 .blog-post-item-info {
@@ -73,7 +73,7 @@ export default {
 .blog-post-item-tags {
   color: #b8b9b9;
   font-weight: normal;
-  margin: .25em 0;
+  margin: 0.25em 0;
   font-size: 1.2em;
 }
 
@@ -87,12 +87,8 @@ export default {
   font-size: 1em;
   line-height: 1.5em;
   color: #3b3b3b;
-  font-family: 'Open Sans', 'arial', sans-serif, serif;
+  font-family: "Open Sans", "arial", sans-serif, serif;
 }
-
-
-
-
 
 /* HD Desktop */
 
@@ -104,7 +100,7 @@ export default {
 
   .blog-post-item-date {
     font-size: 1.5em;
-    margin: .5em 2em 0 0;
+    margin: 0.5em 2em 0 0;
   }
 }
 </style>

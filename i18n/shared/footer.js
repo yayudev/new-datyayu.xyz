@@ -16,4 +16,4 @@ export default {
       repo: "Codigo fuente disponible en"
     }
   }
-};
+}

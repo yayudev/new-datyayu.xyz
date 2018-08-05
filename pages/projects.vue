@@ -4,18 +4,18 @@
       :header-title="pageTitle"
       :header-subtitle="pageSubtitle"
       header-color="blue"
-    ></site-header>
+    />
 
     <div class="site-content">
-      <projects></projects>
+      <projects />
     </div>
   </div>
 </template>
 
 
 <script>
-import SiteHeader from "~components/SiteHeader/SiteHeader.vue";
-import Projects from "~components/Projects/Projects.vue";
+import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"
+import Projects from "~/components/Projects/Projects.vue"
 
 export default {
   transition: "content",
@@ -34,17 +34,17 @@ export default {
         { property: "og:description", content: this.pageSubtitle },
         { property: "og:url", content: "https://datyayu.xyz/projects" }
       ]
-    };
+    }
   },
 
   computed: {
     pageTitle() {
-      return this.$t("projects.title");
+      return this.$t("projects.title")
     },
 
     pageSubtitle() {
-      return this.$t("projects.subtitle");
+      return this.$t("projects.subtitle")
     }
   }
-};
+}
 </script>

@@ -1,17 +1,28 @@
 <template>
   <div class="experiments">
     <div class="experiments-list">
-      <experiments-item v-for="(experiment, index) in experiments" :key="index" :url="experiment.url" :title="experiment.title" :img="experiment.img" @showModal="showModal"></experiments-item>
+      <experiments-item
+        v-for="(experiment, index) in experiments"
+        :key="index"
+        :url="experiment.url"
+        :title="experiment.title"
+        :img="experiment.img"
+        @showModal="showModal"
+      />
     </div>
-  
-    <experiments-modal v-if="isModalActive" :url="activeModalExperiment.url" @closeModal="closeModal"></experiments-modal>
+
+    <experiments-modal
+      v-if="isModalActive"
+      :url="activeModalExperiment.url"
+      @closeModal="closeModal"
+    />
   </div>
 </template>
 
 
 <script>
-import ExperimentsItem from "./ExperimentsItem.vue";
-import ExperimentsModal from "./ExperimentsModal.vue";
+import ExperimentsItem from "./ExperimentsItem.vue"
+import ExperimentsModal from "./ExperimentsModal.vue"
 
 export default {
   components: {
@@ -23,27 +34,27 @@ export default {
     return {
       isModalActive: false,
       activeModalExperiment: {}
-    };
+    }
   },
 
   computed: {
     experiments() {
-      return this.$t("experiments.experiments");
+      return this.$t("experiments.experiments")
     }
   },
 
   methods: {
     showModal(experimentInfo) {
-      this.isModalActive = true;
-      this.activeModalExperiment = experimentInfo;
+      this.isModalActive = true
+      this.activeModalExperiment = experimentInfo
     },
 
     closeModal() {
-      this.isModalActive = false;
-      this.activeModalExperiment = {};
+      this.isModalActive = false
+      this.activeModalExperiment = {}
     }
   }
-};
+}
 </script>
 
 
@@ -65,12 +76,6 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
 }
-
-
-
-
-
-
 
 /* HD Desktop */
 

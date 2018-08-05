@@ -1,8 +1,8 @@
 <template>
-  <i class="navigation-button" :class="activeClass" @click="$emit('click')">
-    <span class="navigation-button-line"></span>
-    <span class="navigation-button-line"></span>
-    <span class="navigation-button-line"></span>
+  <i :class="activeClass" class="navigation-button" @click="$emit('click')">
+    <span class="navigation-button-line" />
+    <span class="navigation-button-line" />
+    <span class="navigation-button-line" />
   </i>
 </template>
 
@@ -14,10 +14,10 @@ export default {
 
   computed: {
     activeClass() {
-      return this.isActive ? "is-active" : "";
+      return this.isActive ? "is-active" : ""
     }
   }
-};
+}
 </script>
 
 
@@ -27,7 +27,7 @@ export default {
 .navigation-button {
   position: absolute;
   display: block;
-  top: .5em;
+  top: 0.5em;
   left: 1em;
   z-index: 9;
 }
@@ -35,20 +35,19 @@ export default {
 .navigation-button-line {
   cursor: pointer;
   width: 2.25em;
-  height: .3em;
+  height: 0.3em;
   position: absolute;
   top: 0;
   left: 0;
   background: white;
   display: block;
-  transition: transform 300ms ease-in-out,
-  opacity 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
   transform: none;
   will-change: transform, opacity;
 }
 
 .navigation-button-line:nth-child(1) {
-  top: .5em;
+  top: 0.5em;
 }
 
 .navigation-button-line:nth-child(2) {
@@ -59,24 +58,20 @@ export default {
   top: 2em;
 }
 
-.is-active>.navigation-button-line:nth-child(2) {
+.is-active > .navigation-button-line:nth-child(2) {
   transform: translateX(calc(100vw - 4em));
   opacity: 0;
 }
 
-.is-active>.navigation-button-line:nth-child(1) {
+.is-active > .navigation-button-line:nth-child(1) {
   transform: translateX(calc(100vw - 4em)) rotateZ(45deg);
   top: 1.25em;
 }
 
-.is-active>.navigation-button-line:nth-child(3) {
+.is-active > .navigation-button-line:nth-child(3) {
   transform: translateX(calc(100vw - 4em)) rotateZ(-45deg);
   top: 1.25em;
 }
-
-
-
-
 
 /* Desktop */
 

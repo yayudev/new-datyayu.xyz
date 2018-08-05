@@ -1,9 +1,9 @@
 <template>
   <div class="blog-navigation">
-    <nuxt-link v-if="hasPrevPage" class="blog-navigation-link" :to="prevPage">
+    <nuxt-link v-if="hasPrevPage" :to="prevPage" class="blog-navigation-link">
       &lt; {{ $t('blog.prev') }}
     </nuxt-link>
-    <nuxt-link v-if="hasNextPage" class="blog-navigation-link" :to="nextPage">
+    <nuxt-link v-if="hasNextPage" :to="nextPage" class="blog-navigation-link">
       {{ $t('blog.next') }} &gt;
     </nuxt-link>
   </div>
@@ -21,13 +21,13 @@ export default {
 
   computed: {
     nextPage() {
-      return `/blog${this.prefix}/${this.page + 1}`;
+      return `/blog${this.prefix}/${this.page + 1}`
     },
     prevPage() {
-      return `/blog${this.prefix}/${this.page - 1}`;
+      return `/blog${this.prefix}/${this.page - 1}`
     }
   }
-};
+}
 </script>
 
 

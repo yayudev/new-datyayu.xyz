@@ -1,12 +1,12 @@
 <template>
-  <div></div>
+  <div/>
 </template>
 
 
 <script>
 export default {
   asyncData({ redirect }) {
-    redirect("/blog");
+    redirect("/blog")
   }
-};
+}
 </script>

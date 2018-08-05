@@ -1,10 +1,9 @@
 <template>
-  <span class="caret custom" :class="animationClass">
-  </span>
+  <span :class="animationClass" class="caret custom" />
 </template>
 
 <script>
-const ANIMATION_CLASS_PREFIX = "vue-typer-caret-";
+const ANIMATION_CLASS_PREFIX = "vue-typer-caret-"
 
 export default {
   props: {
@@ -20,10 +19,10 @@ export default {
   },
   computed: {
     animationClass() {
-      return ANIMATION_CLASS_PREFIX + this.animation;
+      return ANIMATION_CLASS_PREFIX + this.animation
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -31,10 +30,6 @@ span.caret:empty:before {
   content: "\200b";
   /* zero width space character */
 }
-
-
-
-
 
 /* Keep the following .custom.caret styles as low-specificity as possible so they are more easily overridden */
 

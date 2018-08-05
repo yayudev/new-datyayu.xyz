@@ -1,8 +1,8 @@
 // Promise polyfill for ie
 if (process.BROWSER_BUILD) {
-  const PromisePolyfill = require("promise-polyfill");
+  const PromisePolyfill = require("promise-polyfill")
 
   if (!window.Promise) {
-    window.Promise = PromisePolyfill;
+    window.Promise = PromisePolyfill
   }
 }

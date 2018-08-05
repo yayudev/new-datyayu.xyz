@@ -1,20 +1,20 @@
 <template>
   <div class="default-layout">
-    <nuxt/>
-  
-    <site-footer></site-footer>
+    <nuxt />
+
+    <site-footer />
   </div>
 </template>
 
 
 <script>
-import SiteFooter from "~components/SiteFooter/SiteFooter.vue";
+import SiteFooter from "~/components/SiteFooter/SiteFooter.vue"
 
 export default {
   components: {
     SiteFooter
   }
-};
+}
 </script>
 
 

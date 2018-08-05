@@ -1,17 +1,17 @@
 <template>
   <li class="projects-item" @click.prevent="showModal">
-    <h2 class="projects-title"> {{name}} </h2>
-    <p class="projects-date"> {{date}} </p>
-  
+    <h2 class="projects-title"> {{ name }} </h2>
+    <p class="projects-date"> {{ date }} </p>
+
     <div class="projects-screenshots">
       <a :href="phoneImage" rel="noopener" target="_blank" @click.prevent>
-        <img class="projects-image--phone" :src="phoneThumbnail" />
+        <img :src="phoneThumbnail" class="projects-image--phone">
       </a>
       <a :href="ipadImage" rel="noopener" target="_blank" @click.prevent>
-        <img class="projects-image--ipad" :src="ipadThumbnail" />
+        <img :src="ipadThumbnail" class="projects-image--ipad">
       </a>
       <a :href="desktopImage" rel="noopener" target="_blank" @click.prevent>
-        <img class="projects-image--desktop" :src="desktopThumbnail" />
+        <img :src="desktopThumbnail" class="projects-image--desktop">
       </a>
     </div>
   </li>
@@ -19,14 +19,14 @@
 
 
 <script>
-import { getImageUrl } from "../../utils/image-path-generator.js";
+import { getImageUrl } from "../../utils/image-path-generator.js"
 
 export default {
   props: {
     name: { type: String, required: true },
     date: { type: String, required: true },
-    url: { type: String, required: false },
-    github: { type: String, required: true },
+    url: { type: String, required: false, default: () => "" },
+    github: { type: String, required: false, default: () => "" },
     imagePrefix: { type: String, required: true },
     description: { type: String, required: true },
     isIframe: { type: Boolean, default: () => false }
@@ -34,22 +34,22 @@ export default {
 
   computed: {
     phoneThumbnail() {
-      return getImageUrl(this.imagePrefix, "phone", true);
+      return getImageUrl(this.imagePrefix, "phone", true)
     },
     phoneImage() {
-      return getImageUrl(this.imagePrefix, "phone", false);
+      return getImageUrl(this.imagePrefix, "phone", false)
     },
     ipadThumbnail() {
-      return getImageUrl(this.imagePrefix, "ipad", true);
+      return getImageUrl(this.imagePrefix, "ipad", true)
     },
     ipadImage() {
-      return getImageUrl(this.imagePrefix, "ipad", false);
+      return getImageUrl(this.imagePrefix, "ipad", false)
     },
     desktopThumbnail() {
-      return getImageUrl(this.imagePrefix, "desktop", true);
+      return getImageUrl(this.imagePrefix, "desktop", true)
     },
     desktopImage() {
-      return getImageUrl(this.imagePrefix, "desktop", false);
+      return getImageUrl(this.imagePrefix, "desktop", false)
     }
   },
 
@@ -63,12 +63,12 @@ export default {
         github: this.github,
         imagePrefix: this.imagePrefix,
         isIframe: this.isIframe
-      };
+      }
 
-      this.$emit("showModal", project);
+      this.$emit("showModal", project)
     }
   }
-};
+}
 </script>
 
 
@@ -136,7 +136,7 @@ export default {
 .projects-title {
   font-size: 2em;
   color: #6591f5;
-  margin: .5em 0 0 0;
+  margin: 0.5em 0 0 0;
   text-align: center;
   transition: color 200ms ease-in-out;
 }
@@ -158,17 +158,13 @@ export default {
 }
 
 .projects-link:hover {
-  transform: scale(1.2) translateY(.02em);
+  transform: scale(1.2) translateY(0.02em);
 }
 
 .projects-description {
   color: #3b3b3b;
   font-size: 1.2em;
 }
-
-
-
-
 
 /* HD Desktop */
 

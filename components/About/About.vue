@@ -3,7 +3,7 @@
     <h2 class="about-title">{{ $t('about.introTitle') }}</h2>
     <p class="about-text">{{ $t('about.intro') }}</p>
 
-    <img class="about-image" src="~assets/images/avatar.min.jpg" alt="Arturo Coronel"  width="200px" height="200px">
+    <img class="about-image" src="~assets/images/avatar.min.jpg" alt="Arturo Coronel" width="200px" height="200px">
 
     <p class="about-text">{{ $t('about.work') }}</p>
     <p class="about-text">{{ $t('about.openSource') }}</p>
@@ -25,53 +25,54 @@
 
 
 <style scoped>
-  .about {
-    margin: 0 10%;
-    font-size: 1em;
-  }
+.about {
+  margin: 0 10%;
+  font-size: 1em;
+}
 
-  .about-image {
-    margin: 2em auto;
-    display: block;
-    border-radius: 50%;
-  }
+.about-image {
+  margin: 2em auto;
+  display: block;
+  border-radius: 50%;
+}
 
-  .about-title {
-    text-align: center;
-    color: #FF9204;
-    font-size: 2em;
-    margin: 1em 0 0 0;
-  }
+.about-title {
+  text-align: center;
+  color: #ff9204;
+  font-size: 2em;
+  margin: 1em 0 0 0;
+}
 
-  .about-text {
-    font-size: 1em;
-    font-family: 'Open Sans', 'arial', sans-serif, serif;
-    line-height: 1.5em;
-    text-align: center;
-  }
+.about-text {
+  font-size: 1em;
+  font-family: "Open Sans", "arial", sans-serif, serif;
+  line-height: 1.5em;
+  text-align: center;
+}
 
-  .about-link {
-    color: #6591f5;
-    text-decoration: none;
-    font-size: 1.3em;
-  }
+.about-link {
+  color: #6591f5;
+  text-decoration: none;
+  font-size: 1.3em;
+}
 
-  .about-link:hover {
-    text-decoration: underline;
-  }
+.about-link:hover {
+  text-decoration: underline;
+}
 
 /* Tablet */
-  @media screen and (min-width: 480px) {
-    .about-title, .about-text {
-      text-align: left;
-    }
+@media screen and (min-width: 480px) {
+  .about-title,
+  .about-text {
+    text-align: left;
   }
+}
 
 /* HD-Desktop */
-  @media screen and (min-width: 1025px) {
-    .about {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+@media screen and (min-width: 1025px) {
+  .about {
+    max-width: 800px;
+    margin: 0 auto;
   }
+}
 </style>

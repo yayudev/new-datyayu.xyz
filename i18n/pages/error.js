@@ -75,4 +75,4 @@ export default {
     Y el resto, tras una excepción del servidor, fue un numero.`
     }
   }
-};
+}

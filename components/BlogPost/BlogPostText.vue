@@ -1,42 +1,41 @@
 <template>
-  <div class="blog-post-text" v-html="content">
-  </div>
+  <div class="blog-post-text" v-html="content" />
 </template>
 
 
 <script>
-import hljs from "../../plugins/highlight.js";
+import hljs from "../../plugins/highlight.js"
 
 export default {
   props: {
     content: { type: String, default: "" }
   },
 
+  watch: {
+    content() {
+      this.forceHighlight()
+    }
+  },
+
   mounted() {
-    hljs.initHighlightingOnLoad();
-    this.forceHighlight();
+    hljs.initHighlightingOnLoad()
+    this.forceHighlight()
   },
 
   beforeUpdate() {
-    hljs.initHighlightingOnLoad();
-    this.forceHighlight();
+    hljs.initHighlightingOnLoad()
+    this.forceHighlight()
   },
 
   methods: {
     forceHighlight() {
       this.$nextTick(() => {
-        hljs.initHighlighting.called = false;
-        hljs.initHighlighting();
-      });
-    }
-  },
-
-  watch: {
-    content(text) {
-      this.forceHighlight();
+        hljs.initHighlighting.called = false
+        hljs.initHighlighting()
+      })
     }
   }
-};
+}
 </script>
 
 
@@ -58,14 +57,14 @@ export default {
 
 .blog-post-text code {
   background: #ffe7e7;
-  padding: 0 .25em;
+  padding: 0 0.25em;
   color: #d06060;
 }
 
 .blog-post-text pre code {
   background: #282a36;
   color: white;
-  padding: 0 .25em;
+  padding: 0 0.25em;
   font-size: 1.1em;
   line-height: 1.5em;
 }
@@ -99,7 +98,7 @@ export default {
 .blog-post-text h4,
 .blog-post-text h5,
 .blog-post-text h6 {
-  color: #00BF13;
+  color: #00bf13;
   margin-top: 2em;
   line-height: 1.5em;
   text-align: center;

@@ -371,4 +371,4 @@ Nada fancy aqui. Sólo una vieja página rota. Sin embargo, este fue el primer s
       ]
     }
   }
-};
+}

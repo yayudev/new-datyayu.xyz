@@ -26,4 +26,4 @@ export default {
         "Problema al obtener el contenido del post. Por favor revisa tu conexión a internet o intenta más tarde."
     }
   }
-};
+}

@@ -4,18 +4,18 @@
       :header-title="pageTitle"
       :header-subtitle="pageSubtitle"
       header-color="purple"
-    ></site-header>
+    />
 
     <div class="site-content">
-      <experiments></experiments>
+      <experiments />
     </div>
   </div>
 </template>
 
 
 <script>
-import SiteHeader from "~components/SiteHeader/SiteHeader.vue";
-import Experiments from "~components/Experiments/Experiments.vue";
+import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"
+import Experiments from "~/components/Experiments/Experiments.vue"
 
 export default {
   transition: "content",
@@ -34,17 +34,17 @@ export default {
         { property: "og:description", content: this.pageSubtitle },
         { property: "og:url", content: "https://datyayu.xyz/experiments" }
       ]
-    };
+    }
   },
 
   computed: {
     pageTitle() {
-      return this.$t("experiments.title");
+      return this.$t("experiments.title")
     },
 
     pageSubtitle() {
-      return this.$t("experiments.subtitle");
+      return this.$t("experiments.subtitle")
     }
   }
-};
+}
 </script>

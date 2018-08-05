@@ -1,7 +1,7 @@
 <template>
-  <a class="experiments-item" :href="url" rel="noopener" target="_blank" @click.prevent="openExperimentModal">
-    <img class="experiments-item-image" :src="thumbnailUrl" :alt="title" />
-    <h3 class="experiments-item-title"> {{title}} </h3>
+  <a :href="url" class="experiments-item" rel="noopener" target="_blank" @click.prevent="openExperimentModal">
+    <img :src="thumbnailUrl" :alt="title" class="experiments-item-image">
+    <h3 class="experiments-item-title"> {{ title }} </h3>
   </a>
 </template>
 
@@ -16,8 +16,8 @@ export default {
 
   computed: {
     thumbnailUrl() {
-      const img = this.img;
-      return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/experiments/${img}.jpg`;
+      const img = this.img
+      return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/experiments/${img}.jpg`
     }
   },
 
@@ -26,12 +26,12 @@ export default {
       const experimentInfo = {
         url: this.url,
         title: this.title
-      };
+      }
 
-      this.$emit("showModal", experimentInfo);
+      this.$emit("showModal", experimentInfo)
     }
   }
-};
+}
 </script>
 
 
@@ -73,17 +73,10 @@ export default {
   text-overflow: ellipsis;
   box-sizing: border-box;
   color: white;
-  padding: .5em;
-  background: rgba(153, 123, 255, .5);
+  padding: 0.5em;
+  background: rgba(153, 123, 255, 0.5);
   transition: background 200ms ease-in-out;
 }
-
-
-
-
-
-
-
 
 /* Tablet */
 
@@ -94,35 +87,21 @@ export default {
   }
 }
 
-
-
-
-
-
-
-
 /* Desktop */
 
 @media screen and (min-width: 780px) {
   .experiments-item {
     width: 32%;
-    margin: 1em .65%;
+    margin: 1em 0.65%;
   }
 }
-
-
-
-
-
-
-
 
 /* +HD Desktop */
 
 @media screen and (min-width: 1200px) {
   .experiments-item {
     width: 24%;
-    margin: 1em .5%;
+    margin: 1em 0.5%;
   }
 }
 </style>

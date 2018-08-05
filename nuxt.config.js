@@ -1,14 +1,14 @@
-const Webpack = require("webpack");
-const fs = require("fs");
-const path = require("path");
+const Webpack = require("webpack")
+const fs = require("fs")
+const path = require("path")
 
-const SUPPORTED_HIGHLIGHT_LANGUAGES = require("./config/highlight-languages.js");
+const SUPPORTED_HIGHLIGHT_LANGUAGES = require("./config/highlight-languages.js")
 
-const API_DIR = path.resolve(__dirname, "static", "api");
-const POSTS_DIR = path.resolve(API_DIR, "posts");
-const POSTS_PAGES_DIR = path.resolve(POSTS_DIR, "pages");
-const TAGS_DIR = path.resolve(API_DIR, "tags");
-const TAGS_PAGES_DIR = path.resolve(TAGS_DIR, "pages");
+const API_DIR = path.resolve(__dirname, "static", "api")
+const POSTS_DIR = path.resolve(API_DIR, "posts")
+const POSTS_PAGES_DIR = path.resolve(POSTS_DIR, "pages")
+const TAGS_DIR = path.resolve(API_DIR, "tags")
+const TAGS_PAGES_DIR = path.resolve(TAGS_DIR, "pages")
 
 module.exports = {
   /*
@@ -19,6 +19,10 @@ module.exports = {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "description",
+        content: "Just @datyayu's tech blog. Frontend is fun."
+      },
       {
         property: "og:image",
         content: "https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.jpg"
@@ -46,6 +50,7 @@ module.exports = {
   */
   plugins: [
     "~plugins/google-analytics",
+    "~/plugins/disqus",
     { src: "~plugins/i18n.js", injectAs: "i18n" }
   ],
   modules: ["@nuxtjs/workbox"],
@@ -55,15 +60,15 @@ module.exports = {
   router: {
     scrollBehavior(to, from, savedPosition) {
       if (savedPosition) {
-        return savedPosition;
+        return savedPosition
       }
 
-      const $header = document.querySelector(".header");
+      const $header = document.querySelector(".header")
       if ($header) {
-        $header.scrollIntoView();
+        $header.scrollIntoView()
       }
 
-      return { x: 0, y: 0 };
+      return { x: 0, y: 0 }
     }
   },
   /*
@@ -84,7 +89,7 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: "eslint-loader",
           exclude: /(node_modules)/
-        });
+        })
       }
     },
 
@@ -132,27 +137,27 @@ module.exports = {
     routes: [
       // Build posts
       ...fs.readdirSync(POSTS_DIR).map(file => {
-        const postname = file.replace(".json", "");
-        return `/blog/posts/${postname}`;
+        const postname = file.replace(".json", "")
+        return `/blog/posts/${postname}`
       }),
       // Build posts pages
       ...fs.readdirSync(POSTS_PAGES_DIR).map(file => {
-        const postname = file.replace(".json", "");
-        return `/blog/page/${postname}`;
+        const postname = file.replace(".json", "")
+        return `/blog/page/${postname}`
       }),
       // Build tags
       ...fs.readdirSync(TAGS_DIR).map(file => {
-        const tagname = file.replace(".json", "");
-        return `/blog/tags/${tagname}`;
+        const tagname = file.replace(".json", "")
+        return `/blog/tags/${tagname}`
       }),
       // Buld tags pages
       ...fs.readdirSync(TAGS_PAGES_DIR).map(file => {
-        const filename = file.replace(".json", "");
-        const page = filename.match(/[0-9]+$/);
-        const tagname = filename.replace(/-[0-9]+$/, "");
+        const filename = file.replace(".json", "")
+        const page = filename.match(/[0-9]+$/)
+        const tagname = filename.replace(/-[0-9]+$/, "")
 
-        return `/blog/tags/${tagname}/${page}`;
+        return `/blog/tags/${tagname}/${page}`
       })
     ]
   }
-};
+}

@@ -1,34 +1,45 @@
 <template>
   <span class="vue-typer">
     <span class="left">
-      <span v-for="l in numLeftChars" :key="l" class="char custom typed" v-html="currentTextArray[l-1]"></span>
+      <span
+        v-for="l in numLeftChars"
+        :key="l"
+        class="char custom typed"
+        v-html="currentTextArray[l-1]"
+      />
     </span>
 
-    <caret :class="caretClasses" :animation="caretAnimation"></caret>
+    <caret :class="caretClasses" :animation="caretAnimation" />
 
     <span class="right">
-      <span v-for="r in numRightChars" :key="r" class="char custom" :class="rightCharClasses" v-html="currentTextArray[numLeftChars + r-1]"></span>
+      <span
+        v-for="r in numRightChars"
+        :key="r"
+        :class="rightCharClasses"
+        class="char custom"
+        v-html="currentTextArray[numLeftChars + r-1]"
+      />
     </span>
   </span>
 </template>
 
 <script>
-import Caret from "./Caret.vue";
-import shuffle from "../../utils/shuffle.js";
+import Caret from "./Caret.vue"
+import shuffle from "../../utils/shuffle.js"
 
 const STATE = {
   IDLE: "idle",
   TYPING: "typing",
   ERASING: "erasing",
   COMPLETE: "complete"
-};
+}
 
 const ERASE_STYLE = {
   BACKSPACE: "backspace",
   SELECT_BACK: "select-back",
   SELECT_ALL: "select-all",
   CLEAR: "clear"
-};
+}
 
 export default {
   name: "VueTyper",
@@ -38,23 +49,23 @@ export default {
 
   props: {
     /**
-    * Text(s) to type.
-    */
+     * Text(s) to type.
+     */
     text: {
       type: [String, Array],
       required: true,
       validator(value) {
         if (typeof value === "string") {
-          return value.length > 0;
+          return value.length > 0
         }
-        return value.every(item => typeof item === "string" && item.length > 0);
+        return value.every(item => typeof item === "string" && item.length > 0)
       }
     },
 
     /**
-    * Number of extra times to type "text" after the first time.
-    * 0 will type "text" once, 1 will type twice, Infinity will type forever.
-    */
+     * Number of extra times to type "text" after the first time.
+     * 0 will type "text" once, 1 will type twice, Infinity will type forever.
+     */
     repeat: {
       type: Number,
       default: Infinity,
@@ -62,18 +73,18 @@ export default {
     },
 
     /**
-    * Randomly shuffles "text" (using Fisher-Yates algorithm) before typing it.
-    * If "repeat" > 0, "text" will be shuffled again before each repetition.
-    */
+     * Randomly shuffles "text" (using Fisher-Yates algorithm) before typing it.
+     * If "repeat" > 0, "text" will be shuffled again before each repetition.
+     */
     shuffle: {
       type: Boolean,
       default: false
     },
 
     /**
-    * "typing"  - starts VueTyper off as a blank space and begins to type the first word.
-    * "erasing" - starts VueTyper off with the first word already typed, and begins to erase.
-    */
+     * "typing"  - starts VueTyper off as a blank space and begins to type the first word.
+     * "erasing" - starts VueTyper off with the first word already typed, and begins to erase.
+     */
     initialAction: {
       type: String,
       default: STATE.TYPING,
@@ -81,8 +92,8 @@ export default {
     },
 
     /**
-    * Milliseconds to wait before typing the first character.
-    */
+     * Milliseconds to wait before typing the first character.
+     */
     preTypeDelay: {
       type: Number,
       default: 70,
@@ -90,8 +101,8 @@ export default {
     },
 
     /**
-    * Milliseconds to wait after typing a character, until the next character is typed.
-    */
+     * Milliseconds to wait after typing a character, until the next character is typed.
+     */
     typeDelay: {
       type: Number,
       default: 70,
@@ -99,8 +110,8 @@ export default {
     },
 
     /**
-    * Milliseconds to wait before performing the first erase action (backspace, highlight, etc.).
-    */
+     * Milliseconds to wait before performing the first erase action (backspace, highlight, etc.).
+     */
     preEraseDelay: {
       type: Number,
       default: 2000,
@@ -108,9 +119,9 @@ export default {
     },
 
     /**
-    * Milliseconds to wait after performing an erase action (backspace, highlight, etc.),
-    * until the next erase action can start.
-    */
+     * Milliseconds to wait after performing an erase action (backspace, highlight, etc.),
+     * until the next erase action can start.
+     */
     eraseDelay: {
       type: Number,
       default: 250,
@@ -118,11 +129,11 @@ export default {
     },
 
     /**
-    * "backspace"   - Erase one character at a time, like pressing backspace.
-    * "select-back" - Highlight back one character at a time; erase once all characters are highlighted.
-    * "select-all"  - Highlight all characters at once; erase afterwards.
-    * "clear"       - Immediately erases everything; text simply disappears.
-    */
+     * "backspace"   - Erase one character at a time, like pressing backspace.
+     * "select-back" - Highlight back one character at a time; erase once all characters are highlighted.
+     * "select-all"  - Highlight all characters at once; erase afterwards.
+     * "clear"       - Immediately erases everything; text simply disappears.
+     */
     eraseStyle: {
       type: String,
       default: ERASE_STYLE.SELECT_ALL,
@@ -131,17 +142,20 @@ export default {
     },
 
     /**
-    * Flag to erase everything once VueTyper is finished typing. Set to false to leave the last word visible.
-    */
+     * Flag to erase everything once VueTyper is finished typing. Set to false to leave the last word visible.
+     */
     eraseOnComplete: {
       type: Boolean,
       default: false
     },
 
     /**
-    * Caret animation style. See Caret.vue.
-    */
-    caretAnimation: String
+     * Caret animation style. See Caret.vue.
+     */
+    caretAnimation: {
+      type: String,
+      default: () => ""
+    }
   },
 
   data() {
@@ -155,7 +169,7 @@ export default {
       spoolIndex: -1,
       previousTextIndex: -1,
       currentTextIndex: -1
-    };
+    }
   },
 
   computed: {
@@ -168,7 +182,7 @@ export default {
         erasing:
           this.state === STATE.ERASING && !this.isSelectionBasedEraseStyle,
         complete: this.state === STATE.COMPLETE
-      };
+      }
     },
     rightCharClasses() {
       return {
@@ -177,227 +191,228 @@ export default {
         erased:
           this.state !== STATE.ERASING ||
           (this.state === STATE.ERASING && !this.isSelectionBasedEraseStyle)
-      };
+      }
     },
     isSelectionBasedEraseStyle() {
-      const selectBack = ERASE_STYLE.SELECT_BACK;
-      const selectAll = ERASE_STYLE.SELECT_ALL;
-      return !!this.eraseStyle.match(`^${selectBack}|${selectAll}$`);
+      const selectBack = ERASE_STYLE.SELECT_BACK
+      const selectAll = ERASE_STYLE.SELECT_ALL
+      return !!this.eraseStyle.match(`^${selectBack}|${selectAll}$`)
     },
     isEraseAllStyle() {
-      const clear = ERASE_STYLE.CLEAR;
-      const selectAll = ERASE_STYLE.SELECT_ALL;
-      return !!this.eraseStyle.match(`^${clear}|${selectAll}$`);
+      const clear = ERASE_STYLE.CLEAR
+      const selectAll = ERASE_STYLE.SELECT_ALL
+      return !!this.eraseStyle.match(`^${clear}|${selectAll}$`)
     },
     isDoneTyping() {
-      return this.currentTextIndex >= this.currentText.length;
+      return this.currentTextIndex >= this.currentText.length
     },
     isDoneErasing() {
       // Selection-based erase styles must stay in the highlight stage for one iteration before erasing is finished.
       if (this.isSelectionBasedEraseStyle) {
-        return this.currentTextIndex <= 0 && this.previousTextIndex <= 0;
+        return this.currentTextIndex <= 0 && this.previousTextIndex <= 0
       }
-      return this.currentTextIndex <= 0;
+      return this.currentTextIndex <= 0
     },
     onLastWord() {
-      return this.spoolIndex === this.spool.length - 1;
+      return this.spoolIndex === this.spool.length - 1
     },
     shouldRepeat() {
-      return this.repeatCounter < this.repeat;
+      return this.repeatCounter < this.repeat
     },
     currentText() {
       if (this.spoolIndex >= 0 && this.spoolIndex < this.spool.length) {
-        return this.spool[this.spoolIndex];
+        return this.spool[this.spoolIndex]
       }
-      return "";
+      return ""
     },
     currentTextArray() {
       return this.currentText.split("").map(char => {
-        return char === " " ? "&#160;" : char;
-      });
+        return char === " " ? "&#160;" : char
+      })
     },
     numLeftChars() {
-      return this.currentTextIndex < 0 ? 0 : this.currentTextIndex;
+      return this.currentTextIndex < 0 ? 0 : this.currentTextIndex
     },
     numRightChars() {
-      return this.currentText.length - this.numLeftChars;
+      return this.currentText.length - this.numLeftChars
+    }
+  },
+
+  watch: {
+    text() {
+      this.reset()
+    },
+    repeat() {
+      this.reset()
+    },
+    shuffle() {
+      this.reset()
     }
   },
 
   mounted() {
-    this.init();
+    this.init()
   },
 
   beforeDestroy() {
-    this.cancelCurrentAction();
+    this.cancelCurrentAction()
   },
 
   methods: {
     init() {
       // Process the "text" prop into a typing spool
       if (typeof this.text === "string") {
-        this.spool = [this.text];
+        this.spool = [this.text]
       } else {
         // Don"t violate one-way binding, make a copy! Vue doesn"t make a copy for us to keep things reactive
-        let textCopy = this.text.slice();
-        textCopy = textCopy.filter(textToType => textToType.length);
-        this.spool = textCopy;
+        let textCopy = this.text.slice()
+        textCopy = textCopy.filter(textToType => textToType.length)
+        this.spool = textCopy
       }
 
-      this.repeatCounter = 0;
-      this.resetSpool();
+      this.repeatCounter = 0
+      this.resetSpool()
 
       if (this.initialAction === STATE.TYPING) {
-        this.startTyping();
+        this.startTyping()
       } else if (this.initialAction === STATE.ERASING) {
         // This is a special case when we start off in erasing mode. The first text is already considered typed, and
         // it may even be the only text in the spool. So don"t jump directly into erasing mode (in-case "repeat" and
         // "eraseOnComplete" are configured to false), and instead jump to the "we just finished typing a word" phase.
-        this.moveCaretToEnd();
-        this.onTyped();
+        this.moveCaretToEnd()
+        this.onTyped()
       }
     },
     reset() {
-      this.cancelCurrentAction();
-      this.init();
+      this.cancelCurrentAction()
+      this.init()
     },
     resetSpool() {
-      this.spoolIndex = 0;
+      this.spoolIndex = 0
       if (this.shuffle && this.spool.length > 1) {
-        shuffle(this.spool);
+        shuffle(this.spool)
       }
     },
     cancelCurrentAction() {
       if (this.actionInterval) {
-        clearInterval(this.actionInterval);
-        this.actionInterval = 0;
+        clearInterval(this.actionInterval)
+        this.actionInterval = 0
       }
       if (this.actionTimeout) {
-        clearTimeout(this.actionTimeout);
-        this.actionTimeout = 0;
+        clearTimeout(this.actionTimeout)
+        this.actionTimeout = 0
       }
     },
     shiftCaret(delta) {
-      this.previousTextIndex = this.currentTextIndex;
-      const newCaretIndex = this.currentTextIndex + delta;
+      this.previousTextIndex = this.currentTextIndex
+      const newCaretIndex = this.currentTextIndex + delta
       this.currentTextIndex = Math.min(
         Math.max(newCaretIndex, 0),
         this.currentText.length
-      );
+      )
     },
     moveCaretToStart() {
-      this.previousTextIndex = this.currentTextIndex;
-      this.currentTextIndex = 0;
+      this.previousTextIndex = this.currentTextIndex
+      this.currentTextIndex = 0
     },
     moveCaretToEnd() {
-      this.previousTextIndex = this.currentTextIndex;
-      this.currentTextIndex = this.currentText.length;
+      this.previousTextIndex = this.currentTextIndex
+      this.currentTextIndex = this.currentText.length
     },
     typeStep() {
       if (!this.isDoneTyping) {
-        this.shiftCaret(1);
+        this.shiftCaret(1)
       }
 
       if (this.isDoneTyping) {
-        this.cancelCurrentAction();
+        this.cancelCurrentAction()
         // Ensure the last typed character is rendered before proceeding
         // Note that $nextTick is not required after typing the previous characters due to setInterval
-        this.$nextTick(this.onTyped);
+        this.$nextTick(this.onTyped)
       }
     },
     eraseStep() {
       if (!this.isDoneErasing) {
         if (this.isEraseAllStyle) {
-          this.moveCaretToStart();
+          this.moveCaretToStart()
         } else {
-          this.shiftCaret(-1);
+          this.shiftCaret(-1)
         }
       }
 
       if (this.isDoneErasing) {
-        this.cancelCurrentAction();
+        this.cancelCurrentAction()
         // Ensure every last character is "erased" in the DOM before proceeding
-        this.$nextTick(this.onErased);
+        this.$nextTick(this.onErased)
       }
     },
     startTyping() {
       if (this.actionTimeout || this.actionInterval) {
-        return;
+        return
       }
 
-      this.moveCaretToStart();
+      this.moveCaretToStart()
 
-      this.state = STATE.IDLE;
+      this.state = STATE.IDLE
       this.actionTimeout = setTimeout(() => {
-        this.state = STATE.TYPING;
-        this.typeStep();
+        this.state = STATE.TYPING
+        this.typeStep()
         if (!this.isDoneTyping) {
-          this.actionInterval = setInterval(this.typeStep, this.typeDelay);
+          this.actionInterval = setInterval(this.typeStep, this.typeDelay)
         }
-      }, this.preTypeDelay);
+      }, this.preTypeDelay)
     },
     startErasing() {
       if (this.actionTimeout || this.actionInterval) {
-        return;
+        return
       }
 
-      this.moveCaretToEnd();
+      this.moveCaretToEnd()
 
-      this.state = STATE.IDLE;
+      this.state = STATE.IDLE
       this.actionTimeout = setTimeout(() => {
-        this.state = STATE.ERASING;
-        this.eraseStep();
+        this.state = STATE.ERASING
+        this.eraseStep()
         if (!this.isDoneErasing) {
-          this.actionInterval = setInterval(this.eraseStep, this.eraseDelay);
+          this.actionInterval = setInterval(this.eraseStep, this.eraseDelay)
         }
-      }, this.preEraseDelay);
+      }, this.preEraseDelay)
     },
     onTyped() {
-      this.$emit("typed", this.currentText);
+      this.$emit("typed", this.currentText)
 
       if (this.onLastWord) {
         if (this.eraseOnComplete || this.shouldRepeat) {
-          this.startErasing();
+          this.startErasing()
         } else {
-          this.onComplete();
+          this.onComplete()
         }
       } else {
-        this.startErasing();
+        this.startErasing()
       }
     },
     onErased() {
-      this.$emit("erased", this.currentText);
+      this.$emit("erased", this.currentText)
 
       if (this.onLastWord) {
         if (this.shouldRepeat) {
-          this.repeatCounter++;
-          this.resetSpool();
-          this.startTyping();
+          this.repeatCounter++
+          this.resetSpool()
+          this.startTyping()
         } else {
-          this.onComplete();
+          this.onComplete()
         }
       } else {
-        this.spoolIndex++;
-        this.startTyping();
+        this.spoolIndex++
+        this.startTyping()
       }
     },
     onComplete() {
-      this.state = STATE.COMPLETE;
-      this.$emit("completed");
-    }
-  },
-  watch: {
-    text() {
-      this.reset();
-    },
-    repeat() {
-      this.reset();
-    },
-    shuffle() {
-      this.reset();
+      this.state = STATE.COMPLETE
+      this.$emit("completed")
     }
   }
-};
+}
 </script>
 
 <style>
@@ -419,19 +434,6 @@ span.vue-typer span.right {
   display: inline;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Keep the following .custom.char styles as low-specificity as possible so they are more easily overridden */
 
 span {
@@ -445,7 +447,7 @@ span {
 
 .selected {
   color: #ddd;
-  background-color: #ACCEF7;
+  background-color: #accef7;
 }
 
 .erased.erased.erased {

@@ -4,30 +4,31 @@
       :header-title="pageTitle"
       :header-subtitle="pageSubtitle"
       header-color="green"
-    ></site-header>
+    />
 
     <div class="site-content">
       <h2 v-if="error" class="blog-error-message">
         {{ $t("blog.errorFetchingPost") }}
       </h2>
 
-      <blog-post v-if="!fetching && !error"
+      <blog-post
+        v-if="!fetching && !error"
         :title="currentPost.title"
         :date="currentPost.date"
         :tags="currentPost.tags"
         :content="currentPost.content"
-      ></blog-post>
+      />
     </div>
   </div>
 </template>
 
 
 <script>
-import BlogPost from "~components/BlogPost/BlogPost.vue";
-import SiteHeader from "~components/SiteHeader/SiteHeader.vue";
-import axios from "axios";
-import { mapGetters } from "vuex";
-import { POSTS_ENDPOINT } from "../../../config/api.js";
+import BlogPost from "~/components/BlogPost/BlogPost.vue"
+import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"
+import axios from "axios"
+import { mapGetters } from "vuex"
+import { POSTS_ENDPOINT } from "~/config/api.js"
 
 export default {
   transition: "content",
@@ -38,13 +39,13 @@ export default {
   },
 
   async fetch({ store, route }) {
-    store.commit("posts/startFetching");
+    store.commit("posts/startFetching")
 
-    const postId = route.params.id;
+    const postId = route.params.id
 
     try {
-      const request = await axios.get(`${POSTS_ENDPOINT}/${postId}.json`);
-      const post = request.data;
+      const request = await axios.get(`${POSTS_ENDPOINT}/${postId}.json`)
+      const post = request.data
 
       const blogPost = {
         id: post.id,
@@ -52,11 +53,11 @@ export default {
         date: post.date,
         content: post.html,
         tags: post.tags
-      };
+      }
 
-      store.commit("posts/setActivePost", blogPost);
+      store.commit("posts/setActivePost", blogPost)
     } catch (error) {
-      store.commit("posts/errorFetching");
+      store.commit("posts/errorFetching")
     }
   },
 
@@ -68,7 +69,7 @@ export default {
         { property: "og:description", content: this.postSubtitle },
         { property: "og:url", content: this.pageUrl }
       ]
-    };
+    }
   },
 
   computed: {
@@ -81,7 +82,7 @@ export default {
     postTitle() {
       return this.currentPost && this.currentPost.title
         ? this.currentPost.title
-        : this.pageTitle;
+        : this.pageTitle
     },
 
     postSubtitle() {
@@ -91,22 +92,22 @@ export default {
             .replace("<p>", "")
             .replace("</p>", "")
             .replace("[&hellip;]", "")
-        : this.pageSubtitle;
+        : this.pageSubtitle
     },
 
     pageUrl() {
-      return `https://datyayu.xyz/blog/posts/${this.$route.params.id}`;
+      return `https://datyayu.xyz/blog/posts/${this.$route.params.id}`
     },
 
     pageTitle() {
-      return this.$t("blog.title");
+      return this.$t("blog.title")
     },
 
     pageSubtitle() {
-      return this.$t("blog.subtitle");
+      return this.$t("blog.subtitle")
     }
   }
-};
+}
 </script>
 
 

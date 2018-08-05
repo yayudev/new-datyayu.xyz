@@ -1,21 +1,27 @@
 <template>
   <div>
-    <nav class="navigation" :class="activeClass">
+    <nav :class="activeClass" class="navigation">
       <ul class="navigation-list">
-        <navigation-item v-for="(link, index) in links" :key="index" :text="link.text" :url="link.url" :hover-color="link.hoverColor"></navigation-item>
+        <navigation-item
+          v-for="(link, index) in links"
+          :key="index"
+          :text="link.text"
+          :url="link.url"
+          :hover-color="link.hoverColor"
+        />
       </ul>
-  
-      <div class="navigation-overlay" @click="toggleActive"></div>
+
+      <div class="navigation-overlay" @click="toggleActive" />
     </nav>
-  
-    <navigation-button @click="toggleActive" :is-active="isActive"></navigation-button>
+
+    <navigation-button :is-active="isActive" @click="toggleActive" />
   </div>
 </template>
 
 
 <script>
-import NavigationButton from "./NavigationButton.vue";
-import NavigationItem from "./NavigationItem.vue";
+import NavigationButton from "./NavigationButton.vue"
+import NavigationItem from "./NavigationItem.vue"
 
 export default {
   components: {
@@ -33,21 +39,21 @@ export default {
         { text: "experiments", url: "/experiments", hoverColor: "purple" },
         { text: "about", url: "/about", hoverColor: "orange" }
       ]
-    };
+    }
   },
 
   computed: {
     activeClass() {
-      return this.isActive ? "is-active" : "";
+      return this.isActive ? "is-active" : ""
     }
   },
 
   methods: {
     toggleActive() {
-      this.isActive = !this.isActive;
+      this.isActive = !this.isActive
     }
   }
-};
+}
 </script>
 
 
@@ -76,7 +82,7 @@ export default {
   top: 0;
   left: 50vw;
   opacity: 0;
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, 0.4);
   transform: translateX(155vw);
   will-change: transform, opacity;
   transition: opacity 300ms ease-in-out;
@@ -100,9 +106,6 @@ export default {
   height: 100%;
   flex-direction: column;
 }
-
-
-
 
 /* Desktop */
 
@@ -129,9 +132,6 @@ export default {
     width: 600px;
   }
 }
-
-
-
 
 /* HD Desktop */
 

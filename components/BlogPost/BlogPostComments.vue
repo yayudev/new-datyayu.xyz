@@ -1,20 +1,9 @@
 <template>
   <div class="blog-post-comments">
     <hr class="blog-post-comments-divider">
-    <disqus shortname="datyayu"></disqus>
+    <vue-disqus shortname="datyayu" />
   </div>
 </template>
-
-
-<script>
-import VueDisqus from "vue-disqus/VueDisqus.vue";
-
-export default {
-  components: {
-    disqus: VueDisqus
-  }
-};
-</script>
 
 
 <style>

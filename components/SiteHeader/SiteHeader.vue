@@ -1,14 +1,14 @@
 <template>
-  <header class="header" :style="bgStyle">
-    <div class="header-overlay"></div>
-    <navigation></navigation>
-  
+  <header :style="bgStyle" class="header">
+    <div class="header-overlay" />
+    <navigation />
+
     <div class="header-content">
       <h1 class="header-title">
         <span> YAYU/</span>
         <span :class="headerColor">{{ title }}</span>
       </h1>
-  
+
       <h2 class="header-subtitle"> {{ headerSubtitle }} </h2>
     </div>
   </header>
@@ -16,7 +16,7 @@
 
 
 <script>
-import Navigation from "../Navigation/Navigation.vue";
+import Navigation from "../Navigation/Navigation.vue"
 
 export default {
   components: {
@@ -35,13 +35,13 @@ export default {
 
   computed: {
     bgStyle() {
-      return `background-image: url("${this.bgImage}")`;
+      return `background-image: url("${this.bgImage}")`
     },
     title() {
-      return this.headerTitle.toUpperCase();
+      return this.headerTitle.toUpperCase()
     }
   }
-};
+}
 </script>
 
 
@@ -65,7 +65,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .header-content {
@@ -84,9 +84,6 @@ export default {
   margin: 0;
 }
 
-
-
-
 /* Tablet */
 
 @media screen and (min-width: 480px) {
@@ -103,9 +100,6 @@ export default {
   }
 }
 
-
-
-
 /* Desktop */
 
 @media screen and (min-width: 780px) {
@@ -121,9 +115,6 @@ export default {
     font-size: 1.2em;
   }
 }
-
-
-
 
 /* HD Desktop */
 

@@ -1,9 +1,9 @@
 <template>
-  <Home></Home>
+  <Home />
 </template>
 
 <script>
-import Home from "~components/Home/Home.vue";
+import Home from "~/components/Home/Home.vue"
 
 export default {
   layout: "home",
@@ -22,7 +22,7 @@ export default {
         { property: "og:description", content: this.$t("home.subtitle") },
         { property: "og:url", content: "https://datyayu.xyz/" }
       ]
-    };
+    }
   }
-};
+}
 </script>
