@@ -1,9 +1,9 @@
-[//]: # 'title   - Browser API: Fetch                '
-[//]: # 'tags    - javascript, es6, browserApi, ajax '
-[//]: # 'id      - 37                                '
-[//]: # 'date    - 2017.09.03                        '
-[//]: # 'url     - fetch-api                         '
-[//]: # 'excerpt - Aprende la manera moderna de hacer ajax de forma nativa en el navegador con Fetch API. '
+[//]: # (title   - Browser API: Fetch                )
+[//]: # (tags    - javascript, es6, browserApi, ajax )
+[//]: # (id      - 37                                )
+[//]: # (date    - 2017.09.03                        )
+[//]: # (url     - fetch-api                         )
+[//]: # (excerpt - Aprende la manera moderna de hacer ajax de forma nativa en el navegador con Fetch API. )
 
 Uno de los problemas al hacer AJAX por mucho tiempo fue que la unica manera de hacerlo de forma nativa era por medio de XMLHttpRequest que, si lo haz usado directamente, seguro sabras que no es tan fácil ni bonito. Pero estos inconvenientes ya no son necesarios pues hoy en día los navegadores nos ofrecen una opción mucho más sencilla para hacer AJAX de una forma moderna y sencilla: Fetch API.
 
