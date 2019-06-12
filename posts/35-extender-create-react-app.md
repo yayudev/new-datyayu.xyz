@@ -1,17 +1,15 @@
-[//]: # (title   - Extender create-react-app con react-app-rewire     )
-[//]: # (tags    - javascript, tooling, react, node, npm, babel, sass )
-[//]: # (id      - 35                                                 )
-[//]: # (date    - 2017.06.16                                         )
-[//]: # (url     - extender-create-react-app                          )
-[//]: # (excerpt - Extiende CRA y agrega funcionalidades extra sin necesidad de hacer eject y perder la conveniencia que te ofrece. )
+[//]: # 'title   - Extender create-react-app con react-app-rewire     '
+[//]: # 'tags    - javascript, tooling, react, node, npm, babel, sass '
+[//]: # 'id      - 35                                                 '
+[//]: # 'date    - 2017.06.16                                         '
+[//]: # 'url     - extender-create-react-app                          '
+[//]: # 'excerpt - Extiende CRA y agrega funcionalidades extra sin necesidad de hacer eject y perder la conveniencia que te ofrece. '
 
-Hace tiempo escribí [un post acerca de create-react-app (CRA)](https://datyayu.xyz/blog/posts/create-react-app) donde puedes revisar a detalle qué es y cómo usarlo para crear aplicaciones sin preocuparte por configurar las herramientas de desarrollo. Aún cuando considero que es una herramienta genial y mi primera opción a la hora de trabajar con react, una de las limitantes que he encontrado usandolo para crear aplicaciones es que si tu caso de uso está fuera de lo que CRA te ofrece por defecto toca usar `eject`, lo cual termina quitandole esa simplicidad que es el lado fuerte de la herramienta. Sin embargo, en este post te mostraré cómo puedes extender la funcionalidad de CRA manteniendo tu proyecto simple y sin tanta configuración.
-
+Hace tiempo escribí [un post acerca de create-react-app (CRA)](https://datyayu.dev/blog/posts/create-react-app) donde puedes revisar a detalle qué es y cómo usarlo para crear aplicaciones sin preocuparte por configurar las herramientas de desarrollo. Aún cuando considero que es una herramienta genial y mi primera opción a la hora de trabajar con react, una de las limitantes que he encontrado usandolo para crear aplicaciones es que si tu caso de uso está fuera de lo que CRA te ofrece por defecto toca usar `eject`, lo cual termina quitandole esa simplicidad que es el lado fuerte de la herramienta. Sin embargo, en este post te mostraré cómo puedes extender la funcionalidad de CRA manteniendo tu proyecto simple y sin tanta configuración.
 
 ## `eject`
 
 `eject` o `npm run eject` es la manera que CRA nos ofrece por defecto para poder personalizar nuestro proceso de build y tener acceso directo a la configuración de webpack.
-
 
 Una vez, que haces eject, puedes modificar los archivos de webpack y agregar plugins y loaders a tu gusto. La desventaja de esto es que terminas con un monton de archivos y dependencias que puede que no tengas ni idea de por que están en tu proyecto.
 
@@ -22,7 +20,6 @@ Puedes ignorar estos problemas al inicio pero a medida que el tiempo pasa, mante
 <img src="https://s3-us-west-1.amazonaws.com/datyayu-xyz/blog/images/035-2-dependencias-despues-de-eject.jpg" alt="Dependencias despues de eject" />
 
 Por eso quiero presentarte una alternativa para poder extender nuestro proyecto sin caer en estos problemas: [react-app-rewired](https://github.com/timarney/react-app-rewired).
-
 
 # react-rewire-app
 
@@ -35,11 +32,10 @@ La manera en que esto funciona es mediante un archivo `config-overrides.js` en l
 module.exports = function override(config, env) {
   // Modifica la config de webpack.
   return config;
-}
+};
 ```
 
 Con sólo este archivo, puedes realizar los cambios que quieras y seguir teniendo todos los beneficios de usar CRA. Pero para entenderlo mejor, aquí hay dos ejemplos de cómo puedes usarlo.
-
 
 ## Agregar plugins a babel.
 
@@ -57,23 +53,23 @@ O si prefieres npm:
 $ npm install --save-dev react-app-rewired babel-plugin-transform-decorators-legacy
 ```
 
-
 Despues, creamos un archivo `config-overrides.js` en la raíz del proyecto.
 
 ```js
 // config-overrides.js
 const babelLoader = function(rule) {
-  return rule.loader && rule.loader.endsWith("/babel-loader/lib/index.js");
+  return rule.loader && rule.loader.endsWith('/babel-loader/lib/index.js');
 };
 
 module.exports = function override(config, env) {
   const babelrc = config.module.rules.find(babelLoader).options;
 
-  babelrc.plugins = ["transform-decorators-legacy"].concat(babelrc.plugins || []);
+  babelrc.plugins = ['transform-decorators-legacy'].concat(babelrc.plugins || []);
 
   return config;
 };
 ```
+
 En este caso, primero buscamos el plugin de babel dentro de las reglas (`rules`) de la configuración. Recuerda que `module.rules` es la lista de loaders que webpack 2 usa para transformar tu código.
 
 Una vez que lo encontramos, accedemos a sus opciones (`options`), que es basicamente un `babelrc` o un objecto de configuración de babel. Dentro de ese `babelrc`, a la lista de plugins le agregando al inicio `"transform-decorators-legacy"`.
@@ -94,7 +90,6 @@ Por último, sólo falta remplazar los scripts en `package.json` para usar `reac
 
 Y listo, ahora al usar `yarn start` o `npm run start` tendrás los mismos beneficios de antes pero con soporte también para los plugins que agregaste.
 
-
 ## Agregar soporte para Sass
 
 Para poder usar Sass con create-react-app, el proceso es basicamente el mismo que con babel.
@@ -112,6 +107,7 @@ Las podemos instalar todas usando:
 ```sh
 $ yarn add --dev react-app-rewired node-sass sass-loader css-loader style-loader
 ```
+
 O con npm:
 
 ```sh
@@ -122,7 +118,7 @@ Una vez instalados, agregamos el `config-overrides.js`.
 
 ```js
 const findFileLoader = function(rule) {
-  return rule.loader && rule.loader.endsWith("/file-loader/index.js");
+  return rule.loader && rule.loader.endsWith('/file-loader/index.js');
 };
 
 module.exports = function override(config, env) {
@@ -132,7 +128,7 @@ module.exports = function override(config, env) {
 
   config.module.rules.push({
     test: /\.scss$/,
-    loader: ["style-loader", "css-loader", "sass-loader"]
+    loader: ['style-loader', 'css-loader', 'sass-loader']
   });
 
   return config;
@@ -156,7 +152,6 @@ Ahora sólo queda remplazar los scripts en el `package.json`.
 }
 ...
 ```
-
 
 Y con esto ya podremos usar sass sin problemas.
 

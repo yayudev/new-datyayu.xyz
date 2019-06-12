@@ -27,9 +27,9 @@ module.exports = {
         property: "og:image",
         content: "https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.jpg"
       },
-      { property: "og:site_name", content: "datyayu.xyz" },
+      { property: "og:site_name", content: "datyayu.dev" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image:alt", content: "datyayu.xyz logo" },
+      { name: "twitter:image:alt", content: "datyayu.dev logo" },
       { name: "twitter:site", content: "@datyayu" }
     ],
     link: [

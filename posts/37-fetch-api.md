@@ -1,15 +1,13 @@
-[//]: # (title   - Browser API: Fetch                )
-[//]: # (tags    - javascript, es6, browserApi, ajax )
-[//]: # (id      - 37                                )
-[//]: # (date    - 2017.09.03                        )
-[//]: # (url     - fetch-api                         )
-[//]: # (excerpt - Aprende la manera moderna de hacer ajax de forma nativa en el navegador con Fetch API. )
-
+[//]: # 'title   - Browser API: Fetch                '
+[//]: # 'tags    - javascript, es6, browserApi, ajax '
+[//]: # 'id      - 37                                '
+[//]: # 'date    - 2017.09.03                        '
+[//]: # 'url     - fetch-api                         '
+[//]: # 'excerpt - Aprende la manera moderna de hacer ajax de forma nativa en el navegador con Fetch API. '
 
 Uno de los problemas al hacer AJAX por mucho tiempo fue que la unica manera de hacerlo de forma nativa era por medio de XMLHttpRequest que, si lo haz usado directamente, seguro sabras que no es tan fácil ni bonito. Pero estos inconvenientes ya no son necesarios pues hoy en día los navegadores nos ofrecen una opción mucho más sencilla para hacer AJAX de una forma moderna y sencilla: Fetch API.
 
-> Nota: Fetch API depende del uso de promesas, así que te recomiendo que, si nunca las haz usado, aprendas como usarlas primero para que no te confundas al usar fetch. Si ocupas ayuda, puedes revisar [este post que escribí acerca de Promesas](https://datyayu.xyz/blog/posts/es6-promesas) para aprender qué son y cómo usarlas.
-
+> Nota: Fetch API depende del uso de promesas, así que te recomiendo que, si nunca las haz usado, aprendas como usarlas primero para que no te confundas al usar fetch. Si ocupas ayuda, puedes revisar [este post que escribí acerca de Promesas](https://datyayu.dev/blog/posts/es6-promesas) para aprender qué son y cómo usarlas.
 
 ## ¿Qué es Fetch API?
 
@@ -24,9 +22,10 @@ La ventaja que tiene fetch con respecto a estas es que es completamente nativa, 
 Lo más común es usar AJAX para pedir datos por medio de GET para actualizar el contenido de una página, así que empezemos por ver como hacer peticiones con fetch usando el método GET.
 
 Fetch tiene 3 pasos.
-  1. Pide los datos al servidor
-  2. Procesa los datos
-  3. Nos entrega el resultado final
+
+1. Pide los datos al servidor
+2. Procesa los datos
+3. Nos entrega el resultado final
 
 En codigo luce algo como asi:
 
@@ -34,9 +33,13 @@ En codigo luce algo como asi:
 // Pide datos
 fetch(url)
   // Procesa los datos
-  .then(respuesta => {/* ... */ })
+  .then(respuesta => {
+    /* ... */
+  })
   // Resultado final
-  .then(datos => {/* ... */})
+  .then(datos => {
+    /* ... */
+  });
 ```
 
 Si te das cuenta, fetch trabaja con promesas. Esto es mejor, más moderno y fácil de entender que tener que lidiar con callbacks o eventos para manejar la petición.
@@ -46,13 +49,13 @@ En un caso real sería algo así:
 ```js
 fetch('https://jsonplaceholder.typicode.com/posts/1')
   .then(res => res.json())
-  .then(post => console.log(post))
+  .then(post => console.log(post));
 ```
 
 Revisemos parte por parte lo que hace.
 
 ```js
-fetch('https://jsonplaceholder.typicode.com/posts/1')
+fetch('https://jsonplaceholder.typicode.com/posts/1');
 ```
 
 Primero pedimos data de `https://jsonplaceholder.typicode.com/posts/1`. jsonplaceholder es un servicio gratis para hacer pruebas con ajax, así que es una buena fuente para probar fetch.
@@ -80,11 +83,9 @@ Aquí hay un ejemplo un poco más complejo por si quieres tenerlo de referencía
 <iframe height='265' scrolling='no' title='WEmEWP' src='//codepen.io/datyayu/embed/WEmEWP/?height=265&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/datyayu/pen/WEmEWP/'>WEmEWP</a> by Arturo Coronel (<a href='https://codepen.io/datyayu'>@datyayu</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-
 ## Cómo usar (`POST`)
 
 Ya que sabemos cómo usar fetch para hacer peticiones GET, veamos cómo hacerlo para POST.
-
 
 Usar fetch para realizar peticiones POST es un poco más elaborado que GET, pero sigue siendo bastante sencillo:
 
@@ -98,13 +99,13 @@ const options = {
     title: 'hello',
     body: 'world'
   })
-}
+};
 
 fetch('https://jsonplaceholder.typicode.com/posts/', options)
   .then(response => response.json())
   .then(post => {
-    console.log(post)
-  })
+    console.log(post);
+  });
 ```
 
 La parte de usar fetch es la misma que con GET, con la diferencia de que ocupamos obligatoriamente pasarle un objeto de opciones como segundo argumento. Veamos en este caso que hace cada propiedad en nuestras opciones.
@@ -124,10 +125,10 @@ Esto nos dice que método vamos usar. Por defecto usa GET así que cuando usamos
 Cuando usamos fetch podemos especificar los headers de la petici´øn pasandole un objeto en las opciones con todos los que queremos incluir. Entonces si quisiéramos agregarle otro header, sólo hace falta agregarle otra propiedad a la parte de headers como `'x-mi-header': 'holamundo'`.
 
 ```js
-  body: JSON.stringify({
-    title: 'hello',
-    body: 'world'
-  })
+body: JSON.stringify({
+  title: 'hello',
+  body: 'world'
+});
 ```
 
 `body` representa el cuerpo de nuestra petición. En este caso, queremos enviar un objeto `{ title: 'hello', body: 'world' }` en formato json, así que lo pasamos por `JSON.stringify` para transformarlo a su equivalente en json.
@@ -136,8 +137,8 @@ Cuando usamos fetch podemos especificar los headers de la petici´øn pasandole 
 fetch(url, options)
   .then(response => response.json())
   .then(post => {
-    console.log(post)
-  })
+    console.log(post);
+  });
 ```
 
 El resto es lo mismo que con GET; pedimos la información, lo procesamos y después lo mostramos en consola. Si todo salió bien deberías ver algo así en tu consola:
@@ -167,11 +168,11 @@ Debido a que lo que fetch retorna es una promesa normal, para atrapar errores s�
 fetch(url, options)
   .then(response => response.json())
   .then(post => {
-    console.log(post)
+    console.log(post);
   })
   .catch(error => {
-    console.log(error)
-  })
+    console.log(error);
+  });
 ```
 
 Esto nos permitira tratar con casos, por ejemplo, como cuando el servidor no responda o el usuario no tenga conexión.
@@ -190,16 +191,16 @@ fetch('https://jsonplaceholder.typicode.com/posts/9999999999')
       });
     }
 
-    return res.json()
+    return res.json();
   })
   .then(post => {
-    $title.innerText = post.title
-    $body.innerText = post.body
+    $title.innerText = post.title;
+    $body.innerText = post.body;
   })
   .catch(error => {
-    $title.innerText = 'ERROR'
-    $body.innerText = 'Algo salio mal.'
-  })
+    $title.innerText = 'ERROR';
+    $body.innerText = 'Algo salio mal.';
+  });
 ```
 
 En este caso despues de realizar la petición procesamos la respuesta viendo primero que status tuvo (usando `res.status`) y si la respuesta fue un 404, renderizamos un mensaje de error; de lo contrario procesamos la respuesta normalmente.
@@ -209,10 +210,11 @@ Hay que tener cuidado con esto pues si no tratamos esos casos puede que el servi
 # Compatibilidad
 
 Fetch API ya lleva bastante tiempo siendo soportada en los navegadores modernos. Pero siendo más especifico, puedes usar fetch a partir de:
- * Edge 14+
- * Firefox 39+
- * Safari 10.1+
- * Chrome 42+
+
+- Edge 14+
+- Firefox 39+
+- Safari 10.1+
+- Chrome 42+
 
 Pero si ocupas soportar versiones más viejas o IE, puedes usarlo por medio de polyfill.io:
 
@@ -221,8 +223,6 @@ Pero si ocupas soportar versiones más viejas o IE, puedes usarlo por medio de p
 ```
 
 O si ocupas usar fetch en el servidor (incluido para server-side rendering) te recomiendo usar [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch).
-
-
 
 ---
 

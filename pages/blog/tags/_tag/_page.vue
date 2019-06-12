@@ -97,7 +97,7 @@ export default {
     pageUrl() {
       const prefix = this.navigationPrefix
       const page = this.currentPage
-      return `https://datyayu.xyz/blog/${prefix}/${page}`
+      return `https://datyayu.dev/blog/${prefix}/${page}`
     },
 
     pageTitle() {

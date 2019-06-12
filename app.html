@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="es" {{ HTML_ATTRS }}>
+  <head>
+    {{
+      HEAD
+    }}
 
-<head>
-  {{ HEAD }}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Open+Sans" />
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Open+Sans">
-
-  <script type="application/ld+json">
-    {
+    <script type="application/ld+json">
+      {
         "@context": "https://schema.org/",
         "@type": "Person",
         "name": "Arturo Coronel",
         "additionalName": "Yayu",
         "jobTitle": "Frontend developer",
         "telephone": "(664) 3476016 ",
-        "url": "https//datyayu.xyz/"
+        "url": "https//datyayu.dev/"
       }
-  </script>
+    </script>
+  </head>
 
-</head>
-
-<body {{ BODY_ATTRS }}>
-  {{ APP }}
-</body>
-
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
 </html>

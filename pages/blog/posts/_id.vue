@@ -96,7 +96,7 @@ export default {
     },
 
     pageUrl() {
-      return `https://datyayu.xyz/blog/posts/${this.$route.params.id}`
+      return `https://datyayu.dev/blog/posts/${this.$route.params.id}`
     },
 
     pageTitle() {

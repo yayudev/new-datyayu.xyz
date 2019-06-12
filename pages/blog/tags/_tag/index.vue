@@ -91,7 +91,7 @@ export default {
     },
 
     pageUrl() {
-      return `https://datyayu.xyz/blog/${this.navigationPrefix}`
+      return `https://datyayu.dev/blog/${this.navigationPrefix}`
     },
 
     pageTitle() {

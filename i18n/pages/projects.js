@@ -7,10 +7,10 @@ export default {
         created.`,
       projects: [
         {
-          name: "datyayu.xyz",
+          name: "datyayu.dev",
           date: "2017 - Ongoing",
           imagePrefix: "datyayu-xyz",
-          url: "https://datyayu.xyz",
+          url: "https://datyayu.dev",
           github: "https://github.com/datyayu/new-datyayu.xyz",
           isIframe: true,
           description: `
@@ -113,7 +113,7 @@ Built from scratch using java.`
           description: `
 Blog built with ghost, deployed using a custom theme created from scratch for this site (Available now at github at datyayu/yayul-theme).
 
-It was the first version of datyayu.xyz, but focused only on the blogging side of this site.`
+It was the first version of datyayu.dev, but focused only on the blogging side of this site.`
         },
         {
           name: "rental",
@@ -193,10 +193,10 @@ Isn't it beautiful?`
         he creado.`,
       projects: [
         {
-          name: "datyayu.xyz",
+          name: "datyayu.dev",
           date: "2017 - Actual",
           imagePrefix: "datyayu-xyz",
-          url: "https://datyayu.xyz",
+          url: "https://datyayu.dev",
           github: "https://github.com/datyayu/new-datyayu.xyz",
           isIframe: true,
           description: `
@@ -297,7 +297,7 @@ Creado desde cero usando java.`
           description: `
 Blog construido con ghost, publicado usando un tema personalizado creado desde cero para este sitio (disponible actualmente en github como datyayu/yayul-theme).
 
-Fue la primera versión de datyayu.xyz, pero enfocado sólo en la parte de blogging del sitio.`
+Fue la primera versión de datyayu.dev, pero enfocado sólo en la parte de blogging del sitio.`
         },
         {
           name: "rental",
