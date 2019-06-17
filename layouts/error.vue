@@ -7,11 +7,16 @@
     />
 
     <div class="error-text">
-      <h3 class="error-info"> {{ $t('error.error') }} </h3>
-      <h2 class="error-code red"> {{ error.statusCode }} </h2>
+      <h3 class="error-info">
+        {{ $t("error.error") }}
+      </h3>
+      <h2 class="error-code red">
+        {{ error.statusCode }}
+      </h2>
     </div>
   </section>
 </template>
+
 <script>
 import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"
 
@@ -21,6 +26,10 @@ export default {
   },
 
   props: {
+    error: {
+      type: Object,
+      required: true
+    },
     name: {
       type: String,
       default: () => ""
@@ -41,7 +50,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 .error-container {

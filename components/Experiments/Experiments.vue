@@ -19,7 +19,6 @@
   </div>
 </template>
 
-
 <script>
 import ExperimentsItem from "./ExperimentsItem.vue"
 import ExperimentsModal from "./ExperimentsModal.vue"
@@ -56,7 +55,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 /* Base */

@@ -12,7 +12,6 @@
   </div>
 </template>
 
-
 <script>
 import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"
 import Experiments from "~/components/Experiments/Experiments.vue"

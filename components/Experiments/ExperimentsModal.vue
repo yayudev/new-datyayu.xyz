@@ -26,7 +26,6 @@ export default {
 }
 </script>
 
-
 <style>
 .experiments-modal {
   position: fixed;

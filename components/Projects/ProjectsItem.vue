@@ -1,22 +1,37 @@
 <template>
   <li class="projects-item" @click.prevent="showModal">
-    <h2 class="projects-title"> {{ name }} </h2>
-    <p class="projects-date"> {{ date }} </p>
+    <h2 class="projects-title">
+      {{ name }}
+    </h2>
+    <p class="projects-date">
+      {{ date }}
+    </p>
 
     <div class="projects-screenshots">
       <a :href="phoneImage" rel="noopener" target="_blank" @click.prevent>
-        <img :src="phoneThumbnail" :alt="name + ' (mobile)'" class="projects-image--phone">
+        <img
+          :src="phoneThumbnail"
+          :alt="name + ' (mobile)'"
+          class="projects-image--phone"
+        />
       </a>
       <a :href="ipadImage" rel="noopener" target="_blank" @click.prevent>
-        <img :src="ipadThumbnail" :alt="name + ' (ipad)'" class="projects-image--ipad">
+        <img
+          :src="ipadThumbnail"
+          :alt="name + ' (ipad)'"
+          class="projects-image--ipad"
+        />
       </a>
       <a :href="desktopImage" rel="noopener" target="_blank" @click.prevent>
-        <img :src="desktopThumbnail" :alt="name + ' (desktop)'" class="projects-image--desktop">
+        <img
+          :src="desktopThumbnail"
+          :alt="name + ' (desktop)'"
+          class="projects-image--desktop"
+        />
       </a>
     </div>
   </li>
 </template>
-
 
 <script>
 import { getImageUrl } from "../../utils/image-path-generator.js"
@@ -70,7 +85,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 /* Base */

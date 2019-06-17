@@ -1,28 +1,99 @@
 <template>
   <div class="about">
-    <h2 class="about-title">{{ $t('about.introTitle') }}</h2>
-    <p class="about-text">{{ $t('about.intro') }}</p>
+    <h2 class="about-title">
+      {{ $t("about.introTitle") }}
+    </h2>
 
-    <img class="about-image" src="~assets/images/avatar.min.jpg" alt="Arturo Coronel" width="200px" height="200px">
+    <p class="about-text">
+      {{ $t("about.intro") }}
+    </p>
 
-    <p class="about-text">{{ $t('about.work') }}</p>
-    <p class="about-text">{{ $t('about.openSource') }}</p>
-    <p class="about-text">{{ $t('about.hobbies') }}</p>
+    <img
+      class="about-image"
+      src="~assets/images/avatar.min.jpg"
+      alt="Arturo Coronel"
+      width="200px"
+      height="200px"
+    />
 
-    <h2 class="about-title">{{ $t('about.contactTitle') }}</h2>
-    <p class="about-text">{{ $t('about.contactText') }}</p>
+    <p class="about-text">
+      {{ $t("about.work") }}
+    </p>
+
+    <p class="about-text">
+      {{ $t("about.openSource") }}
+    </p>
+
+    <p class="about-text">
+      {{ $t("about.hobbies") }}
+    </p>
+
+    <h2 class="about-title">
+      {{ $t("about.contactTitle") }}
+    </h2>
+
+    <p class="about-text">
+      {{ $t("about.contactText") }}
+    </p>
 
     <ul class="about-list">
-      <li class="about-list-item"><a class="about-link" target="_blank" href="https://github.com/datyayu/">Github</a></li>
-      <li class="about-list-item"><a class="about-link" href="mailto:aoitsu3@gmail.com">Email</a></li>
-      <li class="about-list-item"><a class="about-link" target="_blank" href="https://facebook.com/datyayu">Facebook</a></li>
-      <li class="about-list-item"><a class="about-link" target="_blank" href="https://twitter.com/datyayu">Twitter</a></li>
-      <li class="about-list-item"><a class="about-link" target="_blank" href="https://www.linkedin.com/in/datyayu/">Linkedin</a></li>
-      <li class="about-list-item"><a class="about-link" href="skype:aoitsu">Skype</a></li>
+      <li class="about-list-item">
+        <a
+          class="about-link"
+          target="_blank"
+          href="https://github.com/datyayu/"
+        >
+          Github
+        </a>
+      </li>
+      <li class="about-list-item">
+        <a
+          class="about-link"
+          href="mailto:
+          aoitsu3@gmail.com"
+        >
+          Email
+        </a>
+      </li>
+      <li class="about-list-item">
+        <a
+          class="about-link"
+          target="_blank"
+          href="https://facebook.com/datyayu"
+        >
+          Facebook
+        </a>
+      </li>
+      <li class="about-list-item">
+        <a
+          class="about-link"
+          target="_blank"
+          href="https://twitter.com/datyayu"
+        >
+          Twitter
+        </a>
+      </li>
+      <li class="about-list-item">
+        <a
+          class="about-link"
+          target="_blank"
+          href="https://www.linkedin.com/in/datyayu/"
+        >
+          Linkedin
+        </a>
+      </li>
+      <li class="about-list-item">
+        <a
+          class="about-link"
+          href="skype:
+          aoitsu"
+        >
+          Skype
+        </a>
+      </li>
     </ul>
   </div>
 </template>
-
 
 <style scoped>
 .about {

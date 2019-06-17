@@ -9,12 +9,18 @@
       </li>
 
       <li class="home-navigation-item">
-        <a class="home-navigation-link" rel="noopener" href="https://github.com/datyayu" target="_blank"> Github </a>
+        <a
+          class="home-navigation-link"
+          rel="noopener"
+          href="https://github.com/datyayu"
+          target="_blank"
+        >
+          Github
+        </a>
       </li>
     </ul>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -99,7 +105,7 @@ export default {
 /* Desktop */
 @media screen and (min-width: 830px) {
   .home-navigation {
-    padding: 4em 5vw 0;
+    padding: 0em 3vw 0;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -133,12 +139,12 @@ export default {
 @media screen and (min-width: 1025px) {
   ul.home-navigation,
   .home-navigation {
-    padding: 2em 3vw 0;
+    padding: 0em 1vw 0;
   }
 
   .home-border-layer {
-    border-bottom: 18em solid white;
-    border-left: 15em solid transparent;
+    border-bottom: 20em solid white;
+    border-left: 17em solid transparent;
     bottom: -0.5em;
     overflow: hidden;
   }
@@ -148,14 +154,21 @@ export default {
 @media screen and (min-width: 1400px) {
   ul.home-navigation,
   .home-navigation {
-    padding: 3em 1em 0 1em;
+    padding: 0.5em 0.5em 0 1em;
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-height: 1366px) {
+  .home-border-layer {
+    border-bottom: 28em solid white;
+    border-left: 15em solid transparent;
   }
 }
 
 @media screen and (min-width: 1400px) and (min-height: 1000px) {
   ul.home-navigation,
   .home-navigation {
-    padding: 3em 0.5em 0 1em;
+    padding: 0.5em 0.5em 0 1em;
   }
 }
 </style>

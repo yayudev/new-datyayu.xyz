@@ -12,7 +12,6 @@
   </div>
 </template>
 
-
 <script>
 import About from "~/components/About/About.vue"
 import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"

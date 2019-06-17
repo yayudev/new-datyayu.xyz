@@ -22,7 +22,6 @@
   </div>
 </template>
 
-
 <script>
 import Blog from "~/components/Blog/Blog.vue"
 import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"
@@ -36,6 +35,29 @@ export default {
   components: {
     Blog,
     SiteHeader
+  },
+
+  computed: {
+    ...mapGetters({
+      posts: "posts/posts",
+      fetching: "posts/fetching",
+      hasNextPage: "posts/hasNextPage",
+      hasPrevPage: "posts/hasPrevPage",
+      currentPage: "posts/currentPage",
+      error: "posts/error"
+    }),
+
+    pageUrl() {
+      return `https://datyayu.dev/blog/page/${this.$route.params.id}`
+    },
+
+    pageTitle() {
+      return this.$t("blog.title")
+    },
+
+    pageSubtitle() {
+      return this.$t("blog.subtitle")
+    }
   },
 
   async fetch({ store, route }) {
@@ -72,33 +94,9 @@ export default {
         { property: "og:url", content: this.pageUrl }
       ]
     }
-  },
-
-  computed: {
-    ...mapGetters({
-      posts: "posts/posts",
-      fetching: "posts/fetching",
-      hasNextPage: "posts/hasNextPage",
-      hasPrevPage: "posts/hasPrevPage",
-      currentPage: "posts/currentPage",
-      error: "posts/error"
-    }),
-
-    pageUrl() {
-      return `https://datyayu.dev/blog/page/${this.$route.params.id}`
-    },
-
-    pageTitle() {
-      return this.$t("blog.title")
-    },
-
-    pageSubtitle() {
-      return this.$t("blog.subtitle")
-    }
   }
 }
 </script>
-
 
 <style>
 .blog-error-message {

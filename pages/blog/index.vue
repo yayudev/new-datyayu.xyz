@@ -22,7 +22,6 @@
   </div>
 </template>
 
-
 <script>
 import Blog from "~/components/Blog/Blog.vue"
 import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"
@@ -36,6 +35,25 @@ export default {
   components: {
     Blog,
     SiteHeader
+  },
+
+  computed: {
+    ...mapGetters({
+      posts: "posts/posts",
+      fetching: "posts/fetching",
+      hasNextPage: "posts/hasNextPage",
+      hasPrevPage: "posts/hasPrevPage",
+      currentPage: "posts/currentPage",
+      error: "posts/error"
+    }),
+
+    pageTitle() {
+      return this.$t("blog.title")
+    },
+
+    pageSubtitle() {
+      return this.$t("blog.subtitle")
+    }
   },
 
   async fetch({ store }) {
@@ -69,25 +87,6 @@ export default {
         { property: "og:description", content: this.pageSubtitle },
         { property: "og:url", content: "https://datyayu.dev/blog" }
       ]
-    }
-  },
-
-  computed: {
-    ...mapGetters({
-      posts: "posts/posts",
-      fetching: "posts/fetching",
-      hasNextPage: "posts/hasNextPage",
-      hasPrevPage: "posts/hasPrevPage",
-      currentPage: "posts/currentPage",
-      error: "posts/error"
-    }),
-
-    pageTitle() {
-      return this.$t("blog.title")
-    },
-
-    pageSubtitle() {
-      return this.$t("blog.subtitle")
     }
   }
 }

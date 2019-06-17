@@ -1,11 +1,15 @@
 <template>
-  <nuxt-link :active-class="activeClass" :to="url" class="navigation-item" tag="li">
+  <nuxt-link
+    :active-class="activeClass"
+    :to="url"
+    class="navigation-item"
+    tag="li"
+  >
     <a :class="linkClasses" class="navigation-link">
       {{ $t(`navigation.${text}`) }}
     </a>
   </nuxt-link>
 </template>
-
 
 <script>
 export default {
@@ -26,7 +30,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 /* Base */

@@ -1,10 +1,17 @@
 <template>
-  <a :href="url" class="experiments-item" rel="noopener" target="_blank" @click.prevent="openExperimentModal">
-    <img :src="thumbnailUrl" :alt="title" class="experiments-item-image">
-    <h3 class="experiments-item-title"> {{ title }} </h3>
+  <a
+    :href="url"
+    class="experiments-item"
+    rel="noopener"
+    target="_blank"
+    @click.prevent="openExperimentModal"
+  >
+    <img :src="thumbnailUrl" :alt="title" class="experiments-item-image" />
+    <h3 class="experiments-item-title">
+      {{ title }}
+    </h3>
   </a>
 </template>
-
 
 <script>
 export default {
@@ -33,7 +40,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 /* Base */

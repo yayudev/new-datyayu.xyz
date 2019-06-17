@@ -1,12 +1,17 @@
 <template>
   <div class="blog-post">
-    <h1 class="blog-post-title"> {{ title }} </h1>
-    <h4 class="blog-post-date"> {{ date }} </h4>
+    <h1 class="blog-post-title">
+      {{ title }}
+    </h1>
+    <h4 class="blog-post-date">
+      {{ date }}
+    </h4>
+
     <h4 class="blog-post-tags">
       <nuxt-link
         v-for="(tag, index) in tags"
-        :to="generateTagUrl(tag)"
         :key="index"
+        :to="generateTagUrl(tag)"
         class="blog-post-tag-link"
       >
         #{{ tag }}
@@ -18,7 +23,6 @@
     <blog-post-comments />
   </div>
 </template>
-
 
 <script>
 import BlogPostText from "./BlogPostText.vue"
@@ -44,7 +48,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 .blog-post {

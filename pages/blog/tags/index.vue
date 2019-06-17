@@ -2,7 +2,6 @@
   <div />
 </template>
 
-
 <script>
 export default {
   asyncData({ redirect }) {

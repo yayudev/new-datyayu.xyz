@@ -1,14 +1,20 @@
 <template>
   <div class="home-text">
     <div class="home-logo-container">
-      <img class="home-logo" src="~assets/images/logo.svg" alt="Arturo Coronel Logo">
+      <img
+        class="home-logo"
+        src="~assets/images/logo.svg"
+        alt="Arturo Coronel Logo"
+      />
     </div>
 
     <div class="home-text-container">
-      <h1 class="home-title"> ARTURO CORONEL </h1>
+      <h1 class="home-title">
+        ARTURO CORONEL
+      </h1>
       <h3 class="home-subtitle">
-        <span class="home-subtitle-item"> {{ developerTitle }} </span>
-        <span class="home-subtitle-item"> {{ javascriptTitle }} </span>
+        <span class="home-subtitle-item">{{ developerTitle }}</span>
+        <span class="home-subtitle-item">{{ javascriptTitle }}</span>
         <span class="home-subtitle-item">
           <vue-typer
             :text="messages"
@@ -64,7 +70,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 /* Base */

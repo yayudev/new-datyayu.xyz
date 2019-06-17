@@ -22,7 +22,6 @@
   </div>
 </template>
 
-
 <script>
 import BlogPost from "~/components/BlogPost/BlogPost.vue"
 import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"
@@ -36,29 +35,6 @@ export default {
   components: {
     BlogPost,
     SiteHeader
-  },
-
-  async fetch({ store, route }) {
-    store.commit("posts/startFetching")
-
-    const postId = route.params.id
-
-    try {
-      const request = await axios.get(`${POSTS_ENDPOINT}/${postId}.json`)
-      const post = request.data
-
-      const blogPost = {
-        id: post.id,
-        title: post.title,
-        date: post.date,
-        content: post.html,
-        tags: post.tags
-      }
-
-      store.commit("posts/setActivePost", blogPost)
-    } catch (error) {
-      store.commit("posts/errorFetching")
-    }
   },
 
   head() {
@@ -106,10 +82,32 @@ export default {
     pageSubtitle() {
       return this.$t("blog.subtitle")
     }
+  },
+
+  async fetch({ store, route }) {
+    store.commit("posts/startFetching")
+
+    const postId = route.params.id
+
+    try {
+      const request = await axios.get(`${POSTS_ENDPOINT}/${postId}.json`)
+      const post = request.data
+
+      const blogPost = {
+        id: post.id,
+        title: post.title,
+        date: post.date,
+        content: post.html,
+        tags: post.tags
+      }
+
+      store.commit("posts/setActivePost", blogPost)
+    } catch (error) {
+      store.commit("posts/errorFetching")
+    }
   }
 }
 </script>
-
 
 <style>
 .blog-error-message {

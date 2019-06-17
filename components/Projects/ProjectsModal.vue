@@ -2,26 +2,51 @@
   <div class="projects-modal" @click="closeModal">
     <modal-close-button @click="closeModal" />
 
-    <iframe v-if="isIframe" :src="url" class="projects-modal-iframe" @click.stop />
+    <iframe
+      v-if="isIframe"
+      class="projects-modal-iframe"
+      :src="url"
+      @click.stop
+    />
 
-    <projects-modal-image-gallery :has-iframe="isIframe" :image-prefix="imagePrefix" />
+    <projects-modal-image-gallery
+      :has-iframe="isIframe"
+      :image-prefix="imagePrefix"
+    />
 
     <div class="projects-modal-content" @click.stop>
       <div class="projects-modal-info-container">
-        <h2 class="projects-modal-title"> {{ name }} </h2>
-        <h4 class="projects-modal-date"> {{ date }} </h4>
-        <a v-if="url" :href="url" class="projects-link" target="_blank" @click.stop>
+        <h2 class="projects-modal-title">
+          {{ name }}
+        </h2>
+        <h4 class="projects-modal-date">
+          {{ date }}
+        </h4>
+        <a
+          v-if="url"
+          :href="url"
+          class="projects-link"
+          target="_blank"
+          @click.stop
+        >
           &lt; Link &gt;
         </a>
-        <a v-if="github" :href="github" class="projects-link" target="_blank" @click.stop>
+        <a
+          v-if="github"
+          :href="github"
+          class="projects-link"
+          target="_blank"
+          @click.stop
+        >
           &lt; Github &gt;
         </a>
       </div>
-      <p class="projects-modal-description"> {{ description }} </p>
+      <p class="projects-modal-description">
+        {{ description }}
+      </p>
     </div>
   </div>
 </template>
-
 
 <script>
 import ModalCloseButton from "../Shared/ModalCloseButton.vue"
@@ -50,7 +75,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 .projects-modal {

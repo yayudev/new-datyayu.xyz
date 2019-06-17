@@ -2,7 +2,6 @@
   <div class="blog-post-text" v-html="content" />
 </template>
 
-
 <script>
 import hljs from "../../plugins/highlight.js"
 
@@ -38,7 +37,6 @@ export default {
 }
 </script>
 
-
 <style>
 .blog-post-text {
   font-family: "Open Sans", "arial", sans-serif, serif;
@@ -59,6 +57,8 @@ export default {
   background: #ffe7e7;
   padding: 0 0.25em;
   color: #d06060;
+  /* display: flex !important; */
+  /* flex-direction: column; */
 }
 
 .blog-post-text pre code {

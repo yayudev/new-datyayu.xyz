@@ -9,7 +9,6 @@ En la web moderna hay varios tipos de interacciones, como el infinite scroll, la
 
 Pues ahora existe una manera más sencilla de hacerlo de forma precisa y al más tiempo con un rendimiento nativo: `IntersectionObserver`.
 
-
 ## Intersection Observer
 
 Intersection Observer (IO) es una API de los navegadores modernos que nos ofrece una manera bastante sencilla de detectar cuando un elemento se encuentra o no visible para el usuario y reaccionar ante ello.
@@ -38,21 +37,24 @@ Pues empezemos:
     width: 100%;
   }
 </style>
+
 <!--...-->
+
 <div>1</div>
 <div>2</div>
 <div>3</div>
 <div>4</div>
 <div>5</div>
 <div>6</div>
+
 <!--...-->
 ```
 
 Para crear un `IntersectionObserver` que se encargue de observar a los elementos, primero definimos su configuración.
 
-``` js
+```js
 const ioConfig = {
-  threshold: [0, .5, .999]
+  threshold: [0, 0.5, 0.999]
 };
 ```
 
@@ -75,15 +77,13 @@ Entonces, lo primero que hacemos es iterar por cada elemento en el array que rec
 ```js
 function ioHandler(elementos) {
   for (let elemento of elementos) {
-
-    if (elemento.intersectionRatio >= .99) {
-      elemento.target.style.background = "green"
-    } else if (elemento.intersectionRatio > .5) {
-      elemento.target.style.background = "yellow"
+    if (elemento.intersectionRatio >= 0.99) {
+      elemento.target.style.background = 'green';
+    } else if (elemento.intersectionRatio > 0.5) {
+      elemento.target.style.background = 'yellow';
     } else {
-      elemento.target.style.background = "red"
+      elemento.target.style.background = 'red';
     }
-
   }
 }
 ```
@@ -99,10 +99,10 @@ const io = new IntersectionObserver(ioHandler, ioConfig);
 Y por ultimo, solo hay que registrar los elementos a observar usando `io.observe()`.
 
 ```js
-const blocks = document.getElementsByTagName("div");
+const blocks = document.getElementsByTagName('div');
 
 for (let block of blocks) {
-  io.observe(block)
+  io.observe(block);
 }
 
 /* Nota:
@@ -123,11 +123,9 @@ Y listo, si corres el ejemplo puedes ver como a medida que haces scroll los bloq
 <iframe height='265' scrolling='no' title='IntersectionObserver' src='//codepen.io/datyayu/embed/brxPZy/?height=265&theme-id=dark&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/datyayu/pen/brxPZy/'>IntersectionObserver</a> by Arturo Coronel (<a href='https://codepen.io/datyayu'>@datyayu</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-
 ## Usos
 
 Obviamente, este tipo de APIs puede tener un infinito número de usos pero aquí te dejo un cuantos usos populares para que te des una idea de cómo puedes usarlo en tus projectos:
-
 
 ### Lazy-loading de imágenes
 
@@ -136,14 +134,12 @@ Carga images cuando las ocupes mostrar.
 <iframe height='265' scrolling='no' title='IntersectionObserver - Lazy loading images' src='//codepen.io/datyayu/embed/PKyYxK/?height=265&theme-id=dark&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/datyayu/pen/PKyYxK/'>IntersectionObserver - Lazy loading images</a> by Arturo Coronel (<a href='https://codepen.io/datyayu'>@datyayu</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-
 ### Infinite scroll
 
 Carga más contenido mientras el usuario siga scrolleando. (Te recomiendo abrirlo en otra página para poder apreciar bien el efecto, puedes hacerlo <a href="https://codepen.io/datyayu/full/zdmOaQ/" target="_blank" rel="noopener"> haciendo click aqui</a>).
 
 <iframe height='265' scrolling='no' title='IntersectionObserver - Infinite scroll' src='//codepen.io/datyayu/embed/zdmOaQ/?height=265&theme-id=dark&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/datyayu/pen/zdmOaQ/'>IntersectionObserver - Infinite scroll</a> by Arturo Coronel (<a href='https://codepen.io/datyayu'>@datyayu</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
-
 
 ### Animaciones
 

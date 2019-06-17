@@ -233,7 +233,7 @@ CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
 
 Y después podemos usar `docker kill` con el id del contenedor. El tuyo probablemente sea diferente al id de mi contenedor así que no olvides de correr `docker ps` para conocer el tuyo.
 
-```bash85
+```bash
 $ docker kill 8522aba44ee5
 ```
 

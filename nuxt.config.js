@@ -12,8 +12,8 @@ const TAGS_PAGES_DIR = path.resolve(TAGS_DIR, "pages")
 
 module.exports = {
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     titleTemplate: "%s | Arturo Coronel",
     meta: [
@@ -38,16 +38,16 @@ module.exports = {
     ]
   },
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: ["~assets/css/main.css"],
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: "#20c0b1" },
   /*
-  ** Vue Plugins
-  */
+   ** Vue Plugins
+   */
   plugins: [
     "~plugins/google-analytics",
     "~/plugins/disqus",
@@ -55,8 +55,8 @@ module.exports = {
   ],
   modules: ["@nuxtjs/workbox"],
   /*
-  ** Vue Router
-  */
+   ** Vue Router
+   */
   router: {
     scrollBehavior(to, from, savedPosition) {
       if (savedPosition) {
@@ -72,16 +72,12 @@ module.exports = {
     }
   },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** Vendor files
-    */
-    vendor: ["axios", "left-pad", "promise-polyfill", "vue-i18n"],
-    /*
-    ** Run ESLINT on save
-    */
+     ** Run ESLINT on save
+     */
     extend(config, { isClient }) {
       if (isClient) {
         config.module.rules.push({
@@ -124,15 +120,15 @@ module.exports = {
     ]
   },
   /*
-  ** Server rendering cache config
-  */
+   ** Server rendering cache config
+   */
   cache: {
     max: 100,
     maxAge: 900000
   },
   /*
-  ** Static build config
-  */
+   ** Static build config
+   */
   generate: {
     routes: [
       // Build posts

@@ -7,19 +7,22 @@
 
 CSS nos permite hacer cosas increibles pero hay ocasiones en las que por más que lo intentemos no hay una manera de replicar cierto tipo de efectos usando sólo CSS o simplemente es demasiado trabajo hacerlo. Para mucho de esos casos, lo mejor es usar svg. En este caso, veremos como replicar el efecto de que estamos dibujando un trazo usando un SVG.
 
-
 ### Paths en SVG
+
 En SVG, los caminos que se dibujan son definidos usando la etiqueta `path`.
 
 ```html
-<path fill="#fffff" d=" M250, 500 C388.071187,
-  500 500, 388.071187 500, 250 C500,
-  111.928813 388.071187, 2.84217094e-14 250,
-  2.84217094e-14 C111.928813,
-  2.84217094e-14 2.84217094e-14,
-  111.928813 2.84217094e-14, 250 C2.84217094e-14,
-  388.071187 111.928813, 500 250, 500 Z"
-></path>
+<path
+  fill="#fffff"
+  d=" M250, 500 C388.071187,
+      500 500, 388.071187 500, 250 C500,
+      111.928813 388.071187, 2.84217094e-14 250,
+      2.84217094e-14 C111.928813,
+      2.84217094e-14 2.84217094e-14,
+      111.928813 2.84217094e-14, 250 C2.84217094e-14,
+      388.071187 111.928813, 500 250, 500 Z"
+>
+</path>
 ```
 
 El atributo `d` de especifica la forma del trazo y `fill` nos dice de que color será el trazo. Si bien cambiar el `fill` no es problema pues usa un formato estandar para colores, `d` es más complicado y por lo general su contenido es auto-generado por Illustrator, Inkscape, Sketch o cualquier otra herramienta que uses para crear el SVG.
@@ -69,8 +72,12 @@ svg path {
 }
 
 @keyframes loading-animation {
-  from { stroke-dashoffset: 0; }
-  to { stroke-dashoffset: 1000; }
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1000;
+  }
 }
 ```
 
@@ -80,6 +87,7 @@ Simplemente ponemos `dasharray` a un numero que genere suficiente espacio entre 
 </iframe>
 
 ### Animaciones en eventos.
+
 Por supuesto, la mayoría de las animaciones en una aplicación no son ciclicas, sino que se ejecutan sólo como respuesta a una interacción del usuario. Por ejemplo, mostrar una confirmación:
 
 <svg width="200px" height="200px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="container">
@@ -108,7 +116,7 @@ button.addEventListener('click', function() {
   path.style.transition = 'stroke-dashoffset 300ms cubic-bezier(0.07,-0.01, 1, 0.07)';
   path.style.transitionDelay = '300ms';
   path.style.strokeDashoffset = 0;
-})
+});
 ```
 
 Lo que hacemos en esta interacción es escuchar el boton y cuando el usuario haga click ejecutamos la animación.
@@ -126,7 +134,7 @@ path.style.strokeDashoffset = 500;
 2. Forzamos al navegador a que haga un "reflow", es decir, realice el calculo del "layout" y aplique los estilos que especificamos antes. En este caso, nos aprovechamos de que el metodo `getBoundingClientRect()` forza esto, así que lo ejecutamos para que el navegador aplique los cambios.
 
 ```js
-  path.getBoundingClientRect();
+path.getBoundingClientRect();
 ```
 
 3. Agregamos la animación.
@@ -142,10 +150,10 @@ Aquí podemos ver la animación en acción.
 <iframe height='394' scrolling='no' title='Animate SVG Line Draw with js' src='//codepen.io/datyayu/embed/dRbmEQ/?height=394&theme-id=dark&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/datyayu/pen/dRbmEQ/'>Animate SVG Line Draw with js</a> by Arturo Coronel (<a href='https://codepen.io/datyayu'>@datyayu</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-
 > NOTA: Cabe aclar que sólo ocupamos realizar el reflow porque queremos realizar un reinicio antes de ejecutar la animación. Si no realizaramos el reflow antes de la animación, la parte de la animación sobreescribiria los valores iniciales y nunca se reiniciría de la animación. Aqui un ejemplo de esto (intenta presionar el boton más de una vez):
 
 > <iframe height='394' scrolling='no' title='Animate SVG Line Draw with js (invalid reset)' src='//codepen.io/datyayu/embed/NgxrLY/?height=265&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/datyayu/pen/NgxrLY/'>Animate SVG Line Draw with js (invalid reset)</a> by Arturo Coronel (<a href='https://codepen.io/datyayu'>@datyayu</a>) on <a href='https://codepen.io'>CodePen</a>.
+
 </iframe>
 
 ---

@@ -56,7 +56,7 @@ sumaDosNumeros(2, 1); // 3
 Otra característica, un poco más difícil de entender, es las arrow functions que automáticamente bindean el contexto de la función. Dicho de otra forma, las arrow functions agregan un `.bind(this)` a la función que creamos.
 
 Por ello, estos dos códigos son equivalentes.
-```
+```js
 var pepe = {
   nombre: "Pepe",
   amigos: ['Pedro', 'Jorge'],
@@ -70,7 +70,7 @@ var pepe = {
 
 pepe.mostrarAmigos();
 ```
-```
+```js
 var pepe = {
   nombre: "Pepe",
   amigos: ['Pedro', 'Jorge'],
@@ -120,7 +120,7 @@ var usuario = (nombre, edad) => ({ nombre: nombre, edad: edad })
 ```
 
 * **Funciones sin parámetros.**
-```
+```js
 // Incorrecto
 var foo = => console.log('foooooo')
 

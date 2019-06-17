@@ -1,3 +1,6 @@
+Hotfixes:
+
+- Update dependencies
 - Update domain to .dev
 
 # [1.7.0 - Service Worker Improvement](https://github.com/datyayu/new-datyayu.xyz/tree/1.7.0)

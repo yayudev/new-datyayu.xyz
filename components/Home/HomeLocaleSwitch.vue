@@ -1,11 +1,14 @@
 <template>
   <div class="home-locale-links">
-    <span :class="esClass" class="home-locale-link" @click="setLocale('es')"> ES </span>
+    <span :class="esClass" class="home-locale-link" @click="setLocale('es')">
+      ES
+    </span>
     /
-    <span :class="enClass" class="home-locale-link" @click="setLocale('en')"> EN </span>
+    <span :class="enClass" class="home-locale-link" @click="setLocale('en')">
+      EN
+    </span>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -31,7 +34,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 .home-locale-links {

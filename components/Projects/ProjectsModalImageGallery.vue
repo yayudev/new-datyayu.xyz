@@ -1,8 +1,16 @@
 <template>
   <div :class="iframeClass" class="image-gallery" @click.stop>
-    <img v-if="imageIndex === 0" :src="phoneImage" class="image-gallery-image">
-    <img v-if="imageIndex === 1" :src="ipadImage" class="image-gallery-image">
-    <img v-if="imageIndex === 2" :src="desktopImage" class="image-gallery-image">
+    <img
+      v-if="imageIndex === 0"
+      :src="phoneImage"
+      class="image-gallery-image"
+    />
+    <img v-if="imageIndex === 1" :src="ipadImage" class="image-gallery-image" />
+    <img
+      v-if="imageIndex === 2"
+      :src="desktopImage"
+      class="image-gallery-image"
+    />
 
     <div class="image-gallery-buttons">
       <a class="image-gallery-button" @click.stop="showPrevImage"> &lt; </a>
@@ -10,7 +18,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 import { getImageUrl } from "../../utils/image-path-generator.js"
@@ -54,7 +61,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 .image-gallery {

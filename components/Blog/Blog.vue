@@ -7,7 +7,9 @@
       :prefix="navigationPrefix"
     />
 
-    <h2 v-if="posts && posts.length === 0"> {{ $t('blog.noPosts') }} </h2>
+    <h2 v-if="posts && posts.length === 0">
+      {{ $t("blog.noPosts") }}
+    </h2>
 
     <ul class="blog-post-list">
       <blog-post-item
@@ -30,7 +32,6 @@
   </div>
 </template>
 
-
 <script>
 import BlogPostItem from "./BlogPostItem.vue"
 import BlogNavigation from "./BlogNavigation.vue"
@@ -50,7 +51,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 .blog {

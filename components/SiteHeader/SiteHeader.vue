@@ -9,11 +9,12 @@
         <span :class="headerColor">{{ title }}</span>
       </h1>
 
-      <h2 class="header-subtitle"> {{ headerSubtitle }} </h2>
+      <h2 class="header-subtitle">
+        {{ headerSubtitle }}
+      </h2>
     </div>
   </header>
 </template>
-
 
 <script>
 import Navigation from "../Navigation/Navigation.vue"
@@ -43,7 +44,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 /* Base */

@@ -18,7 +18,6 @@
   </div>
 </template>
 
-
 <script>
 import NavigationButton from "./NavigationButton.vue"
 import NavigationItem from "./NavigationItem.vue"
@@ -55,7 +54,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 /* Base */

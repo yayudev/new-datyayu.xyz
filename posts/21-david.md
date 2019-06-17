@@ -3,13 +3,11 @@
 [//]: # (id      - 21                                              )
 [//]: # (date    - 2016.08.07                                      )
 [//]: # (url     - david                                           )
-[//]: # (excerpt - Uno de los problemas más frecuentes al tener que mantener un proyecto es el de tratar de tener las dependencias siempre actualizadas. ero ya no hay que preocuparnos de más por si nuestro proyecto está o no al día, pues hay una herramienta que convierte este problema en algo bastante trivial: David.)
-
+[//]: # (excerpt - Uno de los problemas más frecuentes al tener que mantener un proyecto es el de tratar de tener las dependencias siempre actualizadas. ero ya no hay que preocuparnos de más por si nuestro proyecto está o no al día, pues hay una herramienta que convierte este problema en algo bastante trivial: David. )
 
 Uno de los problemas más frecuentes al tener que mantener un proyecto es el de tratar de tener las dependencias siempre actualizadas. Ya sea porque se nos olvida mantenerlas al día o simplemente porque no sabemos cuando una de las dependencias ha lanzado una nueva versión, eventualmente terminamos con un proyecto con muchas dependencias desactualizadas, lo cual puede resultar en problemas de mantenibilidad y seguridad.
 
 En el caso de node.js este problema es aun mayor pues muchas veces tomamos ventaja de lo increible y modular que puede ser en combinación con npm y terminamos con decenas de dependencias en nuestro package.json. Pero ya no hay que preocuparnos de más por si nuestro proyecto está o no al día, pues hay una herramienta que convierte este problema en algo bastante trivial: [david](https://github.com/alanshaw/david).
-
 
 ### ¿Qué es david?
 
@@ -22,11 +20,13 @@ Así de sencillo y simple.
 ### Cómo usar david.
 
 Para usar david lo primero es instalarlo en nuestro sistema, lo cual podemos lograr usando
+
 ```bash
 $ npm install -g david
 ```
 
 Una vez instalado, podemos revisar el estado de las dependencias de un proyecto situándonos en el directorio del mismo y usando:
+
 ```bash
 $ david
 ```
@@ -37,13 +37,14 @@ Esto nos mostrara una lista de las dependencias que están desactualizadas junto
 
 Podemos copiar el comando de npm que nos ofrece para instalar las ultimas versiones de las dependencias, pero david nos ofrece una mejor manera de hacerlo.
 
-``` bash
+```bash
 $ david update [nombre-de-la-dependencia]
 ```
 
-Por ejemplo ``$ david update react`` actualizaría sólo el módulo de react a la última versión, sin tocar los demás módulos. Esto es bastante útil para poder actualizar módulo por módulo y poder ir revisando que al actualizarlo no nos cause problemas de compatibilidad entre versiones.
+Por ejemplo `$ david update react` actualizaría sólo el módulo de react a la última versión, sin tocar los demás módulos. Esto es bastante útil para poder actualizar módulo por módulo y poder ir revisando que al actualizarlo no nos cause problemas de compatibilidad entre versiones.
 
 También podemos actualizar todos los paquetes usando
+
 ```bash
 $ david update
 ```
@@ -62,7 +63,7 @@ Esto te mostrará una lista similar a la anterior, pero de tus dependencias glob
 
 ![](https://s3-us-west-1.amazonaws.com/datyayu-xyz/blog/images/021-2-david-global.jpg)
 
-Y para actualizar los módulos globales, lo hacemos de la misma manera que los locales pero agregando un ``-g`` o ``--global`` al comando.
+Y para actualizar los módulos globales, lo hacemos de la misma manera que los locales pero agregando un `-g` o `--global` al comando.
 
 ```bash
 $ david update -g ava

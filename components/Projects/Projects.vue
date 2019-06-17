@@ -18,7 +18,8 @@
         v-if="modalIsActive"
         :name="activeProject.name"
         :description="activeProject.description"
-        :date="activeProject.date" :url="activeProject.url"
+        :date="activeProject.date"
+        :url="activeProject.url"
         :github="activeProject.github"
         :image-prefix="activeProject.imagePrefix"
         :is-iframe="activeProject.isIframe"
@@ -27,7 +28,6 @@
     </ul>
   </div>
 </template>
-
 
 <script>
 import ProjectsItem from "./ProjectsItem.vue"
@@ -65,7 +65,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 .projects {

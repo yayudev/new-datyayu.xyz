@@ -1,17 +1,20 @@
 <template>
   <li class="blog-post-item">
-    <h4 class="blog-post-item-date">{{ date }}</h4>
+    <h4 class="blog-post-item-date">
+      {{ date }}
+    </h4>
 
     <div class="blog-post-item-info">
       <h2 class="blog-post-item-title">
-        <nuxt-link :to="generatePostUrl()" class="blog-post-item-title-link"> {{ title }} </nuxt-link>
+        <nuxt-link :to="generatePostUrl()" class="blog-post-item-title-link">
+          {{ title }}
+        </nuxt-link>
       </h2>
 
       <div class="blog-post-item-summary" v-html="summary" />
     </div>
   </li>
 </template>
-
 
 <script>
 export default {
@@ -34,7 +37,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 /* Base */

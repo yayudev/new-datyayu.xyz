@@ -5,7 +5,7 @@
         v-for="l in numLeftChars"
         :key="l"
         class="char custom typed"
-        v-html="currentTextArray[l-1]"
+        v-html="currentTextArray[l - 1]"
       />
     </span>
 
@@ -17,7 +17,7 @@
         :key="r"
         :class="rightCharClasses"
         class="char custom"
-        v-html="currentTextArray[numLeftChars + r-1]"
+        v-html="currentTextArray[numLeftChars + r - 1]"
       />
     </span>
   </span>
@@ -415,7 +415,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 span.vue-typer {
   cursor: default;
   user-select: none;

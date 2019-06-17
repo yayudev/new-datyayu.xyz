@@ -2,28 +2,53 @@
   <footer class="footer">
     <div class="footer-content">
       <p class="footer-links">
-        {{ $t('footer.localeChange') }}:
-        <span :class="esClass" class="footer-link" @click="setLocale('es')"> Español </span>
+        {{ $t("footer.localeChange") }}:
+        <span :class="esClass" class="footer-link" @click="setLocale('es')">
+          Español
+        </span>
         /
-        <span :class="enClass" class="footer-link" @click="setLocale('en')"> English </span>
+        <span :class="enClass" class="footer-link" @click="setLocale('en')">
+          English
+        </span>
       </p>
 
       <p class="footer-legal">
-        {{ $t('footer.buildWith') }}
-        <a class="footer-link" rel="noopener" href="https://nuxtjs.org/" target="_blank">Nuxt.js</a>
+        {{ $t("footer.buildWith") }}
+        <a
+          class="footer-link"
+          rel="noopener"
+          href="https://nuxtjs.org/"
+          target="_blank"
+        >
+          Nuxt.js
+        </a>
         <span>, </span>
-        <a class="footer-link" rel="noopener" href="https://www.netlify.com/" target="_blank">Netlify</a>
-        {{ $t('footer.and') }} ♥. {{ $t('footer.repo') }}
-        <a class="footer-link" rel="noopener" href="https://github.com/datyayu/new-datyayu.xyz" target="_blank"> Github</a>.
+        <a
+          class="footer-link"
+          rel="noopener"
+          href="https://www.netlify.com/"
+          target="_blank"
+        >
+          Netlify
+        </a>
+        {{ $t("footer.and") }} ♥. {{ $t("footer.repo") }}
+        <a
+          class="footer-link"
+          rel="noopener"
+          href="https://github.com/datyayu/new-datyayu.xyz"
+          target="_blank"
+        >
+          Github
+        </a>
+        .
       </p>
 
       <p class="footer-legal">
-        Copyright © 2017 Arturo Coronel.
+        Copyright © 2019 Arturo Coronel.
       </p>
     </div>
   </footer>
 </template>
-
 
 <script>
 export default {
@@ -49,7 +74,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 .footer {

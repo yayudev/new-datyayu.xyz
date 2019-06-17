@@ -1,14 +1,13 @@
 <template>
   <div class="blog-navigation">
     <nuxt-link v-if="hasPrevPage" :to="prevPage" class="blog-navigation-link">
-      &lt; {{ $t('blog.prev') }}
+      &lt; {{ $t("blog.prev") }}
     </nuxt-link>
     <nuxt-link v-if="hasNextPage" :to="nextPage" class="blog-navigation-link">
-      {{ $t('blog.next') }} &gt;
+      {{ $t("blog.next") }} &gt;
     </nuxt-link>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -29,7 +28,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 .blog-navigation {
