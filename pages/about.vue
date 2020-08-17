@@ -41,7 +41,7 @@ export default {
         { name: "theme-color", content: "#ffc272" },
         { property: "og:title", content: this.pageTitle },
         { property: "og:description", content: this.pageSubtitle },
-        { property: "og:url", content: "https://datyayu.dev/about" },
+        { property: "og:url", content: "https://yayu.dev/about" },
       ],
     }
   },

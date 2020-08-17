@@ -1,11 +1,11 @@
-[//]: # (title   - Extender create-react-app con react-app-rewire     )
-[//]: # (tags    - javascript, tooling, react, node, npm, babel, sass )
-[//]: # (id      - 35                                                 )
-[//]: # (date    - 2017.06.16                                         )
-[//]: # (url     - extender-create-react-app                          )
-[//]: # (excerpt - Extiende CRA y agrega funcionalidades extra sin necesidad de hacer eject y perder la conveniencia que te ofrece. )
+[//]: # "title   - Extender create-react-app con react-app-rewire     "
+[//]: # "tags    - javascript, tooling, react, node, npm, babel, sass "
+[//]: # "id      - 35                                                 "
+[//]: # "date    - 2017.06.16                                         "
+[//]: # "url     - extender-create-react-app                          "
+[//]: # "excerpt - Extiende CRA y agrega funcionalidades extra sin necesidad de hacer eject y perder la conveniencia que te ofrece. "
 
-Hace tiempo escribí [un post acerca de create-react-app (CRA)](https://datyayu.dev/blog/posts/create-react-app) donde puedes revisar a detalle qué es y cómo usarlo para crear aplicaciones sin preocuparte por configurar las herramientas de desarrollo. Aún cuando considero que es una herramienta genial y mi primera opción a la hora de trabajar con react, una de las limitantes que he encontrado usandolo para crear aplicaciones es que si tu caso de uso está fuera de lo que CRA te ofrece por defecto toca usar `eject`, lo cual termina quitandole esa simplicidad que es el lado fuerte de la herramienta. Sin embargo, en este post te mostraré cómo puedes extender la funcionalidad de CRA manteniendo tu proyecto simple y sin tanta configuración.
+Hace tiempo escribí [un post acerca de create-react-app (CRA)](https://yayu.dev/blog/posts/create-react-app) donde puedes revisar a detalle qué es y cómo usarlo para crear aplicaciones sin preocuparte por configurar las herramientas de desarrollo. Aún cuando considero que es una herramienta genial y mi primera opción a la hora de trabajar con react, una de las limitantes que he encontrado usandolo para crear aplicaciones es que si tu caso de uso está fuera de lo que CRA te ofrece por defecto toca usar `eject`, lo cual termina quitandole esa simplicidad que es el lado fuerte de la herramienta. Sin embargo, en este post te mostraré cómo puedes extender la funcionalidad de CRA manteniendo tu proyecto simple y sin tanta configuración.
 
 ## `eject`
 
@@ -58,13 +58,15 @@ Despues, creamos un archivo `config-overrides.js` en la raíz del proyecto.
 ```js
 // config-overrides.js
 const babelLoader = function(rule) {
-  return rule.loader && rule.loader.endsWith('/babel-loader/lib/index.js');
+  return rule.loader && rule.loader.endsWith("/babel-loader/lib/index.js");
 };
 
 module.exports = function override(config, env) {
   const babelrc = config.module.rules.find(babelLoader).options;
 
-  babelrc.plugins = ['transform-decorators-legacy'].concat(babelrc.plugins || []);
+  babelrc.plugins = ["transform-decorators-legacy"].concat(
+    babelrc.plugins || []
+  );
 
   return config;
 };
@@ -118,7 +120,7 @@ Una vez instalados, agregamos el `config-overrides.js`.
 
 ```js
 const findFileLoader = function(rule) {
-  return rule.loader && rule.loader.endsWith('/file-loader/index.js');
+  return rule.loader && rule.loader.endsWith("/file-loader/index.js");
 };
 
 module.exports = function override(config, env) {
@@ -128,7 +130,7 @@ module.exports = function override(config, env) {
 
   config.module.rules.push({
     test: /\.scss$/,
-    loader: ['style-loader', 'css-loader', 'sass-loader']
+    loader: ["style-loader", "css-loader", "sass-loader"],
   });
 
   return config;

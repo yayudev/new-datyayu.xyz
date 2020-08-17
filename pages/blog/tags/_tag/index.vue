@@ -79,7 +79,7 @@ export default {
     },
 
     pageUrl() {
-      return `https://datyayu.dev/blog/${this.navigationPrefix}`
+      return `https://yayu.dev/blog/${this.navigationPrefix}`
     },
 
     pageTitle() {

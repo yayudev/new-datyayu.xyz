@@ -85,7 +85,7 @@ export default {
       meta: [
         { property: "og:title", content: this.pageTitle },
         { property: "og:description", content: this.pageSubtitle },
-        { property: "og:url", content: "https://datyayu.dev/blog" },
+        { property: "og:url", content: "https://yayu.dev/blog" },
       ],
     }
   },

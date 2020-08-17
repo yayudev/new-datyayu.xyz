@@ -1,9 +1,9 @@
-[//]: # (title   - React: Componentes funcionales puros )
-[//]: # (tags    - javascript, react, es2015+           )
-[//]: # (id      - 05                                   )
-[//]: # (date    - 2016.03.09                           )
-[//]: # (url     - react-componentes-funcionales-puros  )
-[//]: # (excerpt - Aprende a crear componentes presentacionales de la manera correcta y mejora tu código de react con componentes puros. )
+[//]: # "title   - React: Componentes funcionales puros "
+[//]: # "tags    - javascript, react, es2015+           "
+[//]: # "id      - 05                                   "
+[//]: # "date    - 2016.03.09                           "
+[//]: # "url     - react-componentes-funcionales-puros  "
+[//]: # "excerpt - Aprende a crear componentes presentacionales de la manera correcta y mejora tu código de react con componentes puros. "
 
 Desde que React apareció en el mundo del frontend, ha existido una gran tendencia por tratar de crear código de una manera más declarativa. La idea de poder expresar de manera sencilla como queremos que se vea una UI, en lugar de tener que especificar cada paso para llegar a esa vista, es algo en lo que React sobresale y que ha ayudado a popularizar esta librería cada vez más.
 
@@ -48,7 +48,7 @@ Para especificar propTypes, hacemos lo mismo que al crear componentes con clases
 const Saludo = ({ name }) => <h1> Hola, {name}! </h1>;
 
 Saludo.propTypes = { name: PropTypes.string };
-Saludo.defaultProps = { name: 'amigo' };
+Saludo.defaultProps = { name: "amigo" };
 ```
 
 #### Contexto
@@ -83,7 +83,7 @@ Ahora que sabemos como utilizar estos componentes, podemos revisar que ventajas 
 
 Aunque los componentes funcionales son geniales, tienen algunas desventajas que puede que sean relevantes para algunos (aunque la mayoría se planean resolver en un futuro).
 
-- **No hay métodos de ciclo de vida.** Este es un arma de doble filo. Si bien en la mayoría de los componentes es mejor que no tengamos estado, hay algunos en los que ocupamos si o si tener estado o realizar ciertas acciones al montar un componente (por ejemplo, en [los componentes de orden superior](http://datyayu.dev/componentes-de-orden-superior/)). Para estos casos actualmente tenemos que regresar a usar clases, aunque [en un futuro se planea permitir estado en estos tipos de componentes](https://twitter.com/sebmarkbage/status/658713924607606784).
+- **No hay métodos de ciclo de vida.** Este es un arma de doble filo. Si bien en la mayoría de los componentes es mejor que no tengamos estado, hay algunos en los que ocupamos si o si tener estado o realizar ciertas acciones al montar un componente (por ejemplo, en [los componentes de orden superior](http://yayu.dev/componentes-de-orden-superior/)). Para estos casos actualmente tenemos que regresar a usar clases, aunque [en un futuro se planea permitir estado en estos tipos de componentes](https://twitter.com/sebmarkbage/status/658713924607606784).
 
 - **Difícil de optimizar.** Debido a que no tenemos métodos del ciclo de vida del componente, no podemos utilizar `shouldComponentUpdate` para optimizar el diff en la aplicación. [Probablemente en un futuro tengamos algo para compensarlo](https://github.com/facebook/react/issues/5677#issuecomment-165457596) pero por ahora no hay manera de hacerlo.
 

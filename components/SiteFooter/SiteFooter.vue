@@ -44,7 +44,7 @@
       </p>
 
       <p class="footer-legal">
-        Copyright © 2019 Arturo Coronel.
+        Copyright © 2020 Arturo Coronel.
       </p>
     </div>
   </footer>

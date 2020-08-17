@@ -1,9 +1,9 @@
-[//]: # (title   - Mejor manejo de dependencias con Yarn )
-[//]: # (tags    - javascript, node, tooling, yarn, npm  )
-[//]: # (id      - 27                                    )
-[//]: # (date    - 2016.10.15                            )
-[//]: # (url     - yarn                                  )
-[//]: # (excerpt - Conoce Yarn, un cliente de npm, creado por el equipo de Facebook que permite disminuir los tiempos de instalación de paquetes y te permite tener un versionamiento más controlado y seguro. )
+[//]: # "title   - Mejor manejo de dependencias con Yarn "
+[//]: # "tags    - javascript, node, tooling, yarn, npm  "
+[//]: # "id      - 27                                    "
+[//]: # "date    - 2016.10.15                            "
+[//]: # "url     - yarn                                  "
+[//]: # "excerpt - Conoce Yarn, un cliente de npm, creado por el equipo de Facebook que permite disminuir los tiempos de instalación de paquetes y te permite tener un versionamiento más controlado y seguro. "
 
 [NPM](https://www.npmjs.com/) es el manejador de dependencias por defecto en el mundo de javascript. Otros manejadores, como bower, han intentado sobreponerse a la popularidad de npm pero ninguno lo ha logrado. Sin embargo, ahora esto podría cambiar, ya que gente de empresas grandes de tecnología como Google y Facebook se han unido para crear una nueva alternativa diseñada para mejorar donde npm había estado fallando: [Yarn](https://yarnpkg.com/), un nuevo manejador de paquetes para javascript.
 
@@ -94,7 +94,7 @@ Si checamos el `package.json` que se generó, veras que es exactamente igual al 
   "version": "1.0.0",
   "description": "Un ejemplo de como usar yarn",
   "main": "index.js",
-  "author": "Arturo Coronel <aoitsu3@gmail.com> (https://datyayu.dev)",
+  "author": "Arturo Coronel <aoitsu3@gmail.com> (https://yayu.dev)",
   "license": "MIT"
 }
 ```
@@ -116,15 +116,15 @@ Y con eso yarn instalará todos los paquetes que el proyecto ocupa de manera sim
 Digamos que tenemos un script sencillo como este:
 
 ```js
-var express = require('express');
+var express = require("express");
 var app = express();
 
-app.get('*', function(req, res) {
-  res.send('Hola');
+app.get("*", function(req, res) {
+  res.send("Hola");
 });
 
 app.listen(3000, function() {
-  console.log('Escuchando en el puerto 3000');
+  console.log("Escuchando en el puerto 3000");
 });
 ```
 

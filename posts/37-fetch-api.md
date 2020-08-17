@@ -1,13 +1,13 @@
-[//]: # (title   - Browser API: Fetch                )
-[//]: # (tags    - javascript, es6, browserApi, ajax )
-[//]: # (id      - 37                                )
-[//]: # (date    - 2017.09.03                        )
-[//]: # (url     - fetch-api                         )
-[//]: # (excerpt - Aprende la manera moderna de hacer ajax de forma nativa en el navegador con Fetch API. )
+[//]: # "title   - Browser API: Fetch                "
+[//]: # "tags    - javascript, es6, browserApi, ajax "
+[//]: # "id      - 37                                "
+[//]: # "date    - 2017.09.03                        "
+[//]: # "url     - fetch-api                         "
+[//]: # "excerpt - Aprende la manera moderna de hacer ajax de forma nativa en el navegador con Fetch API. "
 
 Uno de los problemas al hacer AJAX por mucho tiempo fue que la unica manera de hacerlo de forma nativa era por medio de XMLHttpRequest que, si lo haz usado directamente, seguro sabras que no es tan fácil ni bonito. Pero estos inconvenientes ya no son necesarios pues hoy en día los navegadores nos ofrecen una opción mucho más sencilla para hacer AJAX de una forma moderna y sencilla: Fetch API.
 
-> Nota: Fetch API depende del uso de promesas, así que te recomiendo que, si nunca las haz usado, aprendas como usarlas primero para que no te confundas al usar fetch. Si ocupas ayuda, puedes revisar [este post que escribí acerca de Promesas](https://datyayu.dev/blog/posts/es6-promesas) para aprender qué son y cómo usarlas.
+> Nota: Fetch API depende del uso de promesas, así que te recomiendo que, si nunca las haz usado, aprendas como usarlas primero para que no te confundas al usar fetch. Si ocupas ayuda, puedes revisar [este post que escribí acerca de Promesas](https://yayu.dev/blog/posts/es6-promesas) para aprender qué son y cómo usarlas.
 
 ## ¿Qué es Fetch API?
 
@@ -33,11 +33,11 @@ En codigo luce algo como asi:
 // Pide datos
 fetch(url)
   // Procesa los datos
-  .then(respuesta => {
+  .then((respuesta) => {
     /* ... */
   })
   // Resultado final
-  .then(datos => {
+  .then((datos) => {
     /* ... */
   });
 ```
@@ -47,15 +47,15 @@ Si te das cuenta, fetch trabaja con promesas. Esto es mejor, más moderno y fác
 En un caso real sería algo así:
 
 ```js
-fetch('https://jsonplaceholder.typicode.com/posts/1')
-  .then(res => res.json())
-  .then(post => console.log(post));
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then((res) => res.json())
+  .then((post) => console.log(post));
 ```
 
 Revisemos parte por parte lo que hace.
 
 ```js
-fetch('https://jsonplaceholder.typicode.com/posts/1');
+fetch("https://jsonplaceholder.typicode.com/posts/1");
 ```
 
 Primero pedimos data de `https://jsonplaceholder.typicode.com/posts/1`. jsonplaceholder es un servicio gratis para hacer pruebas con ajax, así que es una buena fuente para probar fetch.
@@ -91,19 +91,19 @@ Usar fetch para realizar peticiones POST es un poco más elaborado que GET, pero
 
 ```js
 const options = {
-  method: 'POST',
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json'
+    "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    title: 'hello',
-    body: 'world'
-  })
+    title: "hello",
+    body: "world",
+  }),
 };
 
-fetch('https://jsonplaceholder.typicode.com/posts/', options)
-  .then(response => response.json())
-  .then(post => {
+fetch("https://jsonplaceholder.typicode.com/posts/", options)
+  .then((response) => response.json())
+  .then((post) => {
     console.log(post);
   });
 ```
@@ -126,8 +126,8 @@ Cuando usamos fetch podemos especificar los headers de la petici´øn pasandole 
 
 ```js
 body: JSON.stringify({
-  title: 'hello',
-  body: 'world'
+  title: "hello",
+  body: "world",
 });
 ```
 
@@ -135,8 +135,8 @@ body: JSON.stringify({
 
 ```js
 fetch(url, options)
-  .then(response => response.json())
-  .then(post => {
+  .then((response) => response.json())
+  .then((post) => {
     console.log(post);
   });
 ```
@@ -166,11 +166,11 @@ Debido a que lo que fetch retorna es una promesa normal, para atrapar errores s�
 
 ```js
 fetch(url, options)
-  .then(response => response.json())
-  .then(post => {
+  .then((response) => response.json())
+  .then((post) => {
     console.log(post);
   })
-  .catch(error => {
+  .catch((error) => {
     console.log(error);
   });
 ```
@@ -182,24 +182,24 @@ Sin embargo, en todos los casos donde el servidor responda, aún si NO es con un
 Para tratar estos casos ocupamos revisar el status de la respuesta. Por ejemplo:
 
 ```js
-fetch('https://jsonplaceholder.typicode.com/posts/9999999999')
-  .then(res => {
+fetch("https://jsonplaceholder.typicode.com/posts/9999999999")
+  .then((res) => {
     if (res.status === 404) {
       return new Promise.resolve({
-        title: 'Error',
-        body: 'El post que solicitó no existe'
+        title: "Error",
+        body: "El post que solicitó no existe",
       });
     }
 
     return res.json();
   })
-  .then(post => {
+  .then((post) => {
     $title.innerText = post.title;
     $body.innerText = post.body;
   })
-  .catch(error => {
-    $title.innerText = 'ERROR';
-    $body.innerText = 'Algo salio mal.';
+  .catch((error) => {
+    $title.innerText = "ERROR";
+    $body.innerText = "Algo salio mal.";
   });
 ```
 
