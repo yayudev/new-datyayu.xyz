@@ -4,7 +4,7 @@ export const state = () => ({
   fetching: true,
   page: 0,
   tagName: "",
-  error: false
+  error: false,
 })
 
 export const mutations = {
@@ -38,16 +38,16 @@ export const mutations = {
 
   setTagName(state, tagName) {
     state.tagName = tagName
-  }
+  },
 }
 
 export const getters = {
-  tagName: state => state.tagName,
-  fetching: state => state.fetching,
-  currentPost: state => state.activePost,
-  posts: state => state.posts,
-  currentPage: state => state.page,
-  hasPrevPage: state => state.page !== 0 && state.page !== 1,
-  hasNextPage: state => state.page !== 0 && state.page < state.totalPosts / 5,
-  error: state => state.error
+  tagName: (state) => state.tagName,
+  fetching: (state) => state.fetching,
+  currentPost: (state) => state.activePost,
+  posts: (state) => state.posts,
+  currentPage: (state) => state.page,
+  hasPrevPage: (state) => state.page !== 0 && state.page !== 1,
+  hasNextPage: (state) => state.page !== 0 && state.page < state.totalPosts / 5,
+  error: (state) => state.error,
 }

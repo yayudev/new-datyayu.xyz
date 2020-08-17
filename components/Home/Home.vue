@@ -30,8 +30,8 @@ export default {
   components: {
     HomeNavigation,
     HomeText,
-    HomeLocaleSwitch
-  }
+    HomeLocaleSwitch,
+  },
 }
 </script>
 

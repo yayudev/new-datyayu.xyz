@@ -21,19 +21,7 @@ export default {
 
   components: {
     SiteHeader,
-    Projects
-  },
-
-  head() {
-    return {
-      title: this.pageTitle,
-      meta: [
-        { name: "theme-color", content: "#2664f1" },
-        { property: "og:title", content: this.pageTitle },
-        { property: "og:description", content: this.pageSubtitle },
-        { property: "og:url", content: "https://datyayu.dev/projects" }
-      ]
-    }
+    Projects,
   },
 
   computed: {
@@ -43,7 +31,19 @@ export default {
 
     pageSubtitle() {
       return this.$t("projects.subtitle")
+    },
+  },
+
+  head() {
+    return {
+      title: this.pageTitle,
+      meta: [
+        { name: "theme-color", content: "#2664f1" },
+        { property: "og:title", content: this.pageTitle },
+        { property: "og:description", content: this.pageSubtitle },
+        { property: "og:url", content: "https://datyayu.dev/projects" },
+      ],
     }
-  }
+  },
 }
 </script>

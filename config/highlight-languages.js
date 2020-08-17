@@ -7,5 +7,5 @@ module.exports = [
   "json",
   "scss",
   "typescript",
-  "xml"
+  "xml",
 ]

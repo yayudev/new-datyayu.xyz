@@ -21,19 +21,7 @@ export default {
 
   components: {
     SiteHeader,
-    Experiments
-  },
-
-  head() {
-    return {
-      title: this.pageTitle,
-      meta: [
-        { name: "theme-color", content: "#997cff" },
-        { property: "og:title", content: this.pageTitle },
-        { property: "og:description", content: this.pageSubtitle },
-        { property: "og:url", content: "https://datyayu.dev/experiments" }
-      ]
-    }
+    Experiments,
   },
 
   computed: {
@@ -43,7 +31,19 @@ export default {
 
     pageSubtitle() {
       return this.$t("experiments.subtitle")
+    },
+  },
+
+  head() {
+    return {
+      title: this.pageTitle,
+      meta: [
+        { name: "theme-color", content: "#997cff" },
+        { property: "og:title", content: this.pageTitle },
+        { property: "og:description", content: this.pageSubtitle },
+        { property: "og:url", content: "https://datyayu.dev/experiments" },
+      ],
     }
-  }
+  },
 }
 </script>

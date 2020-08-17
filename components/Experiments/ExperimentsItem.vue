@@ -18,26 +18,26 @@ export default {
   props: {
     url: { type: String, required: true },
     img: { type: String, required: true },
-    title: { type: String, required: true }
+    title: { type: String, required: true },
   },
 
   computed: {
     thumbnailUrl() {
       const img = this.img
       return `https://s3-us-west-1.amazonaws.com/datyayu-xyz/experiments/${img}.jpg`
-    }
+    },
   },
 
   methods: {
     openExperimentModal() {
       const experimentInfo = {
         url: this.url,
-        title: this.title
+        title: this.title,
       }
 
       this.$emit("showModal", experimentInfo)
-    }
-  }
+    },
+  },
 }
 </script>
 

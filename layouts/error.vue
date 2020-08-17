@@ -22,22 +22,18 @@ import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"
 
 export default {
   components: {
-    SiteHeader
+    SiteHeader,
   },
 
   props: {
     error: {
       type: Object,
-      required: true
+      required: true,
     },
     name: {
       type: String,
-      default: () => ""
-    }
-  },
-
-  head: {
-    title: "Error"
+      default: () => "",
+    },
   },
 
   computed: {
@@ -46,8 +42,12 @@ export default {
     },
     errorSubtitle() {
       return this.$t("error.subtitle")
-    }
-  }
+    },
+  },
+
+  head: {
+    title: "Error",
+  },
 }
 </script>
 

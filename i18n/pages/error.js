@@ -34,8 +34,8 @@ export default {
 
     I wonder if it will be friends with me?
 
-    And the rest, after a sudden server exception, was a number.`
-    }
+    And the rest, after a sudden server exception, was a number.`,
+    },
   },
   es: {
     error: {
@@ -72,7 +72,7 @@ export default {
 
     Me pregunto si querrá ser mi amigo.
 
-    Y el resto, tras una excepción del servidor, fue un numero.`
-    }
-  }
+    Y el resto, tras una excepción del servidor, fue un numero.`,
+    },
+  },
 }

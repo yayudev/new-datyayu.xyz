@@ -34,17 +34,29 @@ export default {
 
   components: {
     BlogPost,
-    SiteHeader
+    SiteHeader,
   },
 
-  head() {
-    return {
-      title: this.postTitle,
-      meta: [
-        { property: "og:title", content: this.postTitle },
-        { property: "og:description", content: this.postSubtitle },
-        { property: "og:url", content: this.pageUrl }
-      ]
+  async fetch({ store, route }) {
+    store.commit("posts/startFetching")
+
+    const postId = route.params.id
+
+    try {
+      const request = await axios.get(`${POSTS_ENDPOINT}/${postId}.json`)
+      const post = request.data
+
+      const blogPost = {
+        id: post.id,
+        title: post.title,
+        date: post.date,
+        content: post.html,
+        tags: post.tags,
+      }
+
+      store.commit("posts/setActivePost", blogPost)
+    } catch (error) {
+      store.commit("posts/errorFetching")
     }
   },
 
@@ -52,7 +64,7 @@ export default {
     ...mapGetters({
       fetching: "posts/fetching",
       currentPost: "posts/currentPost",
-      error: "posts/error"
+      error: "posts/error",
     }),
 
     postTitle() {
@@ -81,31 +93,19 @@ export default {
 
     pageSubtitle() {
       return this.$t("blog.subtitle")
-    }
+    },
   },
 
-  async fetch({ store, route }) {
-    store.commit("posts/startFetching")
-
-    const postId = route.params.id
-
-    try {
-      const request = await axios.get(`${POSTS_ENDPOINT}/${postId}.json`)
-      const post = request.data
-
-      const blogPost = {
-        id: post.id,
-        title: post.title,
-        date: post.date,
-        content: post.html,
-        tags: post.tags
-      }
-
-      store.commit("posts/setActivePost", blogPost)
-    } catch (error) {
-      store.commit("posts/errorFetching")
+  head() {
+    return {
+      title: this.postTitle,
+      meta: [
+        { property: "og:title", content: this.postTitle },
+        { property: "og:description", content: this.postSubtitle },
+        { property: "og:url", content: this.pageUrl },
+      ],
     }
-  }
+  },
 }
 </script>
 

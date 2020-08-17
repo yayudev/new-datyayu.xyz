@@ -21,7 +21,7 @@ import Navigation from "../Navigation/Navigation.vue"
 
 export default {
   components: {
-    Navigation
+    Navigation,
   },
 
   props: {
@@ -30,8 +30,8 @@ export default {
     headerColor: { type: String, required: true },
     bgImage: {
       type: String,
-      default: "https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.jpg"
-    }
+      default: "https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.jpg",
+    },
   },
 
   computed: {
@@ -40,8 +40,8 @@ export default {
     },
     title() {
       return this.headerTitle.toUpperCase()
-    }
-  }
+    },
+  },
 }
 </script>
 

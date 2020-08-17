@@ -1,3 +1,11 @@
+2020.08.17
+Hotfixes:
+
+- Update dev dependencies
+- Update domain to yayu.dev
+- Fix lint errors
+
+June 2019
 Hotfixes:
 
 - Update dependencies

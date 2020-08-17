@@ -34,26 +34,7 @@ export default {
 
   components: {
     Blog,
-    SiteHeader
-  },
-
-  computed: {
-    ...mapGetters({
-      posts: "posts/posts",
-      fetching: "posts/fetching",
-      hasNextPage: "posts/hasNextPage",
-      hasPrevPage: "posts/hasPrevPage",
-      currentPage: "posts/currentPage",
-      error: "posts/error"
-    }),
-
-    pageTitle() {
-      return this.$t("blog.title")
-    },
-
-    pageSubtitle() {
-      return this.$t("blog.subtitle")
-    }
+    SiteHeader,
   },
 
   async fetch({ store }) {
@@ -63,13 +44,13 @@ export default {
       const request = await axios.get(`${POSTS_ENDPOINT}/pages/1.json`)
 
       const totalPosts = request.data.totalPosts
-      const posts = request.data.posts.map(post => {
+      const posts = request.data.posts.map((post) => {
         return {
           id: post.id,
           title: post.title,
           date: post.date,
           summary: post.excerpt,
-          url: post.url
+          url: post.url,
         }
       })
 
@@ -79,16 +60,35 @@ export default {
     }
   },
 
+  computed: {
+    ...mapGetters({
+      posts: "posts/posts",
+      fetching: "posts/fetching",
+      hasNextPage: "posts/hasNextPage",
+      hasPrevPage: "posts/hasPrevPage",
+      currentPage: "posts/currentPage",
+      error: "posts/error",
+    }),
+
+    pageTitle() {
+      return this.$t("blog.title")
+    },
+
+    pageSubtitle() {
+      return this.$t("blog.subtitle")
+    },
+  },
+
   head() {
     return {
       title: this.pageTitle,
       meta: [
         { property: "og:title", content: this.pageTitle },
         { property: "og:description", content: this.pageSubtitle },
-        { property: "og:url", content: "https://datyayu.dev/blog" }
-      ]
+        { property: "og:url", content: "https://datyayu.dev/blog" },
+      ],
     }
-  }
+  },
 }
 </script>
 

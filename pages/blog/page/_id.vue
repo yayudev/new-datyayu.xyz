@@ -34,7 +34,32 @@ export default {
 
   components: {
     Blog,
-    SiteHeader
+    SiteHeader,
+  },
+
+  async fetch({ store, route }) {
+    store.commit("posts/startFetching")
+
+    const page = parseInt(route.params.id, 10)
+
+    try {
+      const request = await axios.get(`${POSTS_ENDPOINT}/pages/${page}.json`)
+
+      const totalPosts = request.data.totalPosts
+      const posts = request.data.posts.map((post) => {
+        return {
+          id: post.id,
+          title: post.title,
+          date: post.date,
+          summary: post.excerpt,
+          url: post.url,
+        }
+      })
+
+      store.commit("posts/updatePosts", { posts, totalPosts, page })
+    } catch (error) {
+      store.commit("posts/errorFetching")
+    }
   },
 
   computed: {
@@ -44,7 +69,7 @@ export default {
       hasNextPage: "posts/hasNextPage",
       hasPrevPage: "posts/hasPrevPage",
       currentPage: "posts/currentPage",
-      error: "posts/error"
+      error: "posts/error",
     }),
 
     pageUrl() {
@@ -57,32 +82,7 @@ export default {
 
     pageSubtitle() {
       return this.$t("blog.subtitle")
-    }
-  },
-
-  async fetch({ store, route }) {
-    store.commit("posts/startFetching")
-
-    const page = parseInt(route.params.id, 10)
-
-    try {
-      const request = await axios.get(`${POSTS_ENDPOINT}/pages/${page}.json`)
-
-      const totalPosts = request.data.totalPosts
-      const posts = request.data.posts.map(post => {
-        return {
-          id: post.id,
-          title: post.title,
-          date: post.date,
-          summary: post.excerpt,
-          url: post.url
-        }
-      })
-
-      store.commit("posts/updatePosts", { posts, totalPosts, page })
-    } catch (error) {
-      store.commit("posts/errorFetching")
-    }
+    },
   },
 
   head() {
@@ -91,10 +91,10 @@ export default {
       meta: [
         { property: "og:title", content: this.pageTitle },
         { property: "og:description", content: this.pageSubtitle },
-        { property: "og:url", content: this.pageUrl }
-      ]
+        { property: "og:url", content: this.pageUrl },
+      ],
     }
-  }
+  },
 }
 </script>
 

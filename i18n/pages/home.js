@@ -33,9 +33,9 @@ export default {
         "Hi",
         "Learning to play the bass",
         "Eventer",
-        "Bang dreamer"
-      ]
-    }
+        "Bang dreamer",
+      ],
+    },
   },
 
   es: {
@@ -68,8 +68,8 @@ export default {
         "Juega demasiado juegos mobiles",
         "Le importa el rendimiento web",
         "Hola",
-        "Actualmente AA1 en Shadowverse"
-      ]
-    }
-  }
+        "Actualmente AA1 en Shadowverse",
+      ],
+    },
+  },
 }

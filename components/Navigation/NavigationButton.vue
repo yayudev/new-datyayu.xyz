@@ -9,14 +9,14 @@
 <script>
 export default {
   props: {
-    isActive: { type: Boolean, default: false }
+    isActive: { type: Boolean, default: false },
   },
 
   computed: {
     activeClass() {
       return this.isActive ? "is-active" : ""
-    }
-  }
+    },
+  },
 }
 </script>
 

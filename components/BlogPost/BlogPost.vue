@@ -31,21 +31,21 @@ import BlogPostComments from "./BlogPostComments.vue"
 export default {
   components: {
     BlogPostText,
-    BlogPostComments
+    BlogPostComments,
   },
 
   props: {
     title: { type: String, required: true },
     date: { type: String, required: true },
     tags: { type: Array, default: () => [] },
-    content: { type: String, default: "" }
+    content: { type: String, default: "" },
   },
 
   methods: {
     generateTagUrl(tag) {
       return `/blog/tags/${tag}`
-    }
-  }
+    },
+  },
 }
 </script>
 

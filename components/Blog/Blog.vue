@@ -39,7 +39,7 @@ import BlogNavigation from "./BlogNavigation.vue"
 export default {
   components: {
     BlogNavigation,
-    BlogPostItem
+    BlogPostItem,
   },
 
   props: {
@@ -47,8 +47,8 @@ export default {
     page: { type: Number, default: 0 },
     hasNextPage: { type: Boolean, default: false },
     hasPrevPage: { type: Boolean, default: false },
-    navigationPrefix: { type: String, default: "/page" }
-  }
+    navigationPrefix: { type: String, default: "/page" },
+  },
 }
 </script>
 

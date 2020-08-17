@@ -13,15 +13,15 @@ export default {
     animation: {
       type: String,
       default: "blink",
-      validator: value =>
-        /^solid$|^blink$|^smooth$|^phase$|^expand$/.test(value)
-    }
+      validator: (value) =>
+        /^solid$|^blink$|^smooth$|^phase$|^expand$/.test(value),
+    },
   },
   computed: {
     animationClass() {
       return ANIMATION_CLASS_PREFIX + this.animation
-    }
-  }
+    },
+  },
 }
 </script>
 

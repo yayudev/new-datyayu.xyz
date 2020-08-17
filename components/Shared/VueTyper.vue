@@ -31,20 +31,20 @@ const STATE = {
   IDLE: "idle",
   TYPING: "typing",
   ERASING: "erasing",
-  COMPLETE: "complete"
+  COMPLETE: "complete",
 }
 
 const ERASE_STYLE = {
   BACKSPACE: "backspace",
   SELECT_BACK: "select-back",
   SELECT_ALL: "select-all",
-  CLEAR: "clear"
+  CLEAR: "clear",
 }
 
 export default {
   name: "VueTyper",
   components: {
-    Caret
+    Caret,
   },
 
   props: {
@@ -58,8 +58,10 @@ export default {
         if (typeof value === "string") {
           return value.length > 0
         }
-        return value.every(item => typeof item === "string" && item.length > 0)
-      }
+        return value.every(
+          (item) => typeof item === "string" && item.length > 0
+        )
+      },
     },
 
     /**
@@ -69,7 +71,7 @@ export default {
     repeat: {
       type: Number,
       default: Infinity,
-      validator: value => value >= 0
+      validator: (value) => value >= 0,
     },
 
     /**
@@ -78,7 +80,7 @@ export default {
      */
     shuffle: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     /**
@@ -88,7 +90,7 @@ export default {
     initialAction: {
       type: String,
       default: STATE.TYPING,
-      validator: value => !!value.match(`^${STATE.TYPING}|${STATE.ERASING}$`)
+      validator: (value) => !!value.match(`^${STATE.TYPING}|${STATE.ERASING}$`),
     },
 
     /**
@@ -97,7 +99,7 @@ export default {
     preTypeDelay: {
       type: Number,
       default: 70,
-      validator: value => value >= 0
+      validator: (value) => value >= 0,
     },
 
     /**
@@ -106,7 +108,7 @@ export default {
     typeDelay: {
       type: Number,
       default: 70,
-      validator: value => value >= 0
+      validator: (value) => value >= 0,
     },
 
     /**
@@ -115,7 +117,7 @@ export default {
     preEraseDelay: {
       type: Number,
       default: 2000,
-      validator: value => value >= 0
+      validator: (value) => value >= 0,
     },
 
     /**
@@ -125,7 +127,7 @@ export default {
     eraseDelay: {
       type: Number,
       default: 250,
-      validator: value => value >= 0
+      validator: (value) => value >= 0,
     },
 
     /**
@@ -137,8 +139,8 @@ export default {
     eraseStyle: {
       type: String,
       default: ERASE_STYLE.SELECT_ALL,
-      validator: value =>
-        Object.keys(ERASE_STYLE).some(item => ERASE_STYLE[item] === value)
+      validator: (value) =>
+        Object.keys(ERASE_STYLE).some((item) => ERASE_STYLE[item] === value),
     },
 
     /**
@@ -146,7 +148,7 @@ export default {
      */
     eraseOnComplete: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     /**
@@ -154,8 +156,8 @@ export default {
      */
     caretAnimation: {
       type: String,
-      default: () => ""
-    }
+      default: () => "",
+    },
   },
 
   data() {
@@ -168,7 +170,7 @@ export default {
       spool: [],
       spoolIndex: -1,
       previousTextIndex: -1,
-      currentTextIndex: -1
+      currentTextIndex: -1,
     }
   },
 
@@ -181,7 +183,7 @@ export default {
           this.state === STATE.ERASING && this.isSelectionBasedEraseStyle,
         erasing:
           this.state === STATE.ERASING && !this.isSelectionBasedEraseStyle,
-        complete: this.state === STATE.COMPLETE
+        complete: this.state === STATE.COMPLETE,
       }
     },
     rightCharClasses() {
@@ -190,7 +192,7 @@ export default {
           this.state === STATE.ERASING && this.isSelectionBasedEraseStyle,
         erased:
           this.state !== STATE.ERASING ||
-          (this.state === STATE.ERASING && !this.isSelectionBasedEraseStyle)
+          (this.state === STATE.ERASING && !this.isSelectionBasedEraseStyle),
       }
     },
     isSelectionBasedEraseStyle() {
@@ -226,7 +228,7 @@ export default {
       return ""
     },
     currentTextArray() {
-      return this.currentText.split("").map(char => {
+      return this.currentText.split("").map((char) => {
         return char === " " ? "&#160;" : char
       })
     },
@@ -235,7 +237,7 @@ export default {
     },
     numRightChars() {
       return this.currentText.length - this.numLeftChars
-    }
+    },
   },
 
   watch: {
@@ -247,7 +249,7 @@ export default {
     },
     shuffle() {
       this.reset()
-    }
+    },
   },
 
   mounted() {
@@ -266,7 +268,7 @@ export default {
       } else {
         // Don"t violate one-way binding, make a copy! Vue doesn"t make a copy for us to keep things reactive
         let textCopy = this.text.slice()
-        textCopy = textCopy.filter(textToType => textToType.length)
+        textCopy = textCopy.filter((textToType) => textToType.length)
         this.spool = textCopy
       }
 
@@ -410,8 +412,8 @@ export default {
     onComplete() {
       this.state = STATE.COMPLETE
       this.$emit("completed")
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -15,7 +15,7 @@ export default {
     page: { type: Number, default: 0 },
     hasPrevPage: { type: Boolean, default: false },
     hasNextPage: { type: Boolean, default: false },
-    prefix: { type: String, default: "/page" }
+    prefix: { type: String, default: "/page" },
   },
 
   computed: {
@@ -24,8 +24,8 @@ export default {
     },
     prevPage() {
       return `/blog${this.prefix}/${this.page - 1}`
-    }
-  }
+    },
+  },
 }
 </script>
 

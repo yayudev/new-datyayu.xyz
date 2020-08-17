@@ -11,8 +11,8 @@ import SiteFooter from "~/components/SiteFooter/SiteFooter.vue"
 
 export default {
   components: {
-    SiteFooter
-  }
+    SiteFooter,
+  },
 }
 </script>
 

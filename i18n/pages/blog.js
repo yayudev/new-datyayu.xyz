@@ -9,8 +9,8 @@ export default {
       errorFetchingList:
         "Unable to retrieve posts list. Please check your internet connection or try again later.",
       errorFetchingPost:
-        "Unable to retrieve post info. Please check your internet connection or try again later."
-    }
+        "Unable to retrieve post info. Please check your internet connection or try again later.",
+    },
   },
 
   es: {
@@ -23,7 +23,7 @@ export default {
       errorFetchingList:
         "Problema al obtener la lista de posts. Por favor revisa tu conexion a internet o intenta mas tarde.",
       errorFetchingPost:
-        "Problema al obtener el contenido del post. Por favor revisa tu conexión a internet o intenta más tarde."
-    }
-  }
+        "Problema al obtener el contenido del post. Por favor revisa tu conexión a internet o intenta más tarde.",
+    },
+  },
 }

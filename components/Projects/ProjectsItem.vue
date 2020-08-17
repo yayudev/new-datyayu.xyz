@@ -44,7 +44,7 @@ export default {
     github: { type: String, required: false, default: () => "" },
     imagePrefix: { type: String, required: true },
     description: { type: String, required: true },
-    isIframe: { type: Boolean, default: () => false }
+    isIframe: { type: Boolean, default: () => false },
   },
 
   computed: {
@@ -65,7 +65,7 @@ export default {
     },
     desktopImage() {
       return getImageUrl(this.imagePrefix, "desktop", false)
-    }
+    },
   },
 
   methods: {
@@ -77,12 +77,12 @@ export default {
         url: this.url,
         github: this.github,
         imagePrefix: this.imagePrefix,
-        isIframe: this.isIframe
+        isIframe: this.isIframe,
       }
 
       this.$emit("showModal", project)
-    }
-  }
+    },
+  },
 }
 </script>
 

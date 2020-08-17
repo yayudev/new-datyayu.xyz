@@ -40,13 +40,13 @@ import VueTyper from "../Shared/VueTyper.vue"
 
 export default {
   components: {
-    VueTyper
+    VueTyper,
   },
 
   data() {
     return {
       currentMessage: "",
-      messageIndex: 0
+      messageIndex: 0,
     }
   },
 
@@ -59,15 +59,15 @@ export default {
     },
     messages() {
       return this.$t("home.messages")
-    }
+    },
   },
 
   watch: {
     developerTitle() {
       const messages = this.$t("home.messages")
       this.currentMessage = messages[this.messageIndex]
-    }
-  }
+    },
+  },
 }
 </script>
 

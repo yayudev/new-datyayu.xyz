@@ -16,8 +16,8 @@ export default ({ app }) => {
     fallbackLocale: "en",
     messages: {
       en: locales.en,
-      es: locales.es
-    }
+      es: locales.es,
+    },
   })
 
   app.i18n = i18n

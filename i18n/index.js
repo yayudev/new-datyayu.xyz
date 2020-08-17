@@ -18,7 +18,7 @@ export default {
     ...Blog.en,
     ...Experiments.en,
     ...Projects.en,
-    ...Home.en
+    ...Home.en,
   },
 
   es: {
@@ -30,6 +30,6 @@ export default {
     ...Blog.es,
     ...Experiments.es,
     ...Projects.es,
-    ...Home.es
-  }
+    ...Home.es,
+  },
 }

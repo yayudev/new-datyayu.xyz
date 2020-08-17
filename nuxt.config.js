@@ -21,21 +21,21 @@ module.exports = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         name: "description",
-        content: "Just @datyayu's tech blog. Frontend is fun."
+        content: "Just @datyayu's tech blog. Frontend is fun.",
       },
       {
         property: "og:image",
-        content: "https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.jpg"
+        content: "https://s3-us-west-1.amazonaws.com/datyayu-xyz/bg.jpg",
       },
       { property: "og:site_name", content: "datyayu.dev" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image:alt", content: "datyayu.dev logo" },
-      { name: "twitter:site", content: "@datyayu" }
+      { name: "twitter:site", content: "@datyayu" },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico?v=3" },
-      { rel: "manifest", href: "/manifest.json" }
-    ]
+      { rel: "manifest", href: "/manifest.json" },
+    ],
   },
   /*
    ** Global CSS
@@ -51,7 +51,7 @@ module.exports = {
   plugins: [
     "~plugins/google-analytics",
     "~/plugins/disqus",
-    { src: "~plugins/i18n.js", injectAs: "i18n" }
+    { src: "~plugins/i18n.js", injectAs: "i18n" },
   ],
   modules: ["@nuxtjs/workbox"],
   /*
@@ -69,7 +69,7 @@ module.exports = {
       }
 
       return { x: 0, y: 0 }
-    }
+    },
   },
   /*
    ** Build configuration
@@ -84,7 +84,7 @@ module.exports = {
           enforce: "pre",
           test: /\.(js|vue)$/,
           loader: "eslint-loader",
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         })
       }
     },
@@ -93,7 +93,7 @@ module.exports = {
       new Webpack.ContextReplacementPlugin(
         /highlight\.js\/lib\/languages$/,
         new RegExp(`^./(${SUPPORTED_HIGHLIGHT_LANGUAGES.join("|")})$`)
-      )
+      ),
     ],
 
     loaders: [
@@ -102,29 +102,29 @@ module.exports = {
         loader: "url-loader",
         query: {
           limit: 1000, // 1KO
-          name: "img/[name].[hash:7].[ext]"
-        }
+          name: "img/[name].[hash:7].[ext]",
+        },
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: "url-loader",
         query: {
           limit: 1000, // 1 KO
-          name: "fonts/[name].[hash:7].[ext]"
-        }
+          name: "fonts/[name].[hash:7].[ext]",
+        },
       },
       {
         test: /\.(webm|mp4)$/,
-        loader: "file-loader"
-      }
-    ]
+        loader: "file-loader",
+      },
+    ],
   },
   /*
    ** Server rendering cache config
    */
   cache: {
     max: 100,
-    maxAge: 900000
+    maxAge: 900000,
   },
   /*
    ** Static build config
@@ -132,28 +132,28 @@ module.exports = {
   generate: {
     routes: [
       // Build posts
-      ...fs.readdirSync(POSTS_DIR).map(file => {
+      ...fs.readdirSync(POSTS_DIR).map((file) => {
         const postname = file.replace(".json", "")
         return `/blog/posts/${postname}`
       }),
       // Build posts pages
-      ...fs.readdirSync(POSTS_PAGES_DIR).map(file => {
+      ...fs.readdirSync(POSTS_PAGES_DIR).map((file) => {
         const postname = file.replace(".json", "")
         return `/blog/page/${postname}`
       }),
       // Build tags
-      ...fs.readdirSync(TAGS_DIR).map(file => {
+      ...fs.readdirSync(TAGS_DIR).map((file) => {
         const tagname = file.replace(".json", "")
         return `/blog/tags/${tagname}`
       }),
       // Buld tags pages
-      ...fs.readdirSync(TAGS_PAGES_DIR).map(file => {
+      ...fs.readdirSync(TAGS_PAGES_DIR).map((file) => {
         const filename = file.replace(".json", "")
         const page = filename.match(/[0-9]+$/)
         const tagname = filename.replace(/-[0-9]+$/, "")
 
         return `/blog/tags/${tagname}/${page}`
-      })
-    ]
-  }
+      }),
+    ],
+  },
 }

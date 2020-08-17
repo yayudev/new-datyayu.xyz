@@ -5,8 +5,8 @@ export default {
       blog: "Blog",
       projects: "Projects",
       experiments: "Experiments",
-      about: "About"
-    }
+      about: "About",
+    },
   },
 
   es: {
@@ -15,7 +15,7 @@ export default {
       blog: "Blog",
       projects: "Proyectos",
       experiments: "Experimentos",
-      about: "Info"
-    }
-  }
+      about: "Info",
+    },
+  },
 }

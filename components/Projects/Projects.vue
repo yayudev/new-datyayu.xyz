@@ -36,20 +36,20 @@ import ProjectsModal from "./ProjectsModal.vue"
 export default {
   components: {
     ProjectsItem,
-    ProjectsModal
+    ProjectsModal,
   },
 
   data() {
     return {
       modalIsActive: false,
-      activeProject: {}
+      activeProject: {},
     }
   },
 
   computed: {
     projects() {
       return this.$t("projects.projects")
-    }
+    },
   },
 
   methods: {
@@ -61,8 +61,8 @@ export default {
     closeModal() {
       this.modalIsActive = false
       this.activeProject = {}
-    }
-  }
+    },
+  },
 }
 </script>
 

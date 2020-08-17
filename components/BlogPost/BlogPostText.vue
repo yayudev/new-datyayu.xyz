@@ -7,13 +7,13 @@ import hljs from "../../plugins/highlight.js"
 
 export default {
   props: {
-    content: { type: String, default: "" }
+    content: { type: String, default: "" },
   },
 
   watch: {
     content() {
       this.forceHighlight()
-    }
+    },
   },
 
   mounted() {
@@ -32,8 +32,8 @@ export default {
         hljs.initHighlighting.called = false
         hljs.initHighlighting()
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

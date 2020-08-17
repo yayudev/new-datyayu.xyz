@@ -4,8 +4,8 @@ export default {
       localeChange: "Change language",
       buildWith: "Powered by",
       and: "and",
-      repo: "Source code available on"
-    }
+      repo: "Source code available on",
+    },
   },
 
   es: {
@@ -13,7 +13,7 @@ export default {
       localeChange: "Cambiar idioma",
       buildWith: "Creado usando",
       and: "y",
-      repo: "Codigo fuente disponible en"
-    }
-  }
+      repo: "Codigo fuente disponible en",
+    },
+  },
 }

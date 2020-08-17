@@ -30,10 +30,10 @@ export default {
         { text: "blog", url: "/blog" },
         { text: "projects", url: "/projects" },
         { text: "experiments", url: "/experiments" },
-        { text: "about", url: "/about" }
-      ]
+        { text: "about", url: "/about" },
+      ],
     }
-  }
+  },
 }
 </script>
 

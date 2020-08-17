@@ -23,7 +23,7 @@ export default {
     title: { type: String, required: true },
     date: { type: String, required: true },
     summary: { type: String, default: "" },
-    url: { type: String, required: true }
+    url: { type: String, required: true },
   },
 
   methods: {
@@ -33,8 +33,8 @@ export default {
 
     generatePostUrl() {
       return `/blog/posts/${this.url}`
-    }
-  }
+    },
+  },
 }
 </script>
 

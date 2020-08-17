@@ -44,8 +44,8 @@ export default {
         Do you have any idea or suggestion to improve this site?
         Want to talk about web develoment or idols?
         Contact me!
-      `
-    }
+      `,
+    },
   },
 
   es: {
@@ -93,7 +93,7 @@ export default {
         ¿Tienes alguna idea o sugerencia para mejorar este blog?
         ¿Deseas platicar de tecnologías web o idols?
         ¡Contáctame!
-      `
-    }
-  }
+      `,
+    },
+  },
 }

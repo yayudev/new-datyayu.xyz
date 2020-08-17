@@ -11,10 +11,10 @@ export default {
       meta: [
         {
           name: "theme-color",
-          content: "#01a711"
-        }
-      ]
+          content: "#01a711",
+        },
+      ],
     }
-  }
+  },
 }
 </script>

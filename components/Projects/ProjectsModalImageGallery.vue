@@ -25,12 +25,12 @@ import { getImageUrl } from "../../utils/image-path-generator.js"
 export default {
   props: {
     imagePrefix: { type: String, required: true },
-    hasIframe: { type: Boolean, default: () => false }
+    hasIframe: { type: Boolean, default: () => false },
   },
 
   data() {
     return {
-      imageIndex: 0
+      imageIndex: 0,
     }
   },
 
@@ -47,7 +47,7 @@ export default {
 
     iframeClass() {
       return this.hasIframe ? "image-gallery--iframe" : ""
-    }
+    },
   },
 
   methods: {
@@ -57,8 +57,8 @@ export default {
 
     showPrevImage() {
       this.imageIndex = this.imageIndex === 0 ? 2 : this.imageIndex - 1
-    }
-  }
+    },
+  },
 }
 </script>
 

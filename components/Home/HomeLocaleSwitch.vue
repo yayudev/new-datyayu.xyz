@@ -19,7 +19,7 @@ export default {
 
     enClass() {
       return this.$i18n.locale === "en" ? "home-locale-link--active" : ""
-    }
+    },
   },
 
   methods: {
@@ -30,8 +30,8 @@ export default {
 
       this.$i18n.locale = locale
       localStorage.setItem("locale", locale)
-    }
-  }
+    },
+  },
 }
 </script>
 

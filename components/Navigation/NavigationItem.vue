@@ -16,7 +16,7 @@ export default {
   props: {
     hoverColor: { type: String, required: true },
     url: { type: String, required: true },
-    text: { type: String, required: true }
+    text: { type: String, required: true },
   },
 
   computed: {
@@ -26,8 +26,8 @@ export default {
 
     linkClasses() {
       return `${this.hoverColor} ${this.activeClass}`
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -25,7 +25,7 @@ import NavigationItem from "./NavigationItem.vue"
 export default {
   components: {
     NavigationItem,
-    NavigationButton
+    NavigationButton,
   },
 
   data() {
@@ -36,22 +36,22 @@ export default {
         { text: "blog", url: "/blog", hoverColor: "green" },
         { text: "projects", url: "/projects", hoverColor: "blue" },
         { text: "experiments", url: "/experiments", hoverColor: "purple" },
-        { text: "about", url: "/about", hoverColor: "orange" }
-      ]
+        { text: "about", url: "/about", hoverColor: "orange" },
+      ],
     }
   },
 
   computed: {
     activeClass() {
       return this.isActive ? "is-active" : ""
-    }
+    },
   },
 
   methods: {
     toggleActive() {
       this.isActive = !this.isActive
-    }
-  }
+    },
+  },
 }
 </script>
 

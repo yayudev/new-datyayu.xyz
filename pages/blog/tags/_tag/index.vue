@@ -35,7 +35,33 @@ export default {
 
   components: {
     Blog,
-    SiteHeader
+    SiteHeader,
+  },
+
+  async fetch({ store, route }) {
+    store.commit("posts/startFetching")
+
+    const tagId = route.params.tag
+
+    try {
+      const request = await axios.get(`${TAGS_ENDPOINT}/pages/${tagId}-1.json`)
+      const tagName = request.data.id
+      const totalPosts = request.data.totalPosts
+      const posts = request.data.posts.map((post) => {
+        return {
+          id: post.id,
+          title: post.title,
+          date: post.date,
+          summary: post.excerpt,
+          url: post.url,
+        }
+      })
+
+      store.commit("posts/setTagName", tagName)
+      store.commit("posts/updatePosts", { posts, totalPosts, page: 1 })
+    } catch (error) {
+      store.commit("posts/errorFetching")
+    }
   },
 
   computed: {
@@ -45,7 +71,7 @@ export default {
       hasNextPage: "posts/hasNextPage",
       hasPrevPage: "posts/hasPrevPage",
       currentPage: "posts/currentPage",
-      error: "posts/error"
+      error: "posts/error",
     }),
 
     navigationPrefix() {
@@ -62,33 +88,7 @@ export default {
 
     pageSubtitle() {
       return this.$t("blog.subtitle")
-    }
-  },
-
-  async fetch({ store, route }) {
-    store.commit("posts/startFetching")
-
-    const tagId = route.params.tag
-
-    try {
-      const request = await axios.get(`${TAGS_ENDPOINT}/pages/${tagId}-1.json`)
-      const tagName = request.data.id
-      const totalPosts = request.data.totalPosts
-      const posts = request.data.posts.map(post => {
-        return {
-          id: post.id,
-          title: post.title,
-          date: post.date,
-          summary: post.excerpt,
-          url: post.url
-        }
-      })
-
-      store.commit("posts/setTagName", tagName)
-      store.commit("posts/updatePosts", { posts, totalPosts, page: 1 })
-    } catch (error) {
-      store.commit("posts/errorFetching")
-    }
+    },
   },
 
   head() {
@@ -97,10 +97,10 @@ export default {
       meta: [
         { property: "og:title", content: this.pageTitle },
         { property: "og:description", content: this.pageSubtitle },
-        { property: "og:url", content: this.pageUrl }
-      ]
+        { property: "og:url", content: this.pageUrl },
+      ],
     }
-  }
+  },
 }
 </script>
 

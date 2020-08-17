@@ -11,18 +11,18 @@ import ModalCloseButton from "../Shared/ModalCloseButton.vue"
 
 export default {
   components: {
-    ModalCloseButton
+    ModalCloseButton,
   },
 
   props: {
-    url: { type: String, required: true }
+    url: { type: String, required: true },
   },
 
   methods: {
     closeModal() {
       this.$emit("closeModal")
-    }
-  }
+    },
+  },
 }
 </script>
 

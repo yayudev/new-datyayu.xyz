@@ -55,7 +55,7 @@ import ProjectsModalImageGallery from "./ProjectsModalImageGallery.vue"
 export default {
   components: {
     ModalCloseButton,
-    ProjectsModalImageGallery
+    ProjectsModalImageGallery,
   },
 
   props: {
@@ -65,14 +65,14 @@ export default {
     isIframe: { type: Boolean, default: false },
     url: { type: String, default: "" },
     github: { type: String, default: "" },
-    imagePrefix: { type: String, required: true }
+    imagePrefix: { type: String, required: true },
   },
 
   methods: {
     closeModal() {
       this.$emit("closeModal")
-    }
-  }
+    },
+  },
 }
 </script>
 

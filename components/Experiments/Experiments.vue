@@ -26,20 +26,20 @@ import ExperimentsModal from "./ExperimentsModal.vue"
 export default {
   components: {
     ExperimentsItem,
-    ExperimentsModal
+    ExperimentsModal,
   },
 
   data() {
     return {
       isModalActive: false,
-      activeModalExperiment: {}
+      activeModalExperiment: {},
     }
   },
 
   computed: {
     experiments() {
       return this.$t("experiments.experiments")
-    }
+    },
   },
 
   methods: {
@@ -51,8 +51,8 @@ export default {
     closeModal() {
       this.isModalActive = false
       this.activeModalExperiment = {}
-    }
-  }
+    },
+  },
 }
 </script>
 
