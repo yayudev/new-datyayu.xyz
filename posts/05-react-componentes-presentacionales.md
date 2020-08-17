@@ -1,9 +1,9 @@
-[//]: # "title   - React: Componentes funcionales puros "
-[//]: # "tags    - javascript, react, es2015+           "
-[//]: # "id      - 05                                   "
-[//]: # "date    - 2016.03.09                           "
-[//]: # "url     - react-componentes-funcionales-puros  "
-[//]: # "excerpt - Aprende a crear componentes presentacionales de la manera correcta y mejora tu código de react con componentes puros. "
+[//]: # (title   - React: Componentes funcionales puros)
+[//]: # (tags    - javascript, react, es2015+          )
+[//]: # (id      - 05                                  )
+[//]: # (date    - 2016.03.09                          )
+[//]: # (url     - react-componentes-funcionales-puros )
+[//]: # (excerpt - Aprende a crear componentes presentacionales de la manera correcta y mejora tu código de react con componentes puros.)
 
 Desde que React apareció en el mundo del frontend, ha existido una gran tendencia por tratar de crear código de una manera más declarativa. La idea de poder expresar de manera sencilla como queremos que se vea una UI, en lugar de tener que especificar cada paso para llegar a esa vista, es algo en lo que React sobresale y que ha ayudado a popularizar esta librería cada vez más.
 

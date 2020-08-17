@@ -1,9 +1,9 @@
-[//]: # "title   - Mejor manejo de dependencias con Yarn "
-[//]: # "tags    - javascript, node, tooling, yarn, npm  "
-[//]: # "id      - 27                                    "
-[//]: # "date    - 2016.10.15                            "
-[//]: # "url     - yarn                                  "
-[//]: # "excerpt - Conoce Yarn, un cliente de npm, creado por el equipo de Facebook que permite disminuir los tiempos de instalación de paquetes y te permite tener un versionamiento más controlado y seguro. "
+[//]: # (title   - Mejor manejo de dependencias con Yarn )
+[//]: # (tags    - javascript, node, tooling, yarn, npm  )
+[//]: # (id      - 27                                    )
+[//]: # (date    - 2016.10.15                            )
+[//]: # (url     - yarn                                  )
+[//]: # (excerpt - Conoce Yarn, un cliente de npm, creado por el equipo de Facebook que permite disminuir los tiempos de instalación de paquetes y te permite tener un versionamiento más controlado y seguro. )
 
 [NPM](https://www.npmjs.com/) es el manejador de dependencias por defecto en el mundo de javascript. Otros manejadores, como bower, han intentado sobreponerse a la popularidad de npm pero ninguno lo ha logrado. Sin embargo, ahora esto podría cambiar, ya que gente de empresas grandes de tecnología como Google y Facebook se han unido para crear una nueva alternativa diseñada para mejorar donde npm había estado fallando: [Yarn](https://yarnpkg.com/), un nuevo manejador de paquetes para javascript.
 
