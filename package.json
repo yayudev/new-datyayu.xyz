@@ -5,7 +5,7 @@
   "author": "Arturo Coronel <aoitsu3@gmail.com>",
   "private": true,
   "engines": {
-    "node": ">14.9.0"
+    "node": ">=14.9.0"
   },
   "dependencies": {
     "axios": "0.19.2",
