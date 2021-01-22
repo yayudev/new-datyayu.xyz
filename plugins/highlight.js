@@ -1,4 +1,4 @@
-import hljs from "highlight.js/lib/highlight"
+import hljs from "highlight.js"
 import SUPPORTED_HIGHLIGHT_LANGUAGES from "../config/highlight-languages.js"
 
 // Register the supported languages.
