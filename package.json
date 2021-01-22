@@ -8,7 +8,7 @@
     "node": ">=14.9.0"
   },  
   "dependencies": {
-    "axios": "0.19.2",
+    "axios": "0.21.0",
     "highlight.js": "^10.5.0",
     "nuxt": "^2.8.1",
     "promise-polyfill": "8.2.0",
