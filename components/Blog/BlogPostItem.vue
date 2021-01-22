@@ -11,6 +11,7 @@
         </nuxt-link>
       </h2>
 
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="blog-post-item-summary" v-html="summary" />
     </div>
   </li>

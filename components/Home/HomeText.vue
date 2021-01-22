@@ -3,7 +3,7 @@
     <div class="home-logo-container">
       <img
         class="home-logo"
-        src="~assets/images/logo.svg"
+        src="~/assets/images/logo.svg"
         alt="Arturo Coronel Logo"
       />
     </div>
