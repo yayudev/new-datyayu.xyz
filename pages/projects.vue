@@ -17,22 +17,12 @@ import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"
 import Projects from "~/components/Projects/Projects.vue"
 
 export default {
-  transition: "content",
-
   components: {
     SiteHeader,
     Projects,
   },
 
-  computed: {
-    pageTitle() {
-      return this.$t("projects.title")
-    },
-
-    pageSubtitle() {
-      return this.$t("projects.subtitle")
-    },
-  },
+  transition: "content",
 
   head() {
     return {
@@ -44,6 +34,16 @@ export default {
         { property: "og:url", content: "https://yayu.dev/projects" },
       ],
     }
+  },
+
+  computed: {
+    pageTitle() {
+      return this.$t("projects.title")
+    },
+
+    pageSubtitle() {
+      return this.$t("projects.subtitle")
+    },
   },
 }
 </script>

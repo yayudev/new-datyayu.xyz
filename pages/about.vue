@@ -17,22 +17,12 @@ import About from "~/components/About/About.vue"
 import SiteHeader from "~/components/SiteHeader/SiteHeader.vue"
 
 export default {
-  transition: "content",
-
   components: {
     About,
     SiteHeader,
   },
 
-  computed: {
-    pageTitle() {
-      return this.$t("about.title")
-    },
-
-    pageSubtitle() {
-      return this.$t("about.subtitle")
-    },
-  },
+  transition: "content",
 
   head() {
     return {
@@ -44,6 +34,16 @@ export default {
         { property: "og:url", content: "https://yayu.dev/about" },
       ],
     }
+  },
+
+  computed: {
+    pageTitle() {
+      return this.$t("about.title")
+    },
+
+    pageSubtitle() {
+      return this.$t("about.subtitle")
+    },
   },
 }
 </script>

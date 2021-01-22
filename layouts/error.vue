@@ -36,6 +36,10 @@ export default {
     },
   },
 
+  head: {
+    title: "Error",
+  },
+
   computed: {
     errorTitle() {
       return this.$t("error.title")
@@ -43,10 +47,6 @@ export default {
     errorSubtitle() {
       return this.$t("error.subtitle")
     },
-  },
-
-  head: {
-    title: "Error",
   },
 }
 </script>

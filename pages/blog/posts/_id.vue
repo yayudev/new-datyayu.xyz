@@ -30,12 +30,12 @@ import { mapGetters } from "vuex"
 import { POSTS_ENDPOINT } from "~/config/api.js"
 
 export default {
-  transition: "content",
-
   components: {
     BlogPost,
     SiteHeader,
   },
+
+  transition: "content",
 
   async fetch({ store, route }) {
     store.commit("posts/startFetching")
@@ -57,6 +57,17 @@ export default {
       store.commit("posts/setActivePost", blogPost)
     } catch (error) {
       store.commit("posts/errorFetching")
+    }
+  },
+
+  head() {
+    return {
+      title: this.postTitle,
+      meta: [
+        { property: "og:title", content: this.postTitle },
+        { property: "og:description", content: this.postSubtitle },
+        { property: "og:url", content: this.pageUrl },
+      ],
     }
   },
 
@@ -94,17 +105,6 @@ export default {
     pageSubtitle() {
       return this.$t("blog.subtitle")
     },
-  },
-
-  head() {
-    return {
-      title: this.postTitle,
-      meta: [
-        { property: "og:title", content: this.postTitle },
-        { property: "og:description", content: this.postSubtitle },
-        { property: "og:url", content: this.pageUrl },
-      ],
-    }
   },
 }
 </script>

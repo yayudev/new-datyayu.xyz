@@ -10,7 +10,7 @@
 
     <div class="home-text-container">
       <h1 class="home-title">
-        ARTURO CORONEL
+        {{ "ARTURO CORONEL" }}
       </h1>
       <h3 class="home-subtitle">
         <span class="home-subtitle-item">{{ developerTitle }}</span>

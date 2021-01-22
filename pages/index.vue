@@ -6,12 +6,12 @@
 import Home from "~/components/Home/Home.vue"
 
 export default {
-  layout: "home",
-  transition: "home",
-
   components: {
     Home,
   },
+
+  layout: "home",
+  transition: "home",
 
   head() {
     return {

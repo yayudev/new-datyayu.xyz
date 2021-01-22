@@ -31,12 +31,12 @@ import { mapGetters } from "vuex"
 import { TAGS_ENDPOINT } from "~/config/api.js"
 
 export default {
-  transition: "content",
-
   components: {
     Blog,
     SiteHeader,
   },
+
+  transition: "content",
 
   async fetch({ store, route }) {
     store.commit("posts/startFetching")
@@ -61,6 +61,17 @@ export default {
       store.commit("posts/updatePosts", { posts, totalPosts, page: 1 })
     } catch (error) {
       store.commit("posts/errorFetching")
+    }
+  },
+
+  head() {
+    return {
+      title: this.pageTitle,
+      meta: [
+        { property: "og:title", content: this.pageTitle },
+        { property: "og:description", content: this.pageSubtitle },
+        { property: "og:url", content: this.pageUrl },
+      ],
     }
   },
 
@@ -89,17 +100,6 @@ export default {
     pageSubtitle() {
       return this.$t("blog.subtitle")
     },
-  },
-
-  head() {
-    return {
-      title: this.pageTitle,
-      meta: [
-        { property: "og:title", content: this.pageTitle },
-        { property: "og:description", content: this.pageSubtitle },
-        { property: "og:url", content: this.pageUrl },
-      ],
-    }
   },
 }
 </script>
