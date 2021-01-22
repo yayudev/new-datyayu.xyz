@@ -7719,10 +7719,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-disqus@3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/vue-disqus/-/vue-disqus-3.0.5.tgz#8d0dd5cabdba7c47f82d129d2907a64366842fa8"
-  integrity sha512-T3Y68lXf5W2lYt6j4Y3kZ4opLPH0EAzqriy11MS4D4Q2+UN0tFuUXeYP1MxfvdyaCEboXSM6CUswxsULuNV70Q==
+vue-disqus@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/vue-disqus/-/vue-disqus-4.0.1.tgz#9ec040c575f3b87f3ef4bf43477ff20f06cc57dc"
+  integrity sha512-LCmEF4UqLMmMZaZwdMWZ5OO0imu/Cy0pZcr7c0QV7iJk1H9VWKUyxqO7+NNY8hhlAQXTdEq+Hv5tzOA9CfpjdA==
 
 vue-eslint-parser@^7.0.0:
   version "7.1.0"
@@ -7741,10 +7741,10 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
   integrity sha512-KmvZVtmM26BQOMK1rwUZsrqxEGeKiYSZGA7SNWE6uExx8UX/cj9hq2MRV/wWC3Cq6AoeDGk57rL9YMFRel/q+g==
 
-vue-i18n@8.11.2:
-  version "8.11.2"
-  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.11.2.tgz#92827fc42449f4602d2a0ddb437dfc4e3370d9d7"
-  integrity sha512-STcpmxqBrG77SyWi7e0Yn/B3DjKR6mSDwYS4F/V7zoi+e/+CPbVb2TaBqFwnrkoDcPmRfjM7nTwsiRQQOGdifw==
+vue-i18n@8.15.3:
+  version "8.15.3"
+  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.15.3.tgz#9f947802d9b734fcb92e2ce724da654f2f9fc0f4"
+  integrity sha512-PVNgo6yhOmacZVFjSapZ314oewwLyXHjJwAqjnaPN1GJAJd/dvsrShGzSiJuCX4Hc36G4epJvNXUwO8y7wEKew==
 
 vue-loader@^15.7.0:
   version "15.7.0"

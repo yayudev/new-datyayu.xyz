@@ -1,7 +1,7 @@
 <template>
   <div class="blog-post-comments">
     <hr class="blog-post-comments-divider" />
-    <vue-disqus shortname="datyayu" />
+    <Disqus shortname="datyayu" />
   </div>
 </template>
 
