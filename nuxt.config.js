@@ -53,7 +53,7 @@ module.exports = {
     "~/plugins/disqus",
     { src: "~plugins/i18n.js", injectAs: "i18n" },
   ],
-  modules: ["@nuxtjs/workbox"],
+  buildModules: ["@nuxtjs/pwa"],
   /*
    ** Vue Router
    */
