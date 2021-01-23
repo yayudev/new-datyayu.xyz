@@ -8,7 +8,7 @@ export default {
 
       intro: `
         Hi! I'm Arturo Coronel (you can call me Yayu).
-        I'm 23 years old, I live at Tijuana, MX and
+        I'm 25 years old, I live at Tijuana, MX and
         I ❤ web development.
       `,
 
@@ -17,9 +17,9 @@ export default {
         design and UX areas. My favorite things about them are using css to bring
         life the pages, create awesome interactive experiences using javascript and
         optimizing the site performance in order to improve the mobile user's experience.
-        I'm also experienced with major css libraries like bootstrap, materialize and foundation;
-        as well as javascript frameworks like Angular, Angular2, polymer
-        and, as my main focus, React, Vue.js (altough I use a lot of ember at work!).
+        I'm also experienced with major css libraries like bootstrap, materialize and tailwind;
+        as well as javascript frameworks like Angular, Angular2, ember
+        and, as my main focus, React & Vue.js.
       `,
 
       openSource: `
@@ -33,7 +33,7 @@ export default {
 
       hobbies: `
         My hobbies are watching anime, play music games, listening to podcasts,
-        learn about my favorite voice actresses, watching and attending idol lives events
+        learn about my favorite music groups, watching and attending idol lives events
         at Japan, write about frontend and help other people to improve their skills.
       `,
 
@@ -56,7 +56,7 @@ export default {
       introTitle: "Acerca de mí",
 
       intro: `
-        Hola. Soy Arturo Coronel (puedes llamarme Yayu), tengo 23 años,
+        Hola. Soy Arturo Coronel (puedes llamarme Yayu), tengo 25 años,
         vivo en Tijuana, MX y amo el desarrollo web ❤.
       `,
 
@@ -68,8 +68,8 @@ export default {
         javascript y optimizar el rendimiento de sitios para mejorar la experiencia
         de usuarios moviles. También tengo experiencia trabajando con librerias de css como
         bootstrap, materialize, foundation; y frameworks de javascript
-        como Angular, Angular2, polymer y, como mi enfoque principal,
-        React+Redux y Vue.js (aunque uso bastante ember en mi trabajo!).
+        como Angular, Angular2, ember y, como mi enfoque principal,
+        React+Redux y Vue.js.
       `,
 
       openSource: `
@@ -82,7 +82,7 @@ export default {
 
       hobbies: `
         Mis hobbies son ver anime, juegos de musica, escuchar podcasts,
-        aprender acerca de mis actrices de voz favoritas, mirar e ir a eventos de idols
+        aprender acerca de mis grupos musicales favoritos, mirar e ir a eventos de idols
         en Japan, escribir acerca de frontend y ayudar a los demás a mejorar sus habilidades.
       `,
 
