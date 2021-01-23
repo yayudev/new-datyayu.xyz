@@ -53,24 +53,10 @@ module.exports = {
     "~/plugins/disqus",
     { src: "~plugins/i18n.js", injectAs: "i18n" },
   ],
-  buildModules: ["@nuxtjs/pwa"],
-  /*
-   ** Vue Router
+  /**
+   * PWA module
    */
-  router: {
-    scrollBehavior(to, from, savedPosition) {
-      if (savedPosition) {
-        return savedPosition
-      }
-
-      const $header = document.querySelector(".header")
-      if ($header) {
-        $header.scrollIntoView()
-      }
-
-      return { x: 0, y: 0 }
-    },
-  },
+  buildModules: ["@nuxtjs/pwa"],
   /*
    ** Build configuration
    */
@@ -78,8 +64,8 @@ module.exports = {
     /*
      ** Run ESLINT on save
      */
-    extend(config, { isClient }) {
-      if (isClient) {
+    extend(config, { isDev, isClient }) {
+      if (isDev && isClient) {
         config.module.rules.push({
           enforce: "pre",
           test: /\.(js|vue)$/,
@@ -95,29 +81,6 @@ module.exports = {
         new RegExp(`^./(${SUPPORTED_HIGHLIGHT_LANGUAGES.join("|")})$`)
       ),
     ],
-
-    loaders: [
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        loader: "url-loader",
-        query: {
-          limit: 1000, // 1KO
-          name: "img/[name].[hash:7].[ext]",
-        },
-      },
-      {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: "url-loader",
-        query: {
-          limit: 1000, // 1 KO
-          name: "fonts/[name].[hash:7].[ext]",
-        },
-      },
-      {
-        test: /\.(webm|mp4)$/,
-        loader: "file-loader",
-      },
-    ],
   },
   /*
    ** Server rendering cache config
@@ -126,9 +89,9 @@ module.exports = {
     max: 100,
     maxAge: 900000,
   },
-  /*
-   ** Static build config
-   */
+  // /*
+  //  ** Static build config
+  //  */
   generate: {
     routes: [
       // Build posts
