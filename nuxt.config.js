@@ -48,15 +48,15 @@ module.exports = {
   /*
    ** Vue Plugins
    */
-  plugins: [
-    "~plugins/google-analytics",
-    "~/plugins/disqus",
-    { src: "~plugins/i18n.js", injectAs: "i18n" },
-  ],
+  plugins: ["~/plugins/disqus", { src: "~plugins/i18n.js", injectAs: "i18n" }],
   /**
-   * PWA module
+   * Prod modules
    */
   buildModules: ["@nuxtjs/pwa"],
+  /**
+   * Global modules
+   */
+  modules: [["@nuxtjs/google-gtag", { id: "G-2WSG4LMRLW" }]],
   /*
    ** Build configuration
    */
