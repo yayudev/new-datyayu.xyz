@@ -1,5 +1,7 @@
 <template>
   <div class="blog">
+    <adsbygoogle />
+
     <blog-navigation
       :has-prev-page="hasPrevPage"
       :has-next-page="hasNextPage"

@@ -56,7 +56,10 @@ module.exports = {
   /**
    * Global modules
    */
-  modules: [["@nuxtjs/google-gtag", { id: "G-2WSG4LMRLW" }]],
+  modules: [
+    ["@nuxtjs/google-gtag", { id: "G-2WSG4LMRLW" }],
+    ["@nuxtjs/google-adsense", { id: "ca-pub-2175056054254139" }],
+  ],
   /*
    ** Build configuration
    */
