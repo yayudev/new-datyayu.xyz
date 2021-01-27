@@ -228,4 +228,4 @@ export default {
       ],
     },
   },
-};
+}
