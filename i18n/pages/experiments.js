@@ -6,6 +6,11 @@ export default {
         "A colllection of small learning experiments using the latest technologies availables for the web.",
       experiments: [
         {
+          img: "pricing-component",
+          title: "React pricing component",
+          url: "https://yayu-pricing-component.netlify.app/",
+        },
+        {
           img: "feed-demo",
           title: "SPA twitter reports (react + redux)",
           url: "http://police-kangaroo-43356.netlify.com/",
@@ -116,6 +121,11 @@ export default {
         "Una colección de pequeños experimentos usando las tecnologias más recientes de la web.",
       experiments: [
         {
+          img: "pricing-component",
+          title: "React componente de precios",
+          url: "https://yayu-pricing-component.netlify.app/",
+        },
+        {
           img: "feed-demo",
           title: "SPA twitter reporter (react + redux)",
           url: "http://police-kangaroo-43356.netlify.com/",
@@ -218,4 +228,4 @@ export default {
       ],
     },
   },
-}
+};
